@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:sqflite/sqflite.dart';
 import '../../../core/theme/app_theme.dart';
@@ -151,6 +150,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       };
       
       final jsonString = jsonEncode(backupData);
+      debugPrint('Backup payload size: ${jsonString.length} chars');
       // Simulasikan penyimpanan ke file lokal
       CustomTopNotification.show(context, message: 'Backup berhasil! Berkas cadangan disimpan ke memori internal.');
     } catch (e) {

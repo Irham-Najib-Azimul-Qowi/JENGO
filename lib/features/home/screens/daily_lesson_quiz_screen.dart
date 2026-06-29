@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -43,6 +42,7 @@ class DailyLessonQuizScreen extends StatefulWidget {
   final List<dynamic>? vocabList;
   final int stage;
   final int day;
+  final bool isSkippingQuiz;
 
   const DailyLessonQuizScreen({
     super.key,
@@ -50,6 +50,7 @@ class DailyLessonQuizScreen extends StatefulWidget {
     this.vocabList,
     this.stage = 1,
     this.day = 1,
+    this.isSkippingQuiz = false,
   });
 
   @override
@@ -62,12 +63,14 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
   bool _isLoading = true;
   List<QuizQuestion> _questions = [];
   int _currentStep = 0;
+  int _correctCount = 0; // Tracks the user's score
 
   // State for user answers
   int _selectedChoiceIndex = -1; // Multiple Choice & Listening
   List<String> _unscrambleSelection = []; // Sentence Unscramble
   List<String> _unscramblePool = [];
-  String _typedAnswer = ""; // Typing & Fill-in-blanks
+  final TextEditingController _typingController = TextEditingController(); // Typing & Fill-in-blanks
+  String _typedAnswer = "";
   String _connectSelectedLeft = ""; // Connect Pairs State
   String _connectSelectedRight = "";
   Map<String, String> _connectPairsAnswers = {}; // Connected pairs so far
@@ -75,6 +78,10 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
   // Evaluation States
   bool _hasAnswered = false;
   bool _isCorrect = false;
+
+  // Stable Connect Pairs items to prevent rearranging on builds
+  List<String> _connectLeftItems = [];
+  List<String> _connectRightItems = [];
 
   @override
   void initState() {
@@ -85,6 +92,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
   @override
   void dispose() {
     _flutterTts.stop();
+    _typingController.dispose();
     super.dispose();
   }
 
@@ -101,7 +109,41 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
     final db = await DatabaseHelper.instance.database;
     List<Map<String, dynamic>> vocabItems = [];
 
-    if (widget.vocabList != null && widget.vocabList!.isNotEmpty) {
+    if (widget.isSkippingQuiz) {
+      final targetStage = widget.stage;
+      List<String> diffLevels = [];
+      if (widget.language == 'JAPANESE') {
+        if (targetStage > 1) diffLevels.add('HIRAGANA');
+        if (targetStage > 4) diffLevels.add('KATAKANA');
+        if (targetStage > 7) diffLevels.add('N5');
+        if (targetStage > 13) diffLevels.add('N4');
+        if (targetStage > 15) diffLevels.add('N3');
+        if (targetStage > 18) {
+          diffLevels.add('N2');
+          diffLevels.add('N1');
+        }
+      } else {
+        if (targetStage > 1) diffLevels.add('A1');
+        if (targetStage > 2) diffLevels.add('A2');
+        if (targetStage > 4) diffLevels.add('B1');
+        if (targetStage > 6) diffLevels.add('B2');
+        if (targetStage > 12) diffLevels.add('C1');
+      }
+
+      if (diffLevels.isEmpty) {
+        diffLevels = widget.language == 'JAPANESE' ? ['HIRAGANA'] : ['A1'];
+      }
+
+      String placeholders = List.filled(diffLevels.length, '?').join(', ');
+      final listQuery = await db.query(
+        'vocabulary',
+        where: 'language = ? AND difficulty_level IN ($placeholders)',
+        whereArgs: [widget.language, ...diffLevels],
+        orderBy: 'RANDOM()',
+        limit: 15,
+      );
+      vocabItems = List<Map<String, dynamic>>.from(listQuery);
+    } else if (widget.vocabList != null && widget.vocabList!.isNotEmpty) {
       vocabItems = List<Map<String, dynamic>>.from(widget.vocabList!);
     } else {
       // Fallback query from vocabulary table
@@ -114,6 +156,13 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
       vocabItems = List<Map<String, dynamic>>.from(listQuery);
     }
 
+    // CRITICAL: Filter out vocab items with empty word or translation
+    vocabItems = vocabItems.where((v) {
+      final w = (v['word'] ?? '').toString().trim();
+      final t = (v['translation'] ?? v['meaning'] ?? '').toString().trim();
+      return w.isNotEmpty && t.isNotEmpty;
+    }).toList();
+
     if (vocabItems.isEmpty) {
       // Return fallback dummy questions if no vocabulary database rows
       _generateFallbackQuestions();
@@ -124,7 +173,9 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
     final List<QuizQuestion> generatedQuestions = [];
     final rand = Random();
 
-    for (int i = 0; i < min(vocabItems.length, 6); i++) {
+    final int totalQuestionsLimit = widget.isSkippingQuiz ? 15 : 6;
+
+    for (int i = 0; i < min(vocabItems.length, totalQuestionsLimit); i++) {
       final item = vocabItems[i];
       final String word = item['word']?.toString() ?? '';
       if (word.trim().isEmpty) continue;
@@ -132,16 +183,24 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
       final String translation = item['translation'] ?? item['meaning'] ?? '';
       final isJp = widget.language == 'JAPANESE';
 
-      // Pick a type dynamically
-      final qType = QuestionType.values[i % QuestionType.values.length];
+      // Pick a type dynamically — beginners (stage <= 12) only get choice-based exercises
+      QuestionType qType;
+      if (widget.stage <= 12) {
+        // Beginner-friendly types only: multipleChoice, listening, connectPairs, fillInBlank
+        final begTypes = [QuestionType.multipleChoice, QuestionType.listening, QuestionType.connectPairs, QuestionType.fillInBlank];
+        qType = begTypes[i % begTypes.length];
+      } else {
+        qType = QuestionType.values[i % QuestionType.values.length];
+      }
 
       switch (qType) {
         case QuestionType.multipleChoice:
           // MC Option generation
           List<String> opts = [translation];
           for (var other in vocabItems) {
-            if (other['translation'] != translation && opts.length < 4) {
-              opts.add(other['translation']);
+            final ot = (other['translation'] ?? other['meaning'] ?? '').toString().trim();
+            if (ot != translation && ot.isNotEmpty && opts.length < 4) {
+              opts.add(ot);
             }
           }
           while (opts.length < 4) {
@@ -198,41 +257,86 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
           break;
 
         case QuestionType.fillInBlank:
-          // Blank character replacement
-          String wordWithBlank = word;
-          String charToFill = "";
-          if (word.length > 2) {
-            int blankIndex = rand.nextInt(word.length);
-            charToFill = word[blankIndex];
-            wordWithBlank = word.replaceRange(blankIndex, blankIndex + 1, " __ ");
-          } else {
-            charToFill = word;
-            wordWithBlank = " __ ";
+          // For fill-in-blank, build 4 choices including the correct answer
+          String wordWithBlank = '___';
+          String charToFill = word;
+
+          // Cari contoh kalimat yang mengandung kata ini dari database
+          try {
+            final sentRows = await db.query(
+              'sentences',
+              where: isJp ? 'japanese LIKE ?' : 'english LIKE ?',
+              whereArgs: ['%$word%'],
+              limit: 1,
+            );
+            if (sentRows.isNotEmpty) {
+              final contextSentence = isJp
+                  ? sentRows.first['japanese'] as String
+                  : sentRows.first['english'] as String;
+              wordWithBlank = contextSentence.replaceFirst(word, '___');
+              charToFill = word;
+            }
+          } catch (_) {}
+
+          // Build 4 choice options (distractor words from same vocab set)
+          List<String> fillOpts = [charToFill];
+          for (var other in vocabItems) {
+            final ow = (other['word'] ?? '').toString().trim();
+            if (ow != charToFill && ow.isNotEmpty && fillOpts.length < 4) {
+              fillOpts.add(ow);
+            }
           }
+          while (fillOpts.length < 4) fillOpts.add('？？？');
+          fillOpts.shuffle();
 
           generatedQuestions.add(QuizQuestion(
             type: QuestionType.fillInBlank,
-            questionText: 'Lengkapi karakter huruf yang hilang dari kata berikut (Petunjuk: "$translation"):',
+            questionText: 'Pilih kata yang tepat untuk melengkapi kalimat berikut (Petunjuk: "$translation"):',
             wordPrompt: wordWithBlank,
+            // NOTE: readingPrompt intentionally omitted to avoid leaking the answer
             correctAnswer: charToFill,
+            options: fillOpts,  // Always include options for choice-based rendering
           ));
           break;
 
         case QuestionType.matchingPairs:
         case QuestionType.connectPairs:
-          // Connecting pairs using 4 random items
-          final Map<String, String> pairMap = {};
-          for (int j = 0; j < min(vocabItems.length, 4); j++) {
-            pairMap[vocabItems[j]['word']] = vocabItems[j]['translation'];
+          // Connecting pairs using 4 random items — need at least 4 items
+          if (vocabItems.length >= 4) {
+            final Map<String, String> pairMap = {};
+            final pairItems = List<Map<String, dynamic>>.from(vocabItems)..shuffle();
+            for (int j = 0; j < 4; j++) {
+              final pWord = (pairItems[j]['word'] ?? '').toString().trim();
+              final pTrans = (pairItems[j]['translation'] ?? pairItems[j]['meaning'] ?? '').toString().trim();
+              if (pWord.isNotEmpty && pTrans.isNotEmpty) pairMap[pWord] = pTrans;
+            }
+            if (pairMap.length >= 2) {
+              generatedQuestions.add(QuizQuestion(
+                type: QuestionType.connectPairs,
+                questionText: 'Hubungkan pasangan kata yang tepat berikut ini:',
+                wordPrompt: '',
+                correctAnswer: '',
+                pairs: pairMap,
+              ));
+            }
+          } else {
+            // Fallback to multiple choice if not enough vocab
+            List<String> opts = [translation];
+            for (var other in vocabItems) {
+              final t2 = (other['translation'] ?? other['meaning'] ?? '').toString().trim();
+              if (t2 != translation && t2.isNotEmpty && opts.length < 4) opts.add(t2);
+            }
+            while (opts.length < 4) opts.add('Pilihan ${opts.length}');
+            opts.shuffle();
+            generatedQuestions.add(QuizQuestion(
+              type: QuestionType.multipleChoice,
+              questionText: 'Pilihlah arti kata yang tepat untuk kata berikut:',
+              wordPrompt: word,
+              readingPrompt: isJp ? reading : null,
+              correctAnswer: translation,
+              options: opts,
+            ));
           }
-
-          generatedQuestions.add(QuizQuestion(
-            type: QuestionType.connectPairs,
-            questionText: 'Hubungkan pasangan kata yang tepat berikut ini:',
-            wordPrompt: '',
-            correctAnswer: '',
-            pairs: pairMap,
-          ));
           break;
 
         case QuestionType.listening:
@@ -283,6 +387,10 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         _questions = generatedQuestions.isNotEmpty ? generatedQuestions : _getFallbackQuestionsList();
         _isLoading = false;
       });
+      // Initialize state for the first question
+      if (_questions.isNotEmpty) {
+        _initQuestionStateForStep(0);
+      }
       // Auto speak first listening question if active
       _triggerAutoSpeak();
     }
@@ -293,6 +401,24 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
       _questions = _getFallbackQuestionsList();
       _isLoading = false;
     });
+    if (_questions.isNotEmpty) {
+      _initQuestionStateForStep(0);
+    }
+  }
+
+  void _initQuestionStateForStep(int stepIndex) {
+    if (stepIndex >= _questions.length) return;
+    final q = _questions[stepIndex];
+    if (q.type == QuestionType.sentenceUnscramble) {
+      _unscramblePool = List<String>.from(q.wordPool);
+      _unscrambleSelection = [];
+    } else if (q.type == QuestionType.connectPairs) {
+      _connectLeftItems = q.pairs.keys.toList()..shuffle();
+      _connectRightItems = q.pairs.values.toList()..shuffle();
+      _connectPairsAnswers = {};
+      _connectSelectedLeft = "";
+      _connectSelectedRight = "";
+    }
   }
 
   List<QuizQuestion> _getFallbackQuestionsList() {
@@ -383,7 +509,14 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         break;
 
       case QuestionType.fillInBlank:
-        correct = _typedAnswer.trim().toLowerCase() == currentQ.correctAnswer.trim().toLowerCase();
+        // Choice-based (stages <= 12) uses selectedChoiceIndex; advanced uses typed answer
+        if (widget.stage <= 12 && currentQ.options.isNotEmpty) {
+          if (_selectedChoiceIndex != -1) {
+            correct = currentQ.options[_selectedChoiceIndex] == currentQ.correctAnswer;
+          }
+        } else {
+          correct = _typedAnswer.trim().toLowerCase() == currentQ.correctAnswer.trim().toLowerCase();
+        }
         break;
 
       case QuestionType.typing:
@@ -404,6 +537,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
     });
 
     if (correct) {
+      _correctCount++;
       _speak(currentQ.wordPrompt);
     }
   }
@@ -416,17 +550,15 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         _isCorrect = false;
         _selectedChoiceIndex = -1;
         _typedAnswer = "";
+        _typingController.clear();
         _unscrambleSelection = [];
         _connectPairsAnswers = {};
         _connectSelectedLeft = "";
         _connectSelectedRight = "";
       });
 
-      // Prepare unscramble pools
-      final currentQ = _questions[_currentStep];
-      if (currentQ.type == QuestionType.sentenceUnscramble) {
-        _unscramblePool = List<String>.from(currentQ.wordPool);
-      }
+      // Prepare state for the new step
+      _initQuestionStateForStep(_currentStep);
 
       _triggerAutoSpeak();
     } else {
@@ -437,11 +569,162 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
   Future<void> _finishQuiz() async {
     final db = await DatabaseHelper.instance.database;
     final userList = await db.query('gamification', limit: 1);
-    if (userList.isNotEmpty) {
-      final user = userList.first;
-      final currentXp = user['total_xp'] as int? ?? 0;
-      final currentGems = user['gems'] as int? ?? 50;
+    
+    if (userList.isEmpty) {
+      Navigator.pop(context);
+      return;
+    }
 
+    final user = userList.first;
+    final currentXp = user['total_xp'] as int? ?? 0;
+    final currentGems = user['gems'] as int? ?? 50;
+
+    // 1. SKIPPING QUIZ FLOW
+    if (widget.isSkippingQuiz) {
+      final totalQ = _questions.length;
+      final requiredCorrect = (totalQ * 0.8).ceil();
+      final isPassed = _correctCount >= requiredCorrect;
+
+      if (isPassed) {
+        // Unlock all stages up to target stage in SQLite
+        final target = widget.stage;
+        for (int i = 1; i < target; i++) {
+          await db.update(
+            'chapters',
+            {'status': 'COMPLETED'},
+            where: 'chapter_number = ?',
+            whereArgs: [i],
+          );
+        }
+        await db.update(
+          'chapters',
+          {'status': 'ACTIVE'},
+          where: 'chapter_number = ?',
+          whereArgs: [target],
+        );
+
+        // Update user's current level & day in gamification table
+        await db.update(
+          'gamification',
+          {
+            'current_level': target,
+            'current_day': 1,
+            'total_xp': currentXp + 200,
+            'gems': currentGems + 30,
+          },
+          where: 'id = ?',
+          whereArgs: [user['id']],
+        );
+
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (_) => AlertDialog(
+            backgroundColor: AppTheme.darkSurface,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+              side: const BorderSide(color: AppTheme.neonGreen),
+            ),
+            title: const Row(
+              children: [
+                Icon(Icons.stars, color: AppTheme.neonGreen),
+                SizedBox(width: 10),
+                Text('LULUS! 🎉'),
+              ],
+            ),
+            content: Text(
+              'Selamat! Anda lulus Kuis Evaluasi Lompat Stage dengan menjawab $_correctCount dari $totalQ pertanyaan dengan benar.\n\nStage $target sekarang TERBUKA!',
+            ),
+            actions: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonGreen),
+                onPressed: () {
+                  Navigator.pop(context); // Close dialog
+                  Navigator.pop(context); // Return to LearningPathScreen
+                },
+                child: const Text('Lanjutkan', style: TextStyle(color: AppTheme.darkBackground, fontWeight: FontWeight.bold)),
+              ),
+            ],
+          ),
+        );
+      } else {
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (_) => AlertDialog(
+            backgroundColor: AppTheme.darkSurface,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+              side: const BorderSide(color: AppTheme.neonPink),
+            ),
+            title: const Row(
+              children: [
+                Icon(Icons.gpp_bad, color: AppTheme.neonPink),
+                SizedBox(width: 10),
+                Text('BELUM LULUS ❌'),
+              ],
+            ),
+            content: Text(
+              'Maaf, Anda hanya menjawab $_correctCount dari $totalQ pertanyaan dengan benar.\n\nAnda membutuhkan minimal $requiredCorrect jawaban benar (80%) untuk melompati ke Stage $target. Silakan coba lagi!',
+            ),
+            actions: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonPink),
+                onPressed: () {
+                  Navigator.pop(context); // Close dialog
+                  Navigator.pop(context); // Return to LearningPathScreen
+                },
+                child: const Text('Kembali', style: TextStyle(color: AppTheme.textPrimary, fontWeight: FontWeight.bold)),
+              ),
+            ],
+          ),
+        );
+      }
+      return;
+    }
+
+    // 2. NORMAL LESSON PROGRESSION FLOW
+    final isBasicStage = widget.stage <= 6;
+
+    if (isBasicStage) {
+      // stages <= 6: increment progression day immediately because daily mock practice is locked!
+      int currentDay = user['current_day'] as int? ?? 1;
+      int currentLevel = user['current_level'] as int? ?? 1;
+      int nextDay = currentDay + 1;
+      int nextLevel = currentLevel;
+
+      if (nextDay > 30) {
+        nextDay = 1;
+        if (currentLevel < 20) {
+          nextLevel = currentLevel + 1;
+          await db.update(
+            'chapters',
+            {'status': 'COMPLETED'},
+            where: 'chapter_number = ?',
+            whereArgs: [currentLevel],
+          );
+          await db.update(
+            'chapters',
+            {'status': 'ACTIVE'},
+            where: 'chapter_number = ?',
+            whereArgs: [nextLevel],
+          );
+        }
+      }
+
+      await db.update(
+        'gamification',
+        {
+          'total_xp': currentXp + 50,
+          'gems': currentGems + 10,
+          'current_day': nextDay,
+          'current_level': nextLevel,
+        },
+        where: 'id = ?',
+        whereArgs: [user['id']],
+      );
+    } else {
+      // stages > 6: progress is driven by mock exam session after daily lesson quiz
       await db.update(
         'gamification',
         {
@@ -478,29 +761,45 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             const Text('🏆 XP Belajar: +50 XP', style: TextStyle(fontWeight: FontWeight.bold, color: AppTheme.neonGreen)),
             const Text('💎 Hadiah Permata: +10 Gems', style: TextStyle(fontWeight: FontWeight.bold, color: AppTheme.neonBlue)),
             const SizedBox(height: 16),
-            Text(
-              'Langkah berikutnya: Selesaikan Sesi Latihan Rutin ${widget.language == 'JAPANESE' ? 'JLPT' : 'IELTS'} Anda!',
-              style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13),
-            ),
+            if (!isBasicStage)
+              Text(
+                'Langkah berikutnya: Selesaikan Sesi Latihan Rutin ${widget.language == 'JAPANESE' ? 'JLPT' : 'IELTS'} Anda!',
+                style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13),
+              )
+            else
+              const Text(
+                'Anda telah menyelesaikan materi hari ini. Silakan lanjutkan belajar hari berikutnya secara langsung!',
+                style: TextStyle(color: AppTheme.textSecondary, fontSize: 13),
+              ),
           ],
         ),
         actions: [
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonGreen),
-            onPressed: () {
-              Navigator.pop(context);
-              Navigator.pushReplacementNamed(
-                context,
-                '/daily_mock_practice',
-                arguments: {
-                  'language': widget.language,
-                  'stage': widget.stage,
-                  'day': widget.day,
-                },
-              );
-            },
-            child: const Text('Mulai Sesi Ujian Harian', style: TextStyle(color: AppTheme.darkBackground, fontWeight: FontWeight.bold)),
-          ),
+          if (!isBasicStage)
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonGreen),
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.pushReplacementNamed(
+                  context,
+                  '/daily_mock_practice',
+                  arguments: {
+                    'language': widget.language,
+                    'stage': widget.stage,
+                    'day': widget.day,
+                  },
+                );
+              },
+              child: const Text('Mulai Sesi Ujian Harian', style: TextStyle(color: AppTheme.darkBackground, fontWeight: FontWeight.bold)),
+            )
+          else
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonBlue),
+              onPressed: () {
+                Navigator.pop(context); // Close dialog
+                Navigator.pop(context); // Return to LessonListScreen
+              },
+              child: const Text('Kembali ke Menu', style: TextStyle(color: AppTheme.darkBackground, fontWeight: FontWeight.bold)),
+            ),
         ],
       ),
     );
@@ -515,13 +814,19 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
     }
 
     final currentQ = _questions[_currentStep];
-    final progress = _currentStep / _questions.length;
+    final progress = (_connectLeftItems.isNotEmpty || _connectRightItems.isNotEmpty || currentQ.type == QuestionType.connectPairs)
+        ? (_currentStep + (_hasAnswered ? 1 : 0)) / _questions.length
+        : _currentStep / _questions.length;
     final isJp = widget.language == 'JAPANESE';
     final accentColor = isJp ? AppTheme.neonBlue : AppTheme.neonGreen;
 
-    // Initialize unscramble pool if not done
+    // Initialize unscramble pool or connect items if not done
     if (currentQ.type == QuestionType.sentenceUnscramble && _unscramblePool.isEmpty && _unscrambleSelection.isEmpty) {
       _unscramblePool = List<String>.from(currentQ.wordPool);
+    }
+    if (currentQ.type == QuestionType.connectPairs && _connectLeftItems.isEmpty && _connectRightItems.isEmpty) {
+      _connectLeftItems = currentQ.pairs.keys.toList()..shuffle();
+      _connectRightItems = currentQ.pairs.values.toList()..shuffle();
     }
 
     return Scaffold(
@@ -539,7 +844,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(6),
                 child: LinearProgressIndicator(
-                  value: progress,
+                  value: progress.clamp(0.0, 1.0),
                   minHeight: 8,
                   backgroundColor: AppTheme.darkSurface,
                   color: accentColor,
@@ -605,6 +910,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
 
   Widget _buildMultipleChoiceView(QuizQuestion q, Color color) {
     final showReading = q.readingPrompt != null && q.readingPrompt!.isNotEmpty;
+    final isJp = widget.language == 'JAPANESE';
 
     return Column(
       children: [
@@ -622,11 +928,20 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
                   q.wordPrompt,
                   style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
                 ),
-                if (showReading) ...[
+                // Show reading (furigana) for stages <= 12
+                if (showReading && widget.stage <= 12) ...[
                   const SizedBox(height: 8),
                   Text(
                     '(${q.readingPrompt})',
                     style: const TextStyle(fontSize: 16, color: AppTheme.textSecondary),
+                  ),
+                ],
+                // Romaji hint for stages 1-6 only
+                if (isJp && widget.stage <= 6 && showReading) ...[
+                  const SizedBox(height: 4),
+                  Text(
+                    '🔤 Hint romaji di balik jawaban',
+                    style: TextStyle(fontSize: 11, color: color.withOpacity(0.7), fontStyle: FontStyle.italic),
                   ),
                 ],
               ],
@@ -637,22 +952,49 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         ...List.generate(q.options.length, (idx) {
           final isSelected = _selectedChoiceIndex == idx;
           final optText = q.options[idx];
+          Color? bgColor;
+          Color borderColor;
+          if (_hasAnswered) {
+            if (optText == q.correctAnswer) {
+              bgColor = AppTheme.neonGreen.withOpacity(0.15);
+              borderColor = AppTheme.neonGreen;
+            } else if (isSelected && optText != q.correctAnswer) {
+              bgColor = Colors.red.withOpacity(0.10);
+              borderColor = Colors.redAccent;
+            } else {
+              bgColor = Colors.transparent;
+              borderColor = AppTheme.textSecondary.withOpacity(0.1);
+            }
+          } else {
+            bgColor = isSelected ? color.withOpacity(0.08) : Colors.transparent;
+            borderColor = isSelected ? color : AppTheme.textSecondary.withOpacity(0.1);
+          }
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             width: double.infinity,
             child: OutlinedButton(
               style: OutlinedButton.styleFrom(
-                side: BorderSide(color: isSelected ? color : AppTheme.textSecondary.withOpacity(0.1), width: 2),
+                side: BorderSide(color: borderColor, width: 2),
                 padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                backgroundColor: isSelected ? color.withOpacity(0.08) : Colors.transparent,
+                backgroundColor: bgColor,
               ),
               onPressed: _hasAnswered ? null : () => setState(() => _selectedChoiceIndex = idx),
               child: Align(
                 alignment: Alignment.centerLeft,
-                child: Text(
-                  optText,
-                  style: const TextStyle(color: AppTheme.textPrimary, fontSize: 15),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        optText,
+                        style: const TextStyle(color: AppTheme.textPrimary, fontSize: 15),
+                      ),
+                    ),
+                    if (_hasAnswered && optText == q.correctAnswer)
+                      const Icon(Icons.check_circle, color: AppTheme.neonGreen, size: 20),
+                    if (_hasAnswered && isSelected && optText != q.correctAnswer)
+                      const Icon(Icons.cancel, color: Colors.redAccent, size: 20),
+                  ],
                 ),
               ),
             ),
@@ -723,6 +1065,9 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
   }
 
   Widget _buildFillInBlankView(QuizQuestion q, Color color) {
+    // Stages 1-12: choice buttons (Duolingo style). Stages 13+: free text input
+    final useChoiceMode = widget.stage <= 12 && q.options.isNotEmpty;
+
     return Column(
       children: [
         Center(
@@ -731,41 +1076,104 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             decoration: BoxDecoration(
               color: AppTheme.darkSurface,
               borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: color.withOpacity(0.3)),
             ),
-            child: Text(
-              q.wordPrompt,
-              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 2),
+            child: Column(
+              children: [
+                Text(
+                  q.wordPrompt,
+                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 2),
+                  textAlign: TextAlign.center,
+                ),
+                if (q.readingPrompt != null && q.readingPrompt!.isNotEmpty && widget.stage <= 6) ...[
+                  const SizedBox(height: 6),
+                  Text(
+                    '(${q.readingPrompt})',
+                    style: const TextStyle(fontSize: 14, color: AppTheme.textSecondary),
+                  ),
+                ],
+              ],
             ),
           ),
         ),
-        const SizedBox(height: 32),
-        TextField(
-          autofocus: true,
-          decoration: InputDecoration(
-            hintText: 'Ketik karakter yang hilang...',
-            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: color, width: 2)),
+        const SizedBox(height: 24),
+        if (useChoiceMode) ...[
+          // Duolingo-style 4-choice buttons
+          const Text('Pilih kata yang tepat:', style: TextStyle(color: AppTheme.textSecondary, fontSize: 13)),
+          const SizedBox(height: 12),
+          ...List.generate(q.options.length, (idx) {
+            final isSelected = _selectedChoiceIndex == idx;
+            final optText = q.options[idx];
+            Color? bgColor;
+            Color borderColor;
+            if (_hasAnswered) {
+              if (optText == q.correctAnswer) {
+                bgColor = AppTheme.neonGreen.withOpacity(0.15);
+                borderColor = AppTheme.neonGreen;
+              } else if (isSelected && optText != q.correctAnswer) {
+                bgColor = Colors.red.withOpacity(0.10);
+                borderColor = Colors.redAccent;
+              } else {
+                bgColor = Colors.transparent;
+                borderColor = AppTheme.textSecondary.withOpacity(0.1);
+              }
+            } else {
+              bgColor = isSelected ? color.withOpacity(0.08) : Colors.transparent;
+              borderColor = isSelected ? color : AppTheme.textSecondary.withOpacity(0.1);
+            }
+            return Container(
+              margin: const EdgeInsets.only(bottom: 10),
+              width: double.infinity,
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: borderColor, width: 2),
+                  padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  backgroundColor: bgColor,
+                ),
+                onPressed: _hasAnswered ? null : () => setState(() => _selectedChoiceIndex = idx),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(optText, style: const TextStyle(color: AppTheme.textPrimary, fontSize: 16)),
+                    ),
+                    if (_hasAnswered && optText == q.correctAnswer)
+                      const Icon(Icons.check_circle, color: AppTheme.neonGreen, size: 20),
+                    if (_hasAnswered && isSelected && optText != q.correctAnswer)
+                      const Icon(Icons.cancel, color: Colors.redAccent, size: 20),
+                  ],
+                ),
+              ),
+            );
+          }),
+        ] else ...[
+          // Advanced: free text input (stages 13+)
+          TextField(
+            autofocus: true,
+            decoration: InputDecoration(
+              hintText: 'Ketik kata yang hilang...',
+              focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: color, width: 2)),
+            ),
+            style: const TextStyle(fontSize: 18, color: AppTheme.textPrimary),
+            onChanged: (val) {
+              _typedAnswer = val;
+            },
+            enabled: !_hasAnswered,
           ),
-          style: const TextStyle(fontSize: 18, color: AppTheme.textPrimary),
-          onChanged: (val) {
-            _typedAnswer = val;
-          },
-          enabled: !_hasAnswered,
-        ),
+        ],
       ],
     );
   }
 
-  Widget _buildConnectPairsView(QuizQuestion q, Color color) {
-    final leftList = q.pairs.keys.toList()..sort();
-    final rightList = q.pairs.values.toList()..shuffle();
 
+  Widget _buildConnectPairsView(QuizQuestion q, Color color) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Left Column
         Expanded(
           child: Column(
-            children: leftList.map((term) {
+            children: _connectLeftItems.map((term) {
               final isMatched = _connectPairsAnswers.containsKey(term);
               final isSelected = _connectSelectedLeft == term;
               Color border = isMatched ? AppTheme.neonGreen : (isSelected ? color : AppTheme.textSecondary.withOpacity(0.1));
@@ -790,7 +1198,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         // Right Column
         Expanded(
           child: Column(
-            children: rightList.map((trans) {
+            children: _connectRightItems.map((trans) {
               final isMatched = _connectPairsAnswers.containsValue(trans);
               final isSelected = _connectSelectedRight == trans;
               Color border = isMatched ? AppTheme.neonGreen : (isSelected ? color : AppTheme.textSecondary.withOpacity(0.1));
@@ -887,6 +1295,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         ),
         const SizedBox(height: 32),
         TextField(
+          controller: _typingController,
           autofocus: true,
           decoration: InputDecoration(
             hintText: 'Ketik arti kata di sini...',
@@ -894,7 +1303,9 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
           ),
           style: const TextStyle(fontSize: 16, color: AppTheme.textPrimary),
           onChanged: (val) {
-            _typedAnswer = val;
+            setState(() {
+              _typedAnswer = val;
+            });
           },
           enabled: !_hasAnswered,
         ),
@@ -908,7 +1319,14 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
       bool canCheck = false;
       if (q.type == QuestionType.multipleChoice || q.type == QuestionType.listening) {
         canCheck = _selectedChoiceIndex != -1;
-      } else if (q.type == QuestionType.typing || q.type == QuestionType.fillInBlank) {
+      } else if (q.type == QuestionType.fillInBlank) {
+        // Choice mode (stages <= 12): use selectedChoiceIndex; text mode (stages 13+): use typed answer
+        if (widget.stage <= 12 && q.options.isNotEmpty) {
+          canCheck = _selectedChoiceIndex != -1;
+        } else {
+          canCheck = _typedAnswer.isNotEmpty;
+        }
+      } else if (q.type == QuestionType.typing) {
         canCheck = _typedAnswer.isNotEmpty;
       } else if (q.type == QuestionType.sentenceUnscramble) {
         canCheck = _unscrambleSelection.isNotEmpty;

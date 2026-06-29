@@ -4,14 +4,35 @@
     "title": "IELTS Academic Reading: The Impact of Climate Change on Marine Ecology",
     "level": "C1",
     "passage": "Rising ocean temperatures and acidification are significantly disrupting marine ecosystems globally. Academic research indicates that coral reefs, which support a quarter of all marine life, are undergoing severe bleaching events. If current emission rates fluctuate without mitigation policies, marine biodiversity will face irreversible degradation. Protecting these resources requires immediate international protocols.",
-    "translation": "Kenaikan suhu samudra dan pengasaman secara signifikan mengganggu ekosistem laut secara global. Penelitian akademis menunjukkan bahwa terumbu karang, yang menopang seperempat dari seluruh kehidupan laut, mengalami peristiwa pemutihan yang parah. Jika tingkat emisi saat ini berfluktuasi tanpa kebijakan mitigasi, keanekaragaman hayati laut akan menghadapi degradasi yang tidak dapat dipulihkan. Melindungi sumber daya ini membutuhkan protokol internasional segera.",
+    "translation": "Kenaikan suhu samudra dan pengasaman secara signifikan mengganggu ekosistem laut secara global.",
     "questions": [
       {
         "question": "What is the primary effect of rising ocean temperatures on coral reefs?",
         "options": [
           "Rapid expansion of marine life",
           "Severe bleaching events",
-          "Enhanced calcium production"
+          "Enhanced calcium production",
+          "Increased fish population"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What fraction of marine life do coral reefs support?",
+        "options": [
+          "One half",
+          "One third",
+          "One quarter",
+          "One fifth"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What does the passage suggest is needed to protect marine resources?",
+        "options": [
+          "Local fishing bans",
+          "Immediate international protocols",
+          "Reduced tourism",
+          "Deep-sea mining regulations"
         ],
         "correct_answer_index": 1
       }
@@ -21,15 +42,426 @@
     "id": 2,
     "title": "IELTS Academic Reading: The History of Artificial Intelligence",
     "level": "C1",
-    "passage": "The concept of artificial intelligence dates back to antiquity, with myths of mechanical men. However, modern AI began in 1956 at the Dartmouth workshop. Early pioneers predicted that machines would rival human intelligence within a generation. Although funding collapsed during the 'AI winters', the advent of deep learning and big data in the 21st century has propelled artificial intelligence into a dominant industry force.",
-    "translation": "Konsep kecerdasan buatan berakar dari zaman kuno, dengan mitos tentang manusia mekanis. Namun, era AI modern baru dimulai pada tahun 1956 di lokakarya Dartmouth. Para perintis awal memprediksi bahwa mesin akan menandingi kecerdasan manusia dalam satu generasi. Meskipun pendanaan sempat runtuh selama masa 'musim dingin AI', kehadiran pembelajaran mendalam (deep learning) dan data raya (big data) di abad ke-21 telah mendorong kecerdasan buatan menjadi kekuatan industri yang dominan.",
+    "passage": "The concept of artificial intelligence dates back to antiquity. However, modern AI began in 1956 at the Dartmouth workshop. Although funding collapsed during the AI winters, deep learning and big data in the 21st century propelled AI into a dominant industry force.",
+    "translation": "Kecerdasan buatan modern dimulai tahun 1956 di Dartmouth.",
     "questions": [
       {
         "question": "When did modern artificial intelligence begin?",
         "options": [
           "During antiquity",
           "In 1956 at Dartmouth",
-          "During the AI winters"
+          "During the AI winters",
+          "In the 21st century"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What revived AI research in the 21st century?",
+        "options": [
+          "Government funding programs",
+          "Deep learning and big data",
+          "Robotic engineering advances",
+          "Military research contracts"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What were the AI winters characterized by?",
+        "options": [
+          "Cold weather affecting computers",
+          "Collapse of funding",
+          "Rapid breakthroughs in computing",
+          "International AI competitions"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "IELTS Academic Reading: Urban Migration and Social Inequality",
+    "level": "C1",
+    "passage": "The rapid urbanization of developing nations has created significant social stratification. Rural migrants face systemic barriers including inadequate housing and limited healthcare access. Without structural reforms in urban planning, inequalities will perpetuate cycles of poverty undermining national development.",
+    "translation": "Urbanisasi cepat menciptakan stratifikasi sosial. Tanpa reformasi struktural, ketimpangan memperparah kemiskinan.",
+    "questions": [
+      {
+        "question": "What is the main challenge faced by rural migrants in cities?",
+        "options": [
+          "Language barriers",
+          "Systemic barriers like housing and healthcare",
+          "Climate adaptation difficulties",
+          "Finding religious communities"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What do sociologists recommend to address urban inequality?",
+        "options": [
+          "Limiting rural migration",
+          "Structural reforms in urban planning",
+          "Building more factories",
+          "Increasing military presence"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What is the likely long-term consequence of unchecked urban inequality?",
+        "options": [
+          "Technological advancement",
+          "Cycles of poverty harming national development",
+          "Stronger international trade",
+          "Cultural enrichment"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "IELTS Academic Reading: The Psychology of Learning",
+    "level": "C1",
+    "passage": "Spaced repetition, reviewing material at increasing intervals, has been consistently shown to outperform massed practice. Cognitive load theory suggests presenting information in manageable chunks reduces working memory strain. Modern language apps incorporate both principles to accelerate vocabulary acquisition.",
+    "translation": "Pengulangan berjarak lebih efektif daripada belajar massed. Teori beban kognitif menyarankan penyajian informasi dalam potongan kecil.",
+    "questions": [
+      {
+        "question": "Which technique outperforms massed practice?",
+        "options": [
+          "Visual mapping",
+          "Spaced repetition",
+          "Group study sessions",
+          "Listening to recordings"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What does cognitive load theory recommend?",
+        "options": [
+          "Testing students frequently",
+          "Presenting information in manageable chunks",
+          "Using only visual learning aids",
+          "Reducing homework assignments"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "How do modern language apps incorporate learning principles?",
+        "options": [
+          "By gamifying all content",
+          "By accelerating vocabulary acquisition using both principles",
+          "By eliminating grammar exercises",
+          "By focusing only on speaking"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "IELTS Academic Reading: Renewable Energy Transitions",
+    "level": "C1",
+    "passage": "Solar and wind power costs have fallen dramatically. However, the intermittent nature poses grid stability challenges. Energy storage technologies, particularly lithium-ion batteries and hydrogen fuel cells, are crucial. Governments implement feed-in tariff schemes and carbon taxation to encourage investment in clean energy.",
+    "translation": "Biaya solar dan angin turun dramatis. Tantangan stabilitas jaringan diatasi melalui teknologi penyimpanan energi.",
+    "questions": [
+      {
+        "question": "What challenge do intermittent renewable energy sources pose?",
+        "options": [
+          "High installation costs",
+          "Grid stability challenges",
+          "Environmental pollution",
+          "Water consumption"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "Which technologies manage energy supply variability?",
+        "options": [
+          "Nuclear reactors",
+          "Lithium-ion batteries and hydrogen fuel cells",
+          "Gas turbines and oil refineries",
+          "Hydroelectric dams"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What policies encourage private investment in clean energy?",
+        "options": [
+          "Import tariffs on electronics",
+          "Feed-in tariff schemes and carbon taxation",
+          "Military contracts",
+          "Agricultural subsidies"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "IELTS Academic Reading: Biodiversity and Ecosystem Services",
+    "level": "C1",
+    "passage": "Biodiversity underpins the stability and productivity of ecosystems. Diverse ecological communities exhibit greater resilience to drought, disease, and temperature fluctuations. Ecosystem services including water purification, pollination, and carbon sequestration are linked to species richness. Current extinction rates threaten the life-support systems human civilization depends upon.",
+    "translation": "Keanekaragaman hayati mendukung stabilitas ekosistem. Tingkat kepunahan saat ini mengancam sistem penopang kehidupan.",
+    "questions": [
+      {
+        "question": "What does greater biodiversity provide to ecosystems?",
+        "options": [
+          "Higher financial value",
+          "Greater resilience to environmental disturbances",
+          "Faster urbanization",
+          "Increased agricultural yields"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "Which is NOT mentioned as an ecosystem service?",
+        "options": [
+          "Water purification",
+          "Pollination",
+          "Military defense",
+          "Carbon sequestration"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What do conservation biologists warn about extinction rates?",
+        "options": [
+          "They will increase tourism",
+          "They threaten human civilization life-support systems",
+          "They improve ecological efficiency",
+          "They are within historical norms"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "IELTS Academic Reading: Digital Transformation in Healthcare",
+    "level": "C1",
+    "passage": "Electronic health records, telemedicine, and AI-driven diagnostic tools enable more accurate diagnoses. Wearable technology allows continuous health monitoring outside clinical settings. However, data privacy, cybersecurity vulnerabilities, and the digital divide remain significant policy challenges.",
+    "translation": "Teknologi digital merevolusi perawatan kesehatan. Privasi data dan kesenjangan digital tetap menjadi tantangan.",
+    "questions": [
+      {
+        "question": "How are AI-driven diagnostic tools contributing to healthcare?",
+        "options": [
+          "By replacing all human doctors",
+          "By enabling more accurate diagnoses",
+          "By reducing medication costs",
+          "By eliminating hospital visits"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What benefit does wearable technology provide?",
+        "options": [
+          "Entertainment in hospitals",
+          "Continuous health monitoring outside clinical settings",
+          "Faster emergency response",
+          "Lower surgery costs"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What concern is raised about digital healthcare transformation?",
+        "options": [
+          "Overuse of paper records",
+          "Data privacy and cybersecurity vulnerabilities",
+          "Too many hospital staff",
+          "Reduced research funding"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "IELTS Academic Reading: The Economics of Education",
+    "level": "C1",
+    "passage": "Economists view education as a human capital investment yielding private and social returns. Higher education graduates earn significantly more, contributing to greater tax revenues. Nations with high educational attainment consistently demonstrate stronger economic growth and lower crime rates. Despite this, access remains inequitable due to income, geography, and gender barriers.",
+    "translation": "Pendidikan merupakan investasi modal manusia. Negara dengan tingkat pendidikan tinggi menunjukkan pertumbuhan ekonomi lebih kuat.",
+    "questions": [
+      {
+        "question": "How do economists categorize education?",
+        "options": [
+          "As government expenditure",
+          "As human capital investment",
+          "As a luxury good",
+          "As welfare spending"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What is consistently seen in nations with high educational attainment?",
+        "options": [
+          "Higher inflation rates",
+          "Stronger economic growth and lower crime",
+          "Slower technological progress",
+          "Increased public debt"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What are mentioned as persistent barriers to educational access?",
+        "options": [
+          "Language, culture, and religion",
+          "Income, geography, and gender",
+          "Technology, transport, and time",
+          "Policy, politics, and propaganda"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "IELTS Academic Reading: Space Exploration and Its Benefits",
+    "level": "C1",
+    "passage": "Private companies have dramatically reduced launch costs through reusable rocket technology. Space missions generate valuable scientific data about Earth climate and geological history. Satellite technologies enable global communications networks, GPS navigation, and agricultural monitoring systems benefiting terrestrial populations.",
+    "translation": "Eksplorasi luar angkasa kini memasuki era komersial dengan roket yang dapat digunakan ulang dan teknologi satelit yang bermanfaat bagi Bumi.",
+    "questions": [
+      {
+        "question": "What has dramatically reduced space launch costs?",
+        "options": [
+          "Government subsidies",
+          "Reusable rocket technology",
+          "International partnerships",
+          "Reduced payload requirements"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "Which terrestrial system benefits from satellite technology?",
+        "options": [
+          "Underground mining",
+          "GPS navigation",
+          "Freshwater drilling",
+          "Road construction"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What valuable information do space missions generate about Earth?",
+        "options": [
+          "Archaeological discoveries",
+          "Climate and geological data",
+          "Oceanic tidal predictions",
+          "Volcanic eruption schedules"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "IELTS Academic Reading: Food Security in the 21st Century",
+    "level": "C1",
+    "passage": "Global food security faces challenges from climate variability, population growth, and resource degradation. Scientists are developing drought-resistant crops and precision farming. Food waste accounts for approximately one-third of global production. International organizations advocate integrated strategies combining technology, policy reform, and behavioral change.",
+    "translation": "Ketahanan pangan global menghadapi tantangan dari perubahan iklim. Pemborosan makanan mencapai sepertiga produksi global.",
+    "questions": [
+      {
+        "question": "What fraction of global food production is wasted?",
+        "options": [
+          "One half",
+          "One quarter",
+          "One third",
+          "One fifth"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "Which farming innovations are mentioned as solutions?",
+        "options": [
+          "Traditional irrigation and crop rotation",
+          "Drought-resistant crops and precision farming",
+          "Chemical fertilizers and pesticides",
+          "Manual harvesting techniques"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What approach do international organizations advocate?",
+        "options": [
+          "Restricting agricultural trade",
+          "Integrated strategies combining technology, policy, and behavior",
+          "Expanding desert farming",
+          "Privatizing water resources"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "IELTS Academic Reading: The Future of Work",
+    "level": "C1",
+    "passage": "Automation and AI are reshaping labor markets. Routine cognitive and physical tasks are increasingly performed by machines in manufacturing and service industries. The World Economic Forum predicts that critical thinking, creativity, and emotional intelligence will become increasingly valuable, emphasizing the need for adaptive educational systems to reskill the workforce.",
+    "translation": "Otomasi dan AI mengubah pasar kerja. Keterampilan berpikir kritis dan kreativitas akan semakin bernilai.",
+    "questions": [
+      {
+        "question": "What types of tasks are increasingly performed by machines?",
+        "options": [
+          "Creative and strategic tasks",
+          "Routine cognitive and physical tasks",
+          "Leadership and management tasks",
+          "Research and development tasks"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "Which skills will become more valuable according to World Economic Forum?",
+        "options": [
+          "Technical coding",
+          "Critical thinking, creativity, and emotional intelligence",
+          "Manual dexterity and physical strength",
+          "Memorization and data entry"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What debate exists among labor economists?",
+        "options": [
+          "Whether to tax robots",
+          "Whether technological unemployment will be offset by new jobs",
+          "Whether to limit immigration",
+          "Whether to privatize education"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "IELTS Academic Reading: Language Acquisition Theory",
+    "level": "C1",
+    "passage": "Noam Chomsky proposed that humans possess an innate language acquisition device through Universal Grammar. Usage-based theories argue that language emerges from exposure and interaction. Bilingual research suggests that early exposure to multiple languages enhances cognitive flexibility, executive function, and even delays dementia onset.",
+    "translation": "Hipotesis Universal Grammar mengusulkan perangkat bawaan. Penelitian bilingual menunjukkan manfaat kognitif dari paparan bahasa ganda.",
+    "questions": [
+      {
+        "question": "What does Chomsky Universal Grammar hypothesis propose?",
+        "options": [
+          "Languages are structurally identical",
+          "Humans have an innate language acquisition device",
+          "Grammar should be taught formally",
+          "Children learn through imitation only"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What benefit of bilingualism is mentioned?",
+        "options": [
+          "Higher academic test scores",
+          "Enhanced cognitive flexibility and delayed dementia",
+          "Better mathematical ability",
+          "Stronger musical aptitude"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What does bilingual research imply for educational policy?",
+        "options": [
+          "Eliminating foreign language requirements",
+          "Implications for early language instruction",
+          "Focusing only on national languages",
+          "Reducing school hours"
         ],
         "correct_answer_index": 1
       }

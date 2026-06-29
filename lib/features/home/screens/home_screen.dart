@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/database/database_helper.dart';
+import '../../../core/utils/custom_top_notification.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -317,6 +318,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 subtitle: 'Tes N5 - N2 sesuai struktur resmi ujian asli Jepang',
                 accentColor: AppTheme.neonBlue,
                 icon: Icons.quiz,
+                isLocked: _activeStage <= 6,
                 onTap: () => _showJlptLevelSelector(context),
               ),
               const SizedBox(height: 12),
@@ -326,6 +328,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Tes Akademik Listening, Reading, Writing, dan Speaking',
                 accentColor: AppTheme.neonGreen,
                 icon: Icons.assignment,
+                isLocked: _activeStage <= 6,
                 onTap: () {
                   Navigator.pushNamed(
                     context,
@@ -667,27 +670,45 @@ class _HomeScreenState extends State<HomeScreen> {
     required Color accentColor,
     required IconData icon,
     required VoidCallback onTap,
+    bool isLocked = false,
   }) {
+    final effectiveColor = isLocked ? AppTheme.textSecondary : accentColor;
+
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppTheme.darkSurface,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: accentColor.withOpacity(0.3), width: 1.5),
+        border: Border.all(
+          color: effectiveColor.withOpacity(isLocked ? 0.15 : 0.3),
+          width: 1.5,
+        ),
       ),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: onTap,
+          onTap: isLocked
+              ? () {
+                  CustomTopNotification.show(
+                    context,
+                    message: '🔒 Terkunci: Selesaikan Stage 1–6 (Kana Basic) terlebih dahulu untuk membuka Simulasi Ujian Resmi.',
+                    isError: true,
+                  );
+                }
+              : onTap,
           borderRadius: BorderRadius.circular(16),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
             child: Row(
               children: [
                 CircleAvatar(
-                  backgroundColor: accentColor.withOpacity(0.1),
+                  backgroundColor: effectiveColor.withOpacity(0.1),
                   radius: 24,
-                  child: Icon(icon, color: accentColor, size: 24),
+                  child: Icon(
+                    isLocked ? Icons.lock : icon,
+                    color: effectiveColor,
+                    size: 24,
+                  ),
                 ),
                 const SizedBox(width: 16),
                 Expanded(
@@ -696,24 +717,30 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Text(
                         title,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: AppTheme.textPrimary,
+                          color: isLocked ? AppTheme.textSecondary : AppTheme.textPrimary,
                         ),
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        subtitle,
-                        style: const TextStyle(
+                        isLocked
+                            ? '🔒 Tersedia setelah Stage 1–6 selesai'
+                            : subtitle,
+                        style: TextStyle(
                           fontSize: 12,
-                          color: AppTheme.textSecondary,
+                          color: isLocked ? AppTheme.textSecondary.withOpacity(0.6) : AppTheme.textSecondary,
                         ),
                       ),
                     ],
                   ),
                 ),
-                Icon(Icons.arrow_forward, color: accentColor, size: 20),
+                Icon(
+                  isLocked ? Icons.lock_outline : Icons.arrow_forward,
+                  color: effectiveColor,
+                  size: 20,
+                ),
               ],
             ),
           ),

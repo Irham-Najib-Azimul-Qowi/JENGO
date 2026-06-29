@@ -37,7 +37,7 @@ class TipsTricksScreen extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
-                  BoxShadow(color: color.withOpacity(0.15), blurRadius: 10),
+                  BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 10),
                 ],
               ),
               child: Column(
@@ -149,7 +149,7 @@ class TipsTricksScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppTheme.darkSurface,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppTheme.textSecondary.withOpacity(0.08)),
+        border: Border.all(color: AppTheme.textSecondary.withValues(alpha: 0.08)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -63,6 +63,7 @@ class AppRouter {
         final vocabList = args?['vocabList'] as List<dynamic>?;
         final stage = args?['stage'] as int? ?? 1;
         final day = args?['day'] as int? ?? 1;
+        final isSkippingQuiz = args?['isSkippingQuiz'] as bool? ?? false;
 
         return MaterialPageRoute(
           builder: (_) => DailyLessonQuizScreen(
@@ -70,6 +71,7 @@ class AppRouter {
             vocabList: vocabList,
             stage: stage,
             day: day,
+            isSkippingQuiz: isSkippingQuiz,
           ),
         );
       case mockExam:

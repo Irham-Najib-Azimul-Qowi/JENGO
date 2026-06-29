@@ -1,18 +1,39 @@
 [
   {
     "id": 1,
-    "title": "IELTS Academic Lecture: Introduction to Sustainable Architecture",
+    "title": "IELTS Listening: Lecture on Sustainable Architecture",
     "level": "C1",
     "audio": "sustainable_architecture.mp3",
-    "transcript": "Welcome to today's lecture on urban planning. Today, we will analyse how modern architects integrate sustainable energy resources into residential high-rises. Our main focus is not only on reducing energy consumption but also on creating a coherent, eco-friendly infrastructure.",
-    "translation": "Selamat datang di kuliah hari ini tentang perencanaan kota. Hari ini, kita akan menganalisis bagaimana arsitek modern mengintegrasikan sumber daya energi berkelanjutan ke dalam gedung apartemen bertingkat. Fokus utama kita tidak hanya pada pengurangan konsumsi energi tetapi juga pada penciptaan infrastruktur ramah lingkungan yang koheren.",
+    "transcript": "Welcome to today lecture on urban planning. We analyse how modern architects integrate sustainable energy resources into residential high-rises. Our focus is on reducing energy consumption and creating eco-friendly infrastructure.",
+    "translation": "Arsitektur berkelanjutan mengintegrasikan sumber energi terbarukan ke dalam gedung bertingkat tinggi.",
     "questions": [
       {
-        "question": "What is the main focus of sustainable architecture according to the lecture?",
+        "question": "What is the main focus of the lecture on sustainable architecture?",
         "options": [
           "Constructing tallest structures",
           "Integrating energy resources and eco-friendly infrastructure",
-          "Using cheap raw materials"
+          "Using cheap raw materials",
+          "Historical architecture review"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What type of buildings are specifically mentioned?",
+        "options": [
+          "Rural farmhouses",
+          "Residential high-rises",
+          "Underground bunkers",
+          "Single-storey shops"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What is one goal of sustainable architecture according to the lecture?",
+        "options": [
+          "Maximizing rent income",
+          "Reducing energy consumption",
+          "Eliminating natural light",
+          "Increasing building height"
         ],
         "correct_answer_index": 1
       }
@@ -20,20 +41,441 @@
   },
   {
     "id": 2,
-    "title": "IELTS Conversation: Student Registration",
+    "title": "IELTS Listening: Student Registration Conversation",
     "level": "B2",
     "audio": "student_registration.mp3",
-    "transcript": "Staff: Good morning, how can I help you?\nStudent: Hi, I'm here to complete my registration for the advanced IELTS preparation course.\nStaff: Perfect. I just need to verify your student identification card and your language proficiency score certificate.",
-    "translation": "Staf: Selamat pagi, ada yang bisa saya bantu?\nSiswa: Halo, saya di sini untuk menyelesaikan pendaftaran saya untuk kursus persiapan IELTS tingkat lanjut.\nStaf: Bagus. Saya hanya perlu memverifikasi kartu identitas siswa Anda dan sertifikat nilai kemahiran bahasa Anda.",
+    "transcript": "Staff: Good morning, how can I help you? Student: Hi, I am here to complete my registration for the advanced IELTS preparation course. Staff: I need to verify your student identification card and your language proficiency score certificate. Student: Here they are. Staff: Thank you. Your registration is now complete. The course begins on Monday.",
+    "translation": "Percakapan registrasi kursus persiapan IELTS di kantor administrasi.",
     "questions": [
       {
         "question": "What is the student registering for?",
         "options": [
           "Advanced IELTS preparation course",
           "University admission test",
-          "Library membership card"
+          "Library membership card",
+          "Sports club enrollment"
         ],
         "correct_answer_index": 0
+      },
+      {
+        "question": "What documents does the staff need to verify?",
+        "options": [
+          "Passport and birth certificate",
+          "Student ID and language proficiency certificate",
+          "Bank statement and visa",
+          "Medical records and insurance"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "When does the course begin?",
+        "options": [
+          "On Friday",
+          "On Wednesday",
+          "On Monday",
+          "On Sunday"
+        ],
+        "correct_answer_index": 2
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "IELTS Listening: Radio Program on Climate Change",
+    "level": "C1",
+    "audio": "climate_radio.mp3",
+    "transcript": "Today we discuss the latest IPCC report findings. Scientists confirm that global temperatures have risen 1.2 degrees Celsius above pre-industrial levels. Experts warn that without immediate action to cut carbon emissions by 45% before 2030, catastrophic weather events will become more frequent. Renewable energy adoption must accelerate significantly.",
+    "translation": "Laporan IPCC mengkonfirmasi kenaikan suhu 1,2 derajat Celsius. Emisi karbon harus dipotong 45% sebelum 2030.",
+    "questions": [
+      {
+        "question": "By how much have global temperatures risen above pre-industrial levels?",
+        "options": [
+          "0.5 degrees Celsius",
+          "1.2 degrees Celsius",
+          "2.0 degrees Celsius",
+          "3.5 degrees Celsius"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "By what percentage must carbon emissions be cut before 2030?",
+        "options": [
+          "25%",
+          "35%",
+          "45%",
+          "55%"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What must accelerate significantly according to experts?",
+        "options": [
+          "Industrial production",
+          "Renewable energy adoption",
+          "Economic growth",
+          "Population control"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "IELTS Listening: Museum Audio Guide",
+    "level": "B2",
+    "audio": "museum_guide.mp3",
+    "transcript": "Welcome to the Natural History Museum. You are now entering the Jurassic Hall, which houses over 200 dinosaur fossils. The centerpiece is a Tyrannosaurus Rex skeleton, discovered in Montana in 1988 and measuring 12 meters in length. Photography is permitted but please refrain from using flash as it may damage sensitive exhibits.",
+    "translation": "Panduan audio museum sejarah alam tentang Aula Jurassic yang menampilkan lebih dari 200 fosil dinosaurus.",
+    "questions": [
+      {
+        "question": "How many dinosaur fossils are housed in the Jurassic Hall?",
+        "options": [
+          "Over 100",
+          "Over 200",
+          "Over 300",
+          "Over 400"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "Where was the T-Rex skeleton discovered?",
+        "options": [
+          "Texas",
+          "Montana",
+          "Wyoming",
+          "Colorado"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What photography rule applies in the museum?",
+        "options": [
+          "No photography allowed",
+          "Photography with flash permitted",
+          "Photography permitted but no flash",
+          "Photography only in designated areas"
+        ],
+        "correct_answer_index": 2
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "IELTS Listening: University Lecture on Economics",
+    "level": "C1",
+    "audio": "economics_lecture.mp3",
+    "transcript": "In today lecture, we examine Keynesian economic theory, which advocates for government spending during economic downturns to stimulate demand. John Maynard Keynes published his General Theory of Employment in 1936, fundamentally challenging classical economic assumptions. Modern economists debate whether fiscal multipliers justify deficit spending during recessions.",
+    "translation": "Teori ekonomi Keynesian mengadvokasi pengeluaran pemerintah saat kemerosotan ekonomi untuk merangsang permintaan.",
+    "questions": [
+      {
+        "question": "What does Keynesian economic theory advocate?",
+        "options": [
+          "Tax cuts for corporations",
+          "Government spending during economic downturns",
+          "Reducing public services",
+          "Privatizing state companies"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "When did Keynes publish his General Theory?",
+        "options": [
+          "1926",
+          "1936",
+          "1946",
+          "1956"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What do modern economists debate?",
+        "options": [
+          "Whether to abolish central banks",
+          "Whether fiscal multipliers justify deficit spending",
+          "Whether to return to gold standard",
+          "Whether to eliminate taxation"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "IELTS Listening: Health Podcast on Sleep Science",
+    "level": "B2",
+    "audio": "sleep_science.mp3",
+    "transcript": "Research from the National Sleep Foundation shows adults need between seven and nine hours of sleep per night for optimal cognitive function. Chronic sleep deprivation is linked to increased risk of cardiovascular disease, diabetes, and mental health disorders. Blue light from electronic devices suppresses melatonin production, disrupting circadian rhythms. Experts recommend avoiding screens one hour before bedtime.",
+    "translation": "Orang dewasa membutuhkan 7-9 jam tidur per malam. Kekurangan tidur kronis terkait penyakit jantung dan diabetes. Cahaya biru dari perangkat elektronik mengganggu ritme sirkadian.",
+    "questions": [
+      {
+        "question": "How many hours of sleep do adults need per night?",
+        "options": [
+          "5 to 7 hours",
+          "7 to 9 hours",
+          "9 to 11 hours",
+          "6 to 8 hours"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What does blue light from screens suppress?",
+        "options": [
+          "Serotonin production",
+          "Melatonin production",
+          "Cortisol production",
+          "Dopamine production"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What do experts recommend before bedtime?",
+        "options": [
+          "Exercising vigorously",
+          "Drinking warm milk",
+          "Avoiding screens one hour before bed",
+          "Reading news articles"
+        ],
+        "correct_answer_index": 2
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "IELTS Listening: Travel Agency Booking Conversation",
+    "level": "B2",
+    "audio": "travel_booking.mp3",
+    "transcript": "Agent: How can I assist you today? Customer: I want to book a package tour to Japan for two people in October. Agent: Excellent choice. Our Japan autumn tour includes flights from Jakarta, 10 nights hotel accommodation in Tokyo and Kyoto, and guided temple tours. The price is 25 million Rupiah per person. Customer: Does that include meals? Agent: Breakfast and dinner are included.",
+    "translation": "Percakapan pemesanan paket wisata ke Jepang untuk dua orang pada bulan Oktober. Harga 25 juta per orang termasuk sarapan dan makan malam.",
+    "questions": [
+      {
+        "question": "Where does the customer want to travel?",
+        "options": [
+          "South Korea",
+          "Japan",
+          "China",
+          "Thailand"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "How many nights accommodation does the package include?",
+        "options": [
+          "7 nights",
+          "8 nights",
+          "10 nights",
+          "14 nights"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What meals are included in the package?",
+        "options": [
+          "Lunch and dinner",
+          "Breakfast only",
+          "All three meals",
+          "Breakfast and dinner"
+        ],
+        "correct_answer_index": 3
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "IELTS Listening: Science Documentary on Ocean Plastics",
+    "level": "C1",
+    "audio": "ocean_plastics.mp3",
+    "transcript": "An estimated eight million metric tons of plastic enter the world oceans annually. Microplastics, particles smaller than five millimeters, have been detected in marine organisms from zooplankton to blue whales. Scientists at the Ocean Conservancy warn that at current trajectories, there will be more plastic than fish in the ocean by 2050. Biodegradable alternatives and extended producer responsibility laws are being implemented globally.",
+    "translation": "Sekitar 8 juta ton plastik masuk ke laut setiap tahun. Microplastik terdeteksi dalam organisme laut. Pada 2050 bisa ada lebih banyak plastik daripada ikan di lautan.",
+    "questions": [
+      {
+        "question": "How much plastic enters oceans annually?",
+        "options": [
+          "2 million metric tons",
+          "5 million metric tons",
+          "8 million metric tons",
+          "12 million metric tons"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What size are microplastics?",
+        "options": [
+          "Smaller than 1 millimeter",
+          "Smaller than 5 millimeters",
+          "Smaller than 10 millimeters",
+          "Smaller than 50 millimeters"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What prediction does Ocean Conservancy make about 2050?",
+        "options": [
+          "All plastic will be recycled",
+          "Oceans will be free of pollution",
+          "More plastic than fish in the ocean",
+          "Fish populations will triple"
+        ],
+        "correct_answer_index": 2
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "IELTS Listening: Job Interview Conversation",
+    "level": "B2",
+    "audio": "job_interview.mp3",
+    "transcript": "Interviewer: Thank you for coming in today. Can you tell me about your relevant experience? Applicant: I have worked for three years as a data analyst at a financial services company, where I developed dashboards for senior management and improved reporting efficiency by 40%. Interviewer: What is your greatest professional achievement? Applicant: Implementing an automated system that saved the company 200 hours per month.",
+    "translation": "Wawancara kerja untuk posisi analis data. Pelamar memiliki pengalaman 3 tahun dan berhasil meningkatkan efisiensi pelaporan 40%.",
+    "questions": [
+      {
+        "question": "How many years of experience does the applicant have?",
+        "options": [
+          "One year",
+          "Two years",
+          "Three years",
+          "Five years"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "By how much did the applicant improve reporting efficiency?",
+        "options": [
+          "20%",
+          "30%",
+          "40%",
+          "50%"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What was the applicant greatest professional achievement?",
+        "options": [
+          "Winning a company award",
+          "Implementing a system saving 200 hours per month",
+          "Leading a team of 10 people",
+          "Developing a mobile application"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "IELTS Listening: University Seminar on Globalization",
+    "level": "C1",
+    "audio": "globalization_seminar.mp3",
+    "transcript": "Today seminar examines the contested impacts of economic globalization. Proponents argue that free trade has lifted billions out of poverty and accelerated technological diffusion. Critics contend that it has increased wealth inequality between nations and within them, hollowed out manufacturing in developed economies, and undermined labor standards. The debate centers on whether the benefits can be redistributed more equitably.",
+    "translation": "Seminar tentang dampak globalisasi ekonomi. Pendukung berargumen telah mengentaskan kemiskinan, sementara kritikus menyoroti meningkatnya kesenjangan kekayaan.",
+    "questions": [
+      {
+        "question": "What do proponents of globalization argue?",
+        "options": [
+          "It has harmed developing nations",
+          "It has lifted billions out of poverty",
+          "It has increased manufacturing decline",
+          "It has damaged environmental standards"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What concern do critics raise about globalization?",
+        "options": [
+          "It accelerates population growth",
+          "It increased wealth inequality and undermined labor standards",
+          "It slows technological progress",
+          "It limits cultural exchange"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What does the debate center on?",
+        "options": [
+          "Whether to stop all free trade",
+          "Whether benefits can be redistributed more equitably",
+          "Whether to create a world government",
+          "Whether currency union is beneficial"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "IELTS Listening: Medical Consultation",
+    "level": "B2",
+    "audio": "medical_consultation.mp3",
+    "transcript": "Doctor: Based on your test results, your cholesterol levels are elevated. I recommend dietary changes, specifically reducing saturated fats and increasing fiber intake. You should also aim for 30 minutes of moderate exercise five days per week. Patient: Should I take medication? Doctor: Not yet. If your levels do not improve after three months of lifestyle changes, we will consider prescribing statins.",
+    "translation": "Konsultasi medis tentang kolesterol tinggi. Dokter merekomendasikan perubahan diet dan olahraga sebelum mempertimbangkan pengobatan.",
+    "questions": [
+      {
+        "question": "What is the patient health issue?",
+        "options": [
+          "High blood pressure",
+          "Elevated cholesterol levels",
+          "Diabetes diagnosis",
+          "Respiratory problems"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "How much exercise does the doctor recommend per day?",
+        "options": [
+          "15 minutes",
+          "20 minutes",
+          "30 minutes",
+          "60 minutes"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "When will medication be considered?",
+        "options": [
+          "Immediately",
+          "After one month",
+          "After three months if levels do not improve",
+          "After six months"
+        ],
+        "correct_answer_index": 2
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "IELTS Listening: Technology Conference Talk",
+    "level": "C1",
+    "audio": "tech_conference.mp3",
+    "transcript": "In this talk I explore how large language models are transforming natural language processing. These systems, trained on billions of text tokens, demonstrate emergent capabilities including reasoning, translation, and code generation. However, they exhibit significant limitations including hallucination, bias amplification, and opacity. Responsible AI development requires transparency mechanisms, robust evaluation frameworks, and ethical governance structures.",
+    "translation": "Model bahasa besar mengubah pemrosesan bahasa alami tetapi memiliki keterbatasan termasuk halusinasi dan bias. Pengembangan AI bertanggung jawab memerlukan transparansi dan tata kelola etis.",
+    "questions": [
+      {
+        "question": "What are large language models trained on?",
+        "options": [
+          "Millions of images",
+          "Billions of text tokens",
+          "Structured databases",
+          "Video recordings"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "Which limitation of language models is mentioned?",
+        "options": [
+          "Slow processing speed",
+          "Hallucination and bias amplification",
+          "High energy efficiency",
+          "Perfect translation accuracy"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What does responsible AI development require?",
+        "options": [
+          "Unlimited computing power",
+          "Transparency, evaluation frameworks, and ethical governance",
+          "No regulation whatsoever",
+          "Only private sector investment"
+        ],
+        "correct_answer_index": 1
       }
     ]
   }

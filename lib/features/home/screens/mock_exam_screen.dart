@@ -271,11 +271,11 @@ class _MockExamScreenState extends State<MockExamScreen> {
       limit: limit,
     );
 
-    return rows.map((row) {
+    final questions = rows.map((row) {
       final word = row['word']?.toString() ?? '';
       final reading = row['reading']?.toString() ?? '';
       final meaning = row['translation']?.toString() ?? '';
-      final options = _makeOptions(meaning, _fallbackMeanings);
+      final options = _makeOptions(meaning, _fallbackJpMeanings);
 
       return MockExamQuestion(
         id: 'vocab_${row['id']}_$word',
@@ -289,6 +289,35 @@ class _MockExamScreenState extends State<MockExamScreen> {
         explanation: 'Kosakata "$word" berarti "$meaning".',
       );
     }).toList();
+
+    // Pad with high quality N5-N1 Japanese vocabulary fallbacks if database lacks entries
+    if (questions.length < limit) {
+      final needed = limit - questions.length;
+      final extra = List.generate(needed, (idx) {
+        final sampleWords = [
+          {'w': '先生', 'r': 'せんせい', 'm': 'Guru'},
+          {'w': '学生', 'r': 'がくせい', 'm': 'Siswa'},
+          {'w': '本', 'r': 'ほん', 'm': 'Buku'},
+          {'w': '車', 'r': 'くるま', 'm': 'Mobil'},
+          {'w': '水', 'r': 'みず', 'm': 'Air'},
+          {'w': '机', 'r': 'つくえ', 'm': 'Meja'},
+        ];
+        final item = sampleWords[idx % sampleWords.length];
+        final options = _makeOptions(item['m']!, _fallbackJpMeanings);
+        return MockExamQuestion(
+          id: 'fallback_vocab_jp_${level}_${idx}',
+          category: 'Vocabulary',
+          type: 'Word Meaning',
+          kind: MockQuestionKind.multipleChoice,
+          prompt: 'Pilih arti yang paling tepat untuk "${item['w']}" (${item['r']}).',
+          options: options,
+          correctAnswerIndex: options.indexOf(item['m']!),
+          explanation: 'Kosakata "${item['w']}" berarti "${item['m']}".',
+        );
+      });
+      questions.addAll(extra);
+    }
+    return questions;
   }
 
   Future<List<MockExamQuestion>> _buildJlptKanjiQuestions(
@@ -301,10 +330,10 @@ class _MockExamScreenState extends State<MockExamScreen> {
       limit: limit,
     );
 
-    return rows.map((row) {
+    final questions = rows.map((row) {
       final kanji = row['kanji']?.toString() ?? '';
       final meaning = row['meaning']?.toString() ?? '';
-      final options = _makeOptions(meaning, _fallbackMeanings);
+      final options = _makeOptions(meaning, _fallbackJpMeanings);
 
       return MockExamQuestion(
         id: 'kanji_${row['id']}_$kanji',
@@ -317,6 +346,35 @@ class _MockExamScreenState extends State<MockExamScreen> {
         explanation: 'Kanji "$kanji" bermakna "$meaning".',
       );
     }).toList();
+
+    // Pad with high quality N5-N1 Japanese kanji fallbacks if database lacks entries
+    if (questions.length < limit) {
+      final needed = limit - questions.length;
+      final extra = List.generate(needed, (idx) {
+        final sampleKanji = [
+          {'k': '一', 'm': 'Satu'},
+          {'k': '二', 'm': 'Dua'},
+          {'k': '三', 'm': 'Tiga'},
+          {'k': '山', 'm': 'Gunung'},
+          {'k': '川', 'm': 'Sungai'},
+          {'k': '木', 'm': 'Pohon'},
+        ];
+        final item = sampleKanji[idx % sampleKanji.length];
+        final options = _makeOptions(item['m']!, _fallbackJpMeanings);
+        return MockExamQuestion(
+          id: 'fallback_kanji_jp_${level}_${idx}',
+          category: 'Kanji',
+          type: 'Kanji Meaning',
+          kind: MockQuestionKind.multipleChoice,
+          prompt: 'Apa makna kanji "${item['k']}"?',
+          options: options,
+          correctAnswerIndex: options.indexOf(item['m']!),
+          explanation: 'Kanji "${item['k']}" bermakna "${item['m']}".',
+        );
+      });
+      questions.addAll(extra);
+    }
+    return questions;
   }
 
   Future<List<MockExamQuestion>> _buildJlptGrammarQuestions(
@@ -329,11 +387,11 @@ class _MockExamScreenState extends State<MockExamScreen> {
       limit: limit,
     );
 
-    return rows.map((row) {
+    final questions = rows.map((row) {
       final rule = row['rule_name']?.toString() ?? '';
       final explanation = row['explanation']?.toString() ?? '';
       final example = row['example_sentence']?.toString() ?? '';
-      final options = _makeOptions(rule, _fallbackGrammarOptions);
+      final options = _makeOptions(rule, _fallbackJpGrammarOptions);
 
       return MockExamQuestion(
         id: 'grammar_${row['id']}_$rule',
@@ -348,6 +406,32 @@ class _MockExamScreenState extends State<MockExamScreen> {
             explanation.isEmpty ? 'Pola yang tepat adalah $rule.' : explanation,
       );
     }).toList();
+
+    // Pad with high quality N5-N1 Japanese grammar fallbacks if database lacks entries
+    if (questions.length < limit) {
+      final needed = limit - questions.length;
+      final extra = List.generate(needed, (idx) {
+        final sampleGrammar = [
+          {'g': 'から', 'ex': '日本が好きだから、日本語を勉強します。', 'exp': 'Mengindikasikan alasan/sebab.'},
+          {'g': 'ので', 'ex': '雨が降っているので、傘を持って行きます。', 'exp': 'Mengindikasikan alasan secara sopan.'},
+          {'g': 'ながら', 'ex': '音楽を聞きながら勉強します。', 'exp': 'Melakukan dua aktivitas bersamaan.'},
+        ];
+        final item = sampleGrammar[idx % sampleGrammar.length];
+        final options = _makeOptions(item['g']!, _fallbackJpGrammarOptions);
+        return MockExamQuestion(
+          id: 'fallback_grammar_jp_${level}_${idx}',
+          category: 'Grammar',
+          type: 'Grammar Pattern',
+          kind: MockQuestionKind.multipleChoice,
+          prompt: 'Pola tata bahasa mana yang sesuai dengan contoh berikut?\n${item['ex']}',
+          options: options,
+          correctAnswerIndex: options.indexOf(item['g']!),
+          explanation: item['exp']!,
+        );
+      });
+      questions.addAll(extra);
+    }
+    return questions;
   }
 
   Future<List<MockExamQuestion>> _buildPassageQuestions({
@@ -416,40 +500,95 @@ class _MockExamScreenState extends State<MockExamScreen> {
 
   Future<List<MockExamQuestion>> _buildIeltsWritingQuestions(
       Database db) async {
-    final rows = await _randomRows(db, 'writing_prompts', limit: 2);
-    final task1 = rows.isNotEmpty
-        ? rows.first
-        : {
-            'prompt':
-                'The chart shows changes in the number of international students at a university from 2015 to 2025. Summarise the main features and make comparisons where relevant.',
-            'type': 'Line Chart',
-          };
-    final task2 = rows.length > 1
-        ? rows[1]
-        : {
-            'prompt':
-                'Some people believe governments should invest more in public transport than roads. To what extent do you agree or disagree?',
-            'type': 'Transportation',
-          };
+    // Task 1 and Task 2 local fallback banks for variety
+    const task1Bank = [
+      {
+        'prompt': 'The bar chart below shows the percentage of households with internet access in three countries between 2015 and 2025. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
+        'type': 'Bar Chart',
+      },
+      {
+        'prompt': 'The line graph illustrates the average monthly temperature in four major cities throughout 2023. Summarise the main trends and highlight significant changes.',
+        'type': 'Line Graph',
+      },
+      {
+        'prompt': 'The pie charts show the proportion of energy generated from different sources in Germany in 2010 and 2022. Compare and summarise the key changes.',
+        'type': 'Pie Chart',
+      },
+      {
+        'prompt': 'The table below shows the number of visitors to five national museums in London over a three-year period. Summarise the information by selecting and reporting the main features.',
+        'type': 'Table',
+      },
+      {
+        'prompt': 'The diagram illustrates the process of water purification in a modern treatment plant. Summarise the information by describing each stage of the process.',
+        'type': 'Process Diagram',
+      },
+    ];
+
+    const task2Bank = [
+      {
+        'prompt': 'Some people believe that university education should be free for all students. Others disagree, arguing that students should pay tuition fees. Discuss both views and give your opinion.',
+        'type': 'Discussion Essay',
+      },
+      {
+        'prompt': 'Nowadays, many people choose to live and work in foreign countries. Do the advantages of this trend outweigh the disadvantages? Give reasons for your answer and include relevant examples.',
+        'type': 'Opinion Essay',
+      },
+      {
+        'prompt': 'Some people argue that instead of preventing climate change, we should find ways to adapt to it. To what extent do you agree or disagree? Support your answer with examples.',
+        'type': 'Argument Essay',
+      },
+      {
+        'prompt': 'In many countries, children are spending more time playing computer games than playing sports. Why is this happening? What are the effects of this trend on individuals and society?',
+        'type': 'Problem-Solution Essay',
+      },
+      {
+        'prompt': 'Some governments have introduced laws to restrict the amount of time young people can spend using social media each day. Do you agree or disagree with this measure?',
+        'type': 'Opinion Essay',
+      },
+    ];
+
+    // Try to fetch from DB, filtered by task number
+    final task1Rows = await _randomRows(db, 'writing_prompts',
+        where: 'task = ?', whereArgs: [1], limit: 1);
+    final task2Rows = await _randomRows(db, 'writing_prompts',
+        where: 'task = ?', whereArgs: [2], limit: 1);
+
+    // Pick one from local bank using random index if needed
+    final rng = DateTime.now().millisecondsSinceEpoch;
+    final t1Idx = rng % task1Bank.length;
+    final t2Idx = (rng ~/ 7) % task2Bank.length;
+
+    final task1 = (task1Rows.isNotEmpty &&
+            (task1Rows.first['prompt']?.toString() ?? '').isNotEmpty &&
+            !(task1Rows.first['prompt']?.toString() ?? '').contains('Practice Prompt'))
+        ? task1Rows.first
+        : task1Bank[t1Idx];
+
+    final task2 = (task2Rows.isNotEmpty &&
+            (task2Rows.first['prompt']?.toString() ?? '').isNotEmpty &&
+            !(task2Rows.first['prompt']?.toString() ?? '').contains('Practice Prompt'))
+        ? task2Rows.first
+        : task2Bank[t2Idx];
 
     return [
       MockExamQuestion(
         id: 'ielts_writing_task_1',
         category: 'Writing',
-        type: 'Task 1 - ${task1['type'] ?? 'Chart'}',
+        type: 'Task 1 – ${task1['type'] ?? 'Chart/Diagram'}',
         kind: MockQuestionKind.writing,
-        prompt: task1['prompt']?.toString() ?? '',
+        prompt: task1['prompt']?.toString() ?? task1Bank[0]['prompt']!,
         explanation:
-            'Task 1 dinilai dari task achievement, coherence, lexical resource, dan grammar.',
+            'Task 1 dinilai dari task achievement, coherence, lexical resource, dan grammar. Tulis minimal 150 kata.',
         targetWords: 150,
       ),
       MockExamQuestion(
         id: 'ielts_writing_task_2',
         category: 'Writing',
-        type: 'Task 2 - ${task2['type'] ?? 'Essay'}',
+        type: 'Task 2 – ${task2['type'] ?? 'Essay'}',
         kind: MockQuestionKind.writing,
-        prompt: task2['prompt']?.toString() ?? '',
-        explanation: 'Task 2 membutuhkan argumen formal minimal 250 kata.',
+        prompt: task2['prompt']?.toString() ?? task2Bank[0]['prompt']!,
+        explanation:
+            'Task 2 membutuhkan argumen formal minimal 250 kata. Nilai Task 2 memiliki bobot lebih tinggi dari Task 1.',
         targetWords: 250,
       ),
     ];
@@ -457,44 +596,132 @@ class _MockExamScreenState extends State<MockExamScreen> {
 
   Future<List<MockExamQuestion>> _buildIeltsSpeakingQuestions(
       Database db) async {
-    final rows = await _randomRows(db, 'speaking_prompts', limit: 3);
-    final topic = rows.isNotEmpty
-        ? rows.first['topic']?.toString() ?? 'education'
-        : 'education';
-    final cueCard = rows.isNotEmpty
-        ? rows.first['prompt_card']?.toString() ??
-            'Describe an important learning experience you had.'
-        : 'Describe an important learning experience you had.';
+    // Rich local speaking banks per part
+    const part1Bank = [
+      {
+        'topic': 'Hometown & Daily Life',
+        'questions':
+            'Where is your hometown? What do you like most about it? Would you say it is a good place for young people to live?',
+      },
+      {
+        'topic': 'Work & Hobbies',
+        'questions':
+            'What job do you do? Why did you choose this line of work? What hobbies do you enjoy in your free time?',
+      },
+      {
+        'topic': 'Food & Cooking',
+        'questions':
+            'What is your favourite type of food? Do you prefer eating out or cooking at home? Has your diet changed in recent years?',
+      },
+      {
+        'topic': 'Technology & Devices',
+        'questions':
+            'How often do you use your smartphone? What apps do you use most often? Do you think people are too dependent on technology?',
+      },
+    ];
+
+    const part2Bank = [
+      'Describe a book you read recently. You should say:\n• What the book is about\n• Why you decided to read it\n• What you liked or disliked about it\nAnd explain what you learned from reading it.',
+      'Describe a memorable journey you took. You should say:\n• Where you went and how you travelled\n• Who was with you\n• What happened during the journey\nAnd explain why the journey was memorable.',
+      'Describe an important decision you made in your life. You should say:\n• What the decision was\n• When and why you made it\n• What the outcome was\nAnd explain how the decision has affected your life.',
+      'Describe a person who has had a significant influence on your life. You should say:\n• Who this person is\n• How you know them\n• What they did that influenced you\nAnd explain how your life changed as a result.',
+      'Describe a skill you would like to learn in the future. You should say:\n• What the skill is\n• Why you want to learn it\n• How you plan to learn it\nAnd explain how this skill would benefit your life.',
+    ];
+
+    const part3Bank = [
+      {
+        'topic': 'Reading Habits in Society',
+        'questions':
+            'Do you think children read less nowadays than in the past? How has digital technology influenced reading habits? What are the benefits of reading physical books?',
+      },
+      {
+        'topic': 'Travel & Global Culture',
+        'questions':
+            'What are the environmental impacts of mass tourism? How does international travel promote cultural understanding? Should governments restrict tourism to protect natural sites?',
+      },
+      {
+        'topic': 'Decision Making & Influence',
+        'questions':
+            'At what age should people be allowed to make their own major life decisions? How do family and culture influence career choices? Is it better to follow your passion or choose a stable career?',
+      },
+      {
+        'topic': 'Technology & Society',
+        'questions':
+            'Has social media made society more or less connected? What responsibilities do tech companies have for the content on their platforms? Do you think AI will replace most human jobs?',
+      },
+    ];
+
+    final rng = DateTime.now().millisecondsSinceEpoch;
+    final p1Idx = rng % part1Bank.length;
+    final p2Idx = (rng ~/ 11) % part2Bank.length;
+    final p3Idx = (rng ~/ 17) % part3Bank.length;
+
+    // Try DB queries filtered by part number
+    final part1Rows = await _randomRows(db, 'speaking_prompts',
+        where: 'part = ?', whereArgs: [1], limit: 1);
+    final part2Rows = await _randomRows(db, 'speaking_prompts',
+        where: 'part = ? AND (prompt_card IS NOT NULL AND prompt_card != "")',
+        whereArgs: [2],
+        limit: 1);
+    final part3Rows = await _randomRows(db, 'speaking_prompts',
+        where: 'part = ?', whereArgs: [3], limit: 1);
+
+    final p1Topic = (part1Rows.isNotEmpty &&
+            (part1Rows.first['topic']?.toString() ?? '').isNotEmpty &&
+            !(part1Rows.first['topic']?.toString() ?? '').contains('Academic Topic'))
+        ? part1Rows.first['topic']!.toString()
+        : part1Bank[p1Idx]['topic']!;
+    final p1Questions = (part1Rows.isNotEmpty &&
+            (part1Rows.first['questions']?.toString() ?? '').isNotEmpty &&
+            !(part1Rows.first['questions']?.toString() ?? '').contains('Question A'))
+        ? part1Rows.first['questions']!.toString()
+        : part1Bank[p1Idx]['questions']!;
+
+    final cueCard = (part2Rows.isNotEmpty &&
+            (part2Rows.first['prompt_card']?.toString() ?? '').length > 20 &&
+            !(part2Rows.first['prompt_card']?.toString() ?? '').contains('had to '))
+        ? part2Rows.first['prompt_card']!.toString()
+        : part2Bank[p2Idx];
+
+    final p3Topic = (part3Rows.isNotEmpty &&
+            (part3Rows.first['topic']?.toString() ?? '').isNotEmpty &&
+            !(part3Rows.first['topic']?.toString() ?? '').contains('Academic Topic'))
+        ? part3Rows.first['topic']!.toString()
+        : part3Bank[p3Idx]['topic']!;
+    final p3Questions = (part3Rows.isNotEmpty &&
+            (part3Rows.first['questions']?.toString() ?? '').isNotEmpty &&
+            !(part3Rows.first['questions']?.toString() ?? '').contains('Question A'))
+        ? part3Rows.first['questions']!.toString()
+        : part3Bank[p3Idx]['questions']!;
 
     return [
-      const MockExamQuestion(
+      MockExamQuestion(
         id: 'ielts_speaking_part_1',
         category: 'Speaking',
-        type: 'Part 1',
+        type: 'Part 1 – $p1Topic',
         kind: MockQuestionKind.speaking,
-        prompt:
-            'Answer general questions about your home, studies, work, interests, and daily routine.',
-        explanation: 'Part 1 menguji respons spontan pada topik familiar.',
+        prompt: p1Questions,
+        explanation: 'Part 1 menguji respons spontan pada topik familiar. Jawab dengan 2–3 kalimat per pertanyaan.',
         speakingSeconds: 240,
       ),
       MockExamQuestion(
         id: 'ielts_speaking_part_2',
         category: 'Speaking',
-        type: 'Part 2 Cue Card',
+        type: 'Part 2 – Cue Card',
         kind: MockQuestionKind.speaking,
         prompt: cueCard,
         explanation:
-            'Part 2 memberi waktu persiapan singkat lalu berbicara panjang.',
+            'Part 2: Anda memiliki 1 menit untuk mempersiapkan jawaban, kemudian berbicara selama 2 menit menggunakan poin-poin pada cue card.',
         speakingSeconds: 120,
       ),
       MockExamQuestion(
         id: 'ielts_speaking_part_3',
         category: 'Speaking',
-        type: 'Part 3 Discussion',
+        type: 'Part 3 – $p3Topic',
         kind: MockQuestionKind.speaking,
-        prompt:
-            'Discuss broader issues related to "$topic". Give reasons, examples, and comparisons.',
-        explanation: 'Part 3 menguji diskusi abstrak dan argumentasi lanjutan.',
+        prompt: p3Questions,
+        explanation:
+            'Part 3 menguji kemampuan berdiskusi dan berargumentasi secara abstrak. Berikan alasan, contoh, dan perbandingan.',
         speakingSeconds: 300,
       ),
     ];
@@ -1296,52 +1523,588 @@ class _MockExamScreenState extends State<MockExamScreen> {
   }
 
   List<MockExamQuestion> _fallbackReadingQuestions(String language, int limit) {
-    return List.generate(limit, (index) {
-      final isJp = language == 'JAPANESE';
-      return MockExamQuestion(
-        id: 'fallback_reading_${language}_$index',
+    final isJp = language == 'JAPANESE';
+
+    final jpQuestions = [
+      MockExamQuestion(
+        id: 'fallback_reading_jp_0',
         category: 'Reading',
-        type: isJp ? 'Reading Comprehension' : 'Academic Reading',
+        type: 'Reading Comprehension',
         kind: MockQuestionKind.multipleChoice,
-        passage: isJp
-            ? 'A short notice explains a schedule change and asks readers to confirm the new time.'
-            : 'A university notice explains changes to the library opening hours during examination week.',
-        prompt: isJp
-            ? 'Apa informasi utama dari teks tersebut?'
-            : 'What is the main purpose of the notice?',
-        options: const [
-          'To announce a schedule change',
-          'To sell a product',
-          'To describe a person',
-          'To invite a complaint'
-        ],
+        passage: 'きょうはいい天気です。わたしはともだちと公園へ行きます。公園でサッカーをします。それから、いっしょに晩ご飯を食べます。',
+        prompt: 'きょうは何をしますか？',
+        options: const ['ともだちと公園でサッカーをする', '一人で家で勉強する', '学校で先生と話す', '図書館で本を読む'],
         correctAnswerIndex: 0,
-        explanation: 'Jawaban benar diambil dari ide utama teks.',
-      );
-    });
+        explanation: '文章によると、今日は友達と公園でサッカーをします。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_jp_1',
+        category: 'Reading',
+        type: 'Reading Comprehension',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'わたしの部屋はせまいですが、きれいです。机の上に本が三冊あります。窓のそばにいすがあります。',
+        prompt: '机の上に何がありますか？',
+        options: const ['本が三冊', 'いすが一つ', 'かばんが二つ', 'ペンが五本'],
+        correctAnswerIndex: 0,
+        explanation: '文章によると、机の上に本が三冊あります。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_jp_2',
+        category: 'Reading',
+        type: 'Reading Comprehension',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'スーパーの前にバスていがあります。バスていのとなりにゆうびんきょくがあります。ゆうびんきょくのうしろにこうえんがあります。',
+        prompt: 'ゆうびんきょくはどこにありますか？',
+        options: const ['バスていのとなり', 'こうえんのうしろ', 'スーパーの中', '学校のちかく'],
+        correctAnswerIndex: 0,
+        explanation: '文章によると、郵便局はバス停の隣にあります。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_jp_3',
+        category: 'Reading',
+        type: 'Reading Comprehension',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'たなかさんは毎朝六時に起きます。シャワーをあびて、朝ごはんを食べます。七時半に家を出て、電車で会社へ行きます。',
+        prompt: 'たなかさんは何時に起きますか？',
+        options: const ['六時', '七時', '七時半', '八時'],
+        correctAnswerIndex: 0,
+        explanation: '文章によると、田中さんは毎朝6時に起きます。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_jp_4',
+        category: 'Reading',
+        type: 'Reading Comprehension',
+        kind: MockQuestionKind.multipleChoice,
+        passage: '春は花見のきせつです。日本人は公園で桜の花を見ながら食べたり飲んだりします。桜はふつう四月ごろに咲きます。',
+        prompt: '桜はいつ咲きますか？',
+        options: const ['四月ごろ', '一月ごろ', '七月ごろ', '十月ごろ'],
+        correctAnswerIndex: 0,
+        explanation: '文章によると、桜は普通四月頃に咲きます。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_jp_5',
+        category: 'Reading',
+        type: 'Reading Comprehension',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'このお知らせを読んでください。来週の月曜日から図書館は午後五時に閉まります。今まで午後七時まで開いていました。',
+        prompt: '来週から図書館は何時に閉まりますか？',
+        options: const ['午後五時', '午後七時', '午前九時', '午後八時'],
+        correctAnswerIndex: 0,
+        explanation: 'お知らせによると、来週から図書館は午後5時に閉まります。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_jp_6',
+        category: 'Reading',
+        type: 'Reading Comprehension',
+        kind: MockQuestionKind.multipleChoice,
+        passage: '山田さんは料理が上手です。毎日自分でご飯を作ります。好きな料理はカレーと寿司です。今日の晩ご飯は寿司を作りました。',
+        prompt: '今日の晩ご飯は何ですか？',
+        options: const ['寿司', 'カレー', 'ラーメン', 'うどん'],
+        correctAnswerIndex: 0,
+        explanation: '文章によると、今日の晩御飯は寿司です。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_jp_7',
+        category: 'Reading',
+        type: 'Reading Comprehension',
+        kind: MockQuestionKind.multipleChoice,
+        passage: '電車の中にわすれものをした時は、えきのサービスセンターに行ってください。名前と電話番号を書いて、係りの人に見せてください。',
+        prompt: 'わすれものをした時、どこへ行きますか？',
+        options: const ['えきのサービスセンター', '警察のほんぶ', '市役所', '郵便局'],
+        correctAnswerIndex: 0,
+        explanation: '文章によると、忘れ物をした時は駅のサービスセンターへ行きます。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_jp_8',
+        category: 'Reading',
+        type: 'Reading Comprehension',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'わたしは先月、日本語の試験を受けました。結果は来週でます。とても緊張しています。合格したらパーティーをしたいです。',
+        prompt: 'この人はなぜ緊張していますか？',
+        options: const ['試験の結果を待っているから', 'パーティーに行くから', '仕事が忙しいから', '友達と会うから'],
+        correctAnswerIndex: 0,
+        explanation: '試験の結果を待っているので、緊張しています。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_jp_9',
+        category: 'Reading',
+        type: 'Reading Comprehension',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'きのうの夜、かぜをひいて頭が痛くなりました。病院へ行って薬をもらいました。今日は会社を休んで、家でゆっくりしています。',
+        prompt: '今日この人はどこにいますか？',
+        options: const ['家', '病院', '会社', '学校'],
+        correctAnswerIndex: 0,
+        explanation: '今日は会社を休んで家にいます。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_jp_10',
+        category: 'Reading',
+        type: 'Reading Comprehension',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'このレストランは月曜日から金曜日まで、ひる十一時から夜九時まで開いています。土曜日と日曜日は休みです。',
+        prompt: 'このレストランはいつ休みですか？',
+        options: const ['土曜日と日曜日', '月曜日と火曜日', '毎日開いています', '金曜日'],
+        correctAnswerIndex: 0,
+        explanation: 'レストランは土曜日と日曜日が休みです。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_jp_11',
+        category: 'Reading',
+        type: 'Reading Comprehension',
+        kind: MockQuestionKind.multipleChoice,
+        passage: '日本では、食事の前に「いただきます」と言います。食事の後には「ごちそうさまでした」と言います。これは大切なマナーです。',
+        prompt: '食事の後に何と言いますか？',
+        options: const ['ごちそうさまでした', 'いただきます', 'ありがとうございます', 'おやすみなさい'],
+        correctAnswerIndex: 0,
+        explanation: '食事の後には「ごちそうさまでした」と言います。',
+      ),
+    ];
+
+    final enQuestions = [
+      MockExamQuestion(
+        id: 'fallback_reading_en_0',
+        category: 'Reading',
+        type: 'Academic Reading',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'A university notice explains changes to library opening hours during examination week. The library will now close at 11 PM instead of 9 PM.',
+        prompt: 'What is the main purpose of the notice?',
+        options: const ['To announce a schedule change', 'To sell a product', 'To describe a person', 'To invite a complaint'],
+        correctAnswerIndex: 0,
+        explanation: 'The notice announces a change to opening hours.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_en_1',
+        category: 'Reading',
+        type: 'Academic Reading',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'Researchers found that regular exercise significantly reduces the risk of cardiovascular disease. A 30-minute walk five days a week is sufficient for most adults.',
+        prompt: 'According to the text, how much exercise is recommended per week?',
+        options: const ['30 minutes, 5 times', '1 hour daily', '15 minutes, 7 times', '2 hours, 3 times'],
+        correctAnswerIndex: 0,
+        explanation: 'The passage recommends 30 minutes five times a week.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_en_2',
+        category: 'Reading',
+        type: 'Academic Reading',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'The Amazon rainforest produces approximately 20% of the world\'s oxygen. Deforestation threatens the ecological balance and contributes significantly to climate change.',
+        prompt: 'What percentage of the world\'s oxygen does the Amazon produce?',
+        options: const ['20%', '10%', '50%', '5%'],
+        correctAnswerIndex: 0,
+        explanation: 'The Amazon produces approximately 20% of the world\'s oxygen.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_en_3',
+        category: 'Reading',
+        type: 'Academic Reading',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'Solar power has grown dramatically over the past decade. The cost of installing solar panels has dropped by 89% since 2010, making it the cheapest electricity source in history.',
+        prompt: 'By how much has the cost of solar panels dropped since 2010?',
+        options: const ['89%', '50%', '30%', '75%'],
+        correctAnswerIndex: 0,
+        explanation: 'The cost of solar panels dropped by 89% since 2010.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_en_4',
+        category: 'Reading',
+        type: 'Academic Reading',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'Remote work has transformed the modern workplace. Studies show that employees who work from home report higher job satisfaction but lower social interaction compared to office workers.',
+        prompt: 'What is a disadvantage of remote work mentioned in the passage?',
+        options: const ['Lower social interaction', 'Less job satisfaction', 'Higher commuting costs', 'More overtime hours'],
+        correctAnswerIndex: 0,
+        explanation: 'Remote workers have lower social interaction according to the studies.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_en_5',
+        category: 'Reading',
+        type: 'Academic Reading',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'Plastic pollution in oceans has reached alarming levels. Over eight million tons of plastic enter the sea annually, threatening marine ecosystems and entering the food chain.',
+        prompt: 'How much plastic enters the sea each year?',
+        options: const ['Over eight million tons', 'Under one million tons', 'Exactly five million tons', 'Three billion kilograms'],
+        correctAnswerIndex: 0,
+        explanation: 'Over eight million tons of plastic enter the sea annually.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_en_6',
+        category: 'Reading',
+        type: 'Academic Reading',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'The human brain contains approximately 86 billion neurons. These neurons communicate via electrical signals and form the basis of all thought, memory, and emotion.',
+        prompt: 'How many neurons does the human brain contain?',
+        options: const ['86 billion', '1 trillion', '10 million', '500 billion'],
+        correctAnswerIndex: 0,
+        explanation: 'The human brain has approximately 86 billion neurons.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_en_7',
+        category: 'Reading',
+        type: 'Academic Reading',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'Artificial intelligence is being used increasingly in healthcare diagnostics. AI systems can now detect certain cancers from medical imaging with accuracy comparable to experienced radiologists.',
+        prompt: 'What can AI systems do in healthcare according to the passage?',
+        options: const ['Detect cancers from medical imaging', 'Perform surgical operations', 'Prescribe medications', 'Replace all doctors'],
+        correctAnswerIndex: 0,
+        explanation: 'AI can detect certain cancers from medical imaging with high accuracy.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_en_8',
+        category: 'Reading',
+        type: 'Academic Reading',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'Urban farming is gaining popularity worldwide. By growing food in cities, communities can reduce transport costs, decrease carbon emissions, and provide fresh produce year-round.',
+        prompt: 'What is one benefit of urban farming mentioned?',
+        options: const ['Reduced transport costs', 'Higher product prices', 'More pesticide use', 'Larger farms'],
+        correctAnswerIndex: 0,
+        explanation: 'Urban farming can reduce transport costs among other benefits.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_en_9',
+        category: 'Reading',
+        type: 'Academic Reading',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'Sleep is essential for memory consolidation. During sleep, the brain transfers information from short-term to long-term memory. Adults need 7-9 hours per night for optimal cognitive function.',
+        prompt: 'How many hours of sleep do adults need per night?',
+        options: const ['7-9 hours', '5-6 hours', '10-12 hours', 'Exactly 8 hours'],
+        correctAnswerIndex: 0,
+        explanation: 'Adults need 7-9 hours per night for optimal cognitive function.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_en_10',
+        category: 'Reading',
+        type: 'Academic Reading',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'Biodiversity refers to the variety of life on Earth. Scientists estimate that over 8 million species exist, but only about 1.5 million have been formally documented and classified.',
+        prompt: 'How many species have been formally documented?',
+        options: const ['About 1.5 million', 'Over 8 million', 'Exactly 3 million', 'Fewer than 100,000'],
+        correctAnswerIndex: 0,
+        explanation: 'Only about 1.5 million species have been formally documented.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_reading_en_11',
+        category: 'Reading',
+        type: 'Academic Reading',
+        kind: MockQuestionKind.multipleChoice,
+        passage: 'Digital literacy has become a critical skill in the 21st century. The ability to evaluate online sources, understand data privacy, and use technology safely is now as important as reading and writing.',
+        prompt: 'According to the passage, digital literacy is compared to which other skill?',
+        options: const ['Reading and writing', 'Mathematics and science', 'History and geography', 'Art and music'],
+        correctAnswerIndex: 0,
+        explanation: 'Digital literacy is compared to reading and writing as an essential skill.',
+      ),
+    ];
+
+    final source = isJp ? jpQuestions : enQuestions;
+    return List.generate(limit, (i) => source[i % source.length]);
   }
 
   List<MockExamQuestion> _fallbackListeningQuestions(
       String language, int limit) {
-    return List.generate(limit, (index) {
-      final isJp = language == 'JAPANESE';
-      return MockExamQuestion(
-        id: 'fallback_listening_${language}_$index',
+    final isJp = language == 'JAPANESE';
+
+    final jpQuestions = [
+      MockExamQuestion(
+        id: 'fallback_listening_jp_0',
         category: 'Listening',
-        type: isJp
-            ? 'Short Conversation'
-            : 'IELTS Listening Part ${(index % 4) + 1}',
+        type: 'Short Conversation',
         kind: MockQuestionKind.multipleChoice,
-        transcript: isJp
-            ? 'The speaker says the meeting will start at three o clock in room two.'
-            : 'The student asks about accommodation. The officer says the single room costs one hundred and twenty pounds per week.',
-        prompt: isJp ? 'Kapan rapat dimulai?' : 'How much is the weekly rent?',
-        options: const ['120 pounds', '3 o clock', 'Room four', 'Next Monday'],
-        correctAnswerIndex: isJp ? 1 : 0,
-        explanation: 'Informasi kunci disebutkan langsung dalam audio.',
-      );
-    });
+        transcript: '女：明日のパーティーは何時に始まりますか？男：午後六時に始まりますよ。女：分かりました。ありがとうございます。',
+        prompt: 'パーティーは何時に始まりますか？',
+        options: const ['午後五時', '午後六時', '午後七時', '午後八時'],
+        correctAnswerIndex: 1,
+        explanation: '男の人は「午後六時に始まります」と言いました。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_jp_1',
+        category: 'Listening',
+        type: 'Short Conversation',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: '男：すみません、駅はどこですか？女：あそこの角を右に曲がってください。まっすぐ行くと左側にあります。男：ありがとうございます。',
+        prompt: '駅へはどう行きますか？',
+        options: const ['角を右、それからまっすぐ', 'まっすぐ右', 'まず左、次に右', '地下鉄で行く'],
+        correctAnswerIndex: 0,
+        explanation: '角を右に曲がって、まっすぐ進むと左側にあります。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_jp_2',
+        category: 'Listening',
+        type: 'Short Conversation',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: '女：このりんごはいくらですか？男：一つ百五十円です。女：じゃ、三つください。男：ありがとうございます。四百五十円です。',
+        prompt: 'りんごを三つ買うといくらですか？',
+        options: const ['三百円', '四百五十円', '五百円', '二百円'],
+        correctAnswerIndex: 1,
+        explanation: 'りんごは1つ150円なので、3つで450円です。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_jp_3',
+        category: 'Listening',
+        type: 'Short Conversation',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: '男：田中さん、今日の会議は何時からですか？女：午前十時からです。でも、山田部長が五分遅れると連絡が来ました。男：そうですか。分かりました。',
+        prompt: '山田部長は何時ごろ来ますか？',
+        options: const ['午前十時五分', '午前十時', '午前九時五十五分', '午前十一時'],
+        correctAnswerIndex: 0,
+        explanation: '会議は10時からで、山田部長は5分遅れるので10時5分ごろ来ます。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_jp_4',
+        category: 'Listening',
+        type: 'Short Conversation',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: '女：もしもし、山田です。今日の練習、何を持っていけばいいですか？男：ユニフォームとシューズを持ってきてください。水は自分で用意してね。',
+        prompt: '何を持っていきますか？',
+        options: const ['ユニフォームとシューズ', 'ボールと水', 'シューズだけ', 'ユニフォームと水'],
+        correctAnswerIndex: 0,
+        explanation: 'ユニフォームとシューズを持っていきます。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_jp_5',
+        category: 'Listening',
+        type: 'Short Conversation',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: '男：すみません、この電車は新宿に止まりますか？女：いいえ、止まりません。次の駅で乗り換えてください。急行に乗ると新宿まで行けますよ。',
+        prompt: 'この人はどうすれば新宿へ行けますか？',
+        options: const ['次の駅で急行に乗り換える', 'この電車でそのまま行く', '歩いて行く', 'タクシーに乗る'],
+        correctAnswerIndex: 0,
+        explanation: '次の駅で急行に乗り換えると新宿へ行けます。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_jp_6',
+        category: 'Listening',
+        type: 'Short Conversation',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: '女：先生、宿題はいつまでですか？男：来週の月曜日までです。でも、できれば金曜日までに出してくれると助かります。',
+        prompt: '宿題はいつまでに出せばいいですか？',
+        options: const ['来週の月曜日まで', '今週の金曜日まで', '今日まで', '来週の水曜日まで'],
+        correctAnswerIndex: 0,
+        explanation: '提出期限は来週月曜日ですが、できれば金曜日が望ましいです。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_jp_7',
+        category: 'Listening',
+        type: 'Short Conversation',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: '男：ちょっと待って！傘を持った？天気予報では午後から雨だって。女：あ、ほんとだ。ありがとう。持っていくね。',
+        prompt: 'なぜ女の人は傘を持っていきますか？',
+        options: const ['午後から雨が降るから', '毎日傘を使うから', '忘れると困るから', '男の人に頼まれたから'],
+        correctAnswerIndex: 0,
+        explanation: '天気予報で午後から雨が降るからです。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_jp_8',
+        category: 'Listening',
+        type: 'Short Conversation',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: '女：このケーキ、とてもおいしいですね！どこで買いましたか？男：駅の近くの新しいお店です。昨日開いたばかりですよ。女：ぜひ行ってみます。',
+        prompt: 'ケーキはどこで買いましたか？',
+        options: const ['駅の近くの新しいお店', 'デパートの地下', '友達の家', 'コンビニ'],
+        correctAnswerIndex: 0,
+        explanation: '駅の近くの新しいお店で買いました。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_jp_9',
+        category: 'Listening',
+        type: 'Short Conversation',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: '男：もしもし。今どこ？女：今、バスに乗っているところ。あと二十分くらいで着くと思う。男：わかった。じゃ、入口で待ってるね。',
+        prompt: '女の人はあとどのくらいで着きますか？',
+        options: const ['約二十分', '約十分', 'もう着いている', '約一時間'],
+        correctAnswerIndex: 0,
+        explanation: 'バスに乗っていて、あと約20分で着くと言っています。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_jp_10',
+        category: 'Listening',
+        type: 'Short Conversation',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: '女：すみません、コーヒーをひとつください。男：ホットとアイス、どちらになさいますか？女：ホットでお願いします。砂糖はいりません。',
+        prompt: '女の人はどんなコーヒーを注文しましたか？',
+        options: const ['ホット・砂糖なし', 'アイス・砂糖あり', 'ホット・砂糖あり', 'アイス・砂糖なし'],
+        correctAnswerIndex: 0,
+        explanation: 'ホットコーヒーで砂糖なしを注文しました。',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_jp_11',
+        category: 'Listening',
+        type: 'Short Conversation',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: '男：山田さん、今日の発表はよかったですね。女：ありがとうございます。でも、緊張してしまって、大事なところを忘れてしまいました。男：そうですか。全然気づきませんでしたよ。',
+        prompt: '女の人の発表はどうでしたか？',
+        options: const ['大事なところを忘れた', 'とても完璧だった', '時間が足りなかった', '資料を忘れた'],
+        correctAnswerIndex: 0,
+        explanation: '緊張して大事なところを忘れてしまいました。',
+      ),
+    ];
+
+    final enQuestions = [
+      MockExamQuestion(
+        id: 'fallback_listening_en_0',
+        category: 'Listening',
+        type: 'IELTS Listening Part 1',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: 'The student asks about accommodation. The officer says the single room costs one hundred and twenty pounds per week.',
+        prompt: 'How much is the weekly rent for a single room?',
+        options: const ['120 pounds', '150 pounds', '90 pounds', '200 pounds'],
+        correctAnswerIndex: 0,
+        explanation: 'The officer clearly states the single room costs 120 pounds per week.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_en_1',
+        category: 'Listening',
+        type: 'IELTS Listening Part 1',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: 'The caller asks about the museum opening hours. The receptionist says it opens at 9 AM and closes at 5 PM on weekdays, and closes at 3 PM on Sundays.',
+        prompt: 'What time does the museum close on Sundays?',
+        options: const ['3 PM', '5 PM', '6 PM', '4 PM'],
+        correctAnswerIndex: 0,
+        explanation: 'The receptionist states the museum closes at 3 PM on Sundays.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_en_2',
+        category: 'Listening',
+        type: 'IELTS Listening Part 2',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: 'Welcome to the city tour. Our first stop will be the central market, then the art gallery. After lunch at the harbour restaurant, we will visit the botanical gardens.',
+        prompt: 'Where will the group go after lunch?',
+        options: const ['Botanical gardens', 'Central market', 'Art gallery', 'Harbour restaurant'],
+        correctAnswerIndex: 0,
+        explanation: 'After lunch at the harbour restaurant, the group visits the botanical gardens.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_en_3',
+        category: 'Listening',
+        type: 'IELTS Listening Part 2',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: 'Good morning. The college library will be closed for renovation from Monday to Wednesday next week. Students may use the computer lab as an alternative.',
+        prompt: 'What can students use while the library is closed?',
+        options: const ['Computer lab', 'Study café', 'Another library', 'City hall'],
+        correctAnswerIndex: 0,
+        explanation: 'Students may use the computer lab as an alternative.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_en_4',
+        category: 'Listening',
+        type: 'IELTS Listening Part 3',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: 'Tutor: So, for your research project, what topic have you chosen? Student: I have decided to focus on the impact of social media on mental health among teenagers.',
+        prompt: 'What is the student\'s research topic?',
+        options: const ['Social media and teen mental health', 'Climate change solutions', 'Online shopping trends', 'Language learning apps'],
+        correctAnswerIndex: 0,
+        explanation: 'The student chose to study the impact of social media on teenage mental health.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_en_5',
+        category: 'Listening',
+        type: 'IELTS Listening Part 3',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: 'The assignment deadline has been extended. Dr. Brown announced that students now have until Friday the 15th, rather than the original Monday the 12th.',
+        prompt: 'When is the new assignment deadline?',
+        options: const ['Friday the 15th', 'Monday the 12th', 'Wednesday the 14th', 'Sunday the 11th'],
+        correctAnswerIndex: 0,
+        explanation: 'The new deadline is Friday the 15th, extended from Monday the 12th.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_en_6',
+        category: 'Listening',
+        type: 'IELTS Listening Part 4',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: 'Today\'s lecture covers renewable energy sources. Solar power is currently the fastest growing energy source globally, with installations doubling every two years.',
+        prompt: 'How often does solar installation double?',
+        options: const ['Every two years', 'Every five years', 'Every year', 'Every decade'],
+        correctAnswerIndex: 0,
+        explanation: 'The lecturer states solar installations double every two years.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_en_7',
+        category: 'Listening',
+        type: 'IELTS Listening Part 4',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: 'In today\'s talk on migration, we see that about 272 million people live outside their country of birth. Economic opportunity is cited as the primary reason for international migration.',
+        prompt: 'What is the main reason for international migration?',
+        options: const ['Economic opportunity', 'Climate change', 'Political conflict', 'Family reunification'],
+        correctAnswerIndex: 0,
+        explanation: 'Economic opportunity is cited as the primary reason.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_en_8',
+        category: 'Listening',
+        type: 'IELTS Listening Part 1',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: 'The travel agent confirms the booking. The flight departs at 7:45 AM from Terminal 2. The passenger should arrive at least two hours before departure.',
+        prompt: 'From which terminal does the flight depart?',
+        options: const ['Terminal 2', 'Terminal 1', 'Terminal 3', 'Terminal 4'],
+        correctAnswerIndex: 0,
+        explanation: 'The travel agent confirms the departure is from Terminal 2.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_en_9',
+        category: 'Listening',
+        type: 'IELTS Listening Part 2',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: 'For the community garden project, volunteers are needed every Saturday morning from 8 to 11. Bring your own gloves. Tools will be provided by the council.',
+        prompt: 'What should volunteers bring to the community garden?',
+        options: const ['Their own gloves', 'Garden tools', 'Lunch for all', 'Watering cans'],
+        correctAnswerIndex: 0,
+        explanation: 'Volunteers should bring their own gloves. Tools are provided.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_en_10',
+        category: 'Listening',
+        type: 'IELTS Listening Part 3',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: 'Student A: I think we should present the environmental section first. Student B: Agreed. It sets the context for everything else. We can follow with economic impacts.',
+        prompt: 'What will the students present first?',
+        options: const ['Environmental section', 'Economic impacts', 'Social effects', 'Historical background'],
+        correctAnswerIndex: 0,
+        explanation: 'Both students agree to present the environmental section first.',
+      ),
+      MockExamQuestion(
+        id: 'fallback_listening_en_11',
+        category: 'Listening',
+        type: 'IELTS Listening Part 4',
+        kind: MockQuestionKind.multipleChoice,
+        transcript: 'This week\'s psychology lecture covers cognitive biases. Confirmation bias, the tendency to favor information that confirms existing beliefs, is one of the most well-documented biases.',
+        prompt: 'What is confirmation bias?',
+        options: const [
+          'Favoring information that confirms existing beliefs',
+          'Being overly optimistic about outcomes',
+          'Making decisions based on first impressions',
+          'Avoiding information that is unpleasant'
+        ],
+        correctAnswerIndex: 0,
+        explanation: 'Confirmation bias is the tendency to favor information that confirms existing beliefs.',
+      ),
+    ];
+
+    final source = isJp ? jpQuestions : enQuestions;
+    return List.generate(limit, (i) => source[i % source.length]);
   }
+
+  static const List<String> _fallbackJpMeanings = [
+    'Guru',
+    'Siswa',
+    'Buku',
+    'Mobil',
+    'Air',
+    'Meja',
+    'Rumah',
+    'Sekolah',
+    'Makan',
+    'Minum',
+  ];
+
+  static const List<String> _fallbackJpGrammarOptions = [
+    'から',
+    'ので',
+    'ながら',
+    'てから',
+    'ば',
+    'たら',
+    'と',
+    'より',
+  ];
 
   static const List<String> _fallbackMeanings = [
     'study',

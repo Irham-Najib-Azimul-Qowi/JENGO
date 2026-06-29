@@ -1,37 +1,391 @@
 [
   {
     "id": 1,
-    "title": "NHK Easy News: 富士山の登山規制 (Peraturan Pendakian Gunung Fuji)",
+    "title": "JLPT N3: Fuji Registration Rules",
     "level": "N3",
-    "passage": "富士山に登る人が多すぎるため、山梨県は新しいルールを作りました。午後4時から次の日の午前3時までは、登山道を通ることができません。また、一人2000円の通行料を支払う必要があります。これは、安全を守るための大切なルールです。",
-    "translation": "Karena terlalu banyak orang yang mendaki Gunung Fuji, Prefektur Yamanashi membuat aturan baru. Pendaki tidak boleh melewati jalur pendakian dari jam 4 sore hingga jam 3 pagi keesokan harinya. Selain itu, pendaki wajib membayar biaya masuk sebesar 2000 yen per orang. Ini adalah aturan penting untuk menjaga keselamatan.",
+    "passage": "fujisan ni noboru hito ga oosugirunode, yamanashiken wa atarashii ruuru wo tsukurimashita. Gogo yojikara tsuginohino gozen sanji madewa, tozandou wo tooru koto ga dekimasen.",
+    "translation": "Prefektur Yamanashi membuat aturan baru untuk pendakian Gunung Fuji. Jalur pendakian ditutup dari jam 4 sore hingga jam 3 pagi.",
     "questions": [
       {
-        "question": "山梨県が新しいルールを作った理由は何ですか？",
+        "question": "Why did Yamanashi prefecture create new rules?",
         "options": [
-          "富士山に登る人が多すぎるため",
-          "お金が必要なため",
-          "天気が悪いため"
+          "The mountain was too cold",
+          "Too many people were climbing",
+          "The path was damaged",
+          "There was no ticket system"
         ],
-        "correct_answer_index": 0
+        "correct_answer_index": 1
+      },
+      {
+        "question": "When is the climbing path closed?",
+        "options": [
+          "From 8 pm to 5 am",
+          "From 4 pm to 3 am next day",
+          "All day on weekends",
+          "During summer only"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What fee must climbers pay?",
+        "options": [
+          "500 yen",
+          "1000 yen",
+          "2000 yen",
+          "Free"
+        ],
+        "correct_answer_index": 2
       }
     ]
   },
   {
     "id": 2,
-    "title": "JLPT N2 Reading: 日本の仕事文化 (Budaya Kerja di Jepang)",
+    "title": "JLPT N2: Japanese Environmental Policy",
     "level": "N2",
-    "passage": "近年、日本の企業では働き方改革が進められています。従来の長時間労働を見直し、テレワークやフレックスタイム制を導入する企業が増えています。これにより、従業員のワークライフバランスが向上することが期待されていますが、一方で社内のコミュニケーション不足などの課題も指摘されています。",
-    "translation": "Dalam beberapa tahun terakhir, reformasi cara kerja sedang gencar dilakukan di perusahaan-perusahaan Jepang. Jam kerja panjang tradisional mulai ditinjau ulang, dan semakin banyak perusahaan yang menerapkan sistem kerja jarak jauh (telework) serta jam kerja fleksibel. Melalui kebijakan ini, keseimbangan hidup dan kerja karyawan diharapkan dapat meningkat, namun di sisi lain, tantangan seperti kurangnya komunikasi internal juga turut disorot.",
+    "passage": "Japan has committed to achieving carbon neutrality by 2050 as part of its Green Growth Strategy. The government is investing heavily in hydrogen energy, offshore wind power, and next-generation solar cells. This transition requires collaboration between industry, academia, and government to develop innovative technologies.",
+    "translation": "Jepang berkomitmen mencapai netralitas karbon pada 2050. Pemerintah berinvestasi dalam energi hidrogen, angin lepas pantai, dan sel surya generasi berikutnya.",
     "questions": [
       {
-        "question": "働き方改革の導入によって期待されていることは何ですか？",
+        "question": "By when has Japan committed to carbon neutrality?",
         "options": [
-          "従業員のワークライフバランスの向上",
-          "社内コミュニケーションの増加",
-          "労働時間の延長"
+          "2030",
+          "2040",
+          "2050",
+          "2060"
         ],
-        "correct_answer_index": 0
+        "correct_answer_index": 2
+      },
+      {
+        "question": "Which energy type is mentioned in Japan Green Growth Strategy?",
+        "options": [
+          "Nuclear only",
+          "Hydrogen energy",
+          "Coal power",
+          "Oil refining"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What collaboration does the transition require?",
+        "options": [
+          "Only private sector",
+          "Only government action",
+          "Industry, academia, and government",
+          "International organizations only"
+        ],
+        "correct_answer_index": 2
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "JLPT N4: Japanese Train System",
+    "level": "N4",
+    "passage": "Japan train system is one of the most punctual in the world. Trains arrive and depart within seconds of their scheduled time. The Shinkansen bullet train can reach speeds of over 300 kilometers per hour, connecting major cities efficiently. IC cards like Suica and PASMO make traveling very convenient.",
+    "translation": "Sistem kereta Jepang sangat tepat waktu. Shinkansen mencapai kecepatan lebih dari 300 km/jam, menghubungkan kota-kota besar. Kartu IC seperti Suica dan PASMO memudahkan perjalanan.",
+    "questions": [
+      {
+        "question": "What is Japan train system known for?",
+        "options": [
+          "Being the fastest in the world",
+          "Being the most punctual in the world",
+          "Being the cheapest in Asia",
+          "Having the most stations"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "How fast can Shinkansen travel?",
+        "options": [
+          "Over 200 km/h",
+          "Over 300 km/h",
+          "Over 400 km/h",
+          "Over 500 km/h"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What are Suica and PASMO?",
+        "options": [
+          "Restaurant chains",
+          "IC cards for convenient travel",
+          "Train models",
+          "Tourist agencies"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "JLPT N5: Daily Life in Japan",
+    "level": "N5",
+    "passage": "In Japan, people follow many daily customs. They remove their shoes before entering a home. They bow when greeting someone as a sign of respect. Trains and buses are very quiet and passengers do not talk on the phone. People separate garbage into different categories for recycling.",
+    "translation": "Di Jepang, orang melepas sepatu sebelum masuk rumah, membungkuk saat menyapa, menjaga ketenangan di transportasi umum, dan memisahkan sampah untuk daur ulang.",
+    "questions": [
+      {
+        "question": "What do people in Japan do before entering a home?",
+        "options": [
+          "Wash their hands",
+          "Remove their shoes",
+          "Ring a bell",
+          "Say a prayer"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What is bowing used for in Japan?",
+        "options": [
+          "Prayer ritual",
+          "Exercise routine",
+          "Sign of respect when greeting",
+          "Dance performance"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "How do Japanese people handle garbage?",
+        "options": [
+          "Throw everything together",
+          "Separate into categories for recycling",
+          "Burn it at home",
+          "Leave it on the street"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "JLPT N3: Japanese School System",
+    "level": "N3",
+    "passage": "Japanese students attend school six days a week and have very demanding schedules. Elementary school lasts six years, junior high school three years, and high school three years. After high school, many students prepare intensively for university entrance examinations. Club activities after school are important for developing social skills.",
+    "translation": "Siswa Jepang sekolah 6 hari seminggu. SD 6 tahun, SMP 3 tahun, SMA 3 tahun. Banyak yang mempersiapkan ujian masuk universitas secara intensif. Kegiatan klub penting untuk pengembangan sosial.",
+    "questions": [
+      {
+        "question": "How many days per week do Japanese students attend school?",
+        "options": [
+          "4 days",
+          "5 days",
+          "6 days",
+          "7 days"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "How many years does elementary school last in Japan?",
+        "options": [
+          "4 years",
+          "5 years",
+          "6 years",
+          "7 years"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What are club activities important for?",
+        "options": [
+          "University credit",
+          "Developing social skills",
+          "Physical fitness only",
+          "Earning income"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "JLPT N4: Japanese Food Culture",
+    "level": "N4",
+    "passage": "Japanese cuisine, known as washoku, was recognized as UNESCO Intangible Cultural Heritage in 2013. It emphasizes fresh seasonal ingredients, beautiful presentation, and umami flavor. Popular dishes include sushi, ramen, tempura, and udon. The Japanese tradition of saying itadakimasu before eating shows gratitude for the food.",
+    "translation": "Masakan Jepang (washoku) diakui sebagai Warisan Budaya Tidak Benda UNESCO pada 2013. Menekankan bahan segar musiman, penyajian indah, dan rasa umami. Tradisi itadakimasu menunjukkan rasa syukur.",
+    "questions": [
+      {
+        "question": "When was washoku recognized as UNESCO heritage?",
+        "options": [
+          "2010",
+          "2013",
+          "2015",
+          "2018"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What does Japanese cuisine emphasize?",
+        "options": [
+          "Spicy flavor and large portions",
+          "Fresh seasonal ingredients and umami",
+          "Heavy use of dairy products",
+          "Only raw foods"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What does saying itadakimasu before eating show?",
+        "options": [
+          "Religious prayer",
+          "Gratitude for the food",
+          "Signal to the chef",
+          "Order confirmation"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "JLPT N3: Japanese Work Culture",
+    "level": "N3",
+    "passage": "Japan has long been known for its intense work culture, where employees often stay long after official working hours end. The concept of karoshi, or death from overwork, became a serious social issue in the 1980s. In recent years, the Japanese government has implemented work style reforms encouraging shorter hours, remote work, and mandatory paid leave usage.",
+    "translation": "Budaya kerja Jepang dikenal intensif dengan kerja lembur. Konsep karoshi (mati karena kelebihan kerja) menjadi isu sosial. Pemerintah menerapkan reformasi gaya kerja untuk mendorong jam yang lebih pendek dan cuti berbayar.",
+    "questions": [
+      {
+        "question": "What is karoshi?",
+        "options": [
+          "Japanese holiday festival",
+          "Death from overwork",
+          "Type of Japanese tea",
+          "Workplace safety award"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "When did karoshi become a serious social issue?",
+        "options": [
+          "In the 1960s",
+          "In the 1970s",
+          "In the 1980s",
+          "In the 1990s"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What does the Japanese government encourage in work style reforms?",
+        "options": [
+          "Longer working hours",
+          "Shorter hours, remote work, and paid leave",
+          "Eliminating all overtime pay",
+          "Reducing salaries"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "JLPT N5: Seasons in Japan",
+    "level": "N5",
+    "passage": "Japan has four clear seasons. Spring is famous for cherry blossoms called sakura. Summer is hot and humid, with many festivals. Autumn brings beautiful red and orange leaves called koyo. Winter is cold and some areas get heavy snowfall. Japanese people celebrate each season with special foods and activities.",
+    "translation": "Jepang memiliki 4 musim yang jelas. Musim semi terkenal dengan sakura, musim panas panas dan lembab, musim gugur dengan koyo, dan musim dingin dengan salju di beberapa daerah.",
+    "questions": [
+      {
+        "question": "What is Japan spring famous for?",
+        "options": [
+          "Snow festivals",
+          "Cherry blossoms called sakura",
+          "Harvest festivals",
+          "Hot springs"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What is koyo?",
+        "options": [
+          "Japanese summer festival",
+          "Red and orange autumn leaves",
+          "Type of winter food",
+          "Spring cherry blossom event"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "How does Japan summer climate feel?",
+        "options": [
+          "Cold and dry",
+          "Mild and comfortable",
+          "Hot and humid",
+          "Warm and windy"
+        ],
+        "correct_answer_index": 2
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "JLPT N2: Japanese Technology Innovation",
+    "level": "N2",
+    "passage": "Japan has been a global leader in technological innovation for decades. Companies like Sony, Toyota, and Panasonic revolutionized consumer electronics and automotive industries. Japan also pioneered robotics technology, with industrial robots widely deployed in manufacturing. Currently, Japan is investing in AI and quantum computing research to maintain its technological edge.",
+    "translation": "Jepang menjadi pemimpin global dalam inovasi teknologi. Sony, Toyota, dan Panasonic merevolusi elektronik dan otomotif. Jepang kini berinvestasi dalam AI dan komputasi kuantum.",
+    "questions": [
+      {
+        "question": "Which Japanese company is mentioned in relation to automotive industry?",
+        "options": [
+          "Sony",
+          "Panasonic",
+          "Toyota",
+          "Honda"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What technology did Japan pioneer?",
+        "options": [
+          "Social media platforms",
+          "Robotics technology",
+          "Space tourism",
+          "Blockchain systems"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What is Japan currently investing in?",
+        "options": [
+          "Coal and oil extraction",
+          "AI and quantum computing research",
+          "Traditional farming methods",
+          "Tourism advertising"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "JLPT N4: Japanese Onsen Culture",
+    "level": "N4",
+    "passage": "Hot spring baths called onsen are an important part of Japanese culture. Japan has thousands of onsen resorts throughout the country, utilizing the natural geothermal heat from volcanic activity. Visiting onsen is considered relaxing and beneficial for health, helping with skin conditions, muscle pain, and stress. Traditional inns called ryokan often include onsen facilities.",
+    "translation": "Onsen (pemandian air panas) adalah bagian penting budaya Jepang. Ribuan resor onsen memanfaatkan panas geotermal. Mengunjungi onsen dianggap bermanfaat bagi kesehatan. Penginapan tradisional ryokan sering menyertakan fasilitas onsen.",
+    "questions": [
+      {
+        "question": "What are onsen?",
+        "options": [
+          "Japanese restaurants",
+          "Hot spring baths",
+          "Traditional markets",
+          "Cultural festivals"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What natural source heats onsen?",
+        "options": [
+          "Solar energy",
+          "River currents",
+          "Geothermal heat from volcanic activity",
+          "Wind power"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What are ryokan?",
+        "options": [
+          "Japanese fast food chains",
+          "Traditional inns that often include onsen",
+          "Sumo wrestling arenas",
+          "Buddhist temples"
+        ],
+        "correct_answer_index": 1
       }
     ]
   }

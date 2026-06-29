@@ -23,28 +23,6 @@ class FlashcardStudyScreen extends StatefulWidget {
   State<FlashcardStudyScreen> createState() => _FlashcardStudyScreenState();
 }
 
-class _HealthStatusHelper {
-  static Map<String, dynamic> getHealthData(Map<String, dynamic>? userData, int activeStage) {
-    if (userData == null) return {'hearts': 5, 'lagDays': 0};
-
-    final int startTimeMs = userData['start_time'] as int? ?? DateTime.now().millisecondsSinceEpoch;
-    final DateTime startTime = DateTime.fromMillisecondsSinceEpoch(startTimeMs);
-    final DateTime now = DateTime.now();
-
-    final int daysElapsed = now.difference(startTime).inDays;
-    final int progressDays = (activeStage - 1) * 30 + 12; // Simulasi hari ke-12
-    final int lagDays = daysElapsed - progressDays;
-
-    if (lagDays <= 0) return {'hearts': 5, 'lagDays': 0};
-
-    int lostHearts = (lagDays / 6).floor();
-    int currentHearts = 5 - lostHearts;
-    if (currentHearts < 0) currentHearts = 0;
-
-    return {'hearts': currentHearts, 'lagDays': lagDays};
-  }
-}
-
 class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
   final FlutterTts _flutterTts = FlutterTts();
   List<Map<String, dynamic>> _flashcards = [];
@@ -72,16 +50,29 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
 
     // 1. Tentukan difficulty level berdasarkan stage dan bahasa
     List<String> diffLevels = [];
+    String additionalWhere = "";
     if (widget.language == 'JAPANESE') {
       if (targetStage == 1) {
         diffLevels = ['HIRAGANA'];
+        additionalWhere = " AND id <= 100025";
       } else if (targetStage == 2) {
+        diffLevels = ['HIRAGANA'];
+        additionalWhere = " AND id > 100025";
+      } else if (targetStage == 3) {
+        diffLevels = ['HIRAGANA'];
+      } else if (targetStage == 4) {
         diffLevels = ['KATAKANA'];
-      } else if (targetStage >= 3 && targetStage <= 4) {
+        additionalWhere = " AND id <= 100100";
+      } else if (targetStage == 5) {
+        diffLevels = ['KATAKANA'];
+        additionalWhere = " AND id > 100100";
+      } else if (targetStage == 6) {
+        diffLevels = ['HIRAGANA', 'KATAKANA'];
+      } else if (targetStage >= 7 && targetStage <= 13) {
         diffLevels = ['N5'];
-      } else if (targetStage >= 5 && targetStage <= 6) {
+      } else if (targetStage >= 14 && targetStage <= 15) {
         diffLevels = ['N4'];
-      } else if (targetStage >= 7 && targetStage <= 12) {
+      } else if (targetStage >= 16 && targetStage <= 18) {
         diffLevels = ['N3'];
       } else {
         diffLevels = ['N2', 'N1'];
@@ -109,45 +100,94 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
       
       // Hitung total kata yang tersedia untuk level ini
       final countResults = await db.rawQuery(
-        'SELECT COUNT(*) as total FROM vocabulary WHERE language = ? AND difficulty_level IN ($placeholders)',
+        'SELECT COUNT(*) as total FROM vocabulary WHERE language = ? AND difficulty_level IN ($placeholders)$additionalWhere',
         [widget.language, ...diffLevels],
       );
       int totalCount = Sqflite.firstIntValue(countResults) ?? 0;
       
       int wordsPerDay = 10;
       int lessonIndex = (targetStage - 1) * 30 + (targetDay - 1);
-      int offset = 0;
+      
+      // Muat kata Hari ini
+      int offsetToday = 0;
       if (totalCount > 0) {
-        offset = (lessonIndex * wordsPerDay) % totalCount;
+        offsetToday = (lessonIndex * wordsPerDay) % totalCount;
       }
-
-      final results = await db.query(
+      final resultsToday = await db.query(
         'vocabulary',
-        where: 'language = ? AND difficulty_level IN ($placeholders)',
+        where: 'language = ? AND difficulty_level IN ($placeholders)$additionalWhere',
         whereArgs: [widget.language, ...diffLevels],
         orderBy: 'id ASC',
         limit: wordsPerDay,
-        offset: offset,
+        offset: offsetToday,
       );
-      dueWords = List<Map<String, dynamic>>.from(results);
+      
+      List<Map<String, dynamic>> combined = List<Map<String, dynamic>>.from(resultsToday);
+      
+      // Muat kata ulasan Hari Kemarin (jika lessonIndex > 0)
+      if (lessonIndex > 0) {
+        int offsetYesterday = 0;
+        if (totalCount > 0) {
+          offsetYesterday = ((lessonIndex - 1) * wordsPerDay) % totalCount;
+        }
+        final resultsYesterday = await db.query(
+          'vocabulary',
+          where: 'language = ? AND difficulty_level IN ($placeholders)$additionalWhere',
+          whereArgs: [widget.language, ...diffLevels],
+          orderBy: 'id ASC',
+          limit: wordsPerDay,
+          offset: offsetYesterday,
+        );
+        combined.addAll(resultsYesterday);
+      }
+      
+      dueWords = combined;
     }
 
     // Fallback jika kosong
     if (dueWords.isEmpty) {
-      final results = await db.query(
+      int wordsPerDay = 10;
+      int lessonIndex = (targetStage - 1) * 30 + (targetDay - 1);
+      final resultsToday = await db.query(
         'vocabulary',
         where: 'language = ?',
         whereArgs: [widget.language],
-        limit: 10,
+        limit: wordsPerDay,
+        offset: lessonIndex * wordsPerDay,
       );
-      dueWords = List<Map<String, dynamic>>.from(results);
+      List<Map<String, dynamic>> combined = List<Map<String, dynamic>>.from(resultsToday);
+      
+      if (lessonIndex > 0) {
+        final resultsYesterday = await db.query(
+          'vocabulary',
+          where: 'language = ?',
+          whereArgs: [widget.language],
+          limit: wordsPerDay,
+          offset: (lessonIndex - 1) * wordsPerDay,
+        );
+        combined.addAll(resultsYesterday);
+      }
+      dueWords = combined;
     }
+
+    // Filter out empty entries
+    dueWords = dueWords.where((v) {
+      final w = (v['word'] ?? '').toString().trim();
+      final t = (v['translation'] ?? '').toString().trim();
+      return w.isNotEmpty && t.isNotEmpty;
+    }).toList();
 
     if (mounted) {
       setState(() {
         _flashcards = dueWords;
         _isLoading = false;
       });
+      // Auto-speak the first card word when loaded
+      if (dueWords.isNotEmpty) {
+        Future.delayed(const Duration(milliseconds: 500), () {
+          _speak(dueWords.first['word']!);
+        });
+      }
     }
   }
 
@@ -290,7 +330,38 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                             _isFlipped ? 'TERJEMAHAN / ARTI' : 'KOSAKATA / KANA',
                             style: const TextStyle(color: AppTheme.textSecondary, fontSize: 12, letterSpacing: 1.5),
                           ),
-                          const SizedBox(height: 20),
+                          // Romaji policy badge
+                          if (isJapanese) ...[
+                            const SizedBox(height: 4),
+                            Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                              decoration: BoxDecoration(
+                                color: widget.stage <= 6
+                                    ? AppTheme.neonBlue.withOpacity(0.15)
+                                    : widget.stage <= 12
+                                        ? Colors.orange.withOpacity(0.15)
+                                        : Colors.red.withOpacity(0.10),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Text(
+                                widget.stage <= 6
+                                    ? '🔤 Romaji Aktif'
+                                    : widget.stage <= 12
+                                        ? '🔤 Romaji di Balik Kartu'
+                                        : '🎯 Mode Tanpa Romaji',
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: widget.stage <= 6
+                                      ? AppTheme.neonBlue
+                                      : widget.stage <= 12
+                                          ? Colors.orange
+                                          : Colors.redAccent,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ],
+                          const SizedBox(height: 16),
                           if (!_isFlipped) ...[
                             Text(
                               currentCard['word']!,
@@ -298,29 +369,41 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                               textAlign: TextAlign.center,
                             ),
                             if (isJapanese) ...[
-                              if (!isHiraganaKatakana) ...[
-                                if (currentCard['reading'] != null && currentCard['reading'].toString().isNotEmpty) ...[
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    '[ ${currentCard['reading']} ]',
-                                    style: const TextStyle(fontSize: 18, color: AppTheme.textSecondary),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  const SizedBox(height: 6),
-                                  Text(
-                                    'Cara baca: ${KanaHelper.toRomaji(currentCard['reading']!)}',
-                                    style: const TextStyle(fontSize: 16, color: AppTheme.neonBlue, fontWeight: FontWeight.w500),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ] else ...[
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    'Cara baca: ${KanaHelper.toRomaji(currentCard['word']!)}',
-                                    style: const TextStyle(fontSize: 16, color: AppTheme.neonBlue, fontWeight: FontWeight.w500),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ]
-                              ]
+                              // Show reading/furigana for stages 1-12 only
+                              if (widget.stage <= 12) ...[
+                                if (!isHiraganaKatakana) ...[
+                                  if (currentCard['reading'] != null && currentCard['reading'].toString().isNotEmpty) ...[
+                                    const SizedBox(height: 8),
+                                    Text(
+                                      '[ ${currentCard['reading']} ]',
+                                      style: const TextStyle(fontSize: 18, color: AppTheme.textSecondary),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ],
+                                ],
+                              ],
+                              // Show Romaji on FRONT only for stages 1-6
+                              if (widget.stage <= 6) ...[
+                                const SizedBox(height: 6),
+                                Text(
+                                  isHiraganaKatakana
+                                      ? 'Cara baca: ${KanaHelper.toRomaji(currentCard['word']!)}'
+                                      : currentCard['reading'] != null && currentCard['reading'].toString().isNotEmpty
+                                          ? 'Cara baca: ${KanaHelper.toRomaji(currentCard['reading']!)}'
+                                          : 'Cara baca: ${KanaHelper.toRomaji(currentCard['word']!)}',
+                                  style: const TextStyle(fontSize: 16, color: AppTheme.neonBlue, fontWeight: FontWeight.w500),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                              // Hint for stages 7-12 (flip to see romaji)
+                              if (widget.stage >= 7 && widget.stage <= 12) ...[
+                                const SizedBox(height: 8),
+                                const Text(
+                                  '👆 Balik kartu untuk melihat cara baca',
+                                  style: TextStyle(fontSize: 11, color: AppTheme.textSecondary, fontStyle: FontStyle.italic),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
                             ],
                           ] else ...[
                             Text(
@@ -328,19 +411,50 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                               style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
                               textAlign: TextAlign.center,
                             ),
-                            if (isJapanese && (currentCard['difficulty_level'] == 'HIRAGANA' || currentCard['difficulty_level'] == 'KATAKANA')) ...[
+                            // Show Romaji on BACK for stages 1-12
+                            if (isJapanese && widget.stage <= 12) ...[
                               const SizedBox(height: 12),
                               Text(
-                                'Cara baca: ${KanaHelper.toRomaji(currentCard['word']!)}',
+                                isHiraganaKatakana
+                                    ? 'Cara baca: ${KanaHelper.toRomaji(currentCard['word']!)}'
+                                    : currentCard['reading'] != null && currentCard['reading'].toString().isNotEmpty
+                                        ? 'Cara baca: ${KanaHelper.toRomaji(currentCard['reading']!)}'
+                                        : 'Cara baca: ${KanaHelper.toRomaji(currentCard['word']!)}',
                                 style: const TextStyle(fontSize: 18, color: AppTheme.neonBlue, fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
                             ],
-                            const SizedBox(height: 24),
+                            const SizedBox(height: 16),
                             Text(
                               'Level: ${currentCard['difficulty_level']}',
                               style: TextStyle(color: accentColor, fontWeight: FontWeight.bold, fontSize: 14),
                             ),
+                            // Show example sentence if available
+                            if ((currentCard['example_sentence'] ?? '').toString().trim().isNotEmpty) ...[
+                              const SizedBox(height: 16),
+                              Container(
+                                padding: const EdgeInsets.all(12),
+                                decoration: BoxDecoration(
+                                  color: accentColor.withValues(alpha: 0.08),
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(color: accentColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      '📝 Contoh Kalimat',
+                                      style: TextStyle(fontSize: 11, color: accentColor, fontWeight: FontWeight.bold, letterSpacing: 1),
+                                    ),
+                                    const SizedBox(height: 6),
+                                    Text(
+                                      currentCard['example_sentence'].toString(),
+                                      style: const TextStyle(fontSize: 13, color: AppTheme.textPrimary, fontStyle: FontStyle.italic),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ],
                           const SizedBox(height: 32),
                           Icon(

@@ -1,39 +1,401 @@
 [
   {
     "id": 1,
-    "title": "Percakapan N3: Stasiun Kereta Api",
+    "title": "JLPT N3: Conversation about Weekend Plans",
     "level": "N3",
-    "audio": "stasiun_kereta.mp3",
-    "transcript": "男の人と女の人が話しています。男の人はどの電車に乗りますか？\n男：すみません、新宿行きの急行はどれですか？\n女：あそこに見える3番線の電車ですよ。もうすぐ発車します。",
-    "translation": "Seorang pria dan wanita sedang berbicara. Kereta mana yang akan dinaiki pria tersebut?\nPria: Permisi, yang mana kereta ekspres tujuan Shinjuku?\nWanita: Itu kereta di peron 3 yang terlihat di sana. Keretanya akan segera berangkat.",
+    "audio": "jp_weekend_plans.mp3",
+    "transcript": "A: Konshuu no shuumatsu, nani wo suru tsumori desu ka? B: Tomodachi to umi ni iku yotei desu. Anata wa? A: Watashi wa uchi de yasumu tsumori desu. Saikin tsukarete imasu.",
+    "translation": "A: Apa rencanamu akhir pekan ini? B: Saya berencana pergi ke pantai dengan teman. A: Saya berencana istirahat di rumah. Belakangan ini saya kelelahan.",
     "questions": [
       {
-        "question": "男の人は何番線の電車に乗りますか？",
+        "question": "Where does person B plan to go this weekend?",
         "options": [
-          "1番線",
-          "2番線",
-          "3番線"
+          "Mountains",
+          "Beach",
+          "Shopping mall",
+          "Library"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "Who will person B go with?",
+        "options": [
+          "Family",
+          "Colleagues",
+          "Friends",
+          "Alone"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "Why does person A want to stay home?",
+        "options": [
+          "They are sick",
+          "They are tired",
+          "They have homework",
+          "They have no money"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "JLPT N4: Shopping Conversation",
+    "level": "N4",
+    "audio": "jp_shopping.mp3",
+    "transcript": "Kyaku: Sumimasen, kono seetaa wa ikura desu ka? Tenin: San-zen-en desu. Kyaku: Sukoshi takai desu ne. Waribiki wa arimasu ka? Tenin: Hai, kyou wa ni-wari-biki desu. Ni-sen-yonhyaku-en ni narimasu.",
+    "translation": "Pelanggan: Permisi, berapa harga sweater ini? Penjual: 3.000 yen. Pelanggan: Agak mahal ya. Ada diskon? Penjual: Ya, hari ini diskon 20%. Menjadi 2.400 yen.",
+    "questions": [
+      {
+        "question": "What is the original price of the sweater?",
+        "options": [
+          "2,000 yen",
+          "2,400 yen",
+          "3,000 yen",
+          "3,500 yen"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What is the discount percentage today?",
+        "options": [
+          "10%",
+          "15%",
+          "20%",
+          "30%"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What is the final price after the discount?",
+        "options": [
+          "2,000 yen",
+          "2,400 yen",
+          "2,700 yen",
+          "3,000 yen"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "JLPT N2: University Lecture on Japanese History",
+    "level": "N2",
+    "audio": "jp_history_lecture.mp3",
+    "transcript": "The Meiji Restoration of 1868 marked a fundamental transformation in Japanese society. The feudal samurai system was abolished, and Japan rapidly modernized by adopting Western technology, institutions, and educational systems. Within a few decades, Japan emerged as a major industrial and military power in Asia.",
+    "translation": "Restorasi Meiji 1868 menandai transformasi mendasar masyarakat Jepang. Sistem samurai feodal dihapuskan. Jepang memodernisasi diri dengan mengadopsi teknologi Barat dan menjadi kekuatan besar di Asia.",
+    "questions": [
+      {
+        "question": "When did the Meiji Restoration occur?",
+        "options": [
+          "1858",
+          "1868",
+          "1878",
+          "1888"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What system was abolished during the Meiji Restoration?",
+        "options": [
+          "The imperial court system",
+          "The feudal samurai system",
+          "The merchant class system",
+          "The agricultural system"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What did Japan adopt to modernize rapidly?",
+        "options": [
+          "Chinese cultural practices",
+          "Western technology and institutions",
+          "Korean administrative systems",
+          "American military tactics"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "JLPT N5: Directions Conversation",
+    "level": "N5",
+    "audio": "jp_directions.mp3",
+    "transcript": "A: Sumimasen, eki wa doko desu ka? B: Massugu itte, migi ni magatte kudasai. Soko ni arimasu. A: Arigato gozaimasu. Tooi desu ka? B: Iie, aruite go-fun gurai desu.",
+    "translation": "A: Permisi, di mana stasiun? B: Jalan lurus, lalu belok kanan. Di sana. A: Terima kasih. Apakah jauh? B: Tidak, sekitar 5 menit berjalan kaki.",
+    "questions": [
+      {
+        "question": "What is person A looking for?",
+        "options": [
+          "A restaurant",
+          "A hospital",
+          "The station",
+          "A convenience store"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "Which direction should person A turn?",
+        "options": [
+          "Left",
+          "Right",
+          "Straight ahead only",
+          "Behind them"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "How long is the walk to the station?",
+        "options": [
+          "2 minutes",
+          "5 minutes",
+          "10 minutes",
+          "15 minutes"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "JLPT N3: Job Interview Conversation",
+    "level": "N3",
+    "audio": "jp_job_interview.mp3",
+    "transcript": "Mensetsusha: Daigaku de nani wo benkyou shimashita ka? Oubosya: Keizaigaku wo senkoo shimashita. Mensetsusha: Naze uchi no kaisha ni oushi ni narimashita ka? Oubosya: Gijutsu to kankyou mondai ni kyoumi ga ari, kaihatsu jigyou ni sanka shitai to omoimashita.",
+    "translation": "Pewawancara: Apa yang Anda pelajari di universitas? Pelamar: Saya mengambil jurusan ekonomi. Pewawancara: Mengapa Anda melamar ke perusahaan kami? Pelamar: Saya tertarik pada teknologi dan isu lingkungan, dan ingin berpartisipasi dalam proyek pengembangan.",
+    "questions": [
+      {
+        "question": "What did the applicant study at university?",
+        "options": [
+          "Engineering",
+          "Economics",
+          "Environmental science",
+          "Computer science"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What topics is the applicant interested in?",
+        "options": [
+          "Finance and marketing",
+          "Technology and environmental issues",
+          "History and culture",
+          "Language and communication"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What type of project does the applicant want to join?",
+        "options": [
+          "Research project",
+          "Marketing campaign",
+          "Development project",
+          "Education program"
         ],
         "correct_answer_index": 2
       }
     ]
   },
   {
-    "id": 2,
-    "title": "JLPT N2 Listening: Seminar Bisnis",
-    "level": "N2",
-    "audio": "seminar_bisnis.mp3",
-    "transcript": "セミナーで講師が話しています。新入社員に必要なことは何ですか？\n講師：新入社員にとって最も大切なのは、指示を待つだけでなく、自分で仕事を探す姿勢を持つことです。進んで質問をしましょう。",
-    "translation": "Seorang instruktur sedang berbicara di sebuah seminar. Apa yang dibutuhkan oleh karyawan baru?\nInstruktur: Hal yang paling penting bagi karyawan baru bukan hanya menunggu instruksi, tetapi memiliki sikap proaktif mencari pekerjaan sendiri. Mari berinisiatif untuk bertanya.",
+    "id": 6,
+    "title": "JLPT N4: Doctor Appointment",
+    "level": "N4",
+    "audio": "jp_doctor.mp3",
+    "transcript": "Isha: Kyou wa doo shimashita ka? Kanja: Kinou kara atama ga itakute, netsu mo arimasu. Isha: Netsu wa nan-do arimasu ka? Kanja: San-juu-hachi-do desu. Isha: Jaa, kusuri wo dashimasu. Yoku yasunde kudasai.",
+    "translation": "Dokter: Ada keluhan apa hari ini? Pasien: Sejak kemarin kepala saya sakit dan saya juga demam. Dokter: Suhunya berapa? Pasien: 38 derajat. Dokter: Baik, saya akan berikan obat. Silakan istirahat yang cukup.",
     "questions": [
       {
-        "question": "講師によると、新入社員にとって最も大切なことは何ですか？",
+        "question": "What symptoms does the patient have?",
         "options": [
-          "自分で仕事を探す姿勢を持つこと",
-          "指示を待つこと",
-          "静かに仕事を見ていること"
+          "Stomachache and cough",
+          "Headache and fever",
+          "Back pain and fatigue",
+          "Sore throat and runny nose"
         ],
-        "correct_answer_index": 0
+        "correct_answer_index": 1
+      },
+      {
+        "question": "Since when has the patient had these symptoms?",
+        "options": [
+          "This morning",
+          "Yesterday",
+          "Three days ago",
+          "Last week"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What is the patient temperature?",
+        "options": [
+          "37 degrees",
+          "38 degrees",
+          "39 degrees",
+          "40 degrees"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "JLPT N2: Lecture on Japanese Literature",
+    "level": "N2",
+    "audio": "jp_literature_lecture.mp3",
+    "transcript": "Natsume Soseki is considered one of Japan greatest writers. His novel Kokoro, published in 1914, explores themes of loneliness, guilt, and the transition from the Meiji to Taisho era. Soseki was the first Japanese author to appear on the 1000-yen banknote, reflecting his cultural significance to the nation.",
+    "translation": "Natsume Soseki dianggap sebagai salah satu penulis terbesar Jepang. Novel Kokoro yang diterbitkan 1914 mengeksplorasi tema kesepian dan rasa bersalah. Soseki adalah penulis Jepang pertama yang muncul di uang kertas 1000 yen.",
+    "questions": [
+      {
+        "question": "When was the novel Kokoro published?",
+        "options": [
+          "1904",
+          "1914",
+          "1924",
+          "1934"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What themes does Kokoro explore?",
+        "options": [
+          "Adventure and heroism",
+          "Loneliness, guilt, and era transition",
+          "Nature and seasons",
+          "War and politics"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What banknote did Natsume Soseki appear on?",
+        "options": [
+          "500-yen note",
+          "1000-yen note",
+          "5000-yen note",
+          "10000-yen note"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "JLPT N5: Restaurant Order",
+    "level": "N5",
+    "audio": "jp_restaurant.mp3",
+    "transcript": "Waiter: Irasshaimase! Go-chuumon wa? Customer: Ramen hitotsu to gyoza wo futatsu kudasai. Waiter: Nomi-mono wa ikaga desu ka? Customer: Ocha wo hitotsu onegaishimasu. Waiter: Kashikomarimashita.",
+    "translation": "Pelayan: Selamat datang! Mau pesan apa? Pelanggan: Tolong satu ramen dan dua gyoza. Pelayan: Bagaimana minumannya? Pelanggan: Tolong satu teh. Pelayan: Baik.",
+    "questions": [
+      {
+        "question": "What food does the customer order?",
+        "options": [
+          "Sushi and miso soup",
+          "Ramen and gyoza",
+          "Udon and tempura",
+          "Curry and rice"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "How many gyoza does the customer order?",
+        "options": [
+          "One",
+          "Two",
+          "Three",
+          "Four"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "What drink does the customer order?",
+        "options": [
+          "Coffee",
+          "Water",
+          "Juice",
+          "Tea"
+        ],
+        "correct_answer_index": 3
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "JLPT N3: News Report on Natural Disaster",
+    "level": "N3",
+    "audio": "jp_news_disaster.mp3",
+    "transcript": "Kyoo no nyuusu desu. Kyuushuu chihou de ookii jishin ga arimashita. Shindomu wa rokku deshita. Genchi de wa, tatemono ga kowaretari, douro ga kiretari shite iru to iu houkoku ga haitte imasu. Juumin wa anzen na basho ni hinan shite kudasai.",
+    "translation": "Berita hari ini. Terjadi gempa bumi besar di wilayah Kyushu. Intensitas gempa level 6. Dilaporkan ada bangunan rusak dan jalan terputus. Warga diminta mengungsi ke tempat yang aman.",
+    "questions": [
+      {
+        "question": "Where did the earthquake occur?",
+        "options": [
+          "Hokkaido",
+          "Tohoku",
+          "Kyushu",
+          "Okinawa"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What was the earthquake intensity level?",
+        "options": [
+          "Level 4",
+          "Level 5",
+          "Level 6",
+          "Level 7"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "What are residents advised to do?",
+        "options": [
+          "Stay indoors",
+          "Evacuate to a safe place",
+          "Call the police",
+          "Drive to the hospital"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "JLPT N4: Train Announcement",
+    "level": "N4",
+    "audio": "jp_train_announcement.mp3",
+    "transcript": "Okyakusama ni oshire itashimasu. Jinshin jiko no eikyou ni yori, chuuou-sen wa genzai unten wo chuushi shite orimasu. Unten saikai no medo wa tachite orimasen. Taihen gomeiwaku wo okake itashimasu.",
+    "translation": "Pengumuman untuk penumpang. Karena insiden orang ditabrak kereta, jalur Chuo saat ini menghentikan operasi. Belum ada perkiraan kapan operasi akan dilanjutkan. Kami mohon maaf atas ketidaknyamanannya.",
+    "questions": [
+      {
+        "question": "Why has the train stopped operating?",
+        "options": [
+          "Track maintenance",
+          "Human incident on the tracks",
+          "Equipment failure",
+          "Weather conditions"
+        ],
+        "correct_answer_index": 1
+      },
+      {
+        "question": "Which train line is affected?",
+        "options": [
+          "Yamanote Line",
+          "Sobu Line",
+          "Chuo Line",
+          "Keio Line"
+        ],
+        "correct_answer_index": 2
+      },
+      {
+        "question": "Is there an estimated time for service resumption?",
+        "options": [
+          "In 30 minutes",
+          "In one hour",
+          "In two hours",
+          "No estimate given"
+        ],
+        "correct_answer_index": 3
       }
     ]
   }

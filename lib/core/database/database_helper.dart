@@ -4,7 +4,7 @@ import 'dart:convert';
 
 class DatabaseHelper {
   static const _databaseName = "jengo.db";
-  static const _databaseVersion = 5;
+  static const _databaseVersion = 6;
 
   // Singleton Instance
   DatabaseHelper._privateConstructor();
@@ -29,7 +29,7 @@ class DatabaseHelper {
   }
 
   Future _onUpgrade(Database db, int oldVersion, int newVersion) async {
-    if (oldVersion < 5) {
+    if (oldVersion < 6) {
       await db.execute("DROP TABLE IF EXISTS gamification");
       await db.execute("DROP TABLE IF EXISTS chapters");
       await db.execute("DROP TABLE IF EXISTS vocabulary");
@@ -80,7 +80,8 @@ class DatabaseHelper {
         reading TEXT,
         translation TEXT NOT NULL,
         language TEXT NOT NULL, -- JAPANESE, ENGLISH
-        difficulty_level TEXT, -- N5, N4, N3, N2, etc.
+        difficulty_level TEXT, -- N5, N4, N3, N2, A1, A2, B1, B2, C1, HIRAGANA, KATAKANA
+        example_sentence TEXT DEFAULT '',
         box_level INTEGER DEFAULT 1, -- Leitner Box (1-5)
         next_review_time INTEGER NOT NULL -- Timestamp
       )
@@ -94,6 +95,7 @@ class DatabaseHelper {
         meaning TEXT NOT NULL,
         onyomi TEXT NOT NULL,
         kunyomi TEXT NOT NULL,
+        strokes INTEGER DEFAULT 0,
         level TEXT NOT NULL -- N5, N4, N3, N2
       )
     ''');
@@ -268,14 +270,30 @@ class DatabaseHelper {
     final db = await database;
     final batch = db.batch();
     for (var vocab in vocabList) {
+      final String word = (vocab['word'] ?? '').toString().trim();
+      final String translation = (vocab['meaning'] ?? vocab['translation'] ?? '').toString().trim();
+      // Lewati entri kosong
+      if (word.isEmpty || translation.isEmpty) continue;
+
+      // Ambil contoh kalimat pertama jika tersedia
+      String exampleSentence = '';
+      final examples = vocab['examples'];
+      if (examples is List && examples.isNotEmpty) {
+        final first = examples.first?.toString() ?? '';
+        if (!first.toLowerCase().contains('no example')) {
+          exampleSentence = first;
+        }
+      }
+
       batch.insert(
         'vocabulary',
         {
-          'word': vocab['word'],
-          'reading': vocab['reading'] ?? '',
-          'translation': vocab['meaning'] ?? '',
+          'word': word,
+          'reading': (vocab['reading'] ?? '').toString(),
+          'translation': translation,
           'language': language,
-          'difficulty_level': vocab['level'] ?? '',
+          'difficulty_level': (vocab['level'] ?? '').toString(),
+          'example_sentence': exampleSentence,
           'box_level': 1,
           'next_review_time': DateTime.now().millisecondsSinceEpoch,
         },
@@ -290,16 +308,19 @@ class DatabaseHelper {
     final db = await database;
     final batch = db.batch();
     for (var k in kanjiList) {
+      final String kanji = (k['kanji'] ?? '').toString().trim();
+      final String meaning = (k['meaning'] ?? '').toString().trim();
+      if (kanji.isEmpty || meaning.isEmpty) continue;
       batch.insert(
         'kanji',
         {
           'id': k['id'],
-          'kanji': k['kanji'],
-          'level': k['level'],
-          'meaning': k['meaning'],
-          'onyomi': k['onyomi'],
-          'kunyomi': k['kunyomi'],
-          'strokes': k['strokes']
+          'kanji': kanji,
+          'level': (k['level'] ?? 'N5').toString(),
+          'meaning': meaning,
+          'onyomi': (k['onyomi'] ?? '').toString(),
+          'kunyomi': (k['kunyomi'] ?? '').toString(),
+          'strokes': k['strokes'] is int ? k['strokes'] : 0,
         },
         conflictAlgorithm: ConflictAlgorithm.replace,
       );
