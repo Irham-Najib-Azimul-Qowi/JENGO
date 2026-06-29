@@ -4,7 +4,7 @@ import 'dart:convert';
 
 class DatabaseHelper {
   static const _databaseName = "jengo.db";
-  static const _databaseVersion = 7;
+  static const _databaseVersion = 8;
 
   // Singleton Instance
   DatabaseHelper._privateConstructor();
@@ -51,6 +51,9 @@ class DatabaseHelper {
       final currentDay = user['current_day'] as int? ?? 1;
       await _seedLanguageProgress(db,
           currentStage: currentStage, currentDay: currentDay);
+    }
+    if (oldVersion < 8) {
+      await _refreshChapterCurriculum(db);
     }
   }
 
@@ -228,6 +231,20 @@ class DatabaseHelper {
     }
   }
 
+  Future<void> _refreshChapterCurriculum(Database db) async {
+    for (int i = 1; i <= 20; i++) {
+      await db.update(
+        'chapters',
+        {
+          'title': _getStageTitle(i),
+          'description': _getStageDescription(i),
+        },
+        where: 'chapter_number = ?',
+        whereArgs: [i],
+      );
+    }
+  }
+
   Future<void> _createLanguageProgressTable(Database db) async {
     await db.execute('''
       CREATE TABLE IF NOT EXISTS language_progress (
@@ -346,90 +363,90 @@ class DatabaseHelper {
   String _getStageTitle(int i) {
     switch (i) {
       case 1:
-        return "Stage 1: Hiragana & Basic English Vocab";
+        return "Stage 1: Hiragana Dasar / English A1 Sounds";
       case 2:
-        return "Stage 2: Katakana & A1 Practice";
+        return "Stage 2: Hiragana Lanjutan / English A1 Words";
       case 3:
-        return "Stage 3: N5 Vocabulary & A2 English";
+        return "Stage 3: Review Hiragana / English A1 Review";
       case 4:
-        return "Stage 4: Basic Conversational Japanese";
+        return "Stage 4: Katakana Dasar / English A1 Phrases";
       case 5:
-        return "Stage 5: N4 Vocabulary & B1 English";
+        return "Stage 5: Katakana Lanjutan / English A2 Words";
       case 6:
-        return "Stage 6: N4 Grammar & Particles";
+        return "Stage 6: Review Kana / English A2 Review";
       case 7:
-        return "Stage 7: Kanji Introduction & B2 English";
+        return "Stage 7: Kosakata Dasar / English Daily Vocab";
       case 8:
-        return "Stage 8: Kanji Radicals & Sentence Building";
+        return "Stage 8: Salam & Ungkapan / English Greetings";
       case 9:
-        return "Stage 9: N3 Vocabulary & Grammar";
+        return "Stage 9: Angka & Jumlah / English Numbers";
       case 10:
-        return "Stage 10: Intermediate Japanese Drills";
+        return "Stage 10: Hari & Waktu / English Time";
       case 11:
-        return "Stage 11: Kanji Mastery (N3)";
+        return "Stage 11: Warna & Sifat / English Adjectives";
       case 12:
-        return "Stage 12: Complex Grammar (N3-N2)";
+        return "Stage 12: Kata Benda Sederhana / English Nouns";
       case 13:
-        return "Stage 13: N2 Vocabulary & Academic English";
+        return "Stage 13: Kalimat Dasar / English Basic Sentences";
       case 14:
-        return "Stage 14: N2 Grammar Points";
+        return "Stage 14: Partikel Dasar / English Basic Grammar";
       case 15:
-        return "Stage 15: Advanced Kanji (N2)";
+        return "Stage 15: Kanji N5 Awal / English Intermediate Vocab";
       case 16:
-        return "Stage 16: JLPT N2 & IELTS Prep";
+        return "Stage 16: Kanji & Pola N5 / English Paragraphs";
       case 17:
-        return "Stage 17: Mock Exam Focus (JLPT & IELTS)";
+        return "Stage 17: N4 Bridge / IELTS Foundation";
       case 18:
-        return "Stage 18: Advanced Contextual Training";
+        return "Stage 18: N3 Bridge / IELTS Skills";
       case 19:
-        return "Stage 19: Certification Readiness";
+        return "Stage 19: N2 Readiness / IELTS Mock Skills";
       default:
-        return "Stage 20: Final Mastery & Graduation";
+        return "Stage 20: Final Certification Readiness";
     }
   }
 
   String _getStageDescription(int i) {
     switch (i) {
       case 1:
-        return "JP: Hiragana Flashcards & basic characters. EN: A1 Vocabulary & grammar foundation.";
+        return "JP: A-I-U-E-O, hiragana dasar, audio, romaji penuh, arti Indonesia. EN: bunyi, kata paling dasar, instruksi sederhana.";
       case 2:
-        return "JP: Katakana Flashcards & simple pronunciation. EN: A1 Reading & listening comprehension.";
+        return "JP: Hiragana lanjutan dengan audio, romaji penuh, dan pengenalan bentuk mirip. EN: kosakata A1 sehari-hari.";
       case 3:
-        return "JP: N5 Vocabulary Flashcards & simple particles. EN: A2 Vocabulary & typing drills.";
+        return "JP: Review semua hiragana tanpa kalimat kompleks. EN: review A1 dengan pilihan jawaban.";
       case 4:
-        return "JP: N5 Daily verbs & mixed drills. EN: A2 Reading, writing & speaking.";
+        return "JP: Katakana dasar, audio, romaji penuh, arti Indonesia. EN: frasa A1 pendek.";
       case 5:
-        return "JP: N4 Vocabulary Flashcards & past tense verbs. EN: B1 Vocabulary & dictation.";
+        return "JP: Katakana lanjutan dan kata serapan sangat sederhana. EN: kosakata A2 bertahap.";
       case 6:
-        return "JP: N4 Grammar points & mixed listening. EN: B1 Business vocab & writing prompt.";
+        return "JP: Review kana campuran hiragana-katakana. Belum masuk grammar atau bacaan panjang. EN: review A2.";
       case 7:
-        return "JP: Basic N3 Kanji characters. EN: B2 High-frequency academic vocabulary.";
+        return "JP: Kosakata dasar N5 dengan kana/romaji bantuan. EN: daily vocabulary tanpa grammar kompleks.";
       case 8:
-        return "JP: Radical writing & reading passages. EN: B2 Active reading & speaking shadowing.";
+        return "JP: Salam, ungkapan umum, dan respons pendek. EN: greetings and simple responses.";
       case 9:
-        return "JP: N3 Vocabulary Flashcards & honorifics. EN: Advanced vocabulary expansion.";
+        return "JP: Angka, jumlah, umur, harga sederhana. EN: numbers and quantities.";
       case 10:
-        return "JP: Mixed listening & reading drills. EN: Speaking & writing self-evaluation.";
+        return "JP: Hari, tanggal, jam, dan rutinitas sangat pendek. EN: days, dates, and time.";
       case 11:
-        return "JP: Kanji compound flashcards & onyomi/kunyomi. EN: Essay writing & dictation.";
+        return "JP: Warna, sifat sederhana, benda sekitar. EN: basic adjectives.";
       case 12:
-        return "JP: Complex Grammar (N3-N2). EN: Academic listening & reading comprehension.";
+        return "JP: Kata benda sederhana dan pasangan kata. EN: simple nouns and collocations.";
       case 13:
-        return "JP: N2 Vocabulary Flashcards. EN: Advanced IELTS vocabulary drills.";
+        return "JP: Kalimat dasar pola A wa B desu, kore/sore/are. EN: simple sentence building.";
       case 14:
-        return "JP: N2 Grammar rules & context matching. EN: IELTS Academic writing practices.";
+        return "JP: Partikel dasar wa, ga, o, ni, de dengan contoh pendek. EN: grammar foundation.";
       case 15:
-        return "JP: N2 Kanji character writing & reading. EN: IELTS Listening & dictation.";
+        return "JP: Kanji N5 awal setelah kana dan kosakata dasar cukup kuat. EN: intermediate vocabulary.";
       case 16:
-        return "JP: N2 Mock Exam drills & reading. EN: IELTS Speaking & writing mocks.";
+        return "JP: Kanji N5, pola N5, dan bacaan sangat pendek. EN: short paragraphs.";
       case 17:
-        return "JP: Full-length N2 reading/listening. EN: IELTS band 8.0 prep & evaluations.";
+        return "JP: Transisi N4 dengan listening dan reading pendek. EN: IELTS foundation tasks.";
       case 18:
-        return "JP: News reading & audio transcription. EN: IELTS Reading & academic speaking.";
+        return "JP: Transisi N3 bertahap, romaji makin dikurangi. EN: IELTS reading/listening skills.";
       case 19:
-        return "JP: Simulated JLPT N2 timed test. EN: IELTS band 8.0 full mock test.";
+        return "JP: Kesiapan N2 dengan latihan terarah. EN: IELTS mock skills and band estimation.";
       default:
-        return "JP: JLPT N2 final checkpoint. EN: IELTS Band 8.0 graduation checkpoint.";
+        return "JP: Final checkpoint menuju JLPT N2. EN: final checkpoint menuju IELTS target.";
     }
   }
 

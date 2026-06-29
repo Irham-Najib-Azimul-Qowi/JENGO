@@ -62,20 +62,20 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
         diffLevels = ['HIRAGANA'];
       } else if (targetStage == 4) {
         diffLevels = ['KATAKANA'];
-        additionalWhere = " AND id <= 100100";
+        additionalWhere = " AND id <= 100071";
       } else if (targetStage == 5) {
         diffLevels = ['KATAKANA'];
-        additionalWhere = " AND id > 100100";
+        additionalWhere = " AND id > 100071";
       } else if (targetStage == 6) {
         diffLevels = ['HIRAGANA', 'KATAKANA'];
-      } else if (targetStage >= 7 && targetStage <= 13) {
+      } else if (targetStage >= 7 && targetStage <= 16) {
         diffLevels = ['N5'];
-      } else if (targetStage >= 14 && targetStage <= 15) {
+      } else if (targetStage == 17) {
         diffLevels = ['N4'];
-      } else if (targetStage >= 16 && targetStage <= 18) {
+      } else if (targetStage == 18) {
         diffLevels = ['N3'];
       } else {
-        diffLevels = ['N2', 'N1'];
+        diffLevels = ['N2'];
       }
     } else {
       // ENGLISH
@@ -93,21 +93,21 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
     }
 
     List<Map<String, dynamic>> dueWords = [];
-    
+
     // 2. Muat kata secara deterministik dengan paginasi per Hari (LIMIT 10, OFFSET)
     if (diffLevels.isNotEmpty) {
       String placeholders = List.filled(diffLevels.length, '?').join(', ');
-      
+
       // Hitung total kata yang tersedia untuk level ini
       final countResults = await db.rawQuery(
         'SELECT COUNT(*) as total FROM vocabulary WHERE language = ? AND difficulty_level IN ($placeholders)$additionalWhere',
         [widget.language, ...diffLevels],
       );
       int totalCount = Sqflite.firstIntValue(countResults) ?? 0;
-      
+
       int wordsPerDay = 10;
       int lessonIndex = (targetStage - 1) * 30 + (targetDay - 1);
-      
+
       // Muat kata Hari ini
       int offsetToday = 0;
       if (totalCount > 0) {
@@ -115,15 +115,17 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
       }
       final resultsToday = await db.query(
         'vocabulary',
-        where: 'language = ? AND difficulty_level IN ($placeholders)$additionalWhere',
+        where:
+            'language = ? AND difficulty_level IN ($placeholders)$additionalWhere',
         whereArgs: [widget.language, ...diffLevels],
         orderBy: 'id ASC',
         limit: wordsPerDay,
         offset: offsetToday,
       );
-      
-      List<Map<String, dynamic>> combined = List<Map<String, dynamic>>.from(resultsToday);
-      
+
+      List<Map<String, dynamic>> combined =
+          List<Map<String, dynamic>>.from(resultsToday);
+
       // Muat kata ulasan Hari Kemarin (jika lessonIndex > 0)
       if (lessonIndex > 0) {
         int offsetYesterday = 0;
@@ -132,7 +134,8 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
         }
         final resultsYesterday = await db.query(
           'vocabulary',
-          where: 'language = ? AND difficulty_level IN ($placeholders)$additionalWhere',
+          where:
+              'language = ? AND difficulty_level IN ($placeholders)$additionalWhere',
           whereArgs: [widget.language, ...diffLevels],
           orderBy: 'id ASC',
           limit: wordsPerDay,
@@ -140,31 +143,52 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
         );
         combined.addAll(resultsYesterday);
       }
-      
+
       dueWords = combined;
     }
 
-    // Fallback jika kosong
+    // Fallback jika kosong: tetap hormati level stage agar materi tidak loncat.
     if (dueWords.isEmpty) {
       int wordsPerDay = 10;
       int lessonIndex = (targetStage - 1) * 30 + (targetDay - 1);
-      final resultsToday = await db.query(
-        'vocabulary',
-        where: 'language = ?',
-        whereArgs: [widget.language],
-        limit: wordsPerDay,
-        offset: lessonIndex * wordsPerDay,
-      );
-      List<Map<String, dynamic>> combined = List<Map<String, dynamic>>.from(resultsToday);
-      
-      if (lessonIndex > 0) {
-        final resultsYesterday = await db.query(
+      List<Map<String, dynamic>> resultsToday = [];
+      if (diffLevels.isNotEmpty) {
+        final placeholders = List.filled(diffLevels.length, '?').join(', ');
+        resultsToday = await db.query(
+          'vocabulary',
+          where: 'language = ? AND difficulty_level IN ($placeholders)',
+          whereArgs: [widget.language, ...diffLevels],
+          orderBy: 'id ASC',
+          limit: wordsPerDay,
+          offset: lessonIndex * wordsPerDay,
+        );
+      }
+      if (resultsToday.isEmpty) {
+        resultsToday = await db.query(
           'vocabulary',
           where: 'language = ?',
           whereArgs: [widget.language],
+          orderBy: 'id ASC',
           limit: wordsPerDay,
-          offset: (lessonIndex - 1) * wordsPerDay,
+          offset: lessonIndex * wordsPerDay,
         );
+      }
+      List<Map<String, dynamic>> combined =
+          List<Map<String, dynamic>>.from(resultsToday);
+
+      if (lessonIndex > 0) {
+        List<Map<String, dynamic>> resultsYesterday = [];
+        if (diffLevels.isNotEmpty) {
+          final placeholders = List.filled(diffLevels.length, '?').join(', ');
+          resultsYesterday = await db.query(
+            'vocabulary',
+            where: 'language = ? AND difficulty_level IN ($placeholders)',
+            whereArgs: [widget.language, ...diffLevels],
+            orderBy: 'id ASC',
+            limit: wordsPerDay,
+            offset: (lessonIndex - 1) * wordsPerDay,
+          );
+        }
         combined.addAll(resultsYesterday);
       }
       dueWords = combined;
@@ -211,7 +235,8 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
 
     CustomTopNotification.show(
       context,
-      message: isCorrect ? 'Ulasan Berhasil! (+10 XP)' : 'Diulang Nanti (Box 1)',
+      message:
+          isCorrect ? 'Ulasan Berhasil! (+10 XP)' : 'Diulang Nanti (Box 1)',
       isError: !isCorrect,
       duration: const Duration(milliseconds: 1000),
     );
@@ -230,7 +255,8 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
   Widget build(BuildContext context) {
     if (_isLoading) {
       return const Scaffold(
-        body: Center(child: CircularProgressIndicator(color: AppTheme.neonBlue)),
+        body:
+            Center(child: CircularProgressIndicator(color: AppTheme.neonBlue)),
       );
     }
 
@@ -253,8 +279,10 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
     final currentCard = _flashcards[_currentIndex];
     final progressPercent = (_currentIndex + 1) / _flashcards.length;
     final isJapanese = widget.language == 'JAPANESE';
-    final Color accentColor = isJapanese ? AppTheme.neonBlue : AppTheme.neonGreen;
-    final isHiraganaKatakana = currentCard['difficulty_level'] == 'HIRAGANA' || currentCard['difficulty_level'] == 'KATAKANA';
+    final Color accentColor =
+        isJapanese ? AppTheme.neonBlue : AppTheme.neonGreen;
+    final isHiraganaKatakana = currentCard['difficulty_level'] == 'HIRAGANA' ||
+        currentCard['difficulty_level'] == 'KATAKANA';
 
     return Scaffold(
       appBar: AppBar(
@@ -310,12 +338,16 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                     color: AppTheme.darkSurface,
                     borderRadius: BorderRadius.circular(24),
                     border: Border.all(
-                      color: _isFlipped ? accentColor : AppTheme.textSecondary.withOpacity(0.2),
+                      color: _isFlipped
+                          ? accentColor
+                          : AppTheme.textSecondary.withOpacity(0.2),
                       width: 2,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: _isFlipped ? accentColor.withOpacity(0.1) : Colors.transparent,
+                        color: _isFlipped
+                            ? accentColor.withOpacity(0.1)
+                            : Colors.transparent,
                         blurRadius: 16,
                       ),
                     ],
@@ -327,14 +359,20 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            _isFlipped ? 'TERJEMAHAN / ARTI' : 'KOSAKATA / KANA',
-                            style: const TextStyle(color: AppTheme.textSecondary, fontSize: 12, letterSpacing: 1.5),
+                            _isFlipped
+                                ? 'TERJEMAHAN / ARTI'
+                                : 'KOSAKATA / KANA',
+                            style: const TextStyle(
+                                color: AppTheme.textSecondary,
+                                fontSize: 12,
+                                letterSpacing: 1.5),
                           ),
                           // Romaji policy badge
                           if (isJapanese) ...[
                             const SizedBox(height: 4),
                             Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 2),
                               decoration: BoxDecoration(
                                 color: widget.stage <= 6
                                     ? AppTheme.neonBlue.withOpacity(0.15)
@@ -365,18 +403,26 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                           if (!_isFlipped) ...[
                             Text(
                               currentCard['word']!,
-                              style: const TextStyle(fontSize: 42, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
+                              style: const TextStyle(
+                                  fontSize: 42,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppTheme.textPrimary),
                               textAlign: TextAlign.center,
                             ),
                             if (isJapanese) ...[
                               // Show reading/furigana for stages 1-12 only
                               if (widget.stage <= 12) ...[
                                 if (!isHiraganaKatakana) ...[
-                                  if (currentCard['reading'] != null && currentCard['reading'].toString().isNotEmpty) ...[
+                                  if (currentCard['reading'] != null &&
+                                      currentCard['reading']
+                                          .toString()
+                                          .isNotEmpty) ...[
                                     const SizedBox(height: 8),
                                     Text(
                                       '[ ${currentCard['reading']} ]',
-                                      style: const TextStyle(fontSize: 18, color: AppTheme.textSecondary),
+                                      style: const TextStyle(
+                                          fontSize: 18,
+                                          color: AppTheme.textSecondary),
                                       textAlign: TextAlign.center,
                                     ),
                                   ],
@@ -388,10 +434,16 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                                 Text(
                                   isHiraganaKatakana
                                       ? 'Cara baca: ${KanaHelper.toRomaji(currentCard['word']!)}'
-                                      : currentCard['reading'] != null && currentCard['reading'].toString().isNotEmpty
+                                      : currentCard['reading'] != null &&
+                                              currentCard['reading']
+                                                  .toString()
+                                                  .isNotEmpty
                                           ? 'Cara baca: ${KanaHelper.toRomaji(currentCard['reading']!)}'
                                           : 'Cara baca: ${KanaHelper.toRomaji(currentCard['word']!)}',
-                                  style: const TextStyle(fontSize: 16, color: AppTheme.neonBlue, fontWeight: FontWeight.w500),
+                                  style: const TextStyle(
+                                      fontSize: 16,
+                                      color: AppTheme.neonBlue,
+                                      fontWeight: FontWeight.w500),
                                   textAlign: TextAlign.center,
                                 ),
                               ],
@@ -400,7 +452,10 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                                 const SizedBox(height: 8),
                                 const Text(
                                   '👆 Balik kartu untuk melihat cara baca',
-                                  style: TextStyle(fontSize: 11, color: AppTheme.textSecondary, fontStyle: FontStyle.italic),
+                                  style: TextStyle(
+                                      fontSize: 11,
+                                      color: AppTheme.textSecondary,
+                                      fontStyle: FontStyle.italic),
                                   textAlign: TextAlign.center,
                                 ),
                               ],
@@ -408,7 +463,10 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                           ] else ...[
                             Text(
                               currentCard['translation']!,
-                              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
+                              style: const TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppTheme.textPrimary),
                               textAlign: TextAlign.center,
                             ),
                             // Show Romaji on BACK for stages 1-12
@@ -417,38 +475,60 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                               Text(
                                 isHiraganaKatakana
                                     ? 'Cara baca: ${KanaHelper.toRomaji(currentCard['word']!)}'
-                                    : currentCard['reading'] != null && currentCard['reading'].toString().isNotEmpty
+                                    : currentCard['reading'] != null &&
+                                            currentCard['reading']
+                                                .toString()
+                                                .isNotEmpty
                                         ? 'Cara baca: ${KanaHelper.toRomaji(currentCard['reading']!)}'
                                         : 'Cara baca: ${KanaHelper.toRomaji(currentCard['word']!)}',
-                                style: const TextStyle(fontSize: 18, color: AppTheme.neonBlue, fontWeight: FontWeight.bold),
+                                style: const TextStyle(
+                                    fontSize: 18,
+                                    color: AppTheme.neonBlue,
+                                    fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
                             ],
                             const SizedBox(height: 16),
                             Text(
                               'Level: ${currentCard['difficulty_level']}',
-                              style: TextStyle(color: accentColor, fontWeight: FontWeight.bold, fontSize: 14),
+                              style: TextStyle(
+                                  color: accentColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
                             ),
                             // Show example sentence if available
-                            if ((currentCard['example_sentence'] ?? '').toString().trim().isNotEmpty) ...[
+                            if ((currentCard['example_sentence'] ?? '')
+                                .toString()
+                                .trim()
+                                .isNotEmpty) ...[
                               const SizedBox(height: 16),
                               Container(
                                 padding: const EdgeInsets.all(12),
                                 decoration: BoxDecoration(
                                   color: accentColor.withValues(alpha: 0.08),
                                   borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(color: accentColor.withValues(alpha: 0.3)),
+                                  border: Border.all(
+                                      color:
+                                          accentColor.withValues(alpha: 0.3)),
                                 ),
                                 child: Column(
                                   children: [
                                     Text(
                                       '📝 Contoh Kalimat',
-                                      style: TextStyle(fontSize: 11, color: accentColor, fontWeight: FontWeight.bold, letterSpacing: 1),
+                                      style: TextStyle(
+                                          fontSize: 11,
+                                          color: accentColor,
+                                          fontWeight: FontWeight.bold,
+                                          letterSpacing: 1),
                                     ),
                                     const SizedBox(height: 6),
                                     Text(
-                                      currentCard['example_sentence'].toString(),
-                                      style: const TextStyle(fontSize: 13, color: AppTheme.textPrimary, fontStyle: FontStyle.italic),
+                                      currentCard['example_sentence']
+                                          .toString(),
+                                      style: const TextStyle(
+                                          fontSize: 13,
+                                          color: AppTheme.textPrimary,
+                                          fontStyle: FontStyle.italic),
                                       textAlign: TextAlign.center,
                                     ),
                                   ],
@@ -459,7 +539,9 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                           const SizedBox(height: 32),
                           Icon(
                             _isFlipped ? Icons.volume_up : Icons.touch_app,
-                            color: _isFlipped ? accentColor : AppTheme.textSecondary.withOpacity(0.5),
+                            color: _isFlipped
+                                ? accentColor
+                                : AppTheme.textSecondary.withOpacity(0.5),
                             size: 24,
                           ),
                         ],
@@ -480,21 +562,27 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppTheme.neonPink,
                       foregroundColor: AppTheme.darkBackground,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12)),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 24, vertical: 14),
                     ),
                     onPressed: () => _handleReview(false),
-                    child: const Text('Lupa (Salah)', style: TextStyle(fontWeight: FontWeight.bold)),
+                    child: const Text('Lupa (Salah)',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppTheme.neonGreen,
                       foregroundColor: AppTheme.darkBackground,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12)),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 24, vertical: 14),
                     ),
                     onPressed: () => _handleReview(true),
-                    child: const Text('Ingat (Benar)', style: TextStyle(fontWeight: FontWeight.bold)),
+                    child: const Text('Ingat (Benar)',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),
@@ -507,23 +595,29 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppTheme.darkSurface,
                       foregroundColor: AppTheme.textPrimary,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12)),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 14),
                     ),
-                    onPressed: _currentIndex == 0 ? null : () {
-                      setState(() {
-                        _currentIndex--;
-                        _isFlipped = false;
-                      });
-                    },
+                    onPressed: _currentIndex == 0
+                        ? null
+                        : () {
+                            setState(() {
+                              _currentIndex--;
+                              _isFlipped = false;
+                            });
+                          },
                     child: const Text('Sebelumnya'),
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: accentColor,
                       foregroundColor: AppTheme.darkBackground,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12)),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 24, vertical: 14),
                     ),
                     onPressed: () {
                       setState(() {
@@ -565,7 +659,8 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
         ),
         actions: [
           ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonGreen),
+            style:
+                ElevatedButton.styleFrom(backgroundColor: AppTheme.neonGreen),
             onPressed: () {
               Navigator.pop(context);
               Navigator.pushReplacementNamed(
@@ -579,7 +674,8 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                 },
               );
             },
-            child: const Text('Mulai Kuis Latihan', style: TextStyle(color: AppTheme.darkBackground)),
+            child: const Text('Mulai Kuis Latihan',
+                style: TextStyle(color: AppTheme.darkBackground)),
           ),
         ],
       ),

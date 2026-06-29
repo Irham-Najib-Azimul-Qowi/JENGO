@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/database/database_helper.dart';
+import '../../../core/utils/kana_helper.dart';
 import '../../../core/utils/custom_top_notification.dart';
 
 enum QuestionType {
@@ -117,11 +118,10 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         if (targetStage > 1) diffLevels.add('HIRAGANA');
         if (targetStage > 4) diffLevels.add('KATAKANA');
         if (targetStage > 7) diffLevels.add('N5');
-        if (targetStage > 13) diffLevels.add('N4');
-        if (targetStage > 15) diffLevels.add('N3');
+        if (targetStage > 17) diffLevels.add('N4');
+        if (targetStage > 18) diffLevels.add('N3');
         if (targetStage > 18) {
           diffLevels.add('N2');
-          diffLevels.add('N1');
         }
       } else {
         if (targetStage > 1) diffLevels.add('A1');
@@ -147,11 +147,15 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
     } else if (widget.vocabList != null && widget.vocabList!.isNotEmpty) {
       vocabItems = List<Map<String, dynamic>>.from(widget.vocabList!);
     } else {
-      // Fallback query from vocabulary table
+      // Fallback query from vocabulary table, scoped to this stage curriculum.
+      final stageLevels =
+          _difficultyLevelsForStage(widget.language, widget.stage);
+      final placeholders = List.filled(stageLevels.length, '?').join(', ');
       final listQuery = await db.query(
         'vocabulary',
-        where: 'language = ?',
-        whereArgs: [widget.language],
+        where: 'language = ? AND difficulty_level IN ($placeholders)',
+        whereArgs: [widget.language, ...stageLevels],
+        orderBy: 'RANDOM()',
         limit: 15,
       );
       vocabItems = List<Map<String, dynamic>>.from(listQuery);
@@ -183,11 +187,23 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
       final String reading = item['reading'] ?? '';
       final String translation = item['translation'] ?? item['meaning'] ?? '';
       final isJp = widget.language == 'JAPANESE';
+      final isKanaFoundation = isJp && widget.stage <= 6;
+      final readingForPrompt = isJp
+          ? (reading.isNotEmpty
+              ? reading
+              : (isKanaFoundation ? KanaHelper.toRomaji(word) : ''))
+          : null;
 
-      // Pick a type dynamically — beginners (stage <= 12) only get choice-based exercises
+      // Pick a type dynamically. Kana foundation stays choice-based and simple.
       QuestionType qType;
-      if (widget.stage <= 12) {
-        // Beginner-friendly types only: multipleChoice, listening, connectPairs, fillInBlank
+      if (isKanaFoundation) {
+        final kanaTypes = [
+          QuestionType.multipleChoice,
+          QuestionType.listening,
+          QuestionType.connectPairs,
+        ];
+        qType = kanaTypes[i % kanaTypes.length];
+      } else if (widget.stage <= 12) {
         final begTypes = [
           QuestionType.multipleChoice,
           QuestionType.listening,
@@ -220,7 +236,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             type: QuestionType.multipleChoice,
             questionText: 'Pilihlah arti kata yang tepat untuk kata berikut:',
             wordPrompt: word,
-            readingPrompt: isJp ? reading : null,
+            readingPrompt: readingForPrompt,
             correctAnswer: translation,
             options: opts,
           ));
@@ -352,7 +368,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
               type: QuestionType.multipleChoice,
               questionText: 'Pilihlah arti kata yang tepat untuk kata berikut:',
               wordPrompt: word,
-              readingPrompt: isJp ? reading : null,
+              readingPrompt: readingForPrompt,
               correctAnswer: translation,
               options: opts,
             ));
@@ -374,8 +390,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
 
           // Stage based Japanese Rules
           String listenPrompt = word;
-          String? readingLabel = isJp ? reading : null;
-          if (isJp && widget.stage > 2) {
+          String? readingLabel = readingForPrompt;
+          if (isJp && widget.stage > 6) {
             // Hide Romaji and translations for high levels
             readingLabel = null;
           }
@@ -396,7 +412,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             type: QuestionType.typing,
             questionText: 'Ketiklah arti terjemahan dari kata berikut:',
             wordPrompt: word,
-            readingPrompt: isJp ? reading : null,
+            readingPrompt: readingForPrompt,
             correctAnswer: translation,
           ));
           break;
@@ -417,6 +433,24 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
       // Auto speak first listening question if active
       _triggerAutoSpeak();
     }
+  }
+
+  List<String> _difficultyLevelsForStage(String language, int stage) {
+    if (language == 'JAPANESE') {
+      if (stage <= 3) return ['HIRAGANA'];
+      if (stage <= 5) return ['KATAKANA'];
+      if (stage == 6) return ['HIRAGANA', 'KATAKANA'];
+      if (stage <= 16) return ['N5'];
+      if (stage == 17) return ['N4'];
+      if (stage == 18) return ['N3'];
+      return ['N2'];
+    }
+
+    if (stage <= 2) return ['A1'];
+    if (stage <= 4) return ['A2'];
+    if (stage <= 6) return ['B1'];
+    if (stage <= 12) return ['B2'];
+    return ['C1'];
   }
 
   void _generateFallbackQuestions() {
