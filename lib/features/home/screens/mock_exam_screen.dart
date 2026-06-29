@@ -664,8 +664,45 @@ class _MockExamScreenState extends State<MockExamScreen> {
     _flutterTts.stop();
     _speechToText.stop();
 
+    // Pastikan durasi section terakhir juga tercatat
+    _elapsedBySection[_currentSection.id] =
+        (_currentSection.minutes * 60) - _secondsRemaining;
+
     final db = await DatabaseHelper.instance.database;
     final result = _isJapanese ? _gradeJlpt() : _gradeIelts();
+
+    final totalSecondsSpent =
+        _elapsedBySection.values.fold<int>(0, (sum, val) => sum + val);
+
+    final List<Map<String, dynamic>> reviewDataList = [];
+    for (final section in _sections) {
+      for (final q in section.questions) {
+        final userAnswer = _answers[q.id];
+        bool isCorrect = false;
+        if (q.kind == MockQuestionKind.multipleChoice) {
+          isCorrect = userAnswer == q.correctAnswerIndex;
+        } else if (q.kind == MockQuestionKind.writing) {
+          isCorrect = (userAnswer?.toString().trim().isNotEmpty ?? false);
+        } else if (q.kind == MockQuestionKind.speaking) {
+          isCorrect = _recordedSpeakingIds.contains(q.id);
+        }
+
+        reviewDataList.add({
+          'id': q.id,
+          'category': q.category,
+          'type': q.type,
+          'kind': q.kind.name,
+          'prompt': q.prompt,
+          'passage': q.passage,
+          'transcript': q.transcript,
+          'options': q.options,
+          'correctAnswerIndex': q.correctAnswerIndex,
+          'userAnswer': userAnswer,
+          'isCorrect': isCorrect,
+          'explanation': q.explanation,
+        });
+      }
+    }
 
     final historyId = await db.insert('simulations_history', {
       'language': widget.language,
@@ -676,6 +713,8 @@ class _MockExamScreenState extends State<MockExamScreen> {
       'total_questions': result.totalQuestions,
       'weaknesses': result.weaknesses,
       'recommendations': result.recommendations,
+      'time_spent': totalSecondsSpent,
+      'review_data': jsonEncode(reviewDataList),
       'timestamp': DateTime.now().millisecondsSinceEpoch,
     });
 

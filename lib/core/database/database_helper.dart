@@ -4,7 +4,7 @@ import 'dart:convert';
 
 class DatabaseHelper {
   static const _databaseName = "jengo.db";
-  static const _databaseVersion = 4;
+  static const _databaseVersion = 5;
 
   // Singleton Instance
   DatabaseHelper._privateConstructor();
@@ -29,7 +29,7 @@ class DatabaseHelper {
   }
 
   Future _onUpgrade(Database db, int oldVersion, int newVersion) async {
-    if (oldVersion < 4) {
+    if (oldVersion < 5) {
       await db.execute("DROP TABLE IF EXISTS gamification");
       await db.execute("DROP TABLE IF EXISTS chapters");
       await db.execute("DROP TABLE IF EXISTS vocabulary");
@@ -68,7 +68,7 @@ class DatabaseHelper {
         chapter_number INTEGER NOT NULL,
         title TEXT NOT NULL,
         description TEXT NOT NULL,
-        status TEXT NOT NULL -- ACTIVE, LOCKED, COMPLETED
+        status TEXT NOT NULL -- 'LOCKED', 'ACTIVE', 'COMPLETED'
       )
     ''');
 
@@ -80,22 +80,21 @@ class DatabaseHelper {
         reading TEXT,
         translation TEXT NOT NULL,
         language TEXT NOT NULL, -- JAPANESE, ENGLISH
-        difficulty_level TEXT NOT NULL,
-        box_level INTEGER DEFAULT 1, -- Untuk Leitner/SRS (Box 1-5)
-        next_review_time INTEGER NOT NULL
+        difficulty_level TEXT, -- N5, N4, N3, N2, etc.
+        box_level INTEGER DEFAULT 1, -- Leitner Box (1-5)
+        next_review_time INTEGER NOT NULL -- Timestamp
       )
     ''');
 
-    // 4. Buat Tabel Kanji (Jepang)
+    // 4. Buat Tabel Kanji
     await db.execute('''
       CREATE TABLE kanji (
         id INTEGER PRIMARY KEY,
         kanji TEXT NOT NULL,
-        level TEXT NOT NULL,
         meaning TEXT NOT NULL,
         onyomi TEXT NOT NULL,
         kunyomi TEXT NOT NULL,
-        strokes INTEGER NOT NULL
+        level TEXT NOT NULL -- N5, N4, N3, N2
       )
     ''');
 
@@ -186,6 +185,8 @@ class DatabaseHelper {
         total_questions INTEGER NOT NULL,
         weaknesses TEXT NOT NULL,
         recommendations TEXT NOT NULL,
+        time_spent INTEGER NOT NULL,
+        review_data TEXT NOT NULL,
         timestamp INTEGER NOT NULL
       )
     ''');

@@ -19,6 +19,7 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
   bool _isLoading = true;
   Map<String, dynamic>? _historyRecord;
   List<Map<String, dynamic>> _pastAttempts = [];
+  List<dynamic> _reviewData = [];
 
   @override
   void initState() {
@@ -43,16 +44,26 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
       // Load all previous tests of the same language to do progress comparison
       final pastQuery = await db.query(
         'simulations_history',
-        where: 'language = ? AND id != ?',
-        whereArgs: [record['language'], widget.historyId],
-        orderBy: 'timestamp DESC',
-        limit: 5,
+        where: 'language = ?',
+        whereArgs: [record['language']],
+        orderBy: 'timestamp ASC',
+        limit: 6,
       );
+
+      List<dynamic> decodedReview = [];
+      try {
+        if (record['review_data'] != null) {
+          decodedReview = jsonDecode(record['review_data'] as String) as List<dynamic>;
+        }
+      } catch (e) {
+        debugPrint("Error decoding review_data: $e");
+      }
 
       if (mounted) {
         setState(() {
           _historyRecord = record;
           _pastAttempts = pastQuery;
+          _reviewData = decodedReview;
           _isLoading = false;
         });
       }
@@ -63,6 +74,16 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
         });
       }
     }
+  }
+
+  String _formatTimeSpent(int totalSeconds) {
+    if (totalSeconds <= 0) return "0 detik";
+    final minutes = totalSeconds ~/ 60;
+    final seconds = totalSeconds % 60;
+    if (minutes > 0) {
+      return "$minutes menit $seconds detik";
+    }
+    return "$seconds detik";
   }
 
   @override
@@ -90,6 +111,9 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
     final int totalQuestions = _historyRecord!['total_questions'] as int;
     final String weaknesses = _historyRecord!['weaknesses'] as String;
     final String recommendations = _historyRecord!['recommendations'] as String;
+    final int timeSpent = _historyRecord!['time_spent'] as int? ?? 0;
+
+    final double percentage = totalQuestions > 0 ? (correctAnswers / totalQuestions) * 100 : 0.0;
 
     return Scaffold(
       appBar: AppBar(
@@ -103,7 +127,7 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // 1. Overall Score Card
-            _buildOverallScoreCard(isJp, level, overallScore, correctAnswers, totalQuestions, accentColor),
+            _buildOverallScoreCard(isJp, level, overallScore, correctAnswers, totalQuestions, percentage, timeSpent, accentColor),
             const SizedBox(height: 24),
 
             // 2. Sectional Breakdown
@@ -122,19 +146,33 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
             _buildWeaknessAnalysisCard(weaknesses, recommendations, accentColor),
             const SizedBox(height: 24),
 
-            // 4. Progress Comparison vs Past Tests
+            // 4. Progress Chart / Grafik Perkembangan
             Text(
-              'Perbandingan Progress',
+              'Grafik Perkembangan Hasil Ujian',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
             ),
             const SizedBox(height: 12),
-            _buildProgressComparisonList(isJp),
-            const SizedBox(height: 32),
+            _buildProgressChart(isJp, accentColor),
+            const SizedBox(height: 24),
 
-            // 5. Exit button
+            // 5. Detailed Question Review (Jawaban benar/salah & Pembahasan)
+            if (_reviewData.isNotEmpty) ...[
+              Text(
+                'Pembahasan Detail Soal',
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+              const SizedBox(height: 12),
+              _buildDetailedQuestionList(accentColor),
+              const SizedBox(height: 24),
+            ],
+
+            // 6. Exit button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -162,6 +200,8 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
     double score,
     int correct,
     int total,
+    double percentage,
+    int timeSpent,
     Color color,
   ) {
     String scoreText = isJp ? '${score.toInt()} / 180 Poin' : 'Band $score / 9.0';
@@ -173,7 +213,7 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
       decoration: BoxDecoration(
         color: AppTheme.darkSurface,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: color.withOpacity(0.3), width: 1.5),
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
       ),
       child: Column(
         children: [
@@ -190,7 +230,7 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
-              color: score >= (isJp ? 120 : 7.0) ? AppTheme.neonGreen.withOpacity(0.15) : AppTheme.neonPink.withOpacity(0.15),
+              color: score >= (isJp ? 120 : 7.0) ? AppTheme.neonGreen.withValues(alpha: 0.15) : AppTheme.neonPink.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
@@ -206,9 +246,9 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildBriefStat('Benar', '$correct', AppTheme.neonGreen),
-              _buildBriefStat('Salah', '${total - correct}', AppTheme.neonPink),
-              _buildBriefStat('Total Soal', '$total', AppTheme.textSecondary),
+              _buildBriefStat('Akurasi', '${percentage.toStringAsFixed(1)}%', AppTheme.neonBlue),
+              _buildBriefStat('Durasi', _formatTimeSpent(timeSpent), AppTheme.neonGreen),
+              _buildBriefStat('Benar', '$correct / $total', AppTheme.textSecondary),
             ],
           ),
         ],
@@ -219,7 +259,7 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
   Widget _buildBriefStat(String label, String val, Color labelColor) {
     return Column(
       children: [
-        Text(val, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppTheme.textPrimary)),
+        Text(val, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.textPrimary)),
         const SizedBox(height: 4),
         Text(label, style: TextStyle(fontSize: 11, color: labelColor)),
       ],
@@ -236,7 +276,9 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
       child: Column(
         children: sections.entries.map((entry) {
           final double scoreVal = entry.value is int ? (entry.value as int).toDouble() : (entry.value as double);
-          final String scoreLabel = isJp ? '${scoreVal.toInt()} / 90 Poin' : 'Band $scoreVal';
+          final String scoreLabel = isJp 
+              ? (entry.key.contains('Estimated') ? '${scoreVal.toInt()}' : '${scoreVal.toInt()} / 60 Poin') 
+              : 'Band $scoreVal';
 
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
@@ -259,7 +301,7 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
       decoration: BoxDecoration(
         color: AppTheme.darkSurface,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppTheme.textSecondary.withOpacity(0.1)),
+        border: Border.all(color: AppTheme.textSecondary.withValues(alpha: 0.1)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -300,58 +342,243 @@ class _ExamReviewScreenState extends State<ExamReviewScreen> {
     );
   }
 
-  Widget _buildProgressComparisonList(bool isJp) {
-    if (_pastAttempts.isEmpty) {
-      return Container(
-        width: double.infinity,
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: AppTheme.darkSurface,
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: const Center(
-          child: Text(
-            'Ini merupakan simulasi tes pertama Anda. Data perbandingan akan muncul pada ujian berikutnya.',
-            style: TextStyle(fontSize: 12, color: AppTheme.textSecondary),
-            textAlign: TextAlign.center,
-          ),
-        ),
-      );
-    }
+  Widget _buildProgressChart(bool isJp, Color color) {
+    if (_pastAttempts.isEmpty) return const SizedBox();
 
+    final maxScore = isJp ? 180.0 : 9.0;
+    return Container(
+      height: 180,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: AppTheme.darkSurface,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: AppTheme.textSecondary.withValues(alpha: 0.08)),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: _pastAttempts.map((attempt) {
+          final double score = attempt['overall_score'] as double;
+          final double ratio = score / maxScore;
+          final scoreText = isJp ? '${score.toInt()}' : '$score';
+          final DateTime date = DateTime.fromMillisecondsSinceEpoch(attempt['timestamp'] as int);
+          final dateStr = '${date.day}/${date.month}';
+
+          return Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  scoreText,
+                  style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: color),
+                ),
+                const SizedBox(height: 6),
+                Container(
+                  height: (100 * ratio).clamp(10.0, 100.0),
+                  margin: const EdgeInsets.symmetric(horizontal: 8),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [color, color.withValues(alpha: 0.3)],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+                    borderRadius: const BorderRadius.vertical(top: Radius.circular(6)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: color.withValues(alpha: 0.15),
+                        blurRadius: 6,
+                        offset: const Offset(0, -2),
+                      )
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  dateStr,
+                  style: const TextStyle(fontSize: 10, color: AppTheme.textSecondary),
+                ),
+              ],
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+
+  Widget _buildDetailedQuestionList(Color accentColor) {
     return Column(
-      children: _pastAttempts.map((attempt) {
-        final double score = attempt['overall_score'] as double;
-        final String scoreText = isJp ? '${score.toInt()} Poin' : 'Band $score';
-        final DateTime date = DateTime.fromMillisecondsSinceEpoch(attempt['timestamp'] as int);
-        final dateString = '${date.day}/${date.month}/${date.year}';
+      children: List.generate(_reviewData.length, (index) {
+        final q = _reviewData[index];
+        final bool isCorrect = q['isCorrect'] as bool? ?? false;
+        final String category = q['category']?.toString() ?? '';
+        final String prompt = q['prompt']?.toString() ?? '';
+        final String? passage = q['passage']?.toString();
+        final String? transcript = q['transcript']?.toString();
+        final List<dynamic> options = q['options'] as List<dynamic>? ?? [];
+        final dynamic userAnswer = q['userAnswer'];
+        final dynamic correctAnswerIndex = q['correctAnswerIndex'];
+        final String explanation = q['explanation']?.toString() ?? '';
 
         return Container(
-          margin: const EdgeInsets.only(bottom: 10),
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          width: double.infinity,
+          margin: const EdgeInsets.only(bottom: 16),
+          padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: AppTheme.darkSurface,
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(
+              color: isCorrect ? AppTheme.neonGreen.withValues(alpha: 0.15) : AppTheme.neonPink.withValues(alpha: 0.15),
+              width: 1.2,
+            ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              Row(
                 children: [
-                  Text('Tingkat ${attempt['level']}', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
-                  const SizedBox(height: 4),
-                  Text(dateString, style: const TextStyle(color: AppTheme.textSecondary, fontSize: 11)),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: isCorrect ? AppTheme.neonGreen.withValues(alpha: 0.15) : AppTheme.neonPink.withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: Text(
+                      isCorrect ? 'BENAR' : 'SALAH',
+                      style: TextStyle(
+                        fontSize: 10, 
+                        fontWeight: FontWeight.bold, 
+                        color: isCorrect ? AppTheme.neonGreen : AppTheme.neonPink,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    'Soal ${index + 1} • $category',
+                    style: const TextStyle(fontSize: 12, color: AppTheme.textSecondary, fontWeight: FontWeight.w600),
+                  ),
                 ],
               ),
+              const SizedBox(height: 12),
+              if (passage != null && passage.isNotEmpty) ...[
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(12),
+                  margin: const EdgeInsets.only(bottom: 12),
+                  decoration: BoxDecoration(
+                    color: AppTheme.darkBackground,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    passage,
+                    style: const TextStyle(fontSize: 13, color: AppTheme.textSecondary, height: 1.45),
+                  ),
+                ),
+              ],
+              if (transcript != null && transcript.isNotEmpty) ...[
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(12),
+                  margin: const EdgeInsets.only(bottom: 12),
+                  decoration: BoxDecoration(
+                    color: AppTheme.darkBackground,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: AppTheme.neonBlue.withValues(alpha: 0.2)),
+                  ),
+                  child: Text(
+                    'Audio Transcript:\n$transcript',
+                    style: const TextStyle(fontSize: 13, color: AppTheme.textSecondary, fontStyle: FontStyle.italic, height: 1.45),
+                  ),
+                ),
+              ],
               Text(
-                scoreText,
-                style: const TextStyle(color: AppTheme.textPrimary, fontWeight: FontWeight.w900),
+                prompt,
+                style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: AppTheme.textPrimary),
+              ),
+              const SizedBox(height: 14),
+              if (options.isNotEmpty) ...[
+                ...List.generate(options.length, (optIdx) {
+                  final optionText = options[optIdx].toString();
+                  final isUserSelected = userAnswer == optIdx;
+                  final isCorrectOpt = correctAnswerIndex == optIdx;
+
+                  Color optionBorder = AppTheme.textSecondary.withValues(alpha: 0.08);
+                  Color optionBackground = Colors.transparent;
+                  Widget? trailingIcon;
+
+                  if (isCorrectOpt) {
+                    optionBorder = AppTheme.neonGreen;
+                    optionBackground = AppTheme.neonGreen.withValues(alpha: 0.05);
+                    trailingIcon = const Icon(Icons.check_circle, color: AppTheme.neonGreen, size: 16);
+                  } else if (isUserSelected) {
+                    optionBorder = AppTheme.neonPink;
+                    optionBackground = AppTheme.neonPink.withValues(alpha: 0.05);
+                    trailingIcon = const Icon(Icons.cancel, color: AppTheme.neonPink, size: 16);
+                  }
+
+                  return Container(
+                    width: double.infinity,
+                    margin: const EdgeInsets.only(bottom: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                    decoration: BoxDecoration(
+                      color: optionBackground,
+                      border: Border.all(color: optionBorder),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            optionText,
+                            style: const TextStyle(fontSize: 13, color: AppTheme.textPrimary),
+                          ),
+                        ),
+                        if (trailingIcon != null) trailingIcon,
+                      ],
+                    ),
+                  );
+                }),
+              ] else ...[
+                // For writing/speaking answers
+                Text(
+                  'Respons Anda:',
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: accentColor),
+                ),
+                const SizedBox(height: 4),
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: AppTheme.darkBackground,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    userAnswer?.toString() ?? '(Tidak ada respon)',
+                    style: const TextStyle(fontSize: 13, color: AppTheme.textPrimary, height: 1.4),
+                  ),
+                ),
+              ],
+              const SizedBox(height: 16),
+              const Divider(color: AppTheme.darkBackground),
+              const SizedBox(height: 8),
+              const Row(
+                children: [
+                  Icon(Icons.menu_book, color: AppTheme.neonBlue, size: 16),
+                  SizedBox(width: 6),
+                  Text(
+                    'Pembahasan:',
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppTheme.neonBlue),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 6),
+              Text(
+                explanation,
+                style: const TextStyle(fontSize: 12, color: AppTheme.textSecondary, height: 1.45),
               ),
             ],
           ),
         );
-      }).toList(),
+      }),
     );
   }
 }
