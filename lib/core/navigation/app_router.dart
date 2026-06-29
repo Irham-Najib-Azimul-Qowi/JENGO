@@ -11,6 +11,8 @@ import '../../features/home/screens/daily_mock_practice_screen.dart';
 import '../../features/home/screens/tips_tricks_screen.dart';
 import '../../features/home/screens/exam_review_screen.dart';
 
+import '../../features/learning_path/screens/learning_path_screen.dart';
+
 class AppRouter {
   static const String splash = '/';
   static const String mainNav = '/main_nav';
@@ -23,6 +25,7 @@ class AppRouter {
   static const String dailyMockPractice = '/daily_mock_practice';
   static const String tipsTricks = '/tips_tricks';
   static const String examReview = '/exam_review';
+  static const String learningPath = '/learning_path';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -116,6 +119,10 @@ class AppRouter {
           builder: (_) => ExamReviewScreen(
             historyId: historyId,
           ),
+        );
+      case learningPath:
+        return MaterialPageRoute(
+          builder: (_) => const LearningPathScreen(),
         );
       default:
         return MaterialPageRoute(

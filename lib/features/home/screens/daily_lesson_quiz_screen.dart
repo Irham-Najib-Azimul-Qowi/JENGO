@@ -126,9 +126,10 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
 
     for (int i = 0; i < min(vocabItems.length, 6); i++) {
       final item = vocabItems[i];
-      final String word = item['word'];
+      final String word = item['word']?.toString() ?? '';
+      if (word.trim().isEmpty) continue;
       final String reading = item['reading'] ?? '';
-      final String translation = item['translation'];
+      final String translation = item['translation'] ?? item['meaning'] ?? '';
       final isJp = widget.language == 'JAPANESE';
 
       // Pick a type dynamically
@@ -159,21 +160,30 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
           break;
 
         case QuestionType.sentenceUnscramble:
-          // Try to get sentence
-          final sentences = await db.query(
-            'sentences',
-            where: isJp ? 'japanese LIKE ?' : 'english LIKE ?',
-            whereArgs: ['%$word%', '%$word%'],
-            limit: 1,
-          );
-
+          // Dapatkan kalimat acak dengan sangat cepat menggunakan pencarian ID acak
           String targetSentence = translation;
           String unscramblePrompt = word;
-          if (sentences.isNotEmpty) {
-            targetSentence = sentences.first['indonesian'] as String;
-            unscramblePrompt = isJp 
-                ? sentences.first['japanese'] as String 
-                : sentences.first['english'] as String;
+
+          try {
+            final maxIdResult = await db.rawQuery('SELECT MAX(id) as max_id FROM sentences');
+            final maxId = (maxIdResult.first['max_id'] as int?) ?? 0;
+            if (maxId > 0) {
+              final randomId = rand.nextInt(maxId) + 1;
+              final sentences = await db.query(
+                'sentences',
+                where: 'id = ?',
+                whereArgs: [randomId],
+                limit: 1,
+              );
+              if (sentences.isNotEmpty) {
+                targetSentence = sentences.first['indonesian'] as String;
+                unscramblePrompt = isJp 
+                    ? sentences.first['japanese'] as String 
+                    : sentences.first['english'] as String;
+              }
+            }
+          } catch (e) {
+            debugPrint("Error loading random sentence: $e");
           }
 
           List<String> pool = targetSentence.split(' ')..shuffle();
@@ -202,7 +212,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
 
           generatedQuestions.add(QuizQuestion(
             type: QuestionType.fillInBlank,
-            questionText: 'Lengkapi karakter huruf yang hilang dari kata berikut:',
+            questionText: 'Lengkapi karakter huruf yang hilang dari kata berikut (Petunjuk: "$translation"):',
             wordPrompt: wordWithBlank,
             correctAnswer: charToFill,
           ));
