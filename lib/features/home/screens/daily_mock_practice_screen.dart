@@ -356,39 +356,17 @@ class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
       final user = userList.first;
       final currentXp = user['total_xp'] as int? ?? 0;
       final currentGems = user['gems'] as int? ?? 0;
-      int currentDay = user['current_day'] as int? ?? 1;
-      int currentLevel = user['current_level'] as int? ?? 1;
-
-      int nextDay = currentDay + 1;
-      int nextLevel = currentLevel;
-
-      if (nextDay > 30) {
-        nextDay = 1;
-        if (currentLevel < 20) {
-          nextLevel = currentLevel + 1;
-          // Set chapter sebelumnya ke COMPLETED dan chapter berikutnya ke ACTIVE
-          await db.update(
-            'chapters',
-            {'status': 'COMPLETED'},
-            where: 'chapter_number = ?',
-            whereArgs: [currentLevel],
-          );
-          await db.update(
-            'chapters',
-            {'status': 'ACTIVE'},
-            where: 'chapter_number = ?',
-            whereArgs: [nextLevel],
-          );
-        }
-      }
+      await DatabaseHelper.instance.advanceLanguageProgressIfCurrent(
+        language: widget.language,
+        completedStage: widget.stage,
+        completedDay: widget.day,
+      );
 
       await db.update(
         'gamification',
         {
           'total_xp': currentXp + 80,
           'gems': currentGems + 15,
-          'current_day': nextDay,
-          'current_level': nextLevel,
         },
         where: 'id = ?',
         whereArgs: [user['id']],

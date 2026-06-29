@@ -4,7 +4,7 @@ import 'dart:convert';
 
 class DatabaseHelper {
   static const _databaseName = "jengo.db";
-  static const _databaseVersion = 6;
+  static const _databaseVersion = 7;
 
   // Singleton Instance
   DatabaseHelper._privateConstructor();
@@ -43,6 +43,15 @@ class DatabaseHelper {
       await db.execute("DROP TABLE IF EXISTS simulations_history");
       await _onCreate(db, newVersion);
     }
+    if (oldVersion < 7) {
+      await _createLanguageProgressTable(db);
+      final userList = await db.query('gamification', limit: 1);
+      final user = userList.isNotEmpty ? userList.first : <String, Object?>{};
+      final currentStage = user['current_level'] as int? ?? 1;
+      final currentDay = user['current_day'] as int? ?? 1;
+      await _seedLanguageProgress(db,
+          currentStage: currentStage, currentDay: currentDay);
+    }
   }
 
   Future _onCreate(Database db, int version) async {
@@ -60,6 +69,8 @@ class DatabaseHelper {
         is_synced INTEGER DEFAULT 0
       )
     ''');
+
+    await _createLanguageProgressTable(db);
 
     // 2. Buat Tabel Chapters (20 Stage Bulanan)
     await db.execute('''
@@ -204,6 +215,8 @@ class DatabaseHelper {
       'is_synced': 0,
     });
 
+    await _seedLanguageProgress(db);
+
     for (int i = 1; i <= 20; i++) {
       await db.insert('chapters', {
         'id': i,
@@ -215,63 +228,220 @@ class DatabaseHelper {
     }
   }
 
+  Future<void> _createLanguageProgressTable(Database db) async {
+    await db.execute('''
+      CREATE TABLE IF NOT EXISTS language_progress (
+        language TEXT PRIMARY KEY,
+        current_stage INTEGER NOT NULL DEFAULT 1,
+        current_day INTEGER NOT NULL DEFAULT 1,
+        updated_at INTEGER NOT NULL
+      )
+    ''');
+  }
+
+  Future<void> _seedLanguageProgress(
+    Database db, {
+    int currentStage = 1,
+    int currentDay = 1,
+  }) async {
+    final now = DateTime.now().millisecondsSinceEpoch;
+    for (final language in const ['JAPANESE', 'ENGLISH']) {
+      await db.insert(
+        'language_progress',
+        {
+          'language': language,
+          'current_stage': currentStage,
+          'current_day': currentDay,
+          'updated_at': now,
+        },
+        conflictAlgorithm: ConflictAlgorithm.ignore,
+      );
+    }
+  }
+
+  Future<Map<String, int>> getLanguageProgress(String language) async {
+    final db = await database;
+    await _createLanguageProgressTable(db);
+    await _seedLanguageProgress(db);
+
+    final rows = await db.query(
+      'language_progress',
+      where: 'language = ?',
+      whereArgs: [language],
+      limit: 1,
+    );
+    if (rows.isEmpty) {
+      await _seedLanguageProgress(db);
+      return {'stage': 1, 'day': 1};
+    }
+
+    return {
+      'stage': rows.first['current_stage'] as int? ?? 1,
+      'day': rows.first['current_day'] as int? ?? 1,
+    };
+  }
+
+  Future<bool> advanceLanguageProgressIfCurrent({
+    required String language,
+    required int completedStage,
+    required int completedDay,
+  }) async {
+    final db = await database;
+    final progress = await getLanguageProgress(language);
+    final currentStage = progress['stage'] ?? 1;
+    final currentDay = progress['day'] ?? 1;
+
+    if (completedStage != currentStage || completedDay != currentDay) {
+      return false;
+    }
+
+    var nextStage = currentStage;
+    var nextDay = currentDay + 1;
+    if (nextDay > 30) {
+      nextDay = 1;
+      if (nextStage < 20) {
+        nextStage++;
+      }
+    }
+
+    await db.update(
+      'language_progress',
+      {
+        'current_stage': nextStage,
+        'current_day': nextDay,
+        'updated_at': DateTime.now().millisecondsSinceEpoch,
+      },
+      where: 'language = ?',
+      whereArgs: [language],
+    );
+    return true;
+  }
+
+  Future<void> skipLanguageToStage({
+    required String language,
+    required int stage,
+  }) async {
+    final db = await database;
+    await _createLanguageProgressTable(db);
+    await _seedLanguageProgress(db);
+    await db.update(
+      'language_progress',
+      {
+        'current_stage': stage,
+        'current_day': 1,
+        'updated_at': DateTime.now().millisecondsSinceEpoch,
+      },
+      where: 'language = ?',
+      whereArgs: [language],
+    );
+  }
+
+  Future<void> resetLanguageProgress() async {
+    final db = await database;
+    await _createLanguageProgressTable(db);
+    await db.delete('language_progress');
+    await _seedLanguageProgress(db);
+  }
+
   String _getStageTitle(int i) {
     switch (i) {
-      case 1: return "Stage 1: Hiragana & Basic English Vocab";
-      case 2: return "Stage 2: Katakana & A1 Practice";
-      case 3: return "Stage 3: N5 Vocabulary & A2 English";
-      case 4: return "Stage 4: Basic Conversational Japanese";
-      case 5: return "Stage 5: N4 Vocabulary & B1 English";
-      case 6: return "Stage 6: N4 Grammar & Particles";
-      case 7: return "Stage 7: Kanji Introduction & B2 English";
-      case 8: return "Stage 8: Kanji Radicals & Sentence Building";
-      case 9: return "Stage 9: N3 Vocabulary & Grammar";
-      case 10: return "Stage 10: Intermediate Japanese Drills";
-      case 11: return "Stage 11: Kanji Mastery (N3)";
-      case 12: return "Stage 12: Complex Grammar (N3-N2)";
-      case 13: return "Stage 13: N2 Vocabulary & Academic English";
-      case 14: return "Stage 14: N2 Grammar Points";
-      case 15: return "Stage 15: Advanced Kanji (N2)";
-      case 16: return "Stage 16: JLPT N2 & IELTS Prep";
-      case 17: return "Stage 17: Mock Exam Focus (JLPT & IELTS)";
-      case 18: return "Stage 18: Advanced Contextual Training";
-      case 19: return "Stage 19: Certification Readiness";
-      default: return "Stage 20: Final Mastery & Graduation";
+      case 1:
+        return "Stage 1: Hiragana & Basic English Vocab";
+      case 2:
+        return "Stage 2: Katakana & A1 Practice";
+      case 3:
+        return "Stage 3: N5 Vocabulary & A2 English";
+      case 4:
+        return "Stage 4: Basic Conversational Japanese";
+      case 5:
+        return "Stage 5: N4 Vocabulary & B1 English";
+      case 6:
+        return "Stage 6: N4 Grammar & Particles";
+      case 7:
+        return "Stage 7: Kanji Introduction & B2 English";
+      case 8:
+        return "Stage 8: Kanji Radicals & Sentence Building";
+      case 9:
+        return "Stage 9: N3 Vocabulary & Grammar";
+      case 10:
+        return "Stage 10: Intermediate Japanese Drills";
+      case 11:
+        return "Stage 11: Kanji Mastery (N3)";
+      case 12:
+        return "Stage 12: Complex Grammar (N3-N2)";
+      case 13:
+        return "Stage 13: N2 Vocabulary & Academic English";
+      case 14:
+        return "Stage 14: N2 Grammar Points";
+      case 15:
+        return "Stage 15: Advanced Kanji (N2)";
+      case 16:
+        return "Stage 16: JLPT N2 & IELTS Prep";
+      case 17:
+        return "Stage 17: Mock Exam Focus (JLPT & IELTS)";
+      case 18:
+        return "Stage 18: Advanced Contextual Training";
+      case 19:
+        return "Stage 19: Certification Readiness";
+      default:
+        return "Stage 20: Final Mastery & Graduation";
     }
   }
 
   String _getStageDescription(int i) {
     switch (i) {
-      case 1: return "JP: Hiragana Flashcards & basic characters. EN: A1 Vocabulary & grammar foundation.";
-      case 2: return "JP: Katakana Flashcards & simple pronunciation. EN: A1 Reading & listening comprehension.";
-      case 3: return "JP: N5 Vocabulary Flashcards & simple particles. EN: A2 Vocabulary & typing drills.";
-      case 4: return "JP: N5 Daily verbs & mixed drills. EN: A2 Reading, writing & speaking.";
-      case 5: return "JP: N4 Vocabulary Flashcards & past tense verbs. EN: B1 Vocabulary & dictation.";
-      case 6: return "JP: N4 Grammar points & mixed listening. EN: B1 Business vocab & writing prompt.";
-      case 7: return "JP: Basic N3 Kanji characters. EN: B2 High-frequency academic vocabulary.";
-      case 8: return "JP: Radical writing & reading passages. EN: B2 Active reading & speaking shadowing.";
-      case 9: return "JP: N3 Vocabulary Flashcards & honorifics. EN: Advanced vocabulary expansion.";
-      case 10: return "JP: Mixed listening & reading drills. EN: Speaking & writing self-evaluation.";
-      case 11: return "JP: Kanji compound flashcards & onyomi/kunyomi. EN: Essay writing & dictation.";
-      case 12: return "JP: Complex Grammar (N3-N2). EN: Academic listening & reading comprehension.";
-      case 13: return "JP: N2 Vocabulary Flashcards. EN: Advanced IELTS vocabulary drills.";
-      case 14: return "JP: N2 Grammar rules & context matching. EN: IELTS Academic writing practices.";
-      case 15: return "JP: N2 Kanji character writing & reading. EN: IELTS Listening & dictation.";
-      case 16: return "JP: N2 Mock Exam drills & reading. EN: IELTS Speaking & writing mocks.";
-      case 17: return "JP: Full-length N2 reading/listening. EN: IELTS band 8.0 prep & evaluations.";
-      case 18: return "JP: News reading & audio transcription. EN: IELTS Reading & academic speaking.";
-      case 19: return "JP: Simulated JLPT N2 timed test. EN: IELTS band 8.0 full mock test.";
-      default: return "JP: JLPT N2 final checkpoint. EN: IELTS Band 8.0 graduation checkpoint.";
+      case 1:
+        return "JP: Hiragana Flashcards & basic characters. EN: A1 Vocabulary & grammar foundation.";
+      case 2:
+        return "JP: Katakana Flashcards & simple pronunciation. EN: A1 Reading & listening comprehension.";
+      case 3:
+        return "JP: N5 Vocabulary Flashcards & simple particles. EN: A2 Vocabulary & typing drills.";
+      case 4:
+        return "JP: N5 Daily verbs & mixed drills. EN: A2 Reading, writing & speaking.";
+      case 5:
+        return "JP: N4 Vocabulary Flashcards & past tense verbs. EN: B1 Vocabulary & dictation.";
+      case 6:
+        return "JP: N4 Grammar points & mixed listening. EN: B1 Business vocab & writing prompt.";
+      case 7:
+        return "JP: Basic N3 Kanji characters. EN: B2 High-frequency academic vocabulary.";
+      case 8:
+        return "JP: Radical writing & reading passages. EN: B2 Active reading & speaking shadowing.";
+      case 9:
+        return "JP: N3 Vocabulary Flashcards & honorifics. EN: Advanced vocabulary expansion.";
+      case 10:
+        return "JP: Mixed listening & reading drills. EN: Speaking & writing self-evaluation.";
+      case 11:
+        return "JP: Kanji compound flashcards & onyomi/kunyomi. EN: Essay writing & dictation.";
+      case 12:
+        return "JP: Complex Grammar (N3-N2). EN: Academic listening & reading comprehension.";
+      case 13:
+        return "JP: N2 Vocabulary Flashcards. EN: Advanced IELTS vocabulary drills.";
+      case 14:
+        return "JP: N2 Grammar rules & context matching. EN: IELTS Academic writing practices.";
+      case 15:
+        return "JP: N2 Kanji character writing & reading. EN: IELTS Listening & dictation.";
+      case 16:
+        return "JP: N2 Mock Exam drills & reading. EN: IELTS Speaking & writing mocks.";
+      case 17:
+        return "JP: Full-length N2 reading/listening. EN: IELTS band 8.0 prep & evaluations.";
+      case 18:
+        return "JP: News reading & audio transcription. EN: IELTS Reading & academic speaking.";
+      case 19:
+        return "JP: Simulated JLPT N2 timed test. EN: IELTS band 8.0 full mock test.";
+      default:
+        return "JP: JLPT N2 final checkpoint. EN: IELTS Band 8.0 graduation checkpoint.";
     }
   }
 
   // Metode Pengisian (Seeding) Kosakata dalam Jumlah Besar secara Cepat
-  Future<void> seedVocabularyList(List<dynamic> vocabList, String language) async {
+  Future<void> seedVocabularyList(
+      List<dynamic> vocabList, String language) async {
     final db = await database;
     final batch = db.batch();
     for (var vocab in vocabList) {
       final String word = (vocab['word'] ?? '').toString().trim();
-      final String translation = (vocab['meaning'] ?? vocab['translation'] ?? '').toString().trim();
+      final String translation =
+          (vocab['meaning'] ?? vocab['translation'] ?? '').toString().trim();
       // Lewati entri kosong
       if (word.isEmpty || translation.isEmpty) continue;
 
@@ -329,7 +499,8 @@ class DatabaseHelper {
   }
 
   // Metode Seeding Bacaan (Reading)
-  Future<void> seedReadingList(List<dynamic> readingList, String language) async {
+  Future<void> seedReadingList(
+      List<dynamic> readingList, String language) async {
     final db = await database;
     final batch = db.batch();
     for (var r in readingList) {
@@ -351,7 +522,8 @@ class DatabaseHelper {
   }
 
   // Metode Seeding Mendengar (Listening)
-  Future<void> seedListeningList(List<dynamic> listeningList, String language) async {
+  Future<void> seedListeningList(
+      List<dynamic> listeningList, String language) async {
     final db = await database;
     final batch = db.batch();
     for (var l in listeningList) {
@@ -374,7 +546,8 @@ class DatabaseHelper {
   }
 
   // Metode Seeding Grammar (Tata Bahasa)
-  Future<void> seedGrammarList(List<dynamic> grammarList, String language) async {
+  Future<void> seedGrammarList(
+      List<dynamic> grammarList, String language) async {
     final db = await database;
     final batch = db.batch();
     for (var g in grammarList) {

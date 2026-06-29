@@ -616,28 +616,14 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
       final target = widget.stage;
 
       if (isPassed) {
-        // Unlock all stages up to target stage in SQLite
-        for (int i = 1; i < target; i++) {
-          await db.update(
-            'chapters',
-            {'status': 'COMPLETED'},
-            where: 'chapter_number = ?',
-            whereArgs: [i],
-          );
-        }
-        await db.update(
-          'chapters',
-          {'status': 'ACTIVE'},
-          where: 'chapter_number = ?',
-          whereArgs: [target],
+        await DatabaseHelper.instance.skipLanguageToStage(
+          language: widget.language,
+          stage: target,
         );
 
-        // Update user's current level & day in gamification table
         await db.update(
           'gamification',
           {
-            'current_level': target,
-            'current_day': 1,
             'total_xp': currentXp + 200,
             'gems': currentGems + 30,
           },
@@ -724,38 +710,17 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
     final isBasicStage = widget.stage <= 6;
 
     if (isBasicStage) {
-      // stages <= 6: increment progression day immediately because daily mock practice is locked!
-      int currentDay = user['current_day'] as int? ?? 1;
-      int currentLevel = user['current_level'] as int? ?? 1;
-      int nextDay = currentDay + 1;
-      int nextLevel = currentLevel;
-
-      if (nextDay > 30) {
-        nextDay = 1;
-        if (currentLevel < 20) {
-          nextLevel = currentLevel + 1;
-          await db.update(
-            'chapters',
-            {'status': 'COMPLETED'},
-            where: 'chapter_number = ?',
-            whereArgs: [currentLevel],
-          );
-          await db.update(
-            'chapters',
-            {'status': 'ACTIVE'},
-            where: 'chapter_number = ?',
-            whereArgs: [nextLevel],
-          );
-        }
-      }
+      await DatabaseHelper.instance.advanceLanguageProgressIfCurrent(
+        language: widget.language,
+        completedStage: widget.stage,
+        completedDay: widget.day,
+      );
 
       await db.update(
         'gamification',
         {
           'total_xp': currentXp + 50,
           'gems': currentGems + 10,
-          'current_day': nextDay,
-          'current_level': nextLevel,
         },
         where: 'id = ?',
         whereArgs: [user['id']],

@@ -13,8 +13,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   Map<String, dynamic>? _userData;
-  int _activeStage = 1;
-  int _currentDayOfStage = 1;
+  int _japaneseStage = 1;
+  int _japaneseDay = 1;
+  int _englishStage = 1;
+  int _englishDay = 1;
   bool _isLoading = true;
   Timer? _tickerTimer;
 
@@ -44,27 +46,18 @@ class _HomeScreenState extends State<HomeScreen> {
     final userData =
         userList.isNotEmpty ? Map<String, dynamic>.from(userList.first) : null;
 
-    // 2. Ambil stage yang sedang aktif
-    final activeChapterList = await db.query(
-      'chapters',
-      where: 'status = ?',
-      whereArgs: ['ACTIVE'],
-      limit: 1,
-    );
-    final activeStageNum = activeChapterList.isNotEmpty
-        ? activeChapterList.first['chapter_number'] as int
-        : 1;
-
-    int dayOfStage = 1;
-    if (userData != null) {
-      dayOfStage = userData['current_day'] as int? ?? 1;
-    }
+    final japaneseProgress =
+        await DatabaseHelper.instance.getLanguageProgress('JAPANESE');
+    final englishProgress =
+        await DatabaseHelper.instance.getLanguageProgress('ENGLISH');
 
     if (mounted) {
       setState(() {
         _userData = userData;
-        _activeStage = activeStageNum;
-        _currentDayOfStage = dayOfStage;
+        _japaneseStage = japaneseProgress['stage'] ?? 1;
+        _japaneseDay = japaneseProgress['day'] ?? 1;
+        _englishStage = englishProgress['stage'] ?? 1;
+        _englishDay = englishProgress['day'] ?? 1;
         _isLoading = false;
       });
     }
@@ -272,10 +265,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 title: 'Latihan Bahasa Jepang',
                 subtitle: 'Target Akhir: JLPT N2 (Lulus Kompetensi)',
                 stageInfo:
-                    'Stage $_activeStage • Hari ke-$_currentDayOfStage dari 30',
+                    'Stage $_japaneseStage - Hari ke-$_japaneseDay dari 30',
                 vocabCount: 'Sistem Pengulangan SRS & Kuis Harian',
                 gradientColors: [AppTheme.neonBlue, const Color(0xFF0038A8)],
                 languageCode: 'JAPANESE',
+                stage: _japaneseStage,
                 icon: Icons.translate,
               ),
               const SizedBox(height: 16),
@@ -284,10 +278,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 title: 'Latihan Bahasa Inggris',
                 subtitle: 'Target Akhir: IELTS Band 8.0 (Akademik)',
                 stageInfo:
-                    'Stage $_activeStage • Hari ke-$_currentDayOfStage dari 30',
+                    'Stage $_englishStage - Hari ke-$_englishDay dari 30',
                 vocabCount: 'Sistem Pengulangan SRS & Kuis Harian',
                 gradientColors: [AppTheme.neonGreen, const Color(0xFF0F7A5E)],
                 languageCode: 'ENGLISH',
+                stage: _englishStage,
                 icon: Icons.school,
               ),
               const SizedBox(height: 28),
@@ -318,7 +313,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 subtitle: 'Tes N5 - N2 sesuai struktur resmi ujian asli Jepang',
                 accentColor: AppTheme.neonBlue,
                 icon: Icons.quiz,
-                isLocked: _activeStage <= 6,
                 onTap: () => _showJlptLevelSelector(context),
               ),
               const SizedBox(height: 12),
@@ -328,7 +322,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Tes Akademik Listening, Reading, Writing, dan Speaking',
                 accentColor: AppTheme.neonGreen,
                 icon: Icons.assignment,
-                isLocked: _activeStage <= 6,
                 onTap: () {
                   Navigator.pushNamed(
                     context,
@@ -564,6 +557,7 @@ class _HomeScreenState extends State<HomeScreen> {
     required String vocabCount,
     required List<Color> gradientColors,
     required String languageCode,
+    required int stage,
     required IconData icon,
   }) {
     return Container(
@@ -593,7 +587,7 @@ class _HomeScreenState extends State<HomeScreen> {
               '/daily_lesson',
               arguments: {
                 'language': languageCode,
-                'stage': _activeStage,
+                'stage': stage,
               },
             ).then((_) => _loadHomeData());
           },
@@ -691,7 +685,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ? () {
                   CustomTopNotification.show(
                     context,
-                    message: '🔒 Terkunci: Selesaikan Stage 1–6 (Kana Basic) terlebih dahulu untuk membuka Simulasi Ujian Resmi.',
+                    message:
+                        '🔒 Terkunci: Selesaikan Stage 1–6 (Kana Basic) terlebih dahulu untuk membuka Simulasi Ujian Resmi.',
                     isError: true,
                   );
                 }
@@ -720,7 +715,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: isLocked ? AppTheme.textSecondary : AppTheme.textPrimary,
+                          color: isLocked
+                              ? AppTheme.textSecondary
+                              : AppTheme.textPrimary,
                         ),
                       ),
                       const SizedBox(height: 4),
@@ -730,7 +727,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             : subtitle,
                         style: TextStyle(
                           fontSize: 12,
-                          color: isLocked ? AppTheme.textSecondary.withOpacity(0.6) : AppTheme.textSecondary,
+                          color: isLocked
+                              ? AppTheme.textSecondary.withOpacity(0.6)
+                              : AppTheme.textSecondary,
                         ),
                       ),
                     ],

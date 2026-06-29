@@ -32,10 +32,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     // 1. Load user gamification details
     final userList = await db.query('gamification', limit: 1);
-    final userData = userList.isNotEmpty ? Map<String, dynamic>.from(userList.first) : null;
+    final userData =
+        userList.isNotEmpty ? Map<String, dynamic>.from(userList.first) : null;
 
     // 2. Count local words learned
-    final countResult = await db.rawQuery('SELECT COUNT(*) as total FROM vocabulary');
+    final countResult =
+        await db.rawQuery('SELECT COUNT(*) as total FROM vocabulary');
     final totalWords = Sqflite.firstIntValue(countResult) ?? 0;
 
     // 3. Load simulated mock test histories
@@ -60,7 +62,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     // Reset chapters
     await db.update('chapters', {'status': 'LOCKED'});
-    await db.update('chapters', {'status': 'ACTIVE'}, where: 'chapter_number = 1');
+    await db.update('chapters', {'status': 'ACTIVE'},
+        where: 'chapter_number = 1');
 
     // Reset Leitner box levels and review schedule
     await db.update('vocabulary', {
@@ -81,12 +84,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
         'current_day': 1,
       },
     );
+    await DatabaseHelper.instance.resetLanguageProgress();
 
     // Clear simulation history
     await db.delete('simulations_history');
 
     if (mounted) {
-      CustomTopNotification.show(context, message: 'Progres berhasil di-reset ke Awal Stage 1.');
+      CustomTopNotification.show(context,
+          message: 'Progres berhasil di-reset ke Awal Stage 1.');
       Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
     }
   }
@@ -113,18 +118,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
           'gems': userData['gems'],
           'last_sync_time': FieldValue.serverTimestamp(),
         },
-        'stages': chapters.map((c) => {
-          'chapter_number': c['chapter_number'],
-          'status': c['status'],
-        }).toList(),
+        'stages': chapters
+            .map((c) => {
+                  'chapter_number': c['chapter_number'],
+                  'status': c['status'],
+                })
+            .toList(),
       }, SetOptions(merge: true));
 
       if (mounted) {
-        CustomTopNotification.show(context, message: 'Progres belajar berhasil disinkronisasikan ke Firebase JENGO.');
+        CustomTopNotification.show(context,
+            message:
+                'Progres belajar berhasil disinkronisasikan ke Firebase JENGO.');
       }
     } catch (e) {
       if (mounted) {
-        CustomTopNotification.show(context, message: 'Gagal sinkronisasi: ${e.toString()}', isError: true);
+        CustomTopNotification.show(context,
+            message: 'Gagal sinkronisasi: ${e.toString()}', isError: true);
       }
     } finally {
       if (mounted) {
@@ -148,13 +158,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
         'current_day': _userData!['current_day'],
         'backup_time': DateTime.now().millisecondsSinceEpoch,
       };
-      
+
       final jsonString = jsonEncode(backupData);
       debugPrint('Backup payload size: ${jsonString.length} chars');
       // Simulasikan penyimpanan ke file lokal
-      CustomTopNotification.show(context, message: 'Backup berhasil! Berkas cadangan disimpan ke memori internal.');
+      CustomTopNotification.show(context,
+          message:
+              'Backup berhasil! Berkas cadangan disimpan ke memori internal.');
     } catch (e) {
-      CustomTopNotification.show(context, message: 'Gagal membuat backup: $e', isError: true);
+      CustomTopNotification.show(context,
+          message: 'Gagal membuat backup: $e', isError: true);
     }
   }
 
@@ -162,10 +175,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void _performRestore() {
     try {
       // Simulasikan pemulihan dari berkas cadangan lokal
-      CustomTopNotification.show(context, message: 'Pemulihan berhasil! Seluruh statistik belajar berhasil dikembalikan.');
+      CustomTopNotification.show(context,
+          message:
+              'Pemulihan berhasil! Seluruh statistik belajar berhasil dikembalikan.');
       _loadProfileData();
     } catch (e) {
-      CustomTopNotification.show(context, message: 'Gagal memulihkan progres: $e', isError: true);
+      CustomTopNotification.show(context,
+          message: 'Gagal memulihkan progres: $e', isError: true);
     }
   }
 
@@ -173,7 +189,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     if (_isLoading) {
       return const Scaffold(
-        body: Center(child: CircularProgressIndicator(color: AppTheme.neonBlue)),
+        body:
+            Center(child: CircularProgressIndicator(color: AppTheme.neonBlue)),
       );
     }
 
@@ -249,7 +266,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
       decoration: BoxDecoration(
         color: AppTheme.darkSurface,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppTheme.neonBlue.withOpacity(0.3), width: 1.2),
+        border:
+            Border.all(color: AppTheme.neonBlue.withOpacity(0.3), width: 1.2),
       ),
       child: Row(
         children: [
@@ -265,12 +283,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
               children: [
                 const Text(
                   'Learner Pro',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: AppTheme.textPrimary),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   'Stage Aktif: Stage $level • Hari ke-$day',
-                  style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13),
+                  style: const TextStyle(
+                      color: AppTheme.textSecondary, fontSize: 13),
                 ),
                 const SizedBox(height: 12),
                 Row(
@@ -289,7 +311,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     const SizedBox(width: 10),
                     Text(
                       '${xp % 1000}/1000 XP',
-                      style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
+                      style: const TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: AppTheme.textPrimary),
                     ),
                   ],
                 ),
@@ -319,12 +344,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
               children: [
                 Text(
                   'TARGET AKHIR BELAJAR',
-                  style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: AppTheme.neonGreen, letterSpacing: 1.1),
+                  style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.bold,
+                      color: AppTheme.neonGreen,
+                      letterSpacing: 1.1),
                 ),
                 SizedBox(height: 4),
                 Text(
                   'Lulus JLPT N2 & Meraih IELTS Band 8.0',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: AppTheme.textPrimary),
                 ),
                 SizedBox(height: 2),
                 Text(
@@ -348,15 +380,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
       mainAxisSpacing: 16,
       childAspectRatio: 1.5,
       children: [
-        _buildStatItem('Streak Belajar', '$streak Hari', Icons.local_fire_department, Colors.orangeAccent),
-        _buildStatItem('Kosakata Dikuasai', '$_totalWordsCount Kata', Icons.school, AppTheme.neonBlue),
-        _buildStatItem('Permata', '$gems Gems', Icons.diamond, AppTheme.neonPink),
-        _buildStatItem('Waktu Belajar', '${(streak * 25) + 15} Menit', Icons.schedule, AppTheme.neonGreen),
+        _buildStatItem('Streak Belajar', '$streak Hari',
+            Icons.local_fire_department, Colors.orangeAccent),
+        _buildStatItem('Kosakata Dikuasai', '$_totalWordsCount Kata',
+            Icons.school, AppTheme.neonBlue),
+        _buildStatItem(
+            'Permata', '$gems Gems', Icons.diamond, AppTheme.neonPink),
+        _buildStatItem('Waktu Belajar', '${(streak * 25) + 15} Menit',
+            Icons.schedule, AppTheme.neonGreen),
       ],
     );
   }
 
-  Widget _buildStatItem(String title, String value, IconData icon, Color color) {
+  Widget _buildStatItem(
+      String title, String value, IconData icon, Color color) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -372,13 +409,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               Icon(icon, color: color, size: 20),
               const SizedBox(width: 8),
-              Text(title, style: const TextStyle(fontSize: 11, color: AppTheme.textSecondary)),
+              Text(title,
+                  style: const TextStyle(
+                      fontSize: 11, color: AppTheme.textSecondary)),
             ],
           ),
           const SizedBox(height: 8),
           Text(
             value,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
+            style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: AppTheme.textPrimary),
           ),
         ],
       ),
@@ -408,7 +450,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         final isJp = history['language'] == 'JAPANESE';
         final double score = history['overall_score'] as double;
         final String scoreText = isJp ? '${score.toInt()} Poin' : 'Band $score';
-        final DateTime date = DateTime.fromMillisecondsSinceEpoch(history['timestamp'] as int);
+        final DateTime date =
+            DateTime.fromMillisecondsSinceEpoch(history['timestamp'] as int);
         final dateString = '${date.day}/${date.month}/${date.year}';
 
         return Container(
@@ -426,15 +469,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   Text(
                     isJp ? 'JLPT ${history['level']}' : 'IELTS Academic',
-                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: AppTheme.textPrimary),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13,
+                        color: AppTheme.textPrimary),
                   ),
                   const SizedBox(height: 4),
-                  Text(dateString, style: const TextStyle(color: AppTheme.textSecondary, fontSize: 11)),
+                  Text(dateString,
+                      style: const TextStyle(
+                          color: AppTheme.textSecondary, fontSize: 11)),
                 ],
               ),
               Text(
                 scoreText,
-                style: TextStyle(color: isJp ? AppTheme.neonBlue : AppTheme.neonGreen, fontWeight: FontWeight.w900, fontSize: 14),
+                style: TextStyle(
+                    color: isJp ? AppTheme.neonBlue : AppTheme.neonGreen,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 14),
               ),
             ],
           ),
@@ -453,8 +504,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
       child: Column(
         children: [
           SwitchListTile(
-            title: const Text('Pengingat Belajar Harian', style: TextStyle(fontSize: 14, color: AppTheme.textPrimary)),
-            subtitle: const Text('Kirim notifikasi setiap pagi pukul 08.00', style: TextStyle(fontSize: 12, color: AppTheme.textSecondary)),
+            title: const Text('Pengingat Belajar Harian',
+                style: TextStyle(fontSize: 14, color: AppTheme.textPrimary)),
+            subtitle: const Text('Kirim notifikasi setiap pagi pukul 08.00',
+                style: TextStyle(fontSize: 12, color: AppTheme.textSecondary)),
             value: _isNotificationEnabled,
             activeColor: AppTheme.neonBlue,
             onChanged: (bool value) {
@@ -464,60 +517,81 @@ class _ProfileScreenState extends State<ProfileScreen> {
             },
           ),
           const Divider(height: 1, color: AppTheme.darkBackground),
-          
+
           // Sinkronisasi Firebase
           ListTile(
-            title: const Text('Sinkronisasi Cloud (Firebase)', style: TextStyle(fontSize: 14)),
-            subtitle: const Text('Unggah statistik belajar Anda ke server Jengo', style: TextStyle(fontSize: 12)),
+            title: const Text('Sinkronisasi Cloud (Firebase)',
+                style: TextStyle(fontSize: 14)),
+            subtitle: const Text(
+                'Unggah statistik belajar Anda ke server Jengo',
+                style: TextStyle(fontSize: 12)),
             trailing: _isSyncing
-                ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2, color: AppTheme.neonGreen))
-                : const Icon(Icons.cloud_upload_outlined, color: AppTheme.neonGreen, size: 22),
+                ? const SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(
+                        strokeWidth: 2, color: AppTheme.neonGreen))
+                : const Icon(Icons.cloud_upload_outlined,
+                    color: AppTheme.neonGreen, size: 22),
             onTap: _isSyncing ? null : _syncToFirebase,
           ),
           const Divider(height: 1, color: AppTheme.darkBackground),
 
           // Backup Data
           ListTile(
-            title: const Text('Backup Progres Belajar', style: TextStyle(fontSize: 14)),
-            subtitle: const Text('Ekspor progress ke berkas cadangan lokal', style: TextStyle(fontSize: 12)),
-            trailing: const Icon(Icons.save_alt_outlined, color: AppTheme.neonBlue, size: 22),
+            title: const Text('Backup Progres Belajar',
+                style: TextStyle(fontSize: 14)),
+            subtitle: const Text('Ekspor progress ke berkas cadangan lokal',
+                style: TextStyle(fontSize: 12)),
+            trailing: const Icon(Icons.save_alt_outlined,
+                color: AppTheme.neonBlue, size: 22),
             onTap: _performBackup,
           ),
           const Divider(height: 1, color: AppTheme.darkBackground),
 
           // Restore Data
           ListTile(
-            title: const Text('Restore Progres Belajar', style: TextStyle(fontSize: 14)),
-            subtitle: const Text('Pulihkan data dari berkas cadangan terakhir', style: TextStyle(fontSize: 12)),
-            trailing: const Icon(Icons.settings_backup_restore, color: AppTheme.neonGreen, size: 22),
+            title: const Text('Restore Progres Belajar',
+                style: TextStyle(fontSize: 14)),
+            subtitle: const Text('Pulihkan data dari berkas cadangan terakhir',
+                style: TextStyle(fontSize: 12)),
+            trailing: const Icon(Icons.settings_backup_restore,
+                color: AppTheme.neonGreen, size: 22),
             onTap: _performRestore,
           ),
           const Divider(height: 1, color: AppTheme.darkBackground),
 
           // Reset Progress
           ListTile(
-            title: const Text('Reset Progres Belajar', style: TextStyle(color: AppTheme.neonPink, fontSize: 14)),
-            subtitle: const Text('Mulai ulang aplikasi ke Stage 1 Hari ke-1', style: TextStyle(fontSize: 12)),
-            trailing: const Icon(Icons.refresh_outlined, color: AppTheme.neonPink, size: 22),
+            title: const Text('Reset Progres Belajar',
+                style: TextStyle(color: AppTheme.neonPink, fontSize: 14)),
+            subtitle: const Text('Mulai ulang aplikasi ke Stage 1 Hari ke-1',
+                style: TextStyle(fontSize: 12)),
+            trailing: const Icon(Icons.refresh_outlined,
+                color: AppTheme.neonPink, size: 22),
             onTap: () {
               showDialog(
                 context: context,
                 builder: (_) => AlertDialog(
                   backgroundColor: AppTheme.darkSurface,
                   title: const Text('Konfirmasi Reset'),
-                  content: const Text('Apakah Anda yakin ingin menghapus seluruh progres belajar dan kembali ke awal Stage 1?'),
+                  content: const Text(
+                      'Apakah Anda yakin ingin menghapus seluruh progres belajar dan kembali ke awal Stage 1?'),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
-                      child: const Text('Batal', style: TextStyle(color: AppTheme.textSecondary)),
+                      child: const Text('Batal',
+                          style: TextStyle(color: AppTheme.textSecondary)),
                     ),
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonPink),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: AppTheme.neonPink),
                       onPressed: () {
                         Navigator.pop(context);
                         _resetDatabaseProgress();
                       },
-                      child: const Text('Reset', style: TextStyle(color: AppTheme.textPrimary)),
+                      child: const Text('Reset',
+                          style: TextStyle(color: AppTheme.textPrimary)),
                     ),
                   ],
                 ),

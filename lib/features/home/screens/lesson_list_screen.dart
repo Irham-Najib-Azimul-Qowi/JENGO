@@ -28,32 +28,23 @@ class _LessonListScreenState extends State<LessonListScreen> {
   }
 
   Future<void> _loadProgress() async {
-    final db = await DatabaseHelper.instance.database;
-    final userList = await db.query('gamification', limit: 1);
-    if (userList.isNotEmpty) {
-      final user = userList.first;
-      int activeLevel = user['current_level'] as int? ?? 1;
-      int activeDay = user['current_day'] as int? ?? 1;
+    final progress =
+        await DatabaseHelper.instance.getLanguageProgress(widget.language);
+    final activeStage = progress['stage'] ?? 1;
+    final activeDay = progress['day'] ?? 1;
 
-      int displayActiveDay = activeDay;
-      if (widget.stage < activeLevel) {
-        displayActiveDay = 31; // Semua pelajaran selesai di stage lampau
-      } else if (widget.stage > activeLevel) {
-        displayActiveDay = 0; // Semua pelajaran terkunci di stage masa depan
-      }
+    int displayActiveDay = activeDay;
+    if (widget.stage < activeStage) {
+      displayActiveDay = 31;
+    } else if (widget.stage > activeStage) {
+      displayActiveDay = 0;
+    }
 
-      if (mounted) {
-        setState(() {
-          _currentActiveDay = displayActiveDay;
-          _isLoading = false;
-        });
-      }
-    } else {
-      if (mounted) {
-        setState(() {
-          _isLoading = false;
-        });
-      }
+    if (mounted) {
+      setState(() {
+        _currentActiveDay = displayActiveDay;
+        _isLoading = false;
+      });
     }
   }
 
@@ -61,13 +52,16 @@ class _LessonListScreenState extends State<LessonListScreen> {
   Widget build(BuildContext context) {
     if (_isLoading) {
       return const Scaffold(
-        body: Center(child: CircularProgressIndicator(color: AppTheme.neonBlue)),
+        body:
+            Center(child: CircularProgressIndicator(color: AppTheme.neonBlue)),
       );
     }
 
     final isJapanese = widget.language == 'JAPANESE';
-    final String languageTitle = isJapanese ? 'Bahasa Jepang' : 'Bahasa Inggris';
-    final Color accentColor = isJapanese ? AppTheme.neonBlue : AppTheme.neonGreen;
+    final String languageTitle =
+        isJapanese ? 'Bahasa Jepang' : 'Bahasa Inggris';
+    final Color accentColor =
+        isJapanese ? AppTheme.neonBlue : AppTheme.neonGreen;
 
     return Scaffold(
       appBar: AppBar(
@@ -162,7 +156,8 @@ class _LessonListScreenState extends State<LessonListScreen> {
     required Color accentColor,
   }) {
     Color itemColor = AppTheme.textSecondary.withOpacity(0.5);
-    Widget iconWidget = const Icon(Icons.lock, color: AppTheme.textSecondary, size: 20);
+    Widget iconWidget =
+        const Icon(Icons.lock, color: AppTheme.textSecondary, size: 20);
     BoxDecoration itemDecoration = BoxDecoration(
       color: AppTheme.darkSurface.withOpacity(0.5),
       borderRadius: BorderRadius.circular(12),
@@ -171,7 +166,8 @@ class _LessonListScreenState extends State<LessonListScreen> {
 
     if (isCompleted) {
       itemColor = AppTheme.neonGreen;
-      iconWidget = const Icon(Icons.check_circle, color: AppTheme.neonGreen, size: 24);
+      iconWidget =
+          const Icon(Icons.check_circle, color: AppTheme.neonGreen, size: 24);
       itemDecoration = BoxDecoration(
         color: AppTheme.darkSurface,
         borderRadius: BorderRadius.circular(12),
@@ -202,7 +198,8 @@ class _LessonListScreenState extends State<LessonListScreen> {
               ? () {
                   CustomTopNotification.show(
                     context,
-                    message: 'Pelajaran ini terkunci atau Anda harus menyelesaikan hari sebelumnya!',
+                    message:
+                        'Pelajaran ini terkunci atau Anda harus menyelesaikan hari sebelumnya!',
                     isError: true,
                   );
                 }
@@ -234,10 +231,13 @@ class _LessonListScreenState extends State<LessonListScreen> {
                       width: 36,
                       height: 36,
                       decoration: BoxDecoration(
-                        color: isLocked ? Colors.transparent : itemColor.withOpacity(0.1),
+                        color: isLocked
+                            ? Colors.transparent
+                            : itemColor.withOpacity(0.1),
                         shape: BoxShape.circle,
                         border: isLocked
-                            ? Border.all(color: AppTheme.textSecondary.withOpacity(0.3))
+                            ? Border.all(
+                                color: AppTheme.textSecondary.withOpacity(0.3))
                             : null,
                       ),
                       child: Center(
@@ -245,7 +245,8 @@ class _LessonListScreenState extends State<LessonListScreen> {
                           '$dayNumber',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: isLocked ? AppTheme.textSecondary : itemColor,
+                            color:
+                                isLocked ? AppTheme.textSecondary : itemColor,
                           ),
                         ),
                       ),
@@ -258,7 +259,9 @@ class _LessonListScreenState extends State<LessonListScreen> {
                           'Pelajaran Hari ke-$dayNumber',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: isLocked ? AppTheme.textSecondary : AppTheme.textPrimary,
+                            color: isLocked
+                                ? AppTheme.textSecondary
+                                : AppTheme.textPrimary,
                           ),
                         ),
                         Text(
