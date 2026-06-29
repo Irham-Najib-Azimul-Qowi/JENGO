@@ -4,7 +4,7 @@ import 'dart:convert';
 
 class DatabaseHelper {
   static const _databaseName = "jengo.db";
-  static const _databaseVersion = 8;
+  static const _databaseVersion = 9;
 
   // Singleton Instance
   DatabaseHelper._privateConstructor();
@@ -52,7 +52,7 @@ class DatabaseHelper {
       await _seedLanguageProgress(db,
           currentStage: currentStage, currentDay: currentDay);
     }
-    if (oldVersion < 8) {
+    if (oldVersion < 9) {
       await _refreshChapterCurriculum(db);
     }
   }
@@ -94,7 +94,7 @@ class DatabaseHelper {
         reading TEXT,
         translation TEXT NOT NULL,
         language TEXT NOT NULL, -- JAPANESE, ENGLISH
-        difficulty_level TEXT, -- N5, N4, N3, N2, A1, A2, B1, B2, C1, HIRAGANA, KATAKANA
+        difficulty_level TEXT, -- N5, N4, N3, N2, N1, A1, A2, B1, B2, C1, HIRAGANA, KATAKANA
         example_sentence TEXT DEFAULT '',
         box_level INTEGER DEFAULT 1, -- Leitner Box (1-5)
         next_review_time INTEGER NOT NULL -- Timestamp
@@ -389,19 +389,19 @@ class DatabaseHelper {
       case 13:
         return "Stage 13: Kalimat Dasar / English Basic Sentences";
       case 14:
-        return "Stage 14: Partikel Dasar / English Basic Grammar";
+        return "Stage 14: N4 Vocabulary 1 / English Basic Grammar";
       case 15:
-        return "Stage 15: Kanji N5 Awal / English Intermediate Vocab";
+        return "Stage 15: N4 Vocabulary 2 / English Intermediate Vocab";
       case 16:
-        return "Stage 16: Kanji & Pola N5 / English Paragraphs";
+        return "Stage 16: N3 Vocabulary 1 / English Paragraphs";
       case 17:
-        return "Stage 17: N4 Bridge / IELTS Foundation";
+        return "Stage 17: N3 Vocabulary 2 / IELTS Foundation";
       case 18:
-        return "Stage 18: N3 Bridge / IELTS Skills";
+        return "Stage 18: N3 Vocabulary 3 / IELTS Skills";
       case 19:
-        return "Stage 19: N2 Readiness / IELTS Mock Skills";
+        return "Stage 19: N2 + N1 Vocabulary 1 / IELTS Mock Skills";
       default:
-        return "Stage 20: Final Certification Readiness";
+        return "Stage 20: N2 + N1 Vocabulary 2 / Final Readiness";
     }
   }
 
@@ -434,19 +434,19 @@ class DatabaseHelper {
       case 13:
         return "JP: Kalimat dasar pola A wa B desu, kore/sore/are. EN: simple sentence building.";
       case 14:
-        return "JP: Partikel dasar wa, ga, o, ni, de dengan contoh pendek. EN: grammar foundation.";
+        return "JP: Kosakata N4 tahap 1 setelah fondasi N5. EN: grammar foundation.";
       case 15:
-        return "JP: Kanji N5 awal setelah kana dan kosakata dasar cukup kuat. EN: intermediate vocabulary.";
+        return "JP: Kosakata N4 tahap 2 dengan review N5. EN: intermediate vocabulary.";
       case 16:
-        return "JP: Kanji N5, pola N5, dan bacaan sangat pendek. EN: short paragraphs.";
+        return "JP: Kosakata N3 tahap 1, romaji mulai disembunyikan total. EN: short paragraphs.";
       case 17:
-        return "JP: Transisi N4 dengan listening dan reading pendek. EN: IELTS foundation tasks.";
+        return "JP: Kosakata N3 tahap 2 dan konteks kalimat pendek. EN: IELTS foundation tasks.";
       case 18:
-        return "JP: Transisi N3 bertahap, romaji makin dikurangi. EN: IELTS reading/listening skills.";
+        return "JP: Kosakata N3 tahap 3 menuju latihan sertifikasi. EN: IELTS reading/listening skills.";
       case 19:
-        return "JP: Kesiapan N2 dengan latihan terarah. EN: IELTS mock skills and band estimation.";
+        return "JP: Kosakata N2 + N1 tahap 1 untuk kesiapan JLPT lanjut. EN: IELTS mock skills and band estimation.";
       default:
-        return "JP: Final checkpoint menuju JLPT N2. EN: final checkpoint menuju IELTS target.";
+        return "JP: Kosakata N2 + N1 tahap 2 dan final checkpoint JLPT lanjut. EN: final checkpoint menuju IELTS target.";
     }
   }
 

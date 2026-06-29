@@ -62,20 +62,20 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
         diffLevels = ['HIRAGANA'];
       } else if (targetStage == 4) {
         diffLevels = ['KATAKANA'];
-        additionalWhere = " AND id <= 100071";
+        additionalWhere = " AND id <= 100100";
       } else if (targetStage == 5) {
         diffLevels = ['KATAKANA'];
-        additionalWhere = " AND id > 100071";
+        additionalWhere = " AND id > 100100";
       } else if (targetStage == 6) {
         diffLevels = ['HIRAGANA', 'KATAKANA'];
-      } else if (targetStage >= 7 && targetStage <= 16) {
+      } else if (targetStage >= 7 && targetStage <= 13) {
         diffLevels = ['N5'];
-      } else if (targetStage == 17) {
+      } else if (targetStage >= 14 && targetStage <= 15) {
         diffLevels = ['N4'];
-      } else if (targetStage == 18) {
+      } else if (targetStage >= 16 && targetStage <= 18) {
         diffLevels = ['N3'];
       } else {
-        diffLevels = ['N2'];
+        diffLevels = ['N2', 'N1'];
       }
     } else {
       // ENGLISH
@@ -154,14 +154,29 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
       List<Map<String, dynamic>> resultsToday = [];
       if (diffLevels.isNotEmpty) {
         final placeholders = List.filled(diffLevels.length, '?').join(', ');
+        var stageWhere = 'language = ? AND difficulty_level IN ($placeholders)';
+        var stageWhereArgs = <Object?>[widget.language, ...diffLevels];
+        if (widget.language == 'JAPANESE' && targetStage == 5) {
+          stageWhere = 'language = ? AND difficulty_level = ? AND id > 100071';
+          stageWhereArgs = [widget.language, 'KATAKANA'];
+        }
         resultsToday = await db.query(
           'vocabulary',
-          where: 'language = ? AND difficulty_level IN ($placeholders)',
-          whereArgs: [widget.language, ...diffLevels],
+          where: stageWhere,
+          whereArgs: stageWhereArgs,
           orderBy: 'id ASC',
           limit: wordsPerDay,
           offset: lessonIndex * wordsPerDay,
         );
+        if (resultsToday.isEmpty) {
+          resultsToday = await db.query(
+            'vocabulary',
+            where: stageWhere,
+            whereArgs: stageWhereArgs,
+            orderBy: 'id ASC',
+            limit: wordsPerDay,
+          );
+        }
       }
       if (resultsToday.isEmpty) {
         resultsToday = await db.query(
@@ -180,14 +195,31 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
         List<Map<String, dynamic>> resultsYesterday = [];
         if (diffLevels.isNotEmpty) {
           final placeholders = List.filled(diffLevels.length, '?').join(', ');
+          var stageWhere =
+              'language = ? AND difficulty_level IN ($placeholders)';
+          var stageWhereArgs = <Object?>[widget.language, ...diffLevels];
+          if (widget.language == 'JAPANESE' && targetStage == 5) {
+            stageWhere =
+                'language = ? AND difficulty_level = ? AND id > 100071';
+            stageWhereArgs = [widget.language, 'KATAKANA'];
+          }
           resultsYesterday = await db.query(
             'vocabulary',
-            where: 'language = ? AND difficulty_level IN ($placeholders)',
-            whereArgs: [widget.language, ...diffLevels],
+            where: stageWhere,
+            whereArgs: stageWhereArgs,
             orderBy: 'id ASC',
             limit: wordsPerDay,
             offset: (lessonIndex - 1) * wordsPerDay,
           );
+          if (resultsYesterday.isEmpty) {
+            resultsYesterday = await db.query(
+              'vocabulary',
+              where: stageWhere,
+              whereArgs: stageWhereArgs,
+              orderBy: 'id ASC',
+              limit: wordsPerDay,
+            );
+          }
         }
         combined.addAll(resultsYesterday);
       }

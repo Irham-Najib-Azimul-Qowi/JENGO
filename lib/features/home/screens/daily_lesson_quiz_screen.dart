@@ -118,10 +118,11 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         if (targetStage > 1) diffLevels.add('HIRAGANA');
         if (targetStage > 4) diffLevels.add('KATAKANA');
         if (targetStage > 7) diffLevels.add('N5');
-        if (targetStage > 17) diffLevels.add('N4');
-        if (targetStage > 18) diffLevels.add('N3');
+        if (targetStage > 14) diffLevels.add('N4');
+        if (targetStage > 16) diffLevels.add('N3');
         if (targetStage > 18) {
           diffLevels.add('N2');
+          diffLevels.add('N1');
         }
       } else {
         if (targetStage > 1) diffLevels.add('A1');
@@ -440,10 +441,10 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
       if (stage <= 3) return ['HIRAGANA'];
       if (stage <= 5) return ['KATAKANA'];
       if (stage == 6) return ['HIRAGANA', 'KATAKANA'];
-      if (stage <= 16) return ['N5'];
-      if (stage == 17) return ['N4'];
-      if (stage == 18) return ['N3'];
-      return ['N2'];
+      if (stage <= 13) return ['N5'];
+      if (stage <= 15) return ['N4'];
+      if (stage <= 18) return ['N3'];
+      return ['N2', 'N1'];
     }
 
     if (stage <= 2) return ['A1'];
@@ -741,36 +742,26 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
     }
 
     // 2. NORMAL LESSON PROGRESSION FLOW
-    final isBasicStage = widget.stage <= 6;
+    // Completing the active lesson immediately opens the next lesson/day.
+    // The daily mock stays available as extra review and cannot double-advance
+    // because advanceLanguageProgressIfCurrent checks the active stage/day.
+    await DatabaseHelper.instance.advanceLanguageProgressIfCurrent(
+      language: widget.language,
+      completedStage: widget.stage,
+      completedDay: widget.day,
+    );
 
-    if (isBasicStage) {
-      await DatabaseHelper.instance.advanceLanguageProgressIfCurrent(
-        language: widget.language,
-        completedStage: widget.stage,
-        completedDay: widget.day,
-      );
+    await db.update(
+      'gamification',
+      {
+        'total_xp': currentXp + 50,
+        'gems': currentGems + 10,
+      },
+      where: 'id = ?',
+      whereArgs: [user['id']],
+    );
 
-      await db.update(
-        'gamification',
-        {
-          'total_xp': currentXp + 50,
-          'gems': currentGems + 10,
-        },
-        where: 'id = ?',
-        whereArgs: [user['id']],
-      );
-    } else {
-      // stages > 6: progress is driven by mock exam session after daily lesson quiz
-      await db.update(
-        'gamification',
-        {
-          'total_xp': currentXp + 50,
-          'gems': currentGems + 10,
-        },
-        where: 'id = ?',
-        whereArgs: [user['id']],
-      );
-    }
+    final shouldOfferDailyMock = widget.stage > 6;
 
     showDialog(
       context: context,
@@ -802,7 +793,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
                 style: TextStyle(
                     fontWeight: FontWeight.bold, color: AppTheme.neonBlue)),
             const SizedBox(height: 16),
-            if (!isBasicStage)
+            if (shouldOfferDailyMock)
               Text(
                 'Langkah berikutnya: Selesaikan Sesi Latihan Rutin ${widget.language == 'JAPANESE' ? 'JLPT' : 'IELTS'} Anda!',
                 style: const TextStyle(
@@ -816,7 +807,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
           ],
         ),
         actions: [
-          if (!isBasicStage)
+          if (shouldOfferDailyMock)
             ElevatedButton(
               style:
                   ElevatedButton.styleFrom(backgroundColor: AppTheme.neonGreen),
