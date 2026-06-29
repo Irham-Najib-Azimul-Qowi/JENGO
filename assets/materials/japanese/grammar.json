@@ -1,0 +1,2333 @@
+[
+  {
+    "id": 1,
+    "rule_name": "〜ている (te iru)",
+    "level": "N5",
+    "explanation": "Menunjukkan tindakan yang sedang berlangsung atau status kondisi saat ini.",
+    "tips": "Tips: Setara dengan Present Continuous Tense di bahasa Inggris (verb-ing).",
+    "example_sentence": "私は日本語を勉強しています。",
+    "example_translation": "Saya sedang belajar bahasa Jepang."
+  },
+  {
+    "id": 2,
+    "rule_name": "〜てください (te kudasai)",
+    "level": "N5",
+    "explanation": "Digunakan untuk meminta atau memohon seseorang melakukan sesuatu secara sopan.",
+    "tips": "Tips: Dibuat dari kata kerja bentuk-te + kudasai.",
+    "example_sentence": "ここに名前を書いてください。",
+    "example_translation": "Tolong tulis nama Anda di sini."
+  },
+  {
+    "id": 3,
+    "rule_name": "〜から (kara)",
+    "level": "N5",
+    "explanation": "Menunjukkan alasan atau sebab. Diterjemahkan sebagai 'karena' atau 'sebab'.",
+    "tips": "Tips: Diletakkan setelah kalimat penyebab.",
+    "example_sentence": "忙しいですから,パーティーに行きません。",
+    "example_translation": "Karena sibuk, saya tidak pergi ke pesta."
+  },
+  {
+    "id": 4,
+    "rule_name": "〜たい (tai)",
+    "level": "N4",
+    "explanation": "Menunjukkan keinginan pembicara untuk melakukan suatu tindakan ('ingin...').",
+    "tips": "Tips: Hanya digunakan untuk kata kerja tindakan pertama orang pertama.",
+    "example_sentence": "日本に行きたいです。",
+    "example_translation": "Saya ingin pergi ke Jepang."
+  },
+  {
+    "id": 5,
+    "rule_name": "〜たことがある (ta koto ga aru)",
+    "level": "N4",
+    "explanation": "Menunjukkan pengalaman di masa lalu ('pernah melakukan...').",
+    "tips": "Tips: Menggunakan kata kerja bentuk lampau-ta + koto ga aru.",
+    "example_sentence": "富士山に登ったことがありますか？",
+    "example_translation": "Apakah Anda pernah mendaki Gunung Fuji?"
+  },
+  {
+    "id": 6,
+    "rule_name": "〜うちに (uchi ni)",
+    "level": "N3",
+    "explanation": "Melakukan suatu tindakan selagi/mumpung keadaan saat ini belum berubah.",
+    "tips": "Tips: Sangat cocok digunakan untuk momen terbatas seperti selagi muda atau selagi hangat.",
+    "example_sentence": "温いうちに食べてください。",
+    "example_translation": "Silakan makan selagi masih hangat."
+  },
+  {
+    "id": 7,
+    "rule_name": "〜代わりに (kawari ni)",
+    "level": "N3",
+    "explanation": "Sebagai pengganti dari suatu hal, atau sebagai kompensasi atas tindakan.",
+    "tips": "Tips: Diikuti oleh kata benda + no atau kata kerja bentuk kamus.",
+    "example_sentence": "車で行く代わりに,電車で行きましょう。",
+    "example_translation": "Sebagai ganti pergi naik mobil, mari pergi naik kereta."
+  },
+  {
+    "id": 8,
+    "rule_name": "〜際に (sai ni)",
+    "level": "N2",
+    "explanation": "Digunakan dalam situasi formal yang berarti 'Saat / Ketika melakukan...'.",
+    "tips": "Tips: Biasanya didengar pada instruksi bandara atau pengumuman tertulis resmi.",
+    "example_sentence": "パスポートを紛失した際には,大使館へ連絡してください。",
+    "example_translation": "Saat paspor hilang, harap hubungi kedutaan besar."
+  },
+  {
+    "id": 9,
+    "rule_name": "〜つつある (tsutsu aru)",
+    "level": "N2",
+    "explanation": "Menunjukkan bahwa suatu proses sedang berlangsung secara bertahap menuju arah tertentu.",
+    "tips": "Tips: Sering digunakan dalam berita koran untuk menunjukkan tren perubahan ekonomi/cuaca.",
+    "example_sentence": "景気は回復しつつある。",
+    "example_translation": "Kondisi ekonomi sedang berangsur pulih."
+  },
+  {
+    "id": 10,
+    "rule_name": "〜がてら (gatera)",
+    "level": "N1",
+    "explanation": "Sambil melakukan tindakan utama, sekaligus memanfaatkan kesempatan untuk melakukan tindakan sampingan.",
+    "tips": "Tips: Kata kerja sebelum gatera adalah kata kerja utama.",
+    "example_sentence": "散歩がてら,牛乳を買ってきます。",
+    "example_translation": "Sekalian jalan-jalan sore, saya akan membelikan susu."
+  },
+  {
+    "id": 11,
+    "rule_name": "Pola Tata Bahasa Ke-11 (Grammar Pattern 11)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第11文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-11."
+  },
+  {
+    "id": 12,
+    "rule_name": "Pola Tata Bahasa Ke-12 (Grammar Pattern 12)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第12文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-12."
+  },
+  {
+    "id": 13,
+    "rule_name": "Pola Tata Bahasa Ke-13 (Grammar Pattern 13)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第13文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-13."
+  },
+  {
+    "id": 14,
+    "rule_name": "Pola Tata Bahasa Ke-14 (Grammar Pattern 14)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第14文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-14."
+  },
+  {
+    "id": 15,
+    "rule_name": "Pola Tata Bahasa Ke-15 (Grammar Pattern 15)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第15文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-15."
+  },
+  {
+    "id": 16,
+    "rule_name": "Pola Tata Bahasa Ke-16 (Grammar Pattern 16)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第16文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-16."
+  },
+  {
+    "id": 17,
+    "rule_name": "Pola Tata Bahasa Ke-17 (Grammar Pattern 17)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第17文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-17."
+  },
+  {
+    "id": 18,
+    "rule_name": "Pola Tata Bahasa Ke-18 (Grammar Pattern 18)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第18文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-18."
+  },
+  {
+    "id": 19,
+    "rule_name": "Pola Tata Bahasa Ke-19 (Grammar Pattern 19)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第19文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-19."
+  },
+  {
+    "id": 20,
+    "rule_name": "Pola Tata Bahasa Ke-20 (Grammar Pattern 20)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第20文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-20."
+  },
+  {
+    "id": 21,
+    "rule_name": "Pola Tata Bahasa Ke-21 (Grammar Pattern 21)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第21文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-21."
+  },
+  {
+    "id": 22,
+    "rule_name": "Pola Tata Bahasa Ke-22 (Grammar Pattern 22)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第22文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-22."
+  },
+  {
+    "id": 23,
+    "rule_name": "Pola Tata Bahasa Ke-23 (Grammar Pattern 23)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第23文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-23."
+  },
+  {
+    "id": 24,
+    "rule_name": "Pola Tata Bahasa Ke-24 (Grammar Pattern 24)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第24文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-24."
+  },
+  {
+    "id": 25,
+    "rule_name": "Pola Tata Bahasa Ke-25 (Grammar Pattern 25)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第25文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-25."
+  },
+  {
+    "id": 26,
+    "rule_name": "Pola Tata Bahasa Ke-26 (Grammar Pattern 26)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第26文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-26."
+  },
+  {
+    "id": 27,
+    "rule_name": "Pola Tata Bahasa Ke-27 (Grammar Pattern 27)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第27文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-27."
+  },
+  {
+    "id": 28,
+    "rule_name": "Pola Tata Bahasa Ke-28 (Grammar Pattern 28)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第28文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-28."
+  },
+  {
+    "id": 29,
+    "rule_name": "Pola Tata Bahasa Ke-29 (Grammar Pattern 29)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第29文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-29."
+  },
+  {
+    "id": 30,
+    "rule_name": "Pola Tata Bahasa Ke-30 (Grammar Pattern 30)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第30文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-30."
+  },
+  {
+    "id": 31,
+    "rule_name": "Pola Tata Bahasa Ke-31 (Grammar Pattern 31)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第31文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-31."
+  },
+  {
+    "id": 32,
+    "rule_name": "Pola Tata Bahasa Ke-32 (Grammar Pattern 32)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第32文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-32."
+  },
+  {
+    "id": 33,
+    "rule_name": "Pola Tata Bahasa Ke-33 (Grammar Pattern 33)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第33文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-33."
+  },
+  {
+    "id": 34,
+    "rule_name": "Pola Tata Bahasa Ke-34 (Grammar Pattern 34)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第34文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-34."
+  },
+  {
+    "id": 35,
+    "rule_name": "Pola Tata Bahasa Ke-35 (Grammar Pattern 35)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第35文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-35."
+  },
+  {
+    "id": 36,
+    "rule_name": "Pola Tata Bahasa Ke-36 (Grammar Pattern 36)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第36文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-36."
+  },
+  {
+    "id": 37,
+    "rule_name": "Pola Tata Bahasa Ke-37 (Grammar Pattern 37)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第37文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-37."
+  },
+  {
+    "id": 38,
+    "rule_name": "Pola Tata Bahasa Ke-38 (Grammar Pattern 38)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第38文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-38."
+  },
+  {
+    "id": 39,
+    "rule_name": "Pola Tata Bahasa Ke-39 (Grammar Pattern 39)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第39文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-39."
+  },
+  {
+    "id": 40,
+    "rule_name": "Pola Tata Bahasa Ke-40 (Grammar Pattern 40)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第40文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-40."
+  },
+  {
+    "id": 41,
+    "rule_name": "Pola Tata Bahasa Ke-41 (Grammar Pattern 41)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第41文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-41."
+  },
+  {
+    "id": 42,
+    "rule_name": "Pola Tata Bahasa Ke-42 (Grammar Pattern 42)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第42文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-42."
+  },
+  {
+    "id": 43,
+    "rule_name": "Pola Tata Bahasa Ke-43 (Grammar Pattern 43)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第43文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-43."
+  },
+  {
+    "id": 44,
+    "rule_name": "Pola Tata Bahasa Ke-44 (Grammar Pattern 44)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第44文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-44."
+  },
+  {
+    "id": 45,
+    "rule_name": "Pola Tata Bahasa Ke-45 (Grammar Pattern 45)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第45文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-45."
+  },
+  {
+    "id": 46,
+    "rule_name": "Pola Tata Bahasa Ke-46 (Grammar Pattern 46)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第46文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-46."
+  },
+  {
+    "id": 47,
+    "rule_name": "Pola Tata Bahasa Ke-47 (Grammar Pattern 47)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第47文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-47."
+  },
+  {
+    "id": 48,
+    "rule_name": "Pola Tata Bahasa Ke-48 (Grammar Pattern 48)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第48文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-48."
+  },
+  {
+    "id": 49,
+    "rule_name": "Pola Tata Bahasa Ke-49 (Grammar Pattern 49)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第49文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-49."
+  },
+  {
+    "id": 50,
+    "rule_name": "Pola Tata Bahasa Ke-50 (Grammar Pattern 50)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第50文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-50."
+  },
+  {
+    "id": 51,
+    "rule_name": "Pola Tata Bahasa Ke-51 (Grammar Pattern 51)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第51文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-51."
+  },
+  {
+    "id": 52,
+    "rule_name": "Pola Tata Bahasa Ke-52 (Grammar Pattern 52)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第52文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-52."
+  },
+  {
+    "id": 53,
+    "rule_name": "Pola Tata Bahasa Ke-53 (Grammar Pattern 53)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第53文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-53."
+  },
+  {
+    "id": 54,
+    "rule_name": "Pola Tata Bahasa Ke-54 (Grammar Pattern 54)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第54文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-54."
+  },
+  {
+    "id": 55,
+    "rule_name": "Pola Tata Bahasa Ke-55 (Grammar Pattern 55)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第55文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-55."
+  },
+  {
+    "id": 56,
+    "rule_name": "Pola Tata Bahasa Ke-56 (Grammar Pattern 56)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第56文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-56."
+  },
+  {
+    "id": 57,
+    "rule_name": "Pola Tata Bahasa Ke-57 (Grammar Pattern 57)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第57文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-57."
+  },
+  {
+    "id": 58,
+    "rule_name": "Pola Tata Bahasa Ke-58 (Grammar Pattern 58)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第58文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-58."
+  },
+  {
+    "id": 59,
+    "rule_name": "Pola Tata Bahasa Ke-59 (Grammar Pattern 59)",
+    "level": "N5",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N5 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N5 ini.",
+    "example_sentence": "これは第59文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-59."
+  },
+  {
+    "id": 60,
+    "rule_name": "Pola Tata Bahasa Ke-60 (Grammar Pattern 60)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第60文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-60."
+  },
+  {
+    "id": 61,
+    "rule_name": "Pola Tata Bahasa Ke-61 (Grammar Pattern 61)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第61文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-61."
+  },
+  {
+    "id": 62,
+    "rule_name": "Pola Tata Bahasa Ke-62 (Grammar Pattern 62)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第62文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-62."
+  },
+  {
+    "id": 63,
+    "rule_name": "Pola Tata Bahasa Ke-63 (Grammar Pattern 63)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第63文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-63."
+  },
+  {
+    "id": 64,
+    "rule_name": "Pola Tata Bahasa Ke-64 (Grammar Pattern 64)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第64文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-64."
+  },
+  {
+    "id": 65,
+    "rule_name": "Pola Tata Bahasa Ke-65 (Grammar Pattern 65)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第65文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-65."
+  },
+  {
+    "id": 66,
+    "rule_name": "Pola Tata Bahasa Ke-66 (Grammar Pattern 66)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第66文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-66."
+  },
+  {
+    "id": 67,
+    "rule_name": "Pola Tata Bahasa Ke-67 (Grammar Pattern 67)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第67文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-67."
+  },
+  {
+    "id": 68,
+    "rule_name": "Pola Tata Bahasa Ke-68 (Grammar Pattern 68)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第68文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-68."
+  },
+  {
+    "id": 69,
+    "rule_name": "Pola Tata Bahasa Ke-69 (Grammar Pattern 69)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第69文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-69."
+  },
+  {
+    "id": 70,
+    "rule_name": "Pola Tata Bahasa Ke-70 (Grammar Pattern 70)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第70文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-70."
+  },
+  {
+    "id": 71,
+    "rule_name": "Pola Tata Bahasa Ke-71 (Grammar Pattern 71)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第71文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-71."
+  },
+  {
+    "id": 72,
+    "rule_name": "Pola Tata Bahasa Ke-72 (Grammar Pattern 72)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第72文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-72."
+  },
+  {
+    "id": 73,
+    "rule_name": "Pola Tata Bahasa Ke-73 (Grammar Pattern 73)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第73文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-73."
+  },
+  {
+    "id": 74,
+    "rule_name": "Pola Tata Bahasa Ke-74 (Grammar Pattern 74)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第74文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-74."
+  },
+  {
+    "id": 75,
+    "rule_name": "Pola Tata Bahasa Ke-75 (Grammar Pattern 75)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第75文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-75."
+  },
+  {
+    "id": 76,
+    "rule_name": "Pola Tata Bahasa Ke-76 (Grammar Pattern 76)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第76文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-76."
+  },
+  {
+    "id": 77,
+    "rule_name": "Pola Tata Bahasa Ke-77 (Grammar Pattern 77)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第77文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-77."
+  },
+  {
+    "id": 78,
+    "rule_name": "Pola Tata Bahasa Ke-78 (Grammar Pattern 78)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第78文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-78."
+  },
+  {
+    "id": 79,
+    "rule_name": "Pola Tata Bahasa Ke-79 (Grammar Pattern 79)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第79文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-79."
+  },
+  {
+    "id": 80,
+    "rule_name": "Pola Tata Bahasa Ke-80 (Grammar Pattern 80)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第80文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-80."
+  },
+  {
+    "id": 81,
+    "rule_name": "Pola Tata Bahasa Ke-81 (Grammar Pattern 81)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第81文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-81."
+  },
+  {
+    "id": 82,
+    "rule_name": "Pola Tata Bahasa Ke-82 (Grammar Pattern 82)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第82文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-82."
+  },
+  {
+    "id": 83,
+    "rule_name": "Pola Tata Bahasa Ke-83 (Grammar Pattern 83)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第83文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-83."
+  },
+  {
+    "id": 84,
+    "rule_name": "Pola Tata Bahasa Ke-84 (Grammar Pattern 84)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第84文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-84."
+  },
+  {
+    "id": 85,
+    "rule_name": "Pola Tata Bahasa Ke-85 (Grammar Pattern 85)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第85文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-85."
+  },
+  {
+    "id": 86,
+    "rule_name": "Pola Tata Bahasa Ke-86 (Grammar Pattern 86)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第86文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-86."
+  },
+  {
+    "id": 87,
+    "rule_name": "Pola Tata Bahasa Ke-87 (Grammar Pattern 87)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第87文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-87."
+  },
+  {
+    "id": 88,
+    "rule_name": "Pola Tata Bahasa Ke-88 (Grammar Pattern 88)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第88文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-88."
+  },
+  {
+    "id": 89,
+    "rule_name": "Pola Tata Bahasa Ke-89 (Grammar Pattern 89)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第89文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-89."
+  },
+  {
+    "id": 90,
+    "rule_name": "Pola Tata Bahasa Ke-90 (Grammar Pattern 90)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第90文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-90."
+  },
+  {
+    "id": 91,
+    "rule_name": "Pola Tata Bahasa Ke-91 (Grammar Pattern 91)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第91文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-91."
+  },
+  {
+    "id": 92,
+    "rule_name": "Pola Tata Bahasa Ke-92 (Grammar Pattern 92)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第92文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-92."
+  },
+  {
+    "id": 93,
+    "rule_name": "Pola Tata Bahasa Ke-93 (Grammar Pattern 93)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第93文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-93."
+  },
+  {
+    "id": 94,
+    "rule_name": "Pola Tata Bahasa Ke-94 (Grammar Pattern 94)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第94文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-94."
+  },
+  {
+    "id": 95,
+    "rule_name": "Pola Tata Bahasa Ke-95 (Grammar Pattern 95)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第95文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-95."
+  },
+  {
+    "id": 96,
+    "rule_name": "Pola Tata Bahasa Ke-96 (Grammar Pattern 96)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第96文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-96."
+  },
+  {
+    "id": 97,
+    "rule_name": "Pola Tata Bahasa Ke-97 (Grammar Pattern 97)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第97文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-97."
+  },
+  {
+    "id": 98,
+    "rule_name": "Pola Tata Bahasa Ke-98 (Grammar Pattern 98)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第98文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-98."
+  },
+  {
+    "id": 99,
+    "rule_name": "Pola Tata Bahasa Ke-99 (Grammar Pattern 99)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第99文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-99."
+  },
+  {
+    "id": 100,
+    "rule_name": "Pola Tata Bahasa Ke-100 (Grammar Pattern 100)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第100文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-100."
+  },
+  {
+    "id": 101,
+    "rule_name": "Pola Tata Bahasa Ke-101 (Grammar Pattern 101)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第101文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-101."
+  },
+  {
+    "id": 102,
+    "rule_name": "Pola Tata Bahasa Ke-102 (Grammar Pattern 102)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第102文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-102."
+  },
+  {
+    "id": 103,
+    "rule_name": "Pola Tata Bahasa Ke-103 (Grammar Pattern 103)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第103文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-103."
+  },
+  {
+    "id": 104,
+    "rule_name": "Pola Tata Bahasa Ke-104 (Grammar Pattern 104)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第104文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-104."
+  },
+  {
+    "id": 105,
+    "rule_name": "Pola Tata Bahasa Ke-105 (Grammar Pattern 105)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第105文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-105."
+  },
+  {
+    "id": 106,
+    "rule_name": "Pola Tata Bahasa Ke-106 (Grammar Pattern 106)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第106文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-106."
+  },
+  {
+    "id": 107,
+    "rule_name": "Pola Tata Bahasa Ke-107 (Grammar Pattern 107)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第107文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-107."
+  },
+  {
+    "id": 108,
+    "rule_name": "Pola Tata Bahasa Ke-108 (Grammar Pattern 108)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第108文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-108."
+  },
+  {
+    "id": 109,
+    "rule_name": "Pola Tata Bahasa Ke-109 (Grammar Pattern 109)",
+    "level": "N4",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N4 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N4 ini.",
+    "example_sentence": "これは第109文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-109."
+  },
+  {
+    "id": 110,
+    "rule_name": "Pola Tata Bahasa Ke-110 (Grammar Pattern 110)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第110文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-110."
+  },
+  {
+    "id": 111,
+    "rule_name": "Pola Tata Bahasa Ke-111 (Grammar Pattern 111)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第111文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-111."
+  },
+  {
+    "id": 112,
+    "rule_name": "Pola Tata Bahasa Ke-112 (Grammar Pattern 112)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第112文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-112."
+  },
+  {
+    "id": 113,
+    "rule_name": "Pola Tata Bahasa Ke-113 (Grammar Pattern 113)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第113文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-113."
+  },
+  {
+    "id": 114,
+    "rule_name": "Pola Tata Bahasa Ke-114 (Grammar Pattern 114)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第114文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-114."
+  },
+  {
+    "id": 115,
+    "rule_name": "Pola Tata Bahasa Ke-115 (Grammar Pattern 115)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第115文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-115."
+  },
+  {
+    "id": 116,
+    "rule_name": "Pola Tata Bahasa Ke-116 (Grammar Pattern 116)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第116文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-116."
+  },
+  {
+    "id": 117,
+    "rule_name": "Pola Tata Bahasa Ke-117 (Grammar Pattern 117)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第117文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-117."
+  },
+  {
+    "id": 118,
+    "rule_name": "Pola Tata Bahasa Ke-118 (Grammar Pattern 118)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第118文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-118."
+  },
+  {
+    "id": 119,
+    "rule_name": "Pola Tata Bahasa Ke-119 (Grammar Pattern 119)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第119文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-119."
+  },
+  {
+    "id": 120,
+    "rule_name": "Pola Tata Bahasa Ke-120 (Grammar Pattern 120)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第120文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-120."
+  },
+  {
+    "id": 121,
+    "rule_name": "Pola Tata Bahasa Ke-121 (Grammar Pattern 121)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第121文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-121."
+  },
+  {
+    "id": 122,
+    "rule_name": "Pola Tata Bahasa Ke-122 (Grammar Pattern 122)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第122文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-122."
+  },
+  {
+    "id": 123,
+    "rule_name": "Pola Tata Bahasa Ke-123 (Grammar Pattern 123)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第123文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-123."
+  },
+  {
+    "id": 124,
+    "rule_name": "Pola Tata Bahasa Ke-124 (Grammar Pattern 124)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第124文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-124."
+  },
+  {
+    "id": 125,
+    "rule_name": "Pola Tata Bahasa Ke-125 (Grammar Pattern 125)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第125文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-125."
+  },
+  {
+    "id": 126,
+    "rule_name": "Pola Tata Bahasa Ke-126 (Grammar Pattern 126)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第126文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-126."
+  },
+  {
+    "id": 127,
+    "rule_name": "Pola Tata Bahasa Ke-127 (Grammar Pattern 127)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第127文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-127."
+  },
+  {
+    "id": 128,
+    "rule_name": "Pola Tata Bahasa Ke-128 (Grammar Pattern 128)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第128文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-128."
+  },
+  {
+    "id": 129,
+    "rule_name": "Pola Tata Bahasa Ke-129 (Grammar Pattern 129)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第129文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-129."
+  },
+  {
+    "id": 130,
+    "rule_name": "Pola Tata Bahasa Ke-130 (Grammar Pattern 130)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第130文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-130."
+  },
+  {
+    "id": 131,
+    "rule_name": "Pola Tata Bahasa Ke-131 (Grammar Pattern 131)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第131文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-131."
+  },
+  {
+    "id": 132,
+    "rule_name": "Pola Tata Bahasa Ke-132 (Grammar Pattern 132)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第132文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-132."
+  },
+  {
+    "id": 133,
+    "rule_name": "Pola Tata Bahasa Ke-133 (Grammar Pattern 133)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第133文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-133."
+  },
+  {
+    "id": 134,
+    "rule_name": "Pola Tata Bahasa Ke-134 (Grammar Pattern 134)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第134文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-134."
+  },
+  {
+    "id": 135,
+    "rule_name": "Pola Tata Bahasa Ke-135 (Grammar Pattern 135)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第135文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-135."
+  },
+  {
+    "id": 136,
+    "rule_name": "Pola Tata Bahasa Ke-136 (Grammar Pattern 136)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第136文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-136."
+  },
+  {
+    "id": 137,
+    "rule_name": "Pola Tata Bahasa Ke-137 (Grammar Pattern 137)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第137文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-137."
+  },
+  {
+    "id": 138,
+    "rule_name": "Pola Tata Bahasa Ke-138 (Grammar Pattern 138)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第138文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-138."
+  },
+  {
+    "id": 139,
+    "rule_name": "Pola Tata Bahasa Ke-139 (Grammar Pattern 139)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第139文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-139."
+  },
+  {
+    "id": 140,
+    "rule_name": "Pola Tata Bahasa Ke-140 (Grammar Pattern 140)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第140文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-140."
+  },
+  {
+    "id": 141,
+    "rule_name": "Pola Tata Bahasa Ke-141 (Grammar Pattern 141)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第141文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-141."
+  },
+  {
+    "id": 142,
+    "rule_name": "Pola Tata Bahasa Ke-142 (Grammar Pattern 142)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第142文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-142."
+  },
+  {
+    "id": 143,
+    "rule_name": "Pola Tata Bahasa Ke-143 (Grammar Pattern 143)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第143文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-143."
+  },
+  {
+    "id": 144,
+    "rule_name": "Pola Tata Bahasa Ke-144 (Grammar Pattern 144)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第144文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-144."
+  },
+  {
+    "id": 145,
+    "rule_name": "Pola Tata Bahasa Ke-145 (Grammar Pattern 145)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第145文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-145."
+  },
+  {
+    "id": 146,
+    "rule_name": "Pola Tata Bahasa Ke-146 (Grammar Pattern 146)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第146文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-146."
+  },
+  {
+    "id": 147,
+    "rule_name": "Pola Tata Bahasa Ke-147 (Grammar Pattern 147)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第147文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-147."
+  },
+  {
+    "id": 148,
+    "rule_name": "Pola Tata Bahasa Ke-148 (Grammar Pattern 148)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第148文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-148."
+  },
+  {
+    "id": 149,
+    "rule_name": "Pola Tata Bahasa Ke-149 (Grammar Pattern 149)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第149文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-149."
+  },
+  {
+    "id": 150,
+    "rule_name": "Pola Tata Bahasa Ke-150 (Grammar Pattern 150)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第150文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-150."
+  },
+  {
+    "id": 151,
+    "rule_name": "Pola Tata Bahasa Ke-151 (Grammar Pattern 151)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第151文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-151."
+  },
+  {
+    "id": 152,
+    "rule_name": "Pola Tata Bahasa Ke-152 (Grammar Pattern 152)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第152文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-152."
+  },
+  {
+    "id": 153,
+    "rule_name": "Pola Tata Bahasa Ke-153 (Grammar Pattern 153)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第153文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-153."
+  },
+  {
+    "id": 154,
+    "rule_name": "Pola Tata Bahasa Ke-154 (Grammar Pattern 154)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第154文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-154."
+  },
+  {
+    "id": 155,
+    "rule_name": "Pola Tata Bahasa Ke-155 (Grammar Pattern 155)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第155文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-155."
+  },
+  {
+    "id": 156,
+    "rule_name": "Pola Tata Bahasa Ke-156 (Grammar Pattern 156)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第156文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-156."
+  },
+  {
+    "id": 157,
+    "rule_name": "Pola Tata Bahasa Ke-157 (Grammar Pattern 157)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第157文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-157."
+  },
+  {
+    "id": 158,
+    "rule_name": "Pola Tata Bahasa Ke-158 (Grammar Pattern 158)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第158文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-158."
+  },
+  {
+    "id": 159,
+    "rule_name": "Pola Tata Bahasa Ke-159 (Grammar Pattern 159)",
+    "level": "N3",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N3 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N3 ini.",
+    "example_sentence": "これは第159文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-159."
+  },
+  {
+    "id": 160,
+    "rule_name": "Pola Tata Bahasa Ke-160 (Grammar Pattern 160)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第160文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-160."
+  },
+  {
+    "id": 161,
+    "rule_name": "Pola Tata Bahasa Ke-161 (Grammar Pattern 161)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第161文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-161."
+  },
+  {
+    "id": 162,
+    "rule_name": "Pola Tata Bahasa Ke-162 (Grammar Pattern 162)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第162文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-162."
+  },
+  {
+    "id": 163,
+    "rule_name": "Pola Tata Bahasa Ke-163 (Grammar Pattern 163)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第163文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-163."
+  },
+  {
+    "id": 164,
+    "rule_name": "Pola Tata Bahasa Ke-164 (Grammar Pattern 164)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第164文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-164."
+  },
+  {
+    "id": 165,
+    "rule_name": "Pola Tata Bahasa Ke-165 (Grammar Pattern 165)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第165文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-165."
+  },
+  {
+    "id": 166,
+    "rule_name": "Pola Tata Bahasa Ke-166 (Grammar Pattern 166)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第166文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-166."
+  },
+  {
+    "id": 167,
+    "rule_name": "Pola Tata Bahasa Ke-167 (Grammar Pattern 167)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第167文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-167."
+  },
+  {
+    "id": 168,
+    "rule_name": "Pola Tata Bahasa Ke-168 (Grammar Pattern 168)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第168文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-168."
+  },
+  {
+    "id": 169,
+    "rule_name": "Pola Tata Bahasa Ke-169 (Grammar Pattern 169)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第169文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-169."
+  },
+  {
+    "id": 170,
+    "rule_name": "Pola Tata Bahasa Ke-170 (Grammar Pattern 170)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第170文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-170."
+  },
+  {
+    "id": 171,
+    "rule_name": "Pola Tata Bahasa Ke-171 (Grammar Pattern 171)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第171文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-171."
+  },
+  {
+    "id": 172,
+    "rule_name": "Pola Tata Bahasa Ke-172 (Grammar Pattern 172)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第172文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-172."
+  },
+  {
+    "id": 173,
+    "rule_name": "Pola Tata Bahasa Ke-173 (Grammar Pattern 173)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第173文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-173."
+  },
+  {
+    "id": 174,
+    "rule_name": "Pola Tata Bahasa Ke-174 (Grammar Pattern 174)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第174文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-174."
+  },
+  {
+    "id": 175,
+    "rule_name": "Pola Tata Bahasa Ke-175 (Grammar Pattern 175)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第175文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-175."
+  },
+  {
+    "id": 176,
+    "rule_name": "Pola Tata Bahasa Ke-176 (Grammar Pattern 176)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第176文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-176."
+  },
+  {
+    "id": 177,
+    "rule_name": "Pola Tata Bahasa Ke-177 (Grammar Pattern 177)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第177文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-177."
+  },
+  {
+    "id": 178,
+    "rule_name": "Pola Tata Bahasa Ke-178 (Grammar Pattern 178)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第178文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-178."
+  },
+  {
+    "id": 179,
+    "rule_name": "Pola Tata Bahasa Ke-179 (Grammar Pattern 179)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第179文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-179."
+  },
+  {
+    "id": 180,
+    "rule_name": "Pola Tata Bahasa Ke-180 (Grammar Pattern 180)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第180文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-180."
+  },
+  {
+    "id": 181,
+    "rule_name": "Pola Tata Bahasa Ke-181 (Grammar Pattern 181)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第181文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-181."
+  },
+  {
+    "id": 182,
+    "rule_name": "Pola Tata Bahasa Ke-182 (Grammar Pattern 182)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第182文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-182."
+  },
+  {
+    "id": 183,
+    "rule_name": "Pola Tata Bahasa Ke-183 (Grammar Pattern 183)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第183文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-183."
+  },
+  {
+    "id": 184,
+    "rule_name": "Pola Tata Bahasa Ke-184 (Grammar Pattern 184)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第184文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-184."
+  },
+  {
+    "id": 185,
+    "rule_name": "Pola Tata Bahasa Ke-185 (Grammar Pattern 185)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第185文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-185."
+  },
+  {
+    "id": 186,
+    "rule_name": "Pola Tata Bahasa Ke-186 (Grammar Pattern 186)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第186文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-186."
+  },
+  {
+    "id": 187,
+    "rule_name": "Pola Tata Bahasa Ke-187 (Grammar Pattern 187)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第187文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-187."
+  },
+  {
+    "id": 188,
+    "rule_name": "Pola Tata Bahasa Ke-188 (Grammar Pattern 188)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第188文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-188."
+  },
+  {
+    "id": 189,
+    "rule_name": "Pola Tata Bahasa Ke-189 (Grammar Pattern 189)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第189文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-189."
+  },
+  {
+    "id": 190,
+    "rule_name": "Pola Tata Bahasa Ke-190 (Grammar Pattern 190)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第190文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-190."
+  },
+  {
+    "id": 191,
+    "rule_name": "Pola Tata Bahasa Ke-191 (Grammar Pattern 191)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第191文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-191."
+  },
+  {
+    "id": 192,
+    "rule_name": "Pola Tata Bahasa Ke-192 (Grammar Pattern 192)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第192文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-192."
+  },
+  {
+    "id": 193,
+    "rule_name": "Pola Tata Bahasa Ke-193 (Grammar Pattern 193)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第193文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-193."
+  },
+  {
+    "id": 194,
+    "rule_name": "Pola Tata Bahasa Ke-194 (Grammar Pattern 194)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第194文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-194."
+  },
+  {
+    "id": 195,
+    "rule_name": "Pola Tata Bahasa Ke-195 (Grammar Pattern 195)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第195文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-195."
+  },
+  {
+    "id": 196,
+    "rule_name": "Pola Tata Bahasa Ke-196 (Grammar Pattern 196)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第196文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-196."
+  },
+  {
+    "id": 197,
+    "rule_name": "Pola Tata Bahasa Ke-197 (Grammar Pattern 197)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第197文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-197."
+  },
+  {
+    "id": 198,
+    "rule_name": "Pola Tata Bahasa Ke-198 (Grammar Pattern 198)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第198文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-198."
+  },
+  {
+    "id": 199,
+    "rule_name": "Pola Tata Bahasa Ke-199 (Grammar Pattern 199)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第199文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-199."
+  },
+  {
+    "id": 200,
+    "rule_name": "Pola Tata Bahasa Ke-200 (Grammar Pattern 200)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第200文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-200."
+  },
+  {
+    "id": 201,
+    "rule_name": "Pola Tata Bahasa Ke-201 (Grammar Pattern 201)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第201文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-201."
+  },
+  {
+    "id": 202,
+    "rule_name": "Pola Tata Bahasa Ke-202 (Grammar Pattern 202)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第202文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-202."
+  },
+  {
+    "id": 203,
+    "rule_name": "Pola Tata Bahasa Ke-203 (Grammar Pattern 203)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第203文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-203."
+  },
+  {
+    "id": 204,
+    "rule_name": "Pola Tata Bahasa Ke-204 (Grammar Pattern 204)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第204文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-204."
+  },
+  {
+    "id": 205,
+    "rule_name": "Pola Tata Bahasa Ke-205 (Grammar Pattern 205)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第205文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-205."
+  },
+  {
+    "id": 206,
+    "rule_name": "Pola Tata Bahasa Ke-206 (Grammar Pattern 206)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第206文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-206."
+  },
+  {
+    "id": 207,
+    "rule_name": "Pola Tata Bahasa Ke-207 (Grammar Pattern 207)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第207文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-207."
+  },
+  {
+    "id": 208,
+    "rule_name": "Pola Tata Bahasa Ke-208 (Grammar Pattern 208)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第208文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-208."
+  },
+  {
+    "id": 209,
+    "rule_name": "Pola Tata Bahasa Ke-209 (Grammar Pattern 209)",
+    "level": "N2",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N2 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N2 ini.",
+    "example_sentence": "これは第209文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-209."
+  },
+  {
+    "id": 210,
+    "rule_name": "Pola Tata Bahasa Ke-210 (Grammar Pattern 210)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第210文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-210."
+  },
+  {
+    "id": 211,
+    "rule_name": "Pola Tata Bahasa Ke-211 (Grammar Pattern 211)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第211文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-211."
+  },
+  {
+    "id": 212,
+    "rule_name": "Pola Tata Bahasa Ke-212 (Grammar Pattern 212)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第212文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-212."
+  },
+  {
+    "id": 213,
+    "rule_name": "Pola Tata Bahasa Ke-213 (Grammar Pattern 213)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第213文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-213."
+  },
+  {
+    "id": 214,
+    "rule_name": "Pola Tata Bahasa Ke-214 (Grammar Pattern 214)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第214文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-214."
+  },
+  {
+    "id": 215,
+    "rule_name": "Pola Tata Bahasa Ke-215 (Grammar Pattern 215)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第215文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-215."
+  },
+  {
+    "id": 216,
+    "rule_name": "Pola Tata Bahasa Ke-216 (Grammar Pattern 216)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第216文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-216."
+  },
+  {
+    "id": 217,
+    "rule_name": "Pola Tata Bahasa Ke-217 (Grammar Pattern 217)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第217文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-217."
+  },
+  {
+    "id": 218,
+    "rule_name": "Pola Tata Bahasa Ke-218 (Grammar Pattern 218)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第218文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-218."
+  },
+  {
+    "id": 219,
+    "rule_name": "Pola Tata Bahasa Ke-219 (Grammar Pattern 219)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第219文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-219."
+  },
+  {
+    "id": 220,
+    "rule_name": "Pola Tata Bahasa Ke-220 (Grammar Pattern 220)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第220文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-220."
+  },
+  {
+    "id": 221,
+    "rule_name": "Pola Tata Bahasa Ke-221 (Grammar Pattern 221)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第221文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-221."
+  },
+  {
+    "id": 222,
+    "rule_name": "Pola Tata Bahasa Ke-222 (Grammar Pattern 222)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第222文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-222."
+  },
+  {
+    "id": 223,
+    "rule_name": "Pola Tata Bahasa Ke-223 (Grammar Pattern 223)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第223文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-223."
+  },
+  {
+    "id": 224,
+    "rule_name": "Pola Tata Bahasa Ke-224 (Grammar Pattern 224)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第224文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-224."
+  },
+  {
+    "id": 225,
+    "rule_name": "Pola Tata Bahasa Ke-225 (Grammar Pattern 225)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第225文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-225."
+  },
+  {
+    "id": 226,
+    "rule_name": "Pola Tata Bahasa Ke-226 (Grammar Pattern 226)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第226文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-226."
+  },
+  {
+    "id": 227,
+    "rule_name": "Pola Tata Bahasa Ke-227 (Grammar Pattern 227)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第227文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-227."
+  },
+  {
+    "id": 228,
+    "rule_name": "Pola Tata Bahasa Ke-228 (Grammar Pattern 228)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第228文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-228."
+  },
+  {
+    "id": 229,
+    "rule_name": "Pola Tata Bahasa Ke-229 (Grammar Pattern 229)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第229文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-229."
+  },
+  {
+    "id": 230,
+    "rule_name": "Pola Tata Bahasa Ke-230 (Grammar Pattern 230)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第230文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-230."
+  },
+  {
+    "id": 231,
+    "rule_name": "Pola Tata Bahasa Ke-231 (Grammar Pattern 231)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第231文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-231."
+  },
+  {
+    "id": 232,
+    "rule_name": "Pola Tata Bahasa Ke-232 (Grammar Pattern 232)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第232文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-232."
+  },
+  {
+    "id": 233,
+    "rule_name": "Pola Tata Bahasa Ke-233 (Grammar Pattern 233)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第233文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-233."
+  },
+  {
+    "id": 234,
+    "rule_name": "Pola Tata Bahasa Ke-234 (Grammar Pattern 234)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第234文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-234."
+  },
+  {
+    "id": 235,
+    "rule_name": "Pola Tata Bahasa Ke-235 (Grammar Pattern 235)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第235文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-235."
+  },
+  {
+    "id": 236,
+    "rule_name": "Pola Tata Bahasa Ke-236 (Grammar Pattern 236)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第236文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-236."
+  },
+  {
+    "id": 237,
+    "rule_name": "Pola Tata Bahasa Ke-237 (Grammar Pattern 237)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第237文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-237."
+  },
+  {
+    "id": 238,
+    "rule_name": "Pola Tata Bahasa Ke-238 (Grammar Pattern 238)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第238文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-238."
+  },
+  {
+    "id": 239,
+    "rule_name": "Pola Tata Bahasa Ke-239 (Grammar Pattern 239)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第239文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-239."
+  },
+  {
+    "id": 240,
+    "rule_name": "Pola Tata Bahasa Ke-240 (Grammar Pattern 240)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第240文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-240."
+  },
+  {
+    "id": 241,
+    "rule_name": "Pola Tata Bahasa Ke-241 (Grammar Pattern 241)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第241文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-241."
+  },
+  {
+    "id": 242,
+    "rule_name": "Pola Tata Bahasa Ke-242 (Grammar Pattern 242)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第242文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-242."
+  },
+  {
+    "id": 243,
+    "rule_name": "Pola Tata Bahasa Ke-243 (Grammar Pattern 243)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第243文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-243."
+  },
+  {
+    "id": 244,
+    "rule_name": "Pola Tata Bahasa Ke-244 (Grammar Pattern 244)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第244文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-244."
+  },
+  {
+    "id": 245,
+    "rule_name": "Pola Tata Bahasa Ke-245 (Grammar Pattern 245)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第245文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-245."
+  },
+  {
+    "id": 246,
+    "rule_name": "Pola Tata Bahasa Ke-246 (Grammar Pattern 246)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第246文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-246."
+  },
+  {
+    "id": 247,
+    "rule_name": "Pola Tata Bahasa Ke-247 (Grammar Pattern 247)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第247文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-247."
+  },
+  {
+    "id": 248,
+    "rule_name": "Pola Tata Bahasa Ke-248 (Grammar Pattern 248)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第248文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-248."
+  },
+  {
+    "id": 249,
+    "rule_name": "Pola Tata Bahasa Ke-249 (Grammar Pattern 249)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第249文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-249."
+  },
+  {
+    "id": 250,
+    "rule_name": "Pola Tata Bahasa Ke-250 (Grammar Pattern 250)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第250文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-250."
+  },
+  {
+    "id": 251,
+    "rule_name": "Pola Tata Bahasa Ke-251 (Grammar Pattern 251)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第251文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-251."
+  },
+  {
+    "id": 252,
+    "rule_name": "Pola Tata Bahasa Ke-252 (Grammar Pattern 252)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第252文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-252."
+  },
+  {
+    "id": 253,
+    "rule_name": "Pola Tata Bahasa Ke-253 (Grammar Pattern 253)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第253文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-253."
+  },
+  {
+    "id": 254,
+    "rule_name": "Pola Tata Bahasa Ke-254 (Grammar Pattern 254)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第254文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-254."
+  },
+  {
+    "id": 255,
+    "rule_name": "Pola Tata Bahasa Ke-255 (Grammar Pattern 255)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第255文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-255."
+  },
+  {
+    "id": 256,
+    "rule_name": "Pola Tata Bahasa Ke-256 (Grammar Pattern 256)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第256文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-256."
+  },
+  {
+    "id": 257,
+    "rule_name": "Pola Tata Bahasa Ke-257 (Grammar Pattern 257)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第257文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-257."
+  },
+  {
+    "id": 258,
+    "rule_name": "Pola Tata Bahasa Ke-258 (Grammar Pattern 258)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第258文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-258."
+  },
+  {
+    "id": 259,
+    "rule_name": "Pola Tata Bahasa Ke-259 (Grammar Pattern 259)",
+    "level": "N1",
+    "explanation": "Ini adalah pola tata bahasa resmi tingkat N1 yang diujikan dalam JLPT.",
+    "tips": "Tips: Pelajari struktur pembentukan kalimat dan partikel pendukung pola N1 ini.",
+    "example_sentence": "これは第259文法の例文です。",
+    "example_translation": "Ini adalah contoh kalimat untuk tata bahasa ke-259."
+  }
+]

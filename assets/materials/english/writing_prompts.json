@@ -1,0 +1,415 @@
+[
+  {
+    "id": 1,
+    "task": 1,
+    "type": "Bar Chart",
+    "prompt": "The chart below shows the percentage of households with internet access in three countries between 2015 and 2025. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+    "tips": "Tips: Write at least 150 words. Do not give your personal opinion or reasons for the changes; simply report the data. Focus on using comparative structures."
+  },
+  {
+    "id": 2,
+    "task": 2,
+    "type": "Opinion Essay",
+    "prompt": "Some people believe that university education should be free for all students. Others disagree, arguing that students should pay tuition fees. Discuss both views and give your opinion.",
+    "tips": "Tips: Write at least 250 words. Allocate 40 minutes. Ensure a clear thesis statement in the introduction and support your arguments with examples."
+  },
+  {
+    "id": 3,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 3: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 4,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 4: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 5,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 5: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 6,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 6: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 7,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 7: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 8,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 8: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 9,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 9: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 10,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 10: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 11,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 11: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 12,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 12: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 13,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 13: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 14,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 14: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 15,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 15: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 16,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 16: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 17,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 17: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 18,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 18: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 19,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 19: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 20,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 20: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 21,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 21: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 22,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 22: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 23,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 23: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 24,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 24: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 25,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 25: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 26,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 26: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 27,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 27: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 28,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 28: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 29,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 29: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 30,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 30: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 31,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 31: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 32,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 32: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 33,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 33: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 34,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 34: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 35,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 35: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 36,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 36: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 37,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 37: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 38,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 38: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 39,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 39: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 40,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 40: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 41,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 41: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 42,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 42: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 43,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 43: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 44,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 44: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 45,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 45: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 46,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 46: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 47,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 47: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 48,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 48: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 49,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 49: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 50,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 50: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 51,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 51: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 52,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 52: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 53,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 53: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 54,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 54: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 55,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 55: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 56,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 56: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 57,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 57: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 58,
+    "task": 2,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 58: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 2, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  },
+  {
+    "id": 59,
+    "task": 1,
+    "type": "Academic Prompt",
+    "prompt": "IELTS Writing Practice Prompt 59: Discuss the global challenges and consequences of urbanization and resource allocation in modern cities.",
+    "tips": "Tips: For Task 1, ensure cohesion, precise lexical resources, and grammatical accuracy to secure a Band 8.0+."
+  }
+]

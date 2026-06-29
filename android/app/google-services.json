@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "781605410912",
+    "project_id": "jengo-772e8",
+    "storage_bucket": "jengo-772e8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781605410912:android:72f6f9fb86af82a97c8b05",
+        "android_client_info": {
+          "package_name": "com.example.jengo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781605410912-q9ki8bhf97hdi9smjd695kj42fih9qvv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd-KtZcZYM6sLP81IXf314F_O7Jz5TTgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781605410912-q9ki8bhf97hdi9smjd695kj42fih9qvv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

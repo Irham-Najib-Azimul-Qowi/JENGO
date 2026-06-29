@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "IELTS Academic Reading: The Impact of Climate Change on Marine Ecology",
+    "level": "C1",
+    "passage": "Rising ocean temperatures and acidification are significantly disrupting marine ecosystems globally. Academic research indicates that coral reefs, which support a quarter of all marine life, are undergoing severe bleaching events. If current emission rates fluctuate without mitigation policies, marine biodiversity will face irreversible degradation. Protecting these resources requires immediate international protocols.",
+    "translation": "Kenaikan suhu samudra dan pengasaman secara signifikan mengganggu ekosistem laut secara global. Penelitian akademis menunjukkan bahwa terumbu karang, yang menopang seperempat dari seluruh kehidupan laut, mengalami peristiwa pemutihan yang parah. Jika tingkat emisi saat ini berfluktuasi tanpa kebijakan mitigasi, keanekaragaman hayati laut akan menghadapi degradasi yang tidak dapat dipulihkan. Melindungi sumber daya ini membutuhkan protokol internasional segera.",
+    "questions": [
+      {
+        "question": "What is the primary effect of rising ocean temperatures on coral reefs?",
+        "options": [
+          "Rapid expansion of marine life",
+          "Severe bleaching events",
+          "Enhanced calcium production"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "IELTS Academic Reading: The History of Artificial Intelligence",
+    "level": "C1",
+    "passage": "The concept of artificial intelligence dates back to antiquity, with myths of mechanical men. However, modern AI began in 1956 at the Dartmouth workshop. Early pioneers predicted that machines would rival human intelligence within a generation. Although funding collapsed during the 'AI winters', the advent of deep learning and big data in the 21st century has propelled artificial intelligence into a dominant industry force.",
+    "translation": "Konsep kecerdasan buatan berakar dari zaman kuno, dengan mitos tentang manusia mekanis. Namun, era AI modern baru dimulai pada tahun 1956 di lokakarya Dartmouth. Para perintis awal memprediksi bahwa mesin akan menandingi kecerdasan manusia dalam satu generasi. Meskipun pendanaan sempat runtuh selama masa 'musim dingin AI', kehadiran pembelajaran mendalam (deep learning) dan data raya (big data) di abad ke-21 telah mendorong kecerdasan buatan menjadi kekuatan industri yang dominan.",
+    "questions": [
+      {
+        "question": "When did modern artificial intelligence begin?",
+        "options": [
+          "During antiquity",
+          "In 1956 at Dartmouth",
+          "During the AI winters"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  }
+]

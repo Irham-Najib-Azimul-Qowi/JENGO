@@ -1,0 +1,2783 @@
+[
+  {
+    "id": 1,
+    "rule_name": "Inversion (Pembalikan Subjek & Kata Bantu)",
+    "level": "C1",
+    "explanation": "Struktur formal membalik posisi subjek dan auxiliary verb setelah adverbia negatif.",
+    "tips": "Tips: Bagus untuk mendongkrak skor GRA IELTS Writing Task 2.",
+    "example_sentence": "Seldom have I seen such a beautiful sight.",
+    "example_translation": "Jarang sekali saya melihat pemandangan seindah itu."
+  },
+  {
+    "id": 2,
+    "rule_name": "Third Conditional (Pengandaian Masa Lalu)",
+    "level": "B2",
+    "explanation": "Membayangkan situasi alternatif di masa lalu beserta konsekuensinya.",
+    "tips": "Tips: Pola 'If + Past Perfect, would have + V3'.",
+    "example_sentence": "If we had left earlier, we would have caught the train.",
+    "example_translation": "Jika saja kita berangkat lebih awal, kita pasti telah mengejar kereta."
+  },
+  {
+    "id": 3,
+    "rule_name": "Grammar Rule 3: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 3.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-3."
+  },
+  {
+    "id": 4,
+    "rule_name": "Grammar Rule 4: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 4.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-4."
+  },
+  {
+    "id": 5,
+    "rule_name": "Grammar Rule 5: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 5.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-5."
+  },
+  {
+    "id": 6,
+    "rule_name": "Grammar Rule 6: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 6.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-6."
+  },
+  {
+    "id": 7,
+    "rule_name": "Grammar Rule 7: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 7.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-7."
+  },
+  {
+    "id": 8,
+    "rule_name": "Grammar Rule 8: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 8.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-8."
+  },
+  {
+    "id": 9,
+    "rule_name": "Grammar Rule 9: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 9.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-9."
+  },
+  {
+    "id": 10,
+    "rule_name": "Grammar Rule 10: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 10.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-10."
+  },
+  {
+    "id": 11,
+    "rule_name": "Grammar Rule 11: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 11.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-11."
+  },
+  {
+    "id": 12,
+    "rule_name": "Grammar Rule 12: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 12.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-12."
+  },
+  {
+    "id": 13,
+    "rule_name": "Grammar Rule 13: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 13.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-13."
+  },
+  {
+    "id": 14,
+    "rule_name": "Grammar Rule 14: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 14.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-14."
+  },
+  {
+    "id": 15,
+    "rule_name": "Grammar Rule 15: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 15.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-15."
+  },
+  {
+    "id": 16,
+    "rule_name": "Grammar Rule 16: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 16.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-16."
+  },
+  {
+    "id": 17,
+    "rule_name": "Grammar Rule 17: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 17.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-17."
+  },
+  {
+    "id": 18,
+    "rule_name": "Grammar Rule 18: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 18.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-18."
+  },
+  {
+    "id": 19,
+    "rule_name": "Grammar Rule 19: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 19.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-19."
+  },
+  {
+    "id": 20,
+    "rule_name": "Grammar Rule 20: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 20.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-20."
+  },
+  {
+    "id": 21,
+    "rule_name": "Grammar Rule 21: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 21.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-21."
+  },
+  {
+    "id": 22,
+    "rule_name": "Grammar Rule 22: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 22.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-22."
+  },
+  {
+    "id": 23,
+    "rule_name": "Grammar Rule 23: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 23.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-23."
+  },
+  {
+    "id": 24,
+    "rule_name": "Grammar Rule 24: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 24.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-24."
+  },
+  {
+    "id": 25,
+    "rule_name": "Grammar Rule 25: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 25.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-25."
+  },
+  {
+    "id": 26,
+    "rule_name": "Grammar Rule 26: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 26.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-26."
+  },
+  {
+    "id": 27,
+    "rule_name": "Grammar Rule 27: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 27.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-27."
+  },
+  {
+    "id": 28,
+    "rule_name": "Grammar Rule 28: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 28.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-28."
+  },
+  {
+    "id": 29,
+    "rule_name": "Grammar Rule 29: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 29.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-29."
+  },
+  {
+    "id": 30,
+    "rule_name": "Grammar Rule 30: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 30.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-30."
+  },
+  {
+    "id": 31,
+    "rule_name": "Grammar Rule 31: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 31.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-31."
+  },
+  {
+    "id": 32,
+    "rule_name": "Grammar Rule 32: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 32.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-32."
+  },
+  {
+    "id": 33,
+    "rule_name": "Grammar Rule 33: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 33.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-33."
+  },
+  {
+    "id": 34,
+    "rule_name": "Grammar Rule 34: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 34.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-34."
+  },
+  {
+    "id": 35,
+    "rule_name": "Grammar Rule 35: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 35.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-35."
+  },
+  {
+    "id": 36,
+    "rule_name": "Grammar Rule 36: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 36.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-36."
+  },
+  {
+    "id": 37,
+    "rule_name": "Grammar Rule 37: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 37.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-37."
+  },
+  {
+    "id": 38,
+    "rule_name": "Grammar Rule 38: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 38.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-38."
+  },
+  {
+    "id": 39,
+    "rule_name": "Grammar Rule 39: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 39.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-39."
+  },
+  {
+    "id": 40,
+    "rule_name": "Grammar Rule 40: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 40.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-40."
+  },
+  {
+    "id": 41,
+    "rule_name": "Grammar Rule 41: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 41.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-41."
+  },
+  {
+    "id": 42,
+    "rule_name": "Grammar Rule 42: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 42.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-42."
+  },
+  {
+    "id": 43,
+    "rule_name": "Grammar Rule 43: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 43.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-43."
+  },
+  {
+    "id": 44,
+    "rule_name": "Grammar Rule 44: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 44.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-44."
+  },
+  {
+    "id": 45,
+    "rule_name": "Grammar Rule 45: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 45.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-45."
+  },
+  {
+    "id": 46,
+    "rule_name": "Grammar Rule 46: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 46.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-46."
+  },
+  {
+    "id": 47,
+    "rule_name": "Grammar Rule 47: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 47.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-47."
+  },
+  {
+    "id": 48,
+    "rule_name": "Grammar Rule 48: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 48.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-48."
+  },
+  {
+    "id": 49,
+    "rule_name": "Grammar Rule 49: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 49.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-49."
+  },
+  {
+    "id": 50,
+    "rule_name": "Grammar Rule 50: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 50.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-50."
+  },
+  {
+    "id": 51,
+    "rule_name": "Grammar Rule 51: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 51.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-51."
+  },
+  {
+    "id": 52,
+    "rule_name": "Grammar Rule 52: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 52.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-52."
+  },
+  {
+    "id": 53,
+    "rule_name": "Grammar Rule 53: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 53.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-53."
+  },
+  {
+    "id": 54,
+    "rule_name": "Grammar Rule 54: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 54.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-54."
+  },
+  {
+    "id": 55,
+    "rule_name": "Grammar Rule 55: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 55.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-55."
+  },
+  {
+    "id": 56,
+    "rule_name": "Grammar Rule 56: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 56.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-56."
+  },
+  {
+    "id": 57,
+    "rule_name": "Grammar Rule 57: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 57.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-57."
+  },
+  {
+    "id": 58,
+    "rule_name": "Grammar Rule 58: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 58.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-58."
+  },
+  {
+    "id": 59,
+    "rule_name": "Grammar Rule 59: Advanced CEFR Structure",
+    "level": "A1",
+    "explanation": "Official CEFR grammar descriptor for level A1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 59.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-59."
+  },
+  {
+    "id": 60,
+    "rule_name": "Grammar Rule 60: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 60.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-60."
+  },
+  {
+    "id": 61,
+    "rule_name": "Grammar Rule 61: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 61.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-61."
+  },
+  {
+    "id": 62,
+    "rule_name": "Grammar Rule 62: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 62.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-62."
+  },
+  {
+    "id": 63,
+    "rule_name": "Grammar Rule 63: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 63.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-63."
+  },
+  {
+    "id": 64,
+    "rule_name": "Grammar Rule 64: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 64.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-64."
+  },
+  {
+    "id": 65,
+    "rule_name": "Grammar Rule 65: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 65.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-65."
+  },
+  {
+    "id": 66,
+    "rule_name": "Grammar Rule 66: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 66.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-66."
+  },
+  {
+    "id": 67,
+    "rule_name": "Grammar Rule 67: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 67.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-67."
+  },
+  {
+    "id": 68,
+    "rule_name": "Grammar Rule 68: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 68.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-68."
+  },
+  {
+    "id": 69,
+    "rule_name": "Grammar Rule 69: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 69.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-69."
+  },
+  {
+    "id": 70,
+    "rule_name": "Grammar Rule 70: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 70.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-70."
+  },
+  {
+    "id": 71,
+    "rule_name": "Grammar Rule 71: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 71.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-71."
+  },
+  {
+    "id": 72,
+    "rule_name": "Grammar Rule 72: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 72.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-72."
+  },
+  {
+    "id": 73,
+    "rule_name": "Grammar Rule 73: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 73.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-73."
+  },
+  {
+    "id": 74,
+    "rule_name": "Grammar Rule 74: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 74.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-74."
+  },
+  {
+    "id": 75,
+    "rule_name": "Grammar Rule 75: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 75.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-75."
+  },
+  {
+    "id": 76,
+    "rule_name": "Grammar Rule 76: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 76.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-76."
+  },
+  {
+    "id": 77,
+    "rule_name": "Grammar Rule 77: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 77.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-77."
+  },
+  {
+    "id": 78,
+    "rule_name": "Grammar Rule 78: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 78.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-78."
+  },
+  {
+    "id": 79,
+    "rule_name": "Grammar Rule 79: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 79.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-79."
+  },
+  {
+    "id": 80,
+    "rule_name": "Grammar Rule 80: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 80.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-80."
+  },
+  {
+    "id": 81,
+    "rule_name": "Grammar Rule 81: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 81.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-81."
+  },
+  {
+    "id": 82,
+    "rule_name": "Grammar Rule 82: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 82.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-82."
+  },
+  {
+    "id": 83,
+    "rule_name": "Grammar Rule 83: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 83.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-83."
+  },
+  {
+    "id": 84,
+    "rule_name": "Grammar Rule 84: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 84.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-84."
+  },
+  {
+    "id": 85,
+    "rule_name": "Grammar Rule 85: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 85.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-85."
+  },
+  {
+    "id": 86,
+    "rule_name": "Grammar Rule 86: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 86.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-86."
+  },
+  {
+    "id": 87,
+    "rule_name": "Grammar Rule 87: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 87.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-87."
+  },
+  {
+    "id": 88,
+    "rule_name": "Grammar Rule 88: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 88.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-88."
+  },
+  {
+    "id": 89,
+    "rule_name": "Grammar Rule 89: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 89.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-89."
+  },
+  {
+    "id": 90,
+    "rule_name": "Grammar Rule 90: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 90.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-90."
+  },
+  {
+    "id": 91,
+    "rule_name": "Grammar Rule 91: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 91.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-91."
+  },
+  {
+    "id": 92,
+    "rule_name": "Grammar Rule 92: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 92.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-92."
+  },
+  {
+    "id": 93,
+    "rule_name": "Grammar Rule 93: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 93.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-93."
+  },
+  {
+    "id": 94,
+    "rule_name": "Grammar Rule 94: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 94.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-94."
+  },
+  {
+    "id": 95,
+    "rule_name": "Grammar Rule 95: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 95.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-95."
+  },
+  {
+    "id": 96,
+    "rule_name": "Grammar Rule 96: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 96.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-96."
+  },
+  {
+    "id": 97,
+    "rule_name": "Grammar Rule 97: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 97.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-97."
+  },
+  {
+    "id": 98,
+    "rule_name": "Grammar Rule 98: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 98.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-98."
+  },
+  {
+    "id": 99,
+    "rule_name": "Grammar Rule 99: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 99.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-99."
+  },
+  {
+    "id": 100,
+    "rule_name": "Grammar Rule 100: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 100.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-100."
+  },
+  {
+    "id": 101,
+    "rule_name": "Grammar Rule 101: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 101.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-101."
+  },
+  {
+    "id": 102,
+    "rule_name": "Grammar Rule 102: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 102.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-102."
+  },
+  {
+    "id": 103,
+    "rule_name": "Grammar Rule 103: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 103.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-103."
+  },
+  {
+    "id": 104,
+    "rule_name": "Grammar Rule 104: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 104.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-104."
+  },
+  {
+    "id": 105,
+    "rule_name": "Grammar Rule 105: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 105.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-105."
+  },
+  {
+    "id": 106,
+    "rule_name": "Grammar Rule 106: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 106.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-106."
+  },
+  {
+    "id": 107,
+    "rule_name": "Grammar Rule 107: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 107.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-107."
+  },
+  {
+    "id": 108,
+    "rule_name": "Grammar Rule 108: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 108.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-108."
+  },
+  {
+    "id": 109,
+    "rule_name": "Grammar Rule 109: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 109.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-109."
+  },
+  {
+    "id": 110,
+    "rule_name": "Grammar Rule 110: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 110.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-110."
+  },
+  {
+    "id": 111,
+    "rule_name": "Grammar Rule 111: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 111.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-111."
+  },
+  {
+    "id": 112,
+    "rule_name": "Grammar Rule 112: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 112.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-112."
+  },
+  {
+    "id": 113,
+    "rule_name": "Grammar Rule 113: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 113.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-113."
+  },
+  {
+    "id": 114,
+    "rule_name": "Grammar Rule 114: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 114.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-114."
+  },
+  {
+    "id": 115,
+    "rule_name": "Grammar Rule 115: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 115.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-115."
+  },
+  {
+    "id": 116,
+    "rule_name": "Grammar Rule 116: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 116.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-116."
+  },
+  {
+    "id": 117,
+    "rule_name": "Grammar Rule 117: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 117.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-117."
+  },
+  {
+    "id": 118,
+    "rule_name": "Grammar Rule 118: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 118.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-118."
+  },
+  {
+    "id": 119,
+    "rule_name": "Grammar Rule 119: Advanced CEFR Structure",
+    "level": "A2",
+    "explanation": "Official CEFR grammar descriptor for level A2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level A2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 119.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-119."
+  },
+  {
+    "id": 120,
+    "rule_name": "Grammar Rule 120: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 120.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-120."
+  },
+  {
+    "id": 121,
+    "rule_name": "Grammar Rule 121: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 121.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-121."
+  },
+  {
+    "id": 122,
+    "rule_name": "Grammar Rule 122: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 122.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-122."
+  },
+  {
+    "id": 123,
+    "rule_name": "Grammar Rule 123: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 123.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-123."
+  },
+  {
+    "id": 124,
+    "rule_name": "Grammar Rule 124: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 124.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-124."
+  },
+  {
+    "id": 125,
+    "rule_name": "Grammar Rule 125: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 125.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-125."
+  },
+  {
+    "id": 126,
+    "rule_name": "Grammar Rule 126: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 126.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-126."
+  },
+  {
+    "id": 127,
+    "rule_name": "Grammar Rule 127: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 127.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-127."
+  },
+  {
+    "id": 128,
+    "rule_name": "Grammar Rule 128: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 128.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-128."
+  },
+  {
+    "id": 129,
+    "rule_name": "Grammar Rule 129: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 129.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-129."
+  },
+  {
+    "id": 130,
+    "rule_name": "Grammar Rule 130: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 130.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-130."
+  },
+  {
+    "id": 131,
+    "rule_name": "Grammar Rule 131: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 131.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-131."
+  },
+  {
+    "id": 132,
+    "rule_name": "Grammar Rule 132: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 132.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-132."
+  },
+  {
+    "id": 133,
+    "rule_name": "Grammar Rule 133: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 133.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-133."
+  },
+  {
+    "id": 134,
+    "rule_name": "Grammar Rule 134: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 134.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-134."
+  },
+  {
+    "id": 135,
+    "rule_name": "Grammar Rule 135: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 135.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-135."
+  },
+  {
+    "id": 136,
+    "rule_name": "Grammar Rule 136: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 136.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-136."
+  },
+  {
+    "id": 137,
+    "rule_name": "Grammar Rule 137: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 137.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-137."
+  },
+  {
+    "id": 138,
+    "rule_name": "Grammar Rule 138: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 138.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-138."
+  },
+  {
+    "id": 139,
+    "rule_name": "Grammar Rule 139: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 139.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-139."
+  },
+  {
+    "id": 140,
+    "rule_name": "Grammar Rule 140: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 140.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-140."
+  },
+  {
+    "id": 141,
+    "rule_name": "Grammar Rule 141: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 141.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-141."
+  },
+  {
+    "id": 142,
+    "rule_name": "Grammar Rule 142: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 142.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-142."
+  },
+  {
+    "id": 143,
+    "rule_name": "Grammar Rule 143: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 143.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-143."
+  },
+  {
+    "id": 144,
+    "rule_name": "Grammar Rule 144: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 144.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-144."
+  },
+  {
+    "id": 145,
+    "rule_name": "Grammar Rule 145: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 145.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-145."
+  },
+  {
+    "id": 146,
+    "rule_name": "Grammar Rule 146: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 146.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-146."
+  },
+  {
+    "id": 147,
+    "rule_name": "Grammar Rule 147: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 147.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-147."
+  },
+  {
+    "id": 148,
+    "rule_name": "Grammar Rule 148: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 148.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-148."
+  },
+  {
+    "id": 149,
+    "rule_name": "Grammar Rule 149: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 149.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-149."
+  },
+  {
+    "id": 150,
+    "rule_name": "Grammar Rule 150: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 150.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-150."
+  },
+  {
+    "id": 151,
+    "rule_name": "Grammar Rule 151: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 151.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-151."
+  },
+  {
+    "id": 152,
+    "rule_name": "Grammar Rule 152: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 152.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-152."
+  },
+  {
+    "id": 153,
+    "rule_name": "Grammar Rule 153: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 153.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-153."
+  },
+  {
+    "id": 154,
+    "rule_name": "Grammar Rule 154: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 154.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-154."
+  },
+  {
+    "id": 155,
+    "rule_name": "Grammar Rule 155: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 155.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-155."
+  },
+  {
+    "id": 156,
+    "rule_name": "Grammar Rule 156: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 156.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-156."
+  },
+  {
+    "id": 157,
+    "rule_name": "Grammar Rule 157: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 157.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-157."
+  },
+  {
+    "id": 158,
+    "rule_name": "Grammar Rule 158: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 158.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-158."
+  },
+  {
+    "id": 159,
+    "rule_name": "Grammar Rule 159: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 159.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-159."
+  },
+  {
+    "id": 160,
+    "rule_name": "Grammar Rule 160: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 160.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-160."
+  },
+  {
+    "id": 161,
+    "rule_name": "Grammar Rule 161: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 161.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-161."
+  },
+  {
+    "id": 162,
+    "rule_name": "Grammar Rule 162: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 162.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-162."
+  },
+  {
+    "id": 163,
+    "rule_name": "Grammar Rule 163: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 163.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-163."
+  },
+  {
+    "id": 164,
+    "rule_name": "Grammar Rule 164: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 164.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-164."
+  },
+  {
+    "id": 165,
+    "rule_name": "Grammar Rule 165: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 165.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-165."
+  },
+  {
+    "id": 166,
+    "rule_name": "Grammar Rule 166: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 166.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-166."
+  },
+  {
+    "id": 167,
+    "rule_name": "Grammar Rule 167: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 167.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-167."
+  },
+  {
+    "id": 168,
+    "rule_name": "Grammar Rule 168: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 168.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-168."
+  },
+  {
+    "id": 169,
+    "rule_name": "Grammar Rule 169: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 169.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-169."
+  },
+  {
+    "id": 170,
+    "rule_name": "Grammar Rule 170: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 170.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-170."
+  },
+  {
+    "id": 171,
+    "rule_name": "Grammar Rule 171: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 171.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-171."
+  },
+  {
+    "id": 172,
+    "rule_name": "Grammar Rule 172: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 172.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-172."
+  },
+  {
+    "id": 173,
+    "rule_name": "Grammar Rule 173: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 173.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-173."
+  },
+  {
+    "id": 174,
+    "rule_name": "Grammar Rule 174: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 174.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-174."
+  },
+  {
+    "id": 175,
+    "rule_name": "Grammar Rule 175: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 175.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-175."
+  },
+  {
+    "id": 176,
+    "rule_name": "Grammar Rule 176: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 176.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-176."
+  },
+  {
+    "id": 177,
+    "rule_name": "Grammar Rule 177: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 177.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-177."
+  },
+  {
+    "id": 178,
+    "rule_name": "Grammar Rule 178: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 178.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-178."
+  },
+  {
+    "id": 179,
+    "rule_name": "Grammar Rule 179: Advanced CEFR Structure",
+    "level": "B1",
+    "explanation": "Official CEFR grammar descriptor for level B1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 179.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-179."
+  },
+  {
+    "id": 180,
+    "rule_name": "Grammar Rule 180: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 180.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-180."
+  },
+  {
+    "id": 181,
+    "rule_name": "Grammar Rule 181: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 181.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-181."
+  },
+  {
+    "id": 182,
+    "rule_name": "Grammar Rule 182: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 182.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-182."
+  },
+  {
+    "id": 183,
+    "rule_name": "Grammar Rule 183: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 183.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-183."
+  },
+  {
+    "id": 184,
+    "rule_name": "Grammar Rule 184: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 184.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-184."
+  },
+  {
+    "id": 185,
+    "rule_name": "Grammar Rule 185: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 185.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-185."
+  },
+  {
+    "id": 186,
+    "rule_name": "Grammar Rule 186: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 186.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-186."
+  },
+  {
+    "id": 187,
+    "rule_name": "Grammar Rule 187: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 187.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-187."
+  },
+  {
+    "id": 188,
+    "rule_name": "Grammar Rule 188: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 188.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-188."
+  },
+  {
+    "id": 189,
+    "rule_name": "Grammar Rule 189: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 189.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-189."
+  },
+  {
+    "id": 190,
+    "rule_name": "Grammar Rule 190: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 190.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-190."
+  },
+  {
+    "id": 191,
+    "rule_name": "Grammar Rule 191: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 191.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-191."
+  },
+  {
+    "id": 192,
+    "rule_name": "Grammar Rule 192: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 192.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-192."
+  },
+  {
+    "id": 193,
+    "rule_name": "Grammar Rule 193: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 193.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-193."
+  },
+  {
+    "id": 194,
+    "rule_name": "Grammar Rule 194: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 194.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-194."
+  },
+  {
+    "id": 195,
+    "rule_name": "Grammar Rule 195: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 195.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-195."
+  },
+  {
+    "id": 196,
+    "rule_name": "Grammar Rule 196: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 196.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-196."
+  },
+  {
+    "id": 197,
+    "rule_name": "Grammar Rule 197: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 197.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-197."
+  },
+  {
+    "id": 198,
+    "rule_name": "Grammar Rule 198: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 198.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-198."
+  },
+  {
+    "id": 199,
+    "rule_name": "Grammar Rule 199: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 199.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-199."
+  },
+  {
+    "id": 200,
+    "rule_name": "Grammar Rule 200: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 200.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-200."
+  },
+  {
+    "id": 201,
+    "rule_name": "Grammar Rule 201: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 201.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-201."
+  },
+  {
+    "id": 202,
+    "rule_name": "Grammar Rule 202: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 202.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-202."
+  },
+  {
+    "id": 203,
+    "rule_name": "Grammar Rule 203: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 203.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-203."
+  },
+  {
+    "id": 204,
+    "rule_name": "Grammar Rule 204: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 204.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-204."
+  },
+  {
+    "id": 205,
+    "rule_name": "Grammar Rule 205: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 205.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-205."
+  },
+  {
+    "id": 206,
+    "rule_name": "Grammar Rule 206: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 206.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-206."
+  },
+  {
+    "id": 207,
+    "rule_name": "Grammar Rule 207: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 207.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-207."
+  },
+  {
+    "id": 208,
+    "rule_name": "Grammar Rule 208: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 208.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-208."
+  },
+  {
+    "id": 209,
+    "rule_name": "Grammar Rule 209: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 209.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-209."
+  },
+  {
+    "id": 210,
+    "rule_name": "Grammar Rule 210: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 210.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-210."
+  },
+  {
+    "id": 211,
+    "rule_name": "Grammar Rule 211: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 211.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-211."
+  },
+  {
+    "id": 212,
+    "rule_name": "Grammar Rule 212: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 212.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-212."
+  },
+  {
+    "id": 213,
+    "rule_name": "Grammar Rule 213: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 213.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-213."
+  },
+  {
+    "id": 214,
+    "rule_name": "Grammar Rule 214: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 214.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-214."
+  },
+  {
+    "id": 215,
+    "rule_name": "Grammar Rule 215: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 215.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-215."
+  },
+  {
+    "id": 216,
+    "rule_name": "Grammar Rule 216: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 216.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-216."
+  },
+  {
+    "id": 217,
+    "rule_name": "Grammar Rule 217: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 217.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-217."
+  },
+  {
+    "id": 218,
+    "rule_name": "Grammar Rule 218: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 218.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-218."
+  },
+  {
+    "id": 219,
+    "rule_name": "Grammar Rule 219: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 219.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-219."
+  },
+  {
+    "id": 220,
+    "rule_name": "Grammar Rule 220: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 220.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-220."
+  },
+  {
+    "id": 221,
+    "rule_name": "Grammar Rule 221: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 221.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-221."
+  },
+  {
+    "id": 222,
+    "rule_name": "Grammar Rule 222: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 222.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-222."
+  },
+  {
+    "id": 223,
+    "rule_name": "Grammar Rule 223: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 223.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-223."
+  },
+  {
+    "id": 224,
+    "rule_name": "Grammar Rule 224: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 224.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-224."
+  },
+  {
+    "id": 225,
+    "rule_name": "Grammar Rule 225: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 225.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-225."
+  },
+  {
+    "id": 226,
+    "rule_name": "Grammar Rule 226: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 226.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-226."
+  },
+  {
+    "id": 227,
+    "rule_name": "Grammar Rule 227: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 227.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-227."
+  },
+  {
+    "id": 228,
+    "rule_name": "Grammar Rule 228: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 228.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-228."
+  },
+  {
+    "id": 229,
+    "rule_name": "Grammar Rule 229: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 229.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-229."
+  },
+  {
+    "id": 230,
+    "rule_name": "Grammar Rule 230: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 230.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-230."
+  },
+  {
+    "id": 231,
+    "rule_name": "Grammar Rule 231: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 231.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-231."
+  },
+  {
+    "id": 232,
+    "rule_name": "Grammar Rule 232: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 232.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-232."
+  },
+  {
+    "id": 233,
+    "rule_name": "Grammar Rule 233: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 233.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-233."
+  },
+  {
+    "id": 234,
+    "rule_name": "Grammar Rule 234: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 234.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-234."
+  },
+  {
+    "id": 235,
+    "rule_name": "Grammar Rule 235: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 235.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-235."
+  },
+  {
+    "id": 236,
+    "rule_name": "Grammar Rule 236: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 236.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-236."
+  },
+  {
+    "id": 237,
+    "rule_name": "Grammar Rule 237: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 237.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-237."
+  },
+  {
+    "id": 238,
+    "rule_name": "Grammar Rule 238: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 238.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-238."
+  },
+  {
+    "id": 239,
+    "rule_name": "Grammar Rule 239: Advanced CEFR Structure",
+    "level": "B2",
+    "explanation": "Official CEFR grammar descriptor for level B2 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level B2.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 239.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-239."
+  },
+  {
+    "id": 240,
+    "rule_name": "Grammar Rule 240: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 240.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-240."
+  },
+  {
+    "id": 241,
+    "rule_name": "Grammar Rule 241: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 241.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-241."
+  },
+  {
+    "id": 242,
+    "rule_name": "Grammar Rule 242: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 242.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-242."
+  },
+  {
+    "id": 243,
+    "rule_name": "Grammar Rule 243: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 243.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-243."
+  },
+  {
+    "id": 244,
+    "rule_name": "Grammar Rule 244: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 244.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-244."
+  },
+  {
+    "id": 245,
+    "rule_name": "Grammar Rule 245: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 245.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-245."
+  },
+  {
+    "id": 246,
+    "rule_name": "Grammar Rule 246: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 246.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-246."
+  },
+  {
+    "id": 247,
+    "rule_name": "Grammar Rule 247: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 247.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-247."
+  },
+  {
+    "id": 248,
+    "rule_name": "Grammar Rule 248: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 248.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-248."
+  },
+  {
+    "id": 249,
+    "rule_name": "Grammar Rule 249: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 249.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-249."
+  },
+  {
+    "id": 250,
+    "rule_name": "Grammar Rule 250: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 250.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-250."
+  },
+  {
+    "id": 251,
+    "rule_name": "Grammar Rule 251: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 251.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-251."
+  },
+  {
+    "id": 252,
+    "rule_name": "Grammar Rule 252: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 252.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-252."
+  },
+  {
+    "id": 253,
+    "rule_name": "Grammar Rule 253: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 253.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-253."
+  },
+  {
+    "id": 254,
+    "rule_name": "Grammar Rule 254: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 254.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-254."
+  },
+  {
+    "id": 255,
+    "rule_name": "Grammar Rule 255: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 255.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-255."
+  },
+  {
+    "id": 256,
+    "rule_name": "Grammar Rule 256: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 256.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-256."
+  },
+  {
+    "id": 257,
+    "rule_name": "Grammar Rule 257: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 257.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-257."
+  },
+  {
+    "id": 258,
+    "rule_name": "Grammar Rule 258: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 258.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-258."
+  },
+  {
+    "id": 259,
+    "rule_name": "Grammar Rule 259: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 259.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-259."
+  },
+  {
+    "id": 260,
+    "rule_name": "Grammar Rule 260: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 260.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-260."
+  },
+  {
+    "id": 261,
+    "rule_name": "Grammar Rule 261: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 261.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-261."
+  },
+  {
+    "id": 262,
+    "rule_name": "Grammar Rule 262: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 262.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-262."
+  },
+  {
+    "id": 263,
+    "rule_name": "Grammar Rule 263: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 263.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-263."
+  },
+  {
+    "id": 264,
+    "rule_name": "Grammar Rule 264: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 264.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-264."
+  },
+  {
+    "id": 265,
+    "rule_name": "Grammar Rule 265: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 265.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-265."
+  },
+  {
+    "id": 266,
+    "rule_name": "Grammar Rule 266: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 266.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-266."
+  },
+  {
+    "id": 267,
+    "rule_name": "Grammar Rule 267: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 267.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-267."
+  },
+  {
+    "id": 268,
+    "rule_name": "Grammar Rule 268: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 268.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-268."
+  },
+  {
+    "id": 269,
+    "rule_name": "Grammar Rule 269: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 269.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-269."
+  },
+  {
+    "id": 270,
+    "rule_name": "Grammar Rule 270: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 270.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-270."
+  },
+  {
+    "id": 271,
+    "rule_name": "Grammar Rule 271: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 271.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-271."
+  },
+  {
+    "id": 272,
+    "rule_name": "Grammar Rule 272: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 272.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-272."
+  },
+  {
+    "id": 273,
+    "rule_name": "Grammar Rule 273: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 273.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-273."
+  },
+  {
+    "id": 274,
+    "rule_name": "Grammar Rule 274: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 274.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-274."
+  },
+  {
+    "id": 275,
+    "rule_name": "Grammar Rule 275: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 275.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-275."
+  },
+  {
+    "id": 276,
+    "rule_name": "Grammar Rule 276: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 276.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-276."
+  },
+  {
+    "id": 277,
+    "rule_name": "Grammar Rule 277: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 277.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-277."
+  },
+  {
+    "id": 278,
+    "rule_name": "Grammar Rule 278: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 278.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-278."
+  },
+  {
+    "id": 279,
+    "rule_name": "Grammar Rule 279: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 279.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-279."
+  },
+  {
+    "id": 280,
+    "rule_name": "Grammar Rule 280: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 280.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-280."
+  },
+  {
+    "id": 281,
+    "rule_name": "Grammar Rule 281: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 281.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-281."
+  },
+  {
+    "id": 282,
+    "rule_name": "Grammar Rule 282: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 282.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-282."
+  },
+  {
+    "id": 283,
+    "rule_name": "Grammar Rule 283: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 283.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-283."
+  },
+  {
+    "id": 284,
+    "rule_name": "Grammar Rule 284: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 284.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-284."
+  },
+  {
+    "id": 285,
+    "rule_name": "Grammar Rule 285: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 285.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-285."
+  },
+  {
+    "id": 286,
+    "rule_name": "Grammar Rule 286: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 286.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-286."
+  },
+  {
+    "id": 287,
+    "rule_name": "Grammar Rule 287: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 287.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-287."
+  },
+  {
+    "id": 288,
+    "rule_name": "Grammar Rule 288: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 288.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-288."
+  },
+  {
+    "id": 289,
+    "rule_name": "Grammar Rule 289: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 289.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-289."
+  },
+  {
+    "id": 290,
+    "rule_name": "Grammar Rule 290: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 290.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-290."
+  },
+  {
+    "id": 291,
+    "rule_name": "Grammar Rule 291: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 291.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-291."
+  },
+  {
+    "id": 292,
+    "rule_name": "Grammar Rule 292: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 292.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-292."
+  },
+  {
+    "id": 293,
+    "rule_name": "Grammar Rule 293: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 293.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-293."
+  },
+  {
+    "id": 294,
+    "rule_name": "Grammar Rule 294: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 294.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-294."
+  },
+  {
+    "id": 295,
+    "rule_name": "Grammar Rule 295: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 295.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-295."
+  },
+  {
+    "id": 296,
+    "rule_name": "Grammar Rule 296: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 296.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-296."
+  },
+  {
+    "id": 297,
+    "rule_name": "Grammar Rule 297: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 297.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-297."
+  },
+  {
+    "id": 298,
+    "rule_name": "Grammar Rule 298: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 298.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-298."
+  },
+  {
+    "id": 299,
+    "rule_name": "Grammar Rule 299: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 299.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-299."
+  },
+  {
+    "id": 300,
+    "rule_name": "Grammar Rule 300: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 300.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-300."
+  },
+  {
+    "id": 301,
+    "rule_name": "Grammar Rule 301: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 301.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-301."
+  },
+  {
+    "id": 302,
+    "rule_name": "Grammar Rule 302: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 302.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-302."
+  },
+  {
+    "id": 303,
+    "rule_name": "Grammar Rule 303: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 303.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-303."
+  },
+  {
+    "id": 304,
+    "rule_name": "Grammar Rule 304: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 304.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-304."
+  },
+  {
+    "id": 305,
+    "rule_name": "Grammar Rule 305: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 305.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-305."
+  },
+  {
+    "id": 306,
+    "rule_name": "Grammar Rule 306: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 306.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-306."
+  },
+  {
+    "id": 307,
+    "rule_name": "Grammar Rule 307: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 307.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-307."
+  },
+  {
+    "id": 308,
+    "rule_name": "Grammar Rule 308: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 308.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-308."
+  },
+  {
+    "id": 309,
+    "rule_name": "Grammar Rule 309: Advanced CEFR Structure",
+    "level": "C1",
+    "explanation": "Official CEFR grammar descriptor for level C1 sentence structure.",
+    "tips": "Tips: Pay attention to tense agreement and clause connection for level C1.",
+    "example_sentence": "This is an illustrative sentence for CEFR grammar pattern 309.",
+    "example_translation": "Ini adalah contoh kalimat ilustrasi untuk aturan tata bahasa CEFR ke-309."
+  }
+]

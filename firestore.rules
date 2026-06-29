@@ -1,0 +1,53 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Aturan keamanan untuk data progres pengguna
+    match /users/{userId} {
+      // Izinkan akses baca/tulis untuk sinkronisasi progres
+      allow read, write: if true; 
+    }
+    
+    // Aturan keamanan untuk database materi belajar (Hanya Baca / Read-Only)
+    match /japanese_vocab/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    match /japanese_kanji/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    match /japanese_grammar/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    match /japanese_sentences/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    match /english_vocab/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    match /english_grammar/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    match /english_speaking_prompts/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    match /english_writing_prompts/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+name: jengo
+description: A personalized fast-paced language learning application for JLPT N2 and IELTS 8.0.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  sqflite: ^2.3.0
+  path_provider: ^2.1.1
+  provider: ^6.0.5
+  google_fonts: ^6.1.0
+  flutter_tts: ^3.8.3
+  speech_to_text: ^7.4.0
+  firebase_core: ^2.15.0
+  cloud_firestore: ^4.8.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/materials/japanese/
+    - assets/materials/english/

@@ -1,0 +1,627 @@
+[
+  {
+    "id": 1,
+    "part": 1,
+    "topic": "Hometown",
+    "questions": [
+      "Where is your hometown?",
+      "What do you like most about your hometown?",
+      "Would you say it is a good place for young people to live?"
+    ],
+    "tips": "Tips: Keep your answers natural and try to speak for 2-3 sentences. Don't worry about using very complex grammar here; focus on fluency."
+  },
+  {
+    "id": 2,
+    "part": 2,
+    "topic": "Describe a book you read recently",
+    "prompt_card": "Describe a book you read recently. You should say:\n- What book it is\n- What it is about\n- Why you decided to read it\nand explain how you felt after reading it.",
+    "tips": "Tips: You have 1 minute to take notes and should speak for 2 minutes. Use past tenses accurately and structure your response chronologically."
+  },
+  {
+    "id": 3,
+    "part": 3,
+    "topic": "Reading Habits in Society",
+    "questions": [
+      "Do you think children read less nowadays compared to the past?",
+      "How has digital technology influenced people's reading habits?",
+      "What are the benefits of reading physical books over electronic ones?"
+    ],
+    "tips": "Tips: This part requires abstract and analytical thinking. Structure your answers using PEEL (Point, Explanation, Example, Link) to achieve Band 8.0+."
+  },
+  {
+    "id": 4,
+    "part": 2,
+    "topic": "Academic Topic 4: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 4. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 4."
+  },
+  {
+    "id": 5,
+    "part": 3,
+    "topic": "Academic Topic 5: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 5?",
+      "Question B for practice topic 5?",
+      "Question C for practice topic 5?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 5."
+  },
+  {
+    "id": 6,
+    "part": 1,
+    "topic": "Academic Topic 6: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 6?",
+      "Question B for practice topic 6?",
+      "Question C for practice topic 6?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 6."
+  },
+  {
+    "id": 7,
+    "part": 2,
+    "topic": "Academic Topic 7: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 7. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 7."
+  },
+  {
+    "id": 8,
+    "part": 3,
+    "topic": "Academic Topic 8: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 8?",
+      "Question B for practice topic 8?",
+      "Question C for practice topic 8?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 8."
+  },
+  {
+    "id": 9,
+    "part": 1,
+    "topic": "Academic Topic 9: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 9?",
+      "Question B for practice topic 9?",
+      "Question C for practice topic 9?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 9."
+  },
+  {
+    "id": 10,
+    "part": 2,
+    "topic": "Academic Topic 10: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 10. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 10."
+  },
+  {
+    "id": 11,
+    "part": 3,
+    "topic": "Academic Topic 11: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 11?",
+      "Question B for practice topic 11?",
+      "Question C for practice topic 11?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 11."
+  },
+  {
+    "id": 12,
+    "part": 1,
+    "topic": "Academic Topic 12: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 12?",
+      "Question B for practice topic 12?",
+      "Question C for practice topic 12?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 12."
+  },
+  {
+    "id": 13,
+    "part": 2,
+    "topic": "Academic Topic 13: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 13. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 13."
+  },
+  {
+    "id": 14,
+    "part": 3,
+    "topic": "Academic Topic 14: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 14?",
+      "Question B for practice topic 14?",
+      "Question C for practice topic 14?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 14."
+  },
+  {
+    "id": 15,
+    "part": 1,
+    "topic": "Academic Topic 15: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 15?",
+      "Question B for practice topic 15?",
+      "Question C for practice topic 15?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 15."
+  },
+  {
+    "id": 16,
+    "part": 2,
+    "topic": "Academic Topic 16: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 16. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 16."
+  },
+  {
+    "id": 17,
+    "part": 3,
+    "topic": "Academic Topic 17: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 17?",
+      "Question B for practice topic 17?",
+      "Question C for practice topic 17?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 17."
+  },
+  {
+    "id": 18,
+    "part": 1,
+    "topic": "Academic Topic 18: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 18?",
+      "Question B for practice topic 18?",
+      "Question C for practice topic 18?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 18."
+  },
+  {
+    "id": 19,
+    "part": 2,
+    "topic": "Academic Topic 19: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 19. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 19."
+  },
+  {
+    "id": 20,
+    "part": 3,
+    "topic": "Academic Topic 20: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 20?",
+      "Question B for practice topic 20?",
+      "Question C for practice topic 20?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 20."
+  },
+  {
+    "id": 21,
+    "part": 1,
+    "topic": "Academic Topic 21: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 21?",
+      "Question B for practice topic 21?",
+      "Question C for practice topic 21?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 21."
+  },
+  {
+    "id": 22,
+    "part": 2,
+    "topic": "Academic Topic 22: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 22. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 22."
+  },
+  {
+    "id": 23,
+    "part": 3,
+    "topic": "Academic Topic 23: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 23?",
+      "Question B for practice topic 23?",
+      "Question C for practice topic 23?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 23."
+  },
+  {
+    "id": 24,
+    "part": 1,
+    "topic": "Academic Topic 24: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 24?",
+      "Question B for practice topic 24?",
+      "Question C for practice topic 24?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 24."
+  },
+  {
+    "id": 25,
+    "part": 2,
+    "topic": "Academic Topic 25: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 25. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 25."
+  },
+  {
+    "id": 26,
+    "part": 3,
+    "topic": "Academic Topic 26: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 26?",
+      "Question B for practice topic 26?",
+      "Question C for practice topic 26?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 26."
+  },
+  {
+    "id": 27,
+    "part": 1,
+    "topic": "Academic Topic 27: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 27?",
+      "Question B for practice topic 27?",
+      "Question C for practice topic 27?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 27."
+  },
+  {
+    "id": 28,
+    "part": 2,
+    "topic": "Academic Topic 28: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 28. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 28."
+  },
+  {
+    "id": 29,
+    "part": 3,
+    "topic": "Academic Topic 29: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 29?",
+      "Question B for practice topic 29?",
+      "Question C for practice topic 29?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 29."
+  },
+  {
+    "id": 30,
+    "part": 1,
+    "topic": "Academic Topic 30: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 30?",
+      "Question B for practice topic 30?",
+      "Question C for practice topic 30?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 30."
+  },
+  {
+    "id": 31,
+    "part": 2,
+    "topic": "Academic Topic 31: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 31. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 31."
+  },
+  {
+    "id": 32,
+    "part": 3,
+    "topic": "Academic Topic 32: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 32?",
+      "Question B for practice topic 32?",
+      "Question C for practice topic 32?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 32."
+  },
+  {
+    "id": 33,
+    "part": 1,
+    "topic": "Academic Topic 33: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 33?",
+      "Question B for practice topic 33?",
+      "Question C for practice topic 33?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 33."
+  },
+  {
+    "id": 34,
+    "part": 2,
+    "topic": "Academic Topic 34: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 34. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 34."
+  },
+  {
+    "id": 35,
+    "part": 3,
+    "topic": "Academic Topic 35: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 35?",
+      "Question B for practice topic 35?",
+      "Question C for practice topic 35?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 35."
+  },
+  {
+    "id": 36,
+    "part": 1,
+    "topic": "Academic Topic 36: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 36?",
+      "Question B for practice topic 36?",
+      "Question C for practice topic 36?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 36."
+  },
+  {
+    "id": 37,
+    "part": 2,
+    "topic": "Academic Topic 37: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 37. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 37."
+  },
+  {
+    "id": 38,
+    "part": 3,
+    "topic": "Academic Topic 38: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 38?",
+      "Question B for practice topic 38?",
+      "Question C for practice topic 38?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 38."
+  },
+  {
+    "id": 39,
+    "part": 1,
+    "topic": "Academic Topic 39: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 39?",
+      "Question B for practice topic 39?",
+      "Question C for practice topic 39?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 39."
+  },
+  {
+    "id": 40,
+    "part": 2,
+    "topic": "Academic Topic 40: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 40. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 40."
+  },
+  {
+    "id": 41,
+    "part": 3,
+    "topic": "Academic Topic 41: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 41?",
+      "Question B for practice topic 41?",
+      "Question C for practice topic 41?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 41."
+  },
+  {
+    "id": 42,
+    "part": 1,
+    "topic": "Academic Topic 42: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 42?",
+      "Question B for practice topic 42?",
+      "Question C for practice topic 42?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 42."
+  },
+  {
+    "id": 43,
+    "part": 2,
+    "topic": "Academic Topic 43: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 43. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 43."
+  },
+  {
+    "id": 44,
+    "part": 3,
+    "topic": "Academic Topic 44: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 44?",
+      "Question B for practice topic 44?",
+      "Question C for practice topic 44?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 44."
+  },
+  {
+    "id": 45,
+    "part": 1,
+    "topic": "Academic Topic 45: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 45?",
+      "Question B for practice topic 45?",
+      "Question C for practice topic 45?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 45."
+  },
+  {
+    "id": 46,
+    "part": 2,
+    "topic": "Academic Topic 46: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 46. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 46."
+  },
+  {
+    "id": 47,
+    "part": 3,
+    "topic": "Academic Topic 47: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 47?",
+      "Question B for practice topic 47?",
+      "Question C for practice topic 47?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 47."
+  },
+  {
+    "id": 48,
+    "part": 1,
+    "topic": "Academic Topic 48: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 48?",
+      "Question B for practice topic 48?",
+      "Question C for practice topic 48?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 48."
+  },
+  {
+    "id": 49,
+    "part": 2,
+    "topic": "Academic Topic 49: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 49. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 49."
+  },
+  {
+    "id": 50,
+    "part": 3,
+    "topic": "Academic Topic 50: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 50?",
+      "Question B for practice topic 50?",
+      "Question C for practice topic 50?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 50."
+  },
+  {
+    "id": 51,
+    "part": 1,
+    "topic": "Academic Topic 51: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 51?",
+      "Question B for practice topic 51?",
+      "Question C for practice topic 51?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 51."
+  },
+  {
+    "id": 52,
+    "part": 2,
+    "topic": "Academic Topic 52: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 52. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 52."
+  },
+  {
+    "id": 53,
+    "part": 3,
+    "topic": "Academic Topic 53: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 53?",
+      "Question B for practice topic 53?",
+      "Question C for practice topic 53?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 53."
+  },
+  {
+    "id": 54,
+    "part": 1,
+    "topic": "Academic Topic 54: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 54?",
+      "Question B for practice topic 54?",
+      "Question C for practice topic 54?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 54."
+  },
+  {
+    "id": 55,
+    "part": 2,
+    "topic": "Academic Topic 55: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 55. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 55."
+  },
+  {
+    "id": 56,
+    "part": 3,
+    "topic": "Academic Topic 56: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 56?",
+      "Question B for practice topic 56?",
+      "Question C for practice topic 56?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 56."
+  },
+  {
+    "id": 57,
+    "part": 1,
+    "topic": "Academic Topic 57: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 57?",
+      "Question B for practice topic 57?",
+      "Question C for practice topic 57?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 57."
+  },
+  {
+    "id": 58,
+    "part": 2,
+    "topic": "Academic Topic 58: IELTS Speaking Practice",
+    "questions": [],
+    "prompt_card": "Describe a situation where you had to 58. You should say:\n- When it happened\n- Where it happened\n- Who was with you\nand explain how you resolved the situation.",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 58."
+  },
+  {
+    "id": 59,
+    "part": 3,
+    "topic": "Academic Topic 59: IELTS Speaking Practice",
+    "questions": [
+      "Question A for practice topic 59?",
+      "Question B for practice topic 59?",
+      "Question C for practice topic 59?"
+    ],
+    "prompt_card": "",
+    "tips": "Tips: Ensure clear pronunciation and grammatical range to target Band 8.0 on topic 59."
+  }
+]

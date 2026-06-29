@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "title": "IELTS Academic Lecture: Introduction to Sustainable Architecture",
+    "level": "C1",
+    "audio": "sustainable_architecture.mp3",
+    "transcript": "Welcome to today's lecture on urban planning. Today, we will analyse how modern architects integrate sustainable energy resources into residential high-rises. Our main focus is not only on reducing energy consumption but also on creating a coherent, eco-friendly infrastructure.",
+    "translation": "Selamat datang di kuliah hari ini tentang perencanaan kota. Hari ini, kita akan menganalisis bagaimana arsitek modern mengintegrasikan sumber daya energi berkelanjutan ke dalam gedung apartemen bertingkat. Fokus utama kita tidak hanya pada pengurangan konsumsi energi tetapi juga pada penciptaan infrastruktur ramah lingkungan yang koheren.",
+    "questions": [
+      {
+        "question": "What is the main focus of sustainable architecture according to the lecture?",
+        "options": [
+          "Constructing tallest structures",
+          "Integrating energy resources and eco-friendly infrastructure",
+          "Using cheap raw materials"
+        ],
+        "correct_answer_index": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "IELTS Conversation: Student Registration",
+    "level": "B2",
+    "audio": "student_registration.mp3",
+    "transcript": "Staff: Good morning, how can I help you?\nStudent: Hi, I'm here to complete my registration for the advanced IELTS preparation course.\nStaff: Perfect. I just need to verify your student identification card and your language proficiency score certificate.",
+    "translation": "Staf: Selamat pagi, ada yang bisa saya bantu?\nSiswa: Halo, saya di sini untuk menyelesaikan pendaftaran saya untuk kursus persiapan IELTS tingkat lanjut.\nStaf: Bagus. Saya hanya perlu memverifikasi kartu identitas siswa Anda dan sertifikat nilai kemahiran bahasa Anda.",
+    "questions": [
+      {
+        "question": "What is the student registering for?",
+        "options": [
+          "Advanced IELTS preparation course",
+          "University admission test",
+          "Library membership card"
+        ],
+        "correct_answer_index": 0
+      }
+    ]
+  }
+]

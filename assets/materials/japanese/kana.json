@@ -1,0 +1,752 @@
+[
+  {
+    "character": "あ",
+    "romaji": "a",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "い",
+    "romaji": "i",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "う",
+    "romaji": "u",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "え",
+    "romaji": "e",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "お",
+    "romaji": "o",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "か",
+    "romaji": "ka",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "き",
+    "romaji": "ki",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "く",
+    "romaji": "ku",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "け",
+    "romaji": "ke",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "こ",
+    "romaji": "ko",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "さ",
+    "romaji": "sa",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "し",
+    "romaji": "shi",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "す",
+    "romaji": "su",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "せ",
+    "romaji": "se",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "そ",
+    "romaji": "so",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "た",
+    "romaji": "ta",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "ち",
+    "romaji": "chi",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "つ",
+    "romaji": "tsu",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "て",
+    "romaji": "te",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "と",
+    "romaji": "to",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "な",
+    "romaji": "na",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "に",
+    "romaji": "ni",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "ぬ",
+    "romaji": "nu",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "ね",
+    "romaji": "ne",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "の",
+    "romaji": "no",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "は",
+    "romaji": "ha",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "ひ",
+    "romaji": "hi",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "ふ",
+    "romaji": "fu",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "へ",
+    "romaji": "he",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "ほ",
+    "romaji": "ho",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "ま",
+    "romaji": "ma",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "み",
+    "romaji": "mi",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "む",
+    "romaji": "mu",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "め",
+    "romaji": "me",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "も",
+    "romaji": "mo",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "や",
+    "romaji": "ya",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "ゆ",
+    "romaji": "yu",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "よ",
+    "romaji": "yo",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "ら",
+    "romaji": "ra",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "り",
+    "romaji": "ri",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "る",
+    "romaji": "ru",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "れ",
+    "romaji": "re",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "ろ",
+    "romaji": "ro",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "わ",
+    "romaji": "wa",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "を",
+    "romaji": "wo",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "ん",
+    "romaji": "n",
+    "type": "HIRAGANA_BASE"
+  },
+  {
+    "character": "が",
+    "romaji": "ga",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ぎ",
+    "romaji": "gi",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ぐ",
+    "romaji": "gu",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "げ",
+    "romaji": "ge",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ご",
+    "romaji": "go",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ざ",
+    "romaji": "za",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "じ",
+    "romaji": "ji",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ず",
+    "romaji": "zu",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ぜ",
+    "romaji": "ze",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ぞ",
+    "romaji": "zo",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "だ",
+    "romaji": "da",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ぢ",
+    "romaji": "ji",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "づ",
+    "romaji": "zu",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "で",
+    "romaji": "de",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ど",
+    "romaji": "do",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ば",
+    "romaji": "ba",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "び",
+    "romaji": "bi",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ぶ",
+    "romaji": "bu",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "べ",
+    "romaji": "be",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ぼ",
+    "romaji": "bo",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ぱ",
+    "romaji": "pa",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ぴ",
+    "romaji": "pi",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ぷ",
+    "romaji": "pu",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ぺ",
+    "romaji": "pe",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "ぽ",
+    "romaji": "po",
+    "type": "HIRAGANA_DAKUTEN"
+  },
+  {
+    "character": "きゃ",
+    "romaji": "kya",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "きゅ",
+    "romaji": "kyu",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "きょ",
+    "romaji": "kyo",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "しゃ",
+    "romaji": "sha",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "しゅ",
+    "romaji": "shu",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "しょ",
+    "romaji": "sho",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "ちゃ",
+    "romaji": "cha",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "ちゅ",
+    "romaji": "chu",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "ちょ",
+    "romaji": "cho",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "にゃ",
+    "romaji": "nya",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "にゅ",
+    "romaji": "nyu",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "にょ",
+    "romaji": "nyo",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "ひゃ",
+    "romaji": "hya",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "ひゅ",
+    "romaji": "hyu",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "ひょ",
+    "romaji": "hyo",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "みゃ",
+    "romaji": "mya",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "みゅ",
+    "romaji": "myu",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "みょ",
+    "romaji": "myo",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "りゃ",
+    "romaji": "rya",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "りゅ",
+    "romaji": "ryu",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "りょ",
+    "romaji": "ryo",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "ぎゃ",
+    "romaji": "gya",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "ぎゅ",
+    "romaji": "gyu",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "ぎょ",
+    "romaji": "gyo",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "じゃ",
+    "romaji": "ja",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "じゅ",
+    "romaji": "ju",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "じょ",
+    "romaji": "jo",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "びゃ",
+    "romaji": "bya",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "びゅ",
+    "romaji": "byu",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "びょ",
+    "romaji": "byo",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "ぴゃ",
+    "romaji": "pya",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "ぴゅ",
+    "romaji": "pyu",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "ぴょ",
+    "romaji": "pyo",
+    "type": "HIRAGANA_YOON"
+  },
+  {
+    "character": "ア",
+    "romaji": "a",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "イ",
+    "romaji": "i",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ウ",
+    "romaji": "u",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "エ",
+    "romaji": "e",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "オ",
+    "romaji": "o",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "カ",
+    "romaji": "ka",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "キ",
+    "romaji": "ki",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ク",
+    "romaji": "ku",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ケ",
+    "romaji": "ke",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "コ",
+    "romaji": "ko",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "サ",
+    "romaji": "sa",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "シ",
+    "romaji": "shi",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ス",
+    "romaji": "su",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "セ",
+    "romaji": "se",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ソ",
+    "romaji": "so",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "タ",
+    "romaji": "ta",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "チ",
+    "romaji": "chi",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ツ",
+    "romaji": "tsu",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "テ",
+    "romaji": "te",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ト",
+    "romaji": "to",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ナ",
+    "romaji": "na",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ニ",
+    "romaji": "ni",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ヌ",
+    "romaji": "nu",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ネ",
+    "romaji": "ne",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ノ",
+    "romaji": "no",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ハ",
+    "romaji": "ha",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ヒ",
+    "romaji": "hi",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "フ",
+    "romaji": "fu",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ヘ",
+    "romaji": "he",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ホ",
+    "romaji": "ho",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "マ",
+    "romaji": "ma",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ミ",
+    "romaji": "mi",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ム",
+    "romaji": "mu",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "メ",
+    "romaji": "me",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "モ",
+    "romaji": "mo",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ヤ",
+    "romaji": "ya",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ユ",
+    "romaji": "yu",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ヨ",
+    "romaji": "yo",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ラ",
+    "romaji": "ra",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "リ",
+    "romaji": "ri",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ル",
+    "romaji": "ru",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "レ",
+    "romaji": "re",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ロ",
+    "romaji": "ro",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ワ",
+    "romaji": "wa",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ヲ",
+    "romaji": "wo",
+    "type": "KATAKANA_BASE"
+  },
+  {
+    "character": "ン",
+    "romaji": "n",
+    "type": "KATAKANA_BASE"
+  }
+]

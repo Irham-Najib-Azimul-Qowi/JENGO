@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "title": "Percakapan N3: Stasiun Kereta Api",
+    "level": "N3",
+    "audio": "stasiun_kereta.mp3",
+    "transcript": "男の人と女の人が話しています。男の人はどの電車に乗りますか？\n男：すみません、新宿行きの急行はどれですか？\n女：あそこに見える3番線の電車ですよ。もうすぐ発車します。",
+    "translation": "Seorang pria dan wanita sedang berbicara. Kereta mana yang akan dinaiki pria tersebut?\nPria: Permisi, yang mana kereta ekspres tujuan Shinjuku?\nWanita: Itu kereta di peron 3 yang terlihat di sana. Keretanya akan segera berangkat.",
+    "questions": [
+      {
+        "question": "男の人は何番線の電車に乗りますか？",
+        "options": [
+          "1番線",
+          "2番線",
+          "3番線"
+        ],
+        "correct_answer_index": 2
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "JLPT N2 Listening: Seminar Bisnis",
+    "level": "N2",
+    "audio": "seminar_bisnis.mp3",
+    "transcript": "セミナーで講師が話しています。新入社員に必要なことは何ですか？\n講師：新入社員にとって最も大切なのは、指示を待つだけでなく、自分で仕事を探す姿勢を持つことです。進んで質問をしましょう。",
+    "translation": "Seorang instruktur sedang berbicara di sebuah seminar. Apa yang dibutuhkan oleh karyawan baru?\nInstruktur: Hal yang paling penting bagi karyawan baru bukan hanya menunggu instruksi, tetapi memiliki sikap proaktif mencari pekerjaan sendiri. Mari berinisiatif untuk bertanya.",
+    "questions": [
+      {
+        "question": "講師によると、新入社員にとって最も大切なことは何ですか？",
+        "options": [
+          "自分で仕事を探す姿勢を持つこと",
+          "指示を待つこと",
+          "静かに仕事を見ていること"
+        ],
+        "correct_answer_index": 0
+      }
+    ]
+  }
+]

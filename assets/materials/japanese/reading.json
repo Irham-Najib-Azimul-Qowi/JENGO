@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "NHK Easy News: 富士山の登山規制 (Peraturan Pendakian Gunung Fuji)",
+    "level": "N3",
+    "passage": "富士山に登る人が多すぎるため、山梨県は新しいルールを作りました。午後4時から次の日の午前3時までは、登山道を通ることができません。また、一人2000円の通行料を支払う必要があります。これは、安全を守るための大切なルールです。",
+    "translation": "Karena terlalu banyak orang yang mendaki Gunung Fuji, Prefektur Yamanashi membuat aturan baru. Pendaki tidak boleh melewati jalur pendakian dari jam 4 sore hingga jam 3 pagi keesokan harinya. Selain itu, pendaki wajib membayar biaya masuk sebesar 2000 yen per orang. Ini adalah aturan penting untuk menjaga keselamatan.",
+    "questions": [
+      {
+        "question": "山梨県が新しいルールを作った理由は何ですか？",
+        "options": [
+          "富士山に登る人が多すぎるため",
+          "お金が必要なため",
+          "天気が悪いため"
+        ],
+        "correct_answer_index": 0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "JLPT N2 Reading: 日本の仕事文化 (Budaya Kerja di Jepang)",
+    "level": "N2",
+    "passage": "近年、日本の企業では働き方改革が進められています。従来の長時間労働を見直し、テレワークやフレックスタイム制を導入する企業が増えています。これにより、従業員のワークライフバランスが向上することが期待されていますが、一方で社内のコミュニケーション不足などの課題も指摘されています。",
+    "translation": "Dalam beberapa tahun terakhir, reformasi cara kerja sedang gencar dilakukan di perusahaan-perusahaan Jepang. Jam kerja panjang tradisional mulai ditinjau ulang, dan semakin banyak perusahaan yang menerapkan sistem kerja jarak jauh (telework) serta jam kerja fleksibel. Melalui kebijakan ini, keseimbangan hidup dan kerja karyawan diharapkan dapat meningkat, namun di sisi lain, tantangan seperti kurangnya komunikasi internal juga turut disorot.",
+    "questions": [
+      {
+        "question": "働き方改革の導入によって期待されていることは何ですか？",
+        "options": [
+          "従業員のワークライフバランスの向上",
+          "社内コミュニケーションの増加",
+          "労働時間の延長"
+        ],
+        "correct_answer_index": 0
+      }
+    ]
+  }
+]
