@@ -59,7 +59,7 @@ class DailyLessonQuizScreen extends StatefulWidget {
 
 class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
   final FlutterTts _flutterTts = FlutterTts();
-  
+
   bool _isLoading = true;
   List<QuizQuestion> _questions = [];
   int _currentStep = 0;
@@ -69,7 +69,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
   int _selectedChoiceIndex = -1; // Multiple Choice & Listening
   List<String> _unscrambleSelection = []; // Sentence Unscramble
   List<String> _unscramblePool = [];
-  final TextEditingController _typingController = TextEditingController(); // Typing & Fill-in-blanks
+  final TextEditingController _typingController =
+      TextEditingController(); // Typing & Fill-in-blanks
   String _typedAnswer = "";
   String _connectSelectedLeft = ""; // Connect Pairs State
   String _connectSelectedRight = "";
@@ -187,7 +188,12 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
       QuestionType qType;
       if (widget.stage <= 12) {
         // Beginner-friendly types only: multipleChoice, listening, connectPairs, fillInBlank
-        final begTypes = [QuestionType.multipleChoice, QuestionType.listening, QuestionType.connectPairs, QuestionType.fillInBlank];
+        final begTypes = [
+          QuestionType.multipleChoice,
+          QuestionType.listening,
+          QuestionType.connectPairs,
+          QuestionType.fillInBlank
+        ];
         qType = begTypes[i % begTypes.length];
       } else {
         qType = QuestionType.values[i % QuestionType.values.length];
@@ -198,7 +204,9 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
           // MC Option generation
           List<String> opts = [translation];
           for (var other in vocabItems) {
-            final ot = (other['translation'] ?? other['meaning'] ?? '').toString().trim();
+            final ot = (other['translation'] ?? other['meaning'] ?? '')
+                .toString()
+                .trim();
             if (ot != translation && ot.isNotEmpty && opts.length < 4) {
               opts.add(ot);
             }
@@ -224,7 +232,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
           String unscramblePrompt = word;
 
           try {
-            final maxIdResult = await db.rawQuery('SELECT MAX(id) as max_id FROM sentences');
+            final maxIdResult =
+                await db.rawQuery('SELECT MAX(id) as max_id FROM sentences');
             final maxId = (maxIdResult.first['max_id'] as int?) ?? 0;
             if (maxId > 0) {
               final randomId = rand.nextInt(maxId) + 1;
@@ -236,8 +245,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
               );
               if (sentences.isNotEmpty) {
                 targetSentence = sentences.first['indonesian'] as String;
-                unscramblePrompt = isJp 
-                    ? sentences.first['japanese'] as String 
+                unscramblePrompt = isJp
+                    ? sentences.first['japanese'] as String
                     : sentences.first['english'] as String;
               }
             }
@@ -249,7 +258,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
 
           generatedQuestions.add(QuizQuestion(
             type: QuestionType.sentenceUnscramble,
-            questionText: 'Susun kata-kata berikut menjadi terjemahan kalimat yang tepat:',
+            questionText:
+                'Susun kata-kata berikut menjadi terjemahan kalimat yang tepat:',
             wordPrompt: unscramblePrompt,
             correctAnswer: targetSentence,
             wordPool: pool,
@@ -291,11 +301,13 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
 
           generatedQuestions.add(QuizQuestion(
             type: QuestionType.fillInBlank,
-            questionText: 'Pilih kata yang tepat untuk melengkapi kalimat berikut (Petunjuk: "$translation"):',
+            questionText:
+                'Pilih kata yang tepat untuk melengkapi kalimat berikut (Petunjuk: "$translation"):',
             wordPrompt: wordWithBlank,
             // NOTE: readingPrompt intentionally omitted to avoid leaking the answer
             correctAnswer: charToFill,
-            options: fillOpts,  // Always include options for choice-based rendering
+            options:
+                fillOpts, // Always include options for choice-based rendering
           ));
           break;
 
@@ -304,11 +316,16 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
           // Connecting pairs using 4 random items — need at least 4 items
           if (vocabItems.length >= 4) {
             final Map<String, String> pairMap = {};
-            final pairItems = List<Map<String, dynamic>>.from(vocabItems)..shuffle();
+            final pairItems = List<Map<String, dynamic>>.from(vocabItems)
+              ..shuffle();
             for (int j = 0; j < 4; j++) {
               final pWord = (pairItems[j]['word'] ?? '').toString().trim();
-              final pTrans = (pairItems[j]['translation'] ?? pairItems[j]['meaning'] ?? '').toString().trim();
-              if (pWord.isNotEmpty && pTrans.isNotEmpty) pairMap[pWord] = pTrans;
+              final pTrans =
+                  (pairItems[j]['translation'] ?? pairItems[j]['meaning'] ?? '')
+                      .toString()
+                      .trim();
+              if (pWord.isNotEmpty && pTrans.isNotEmpty)
+                pairMap[pWord] = pTrans;
             }
             if (pairMap.length >= 2) {
               generatedQuestions.add(QuizQuestion(
@@ -323,8 +340,11 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             // Fallback to multiple choice if not enough vocab
             List<String> opts = [translation];
             for (var other in vocabItems) {
-              final t2 = (other['translation'] ?? other['meaning'] ?? '').toString().trim();
-              if (t2 != translation && t2.isNotEmpty && opts.length < 4) opts.add(t2);
+              final t2 = (other['translation'] ?? other['meaning'] ?? '')
+                  .toString()
+                  .trim();
+              if (t2 != translation && t2.isNotEmpty && opts.length < 4)
+                opts.add(t2);
             }
             while (opts.length < 4) opts.add('Pilihan ${opts.length}');
             opts.shuffle();
@@ -362,7 +382,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
 
           generatedQuestions.add(QuizQuestion(
             type: QuestionType.listening,
-            questionText: 'Dengarkan suara audio dan pilih arti kata yang tepat:',
+            questionText:
+                'Dengarkan suara audio dan pilih arti kata yang tepat:',
             wordPrompt: listenPrompt,
             readingPrompt: readingLabel,
             correctAnswer: translation,
@@ -384,7 +405,9 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
 
     if (mounted) {
       setState(() {
-        _questions = generatedQuestions.isNotEmpty ? generatedQuestions : _getFallbackQuestionsList();
+        _questions = generatedQuestions.isNotEmpty
+            ? generatedQuestions
+            : _getFallbackQuestionsList();
         _isLoading = false;
       });
       // Initialize state for the first question
@@ -480,7 +503,9 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         if (expectedRight == _connectSelectedRight) {
           _connectPairsAnswers[_connectSelectedLeft] = _connectSelectedRight;
         } else {
-          CustomTopNotification.show(context, message: 'Pasangan tidak cocok, silakan coba lagi.', isError: true);
+          CustomTopNotification.show(context,
+              message: 'Pasangan tidak cocok, silakan coba lagi.',
+              isError: true);
         }
 
         _connectSelectedLeft = "";
@@ -498,7 +523,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
       case QuestionType.multipleChoice:
       case QuestionType.listening:
         if (_selectedChoiceIndex != -1) {
-          correct = currentQ.options[_selectedChoiceIndex] == currentQ.correctAnswer;
+          correct =
+              currentQ.options[_selectedChoiceIndex] == currentQ.correctAnswer;
         }
         break;
 
@@ -512,15 +538,18 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         // Choice-based (stages <= 12) uses selectedChoiceIndex; advanced uses typed answer
         if (widget.stage <= 12 && currentQ.options.isNotEmpty) {
           if (_selectedChoiceIndex != -1) {
-            correct = currentQ.options[_selectedChoiceIndex] == currentQ.correctAnswer;
+            correct = currentQ.options[_selectedChoiceIndex] ==
+                currentQ.correctAnswer;
           }
         } else {
-          correct = _typedAnswer.trim().toLowerCase() == currentQ.correctAnswer.trim().toLowerCase();
+          correct = _typedAnswer.trim().toLowerCase() ==
+              currentQ.correctAnswer.trim().toLowerCase();
         }
         break;
 
       case QuestionType.typing:
-        correct = _typedAnswer.trim().toLowerCase() == currentQ.correctAnswer.trim().toLowerCase();
+        correct = _typedAnswer.trim().toLowerCase() ==
+            currentQ.correctAnswer.trim().toLowerCase();
         break;
 
       case QuestionType.connectPairs:
@@ -569,7 +598,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
   Future<void> _finishQuiz() async {
     final db = await DatabaseHelper.instance.database;
     final userList = await db.query('gamification', limit: 1);
-    
+
     if (userList.isEmpty) {
       Navigator.pop(context);
       return;
@@ -584,10 +613,10 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
       final totalQ = _questions.length;
       final requiredCorrect = (totalQ * 0.8).ceil();
       final isPassed = _correctCount >= requiredCorrect;
+      final target = widget.stage;
 
       if (isPassed) {
         // Unlock all stages up to target stage in SQLite
-        final target = widget.stage;
         for (int i = 1; i < target; i++) {
           await db.update(
             'chapters',
@@ -637,12 +666,16 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             ),
             actions: [
               ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonGreen),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: AppTheme.neonGreen),
                 onPressed: () {
                   Navigator.pop(context); // Close dialog
                   Navigator.pop(context); // Return to LearningPathScreen
                 },
-                child: const Text('Lanjutkan', style: TextStyle(color: AppTheme.darkBackground, fontWeight: FontWeight.bold)),
+                child: const Text('Lanjutkan',
+                    style: TextStyle(
+                        color: AppTheme.darkBackground,
+                        fontWeight: FontWeight.bold)),
               ),
             ],
           ),
@@ -669,12 +702,16 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             ),
             actions: [
               ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonPink),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: AppTheme.neonPink),
                 onPressed: () {
                   Navigator.pop(context); // Close dialog
                   Navigator.pop(context); // Return to LearningPathScreen
                 },
-                child: const Text('Kembali', style: TextStyle(color: AppTheme.textPrimary, fontWeight: FontWeight.bold)),
+                child: const Text('Kembali',
+                    style: TextStyle(
+                        color: AppTheme.textPrimary,
+                        fontWeight: FontWeight.bold)),
               ),
             ],
           ),
@@ -756,15 +793,21 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Hebat! Seluruh kuis latihan harian interaktif Duolingo-style telah selesai.'),
+            const Text(
+                'Hebat! Seluruh kuis latihan harian interaktif Duolingo-style telah selesai.'),
             const SizedBox(height: 12),
-            const Text('🏆 XP Belajar: +50 XP', style: TextStyle(fontWeight: FontWeight.bold, color: AppTheme.neonGreen)),
-            const Text('💎 Hadiah Permata: +10 Gems', style: TextStyle(fontWeight: FontWeight.bold, color: AppTheme.neonBlue)),
+            const Text('🏆 XP Belajar: +50 XP',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, color: AppTheme.neonGreen)),
+            const Text('💎 Hadiah Permata: +10 Gems',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, color: AppTheme.neonBlue)),
             const SizedBox(height: 16),
             if (!isBasicStage)
               Text(
                 'Langkah berikutnya: Selesaikan Sesi Latihan Rutin ${widget.language == 'JAPANESE' ? 'JLPT' : 'IELTS'} Anda!',
-                style: const TextStyle(color: AppTheme.textSecondary, fontSize: 13),
+                style: const TextStyle(
+                    color: AppTheme.textSecondary, fontSize: 13),
               )
             else
               const Text(
@@ -776,7 +819,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         actions: [
           if (!isBasicStage)
             ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonGreen),
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: AppTheme.neonGreen),
               onPressed: () {
                 Navigator.pop(context);
                 Navigator.pushReplacementNamed(
@@ -789,16 +833,23 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
                   },
                 );
               },
-              child: const Text('Mulai Sesi Ujian Harian', style: TextStyle(color: AppTheme.darkBackground, fontWeight: FontWeight.bold)),
+              child: const Text('Mulai Sesi Ujian Harian',
+                  style: TextStyle(
+                      color: AppTheme.darkBackground,
+                      fontWeight: FontWeight.bold)),
             )
           else
             ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonBlue),
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: AppTheme.neonBlue),
               onPressed: () {
                 Navigator.pop(context); // Close dialog
                 Navigator.pop(context); // Return to LessonListScreen
               },
-              child: const Text('Kembali ke Menu', style: TextStyle(color: AppTheme.darkBackground, fontWeight: FontWeight.bold)),
+              child: const Text('Kembali ke Menu',
+                  style: TextStyle(
+                      color: AppTheme.darkBackground,
+                      fontWeight: FontWeight.bold)),
             ),
         ],
       ),
@@ -809,22 +860,29 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
   Widget build(BuildContext context) {
     if (_isLoading) {
       return const Scaffold(
-        body: Center(child: CircularProgressIndicator(color: AppTheme.neonBlue)),
+        body:
+            Center(child: CircularProgressIndicator(color: AppTheme.neonBlue)),
       );
     }
 
     final currentQ = _questions[_currentStep];
-    final progress = (_connectLeftItems.isNotEmpty || _connectRightItems.isNotEmpty || currentQ.type == QuestionType.connectPairs)
+    final progress = (_connectLeftItems.isNotEmpty ||
+            _connectRightItems.isNotEmpty ||
+            currentQ.type == QuestionType.connectPairs)
         ? (_currentStep + (_hasAnswered ? 1 : 0)) / _questions.length
         : _currentStep / _questions.length;
     final isJp = widget.language == 'JAPANESE';
     final accentColor = isJp ? AppTheme.neonBlue : AppTheme.neonGreen;
 
     // Initialize unscramble pool or connect items if not done
-    if (currentQ.type == QuestionType.sentenceUnscramble && _unscramblePool.isEmpty && _unscrambleSelection.isEmpty) {
+    if (currentQ.type == QuestionType.sentenceUnscramble &&
+        _unscramblePool.isEmpty &&
+        _unscrambleSelection.isEmpty) {
       _unscramblePool = List<String>.from(currentQ.wordPool);
     }
-    if (currentQ.type == QuestionType.connectPairs && _connectLeftItems.isEmpty && _connectRightItems.isEmpty) {
+    if (currentQ.type == QuestionType.connectPairs &&
+        _connectLeftItems.isEmpty &&
+        _connectRightItems.isEmpty) {
       _connectLeftItems = currentQ.pairs.keys.toList()..shuffle();
       _connectRightItems = currentQ.pairs.values.toList()..shuffle();
     }
@@ -851,7 +909,7 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
                 ),
               ),
             ),
-            
+
             // Question Counter
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
@@ -859,7 +917,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
                 alignment: Alignment.centerRight,
                 child: Text(
                   'Soal ${_currentStep + 1} dari ${_questions.length}',
-                  style: const TextStyle(fontSize: 12, color: AppTheme.textSecondary),
+                  style: const TextStyle(
+                      fontSize: 12, color: AppTheme.textSecondary),
                 ),
               ),
             ),
@@ -872,7 +931,10 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
                   children: [
                     Text(
                       currentQ.questionText,
-                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.textPrimary),
+                      style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: AppTheme.textPrimary),
                     ),
                     const SizedBox(height: 16),
                     _buildQuestionInterface(currentQ, accentColor),
@@ -926,14 +988,18 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
               children: [
                 Text(
                   q.wordPrompt,
-                  style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
+                  style: const TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
                 // Show reading (furigana) for stages <= 12
                 if (showReading && widget.stage <= 12) ...[
                   const SizedBox(height: 8),
                   Text(
                     '(${q.readingPrompt})',
-                    style: const TextStyle(fontSize: 16, color: AppTheme.textSecondary),
+                    style: const TextStyle(
+                        fontSize: 16, color: AppTheme.textSecondary),
                   ),
                 ],
                 // Romaji hint for stages 1-6 only
@@ -941,7 +1007,10 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
                   const SizedBox(height: 4),
                   Text(
                     '🔤 Hint romaji di balik jawaban',
-                    style: TextStyle(fontSize: 11, color: color.withOpacity(0.7), fontStyle: FontStyle.italic),
+                    style: TextStyle(
+                        fontSize: 11,
+                        color: color.withOpacity(0.7),
+                        fontStyle: FontStyle.italic),
                   ),
                 ],
               ],
@@ -967,7 +1036,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             }
           } else {
             bgColor = isSelected ? color.withOpacity(0.08) : Colors.transparent;
-            borderColor = isSelected ? color : AppTheme.textSecondary.withOpacity(0.1);
+            borderColor =
+                isSelected ? color : AppTheme.textSecondary.withOpacity(0.1);
           }
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
@@ -975,11 +1045,15 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             child: OutlinedButton(
               style: OutlinedButton.styleFrom(
                 side: BorderSide(color: borderColor, width: 2),
-                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12)),
                 backgroundColor: bgColor,
               ),
-              onPressed: _hasAnswered ? null : () => setState(() => _selectedChoiceIndex = idx),
+              onPressed: _hasAnswered
+                  ? null
+                  : () => setState(() => _selectedChoiceIndex = idx),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Row(
@@ -987,13 +1061,18 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
                     Expanded(
                       child: Text(
                         optText,
-                        style: const TextStyle(color: AppTheme.textPrimary, fontSize: 15),
+                        style: const TextStyle(
+                            color: AppTheme.textPrimary, fontSize: 15),
                       ),
                     ),
                     if (_hasAnswered && optText == q.correctAnswer)
-                      const Icon(Icons.check_circle, color: AppTheme.neonGreen, size: 20),
-                    if (_hasAnswered && isSelected && optText != q.correctAnswer)
-                      const Icon(Icons.cancel, color: Colors.redAccent, size: 20),
+                      const Icon(Icons.check_circle,
+                          color: AppTheme.neonGreen, size: 20),
+                    if (_hasAnswered &&
+                        isSelected &&
+                        optText != q.correctAnswer)
+                      const Icon(Icons.cancel,
+                          color: Colors.redAccent, size: 20),
                   ],
                 ),
               ),
@@ -1017,7 +1096,10 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             ),
             child: Text(
               q.wordPrompt,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+              style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
               textAlign: TextAlign.center,
             ),
           ),
@@ -1047,7 +1129,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         ),
         const SizedBox(height: 24),
         // Pool Area
-        const Text('Pilih kata-kata untuk menyusun kalimat:', style: TextStyle(color: AppTheme.textSecondary, fontSize: 13)),
+        const Text('Pilih kata-kata untuk menyusun kalimat:',
+            style: TextStyle(color: AppTheme.textSecondary, fontSize: 13)),
         const SizedBox(height: 12),
         Wrap(
           spacing: 8,
@@ -1055,7 +1138,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
           children: _unscramblePool.map((w) {
             return ActionChip(
               backgroundColor: AppTheme.darkSurface,
-              label: Text(w, style: const TextStyle(color: AppTheme.textPrimary)),
+              label:
+                  Text(w, style: const TextStyle(color: AppTheme.textPrimary)),
               onPressed: _hasAnswered ? null : () => _unscrambleTapWord(w),
             );
           }).toList(),
@@ -1082,14 +1166,21 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
               children: [
                 Text(
                   q.wordPrompt,
-                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 2),
+                  style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      letterSpacing: 2),
                   textAlign: TextAlign.center,
                 ),
-                if (q.readingPrompt != null && q.readingPrompt!.isNotEmpty && widget.stage <= 6) ...[
+                if (q.readingPrompt != null &&
+                    q.readingPrompt!.isNotEmpty &&
+                    widget.stage <= 6) ...[
                   const SizedBox(height: 6),
                   Text(
                     '(${q.readingPrompt})',
-                    style: const TextStyle(fontSize: 14, color: AppTheme.textSecondary),
+                    style: const TextStyle(
+                        fontSize: 14, color: AppTheme.textSecondary),
                   ),
                 ],
               ],
@@ -1099,7 +1190,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         const SizedBox(height: 24),
         if (useChoiceMode) ...[
           // Duolingo-style 4-choice buttons
-          const Text('Pilih kata yang tepat:', style: TextStyle(color: AppTheme.textSecondary, fontSize: 13)),
+          const Text('Pilih kata yang tepat:',
+              style: TextStyle(color: AppTheme.textSecondary, fontSize: 13)),
           const SizedBox(height: 12),
           ...List.generate(q.options.length, (idx) {
             final isSelected = _selectedChoiceIndex == idx;
@@ -1118,8 +1210,10 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
                 borderColor = AppTheme.textSecondary.withOpacity(0.1);
               }
             } else {
-              bgColor = isSelected ? color.withOpacity(0.08) : Colors.transparent;
-              borderColor = isSelected ? color : AppTheme.textSecondary.withOpacity(0.1);
+              bgColor =
+                  isSelected ? color.withOpacity(0.08) : Colors.transparent;
+              borderColor =
+                  isSelected ? color : AppTheme.textSecondary.withOpacity(0.1);
             }
             return Container(
               margin: const EdgeInsets.only(bottom: 10),
@@ -1127,20 +1221,30 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
               child: OutlinedButton(
                 style: OutlinedButton.styleFrom(
                   side: BorderSide(color: borderColor, width: 2),
-                  padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
                   backgroundColor: bgColor,
                 ),
-                onPressed: _hasAnswered ? null : () => setState(() => _selectedChoiceIndex = idx),
+                onPressed: _hasAnswered
+                    ? null
+                    : () => setState(() => _selectedChoiceIndex = idx),
                 child: Row(
                   children: [
                     Expanded(
-                      child: Text(optText, style: const TextStyle(color: AppTheme.textPrimary, fontSize: 16)),
+                      child: Text(optText,
+                          style: const TextStyle(
+                              color: AppTheme.textPrimary, fontSize: 16)),
                     ),
                     if (_hasAnswered && optText == q.correctAnswer)
-                      const Icon(Icons.check_circle, color: AppTheme.neonGreen, size: 20),
-                    if (_hasAnswered && isSelected && optText != q.correctAnswer)
-                      const Icon(Icons.cancel, color: Colors.redAccent, size: 20),
+                      const Icon(Icons.check_circle,
+                          color: AppTheme.neonGreen, size: 20),
+                    if (_hasAnswered &&
+                        isSelected &&
+                        optText != q.correctAnswer)
+                      const Icon(Icons.cancel,
+                          color: Colors.redAccent, size: 20),
                   ],
                 ),
               ),
@@ -1152,7 +1256,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             autofocus: true,
             decoration: InputDecoration(
               hintText: 'Ketik kata yang hilang...',
-              focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: color, width: 2)),
+              focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: color, width: 2)),
             ),
             style: const TextStyle(fontSize: 18, color: AppTheme.textPrimary),
             onChanged: (val) {
@@ -1165,7 +1270,6 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
     );
   }
 
-
   Widget _buildConnectPairsView(QuizQuestion q, Color color) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1176,7 +1280,11 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             children: _connectLeftItems.map((term) {
               final isMatched = _connectPairsAnswers.containsKey(term);
               final isSelected = _connectSelectedLeft == term;
-              Color border = isMatched ? AppTheme.neonGreen : (isSelected ? color : AppTheme.textSecondary.withOpacity(0.1));
+              Color border = isMatched
+                  ? AppTheme.neonGreen
+                  : (isSelected
+                      ? color
+                      : AppTheme.textSecondary.withOpacity(0.1));
 
               return Container(
                 margin: const EdgeInsets.only(bottom: 12),
@@ -1185,10 +1293,14 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
                   style: OutlinedButton.styleFrom(
                     side: BorderSide(color: border, width: 2),
                     padding: const EdgeInsets.all(14),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
                   ),
-                  onPressed: isMatched || _hasAnswered ? null : () => _connectTapItem(term, true),
-                  child: Text(term, style: const TextStyle(color: AppTheme.textPrimary)),
+                  onPressed: isMatched || _hasAnswered
+                      ? null
+                      : () => _connectTapItem(term, true),
+                  child: Text(term,
+                      style: const TextStyle(color: AppTheme.textPrimary)),
                 ),
               );
             }).toList(),
@@ -1201,7 +1313,11 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             children: _connectRightItems.map((trans) {
               final isMatched = _connectPairsAnswers.containsValue(trans);
               final isSelected = _connectSelectedRight == trans;
-              Color border = isMatched ? AppTheme.neonGreen : (isSelected ? color : AppTheme.textSecondary.withOpacity(0.1));
+              Color border = isMatched
+                  ? AppTheme.neonGreen
+                  : (isSelected
+                      ? color
+                      : AppTheme.textSecondary.withOpacity(0.1));
 
               return Container(
                 margin: const EdgeInsets.only(bottom: 12),
@@ -1210,10 +1326,14 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
                   style: OutlinedButton.styleFrom(
                     side: BorderSide(color: border, width: 2),
                     padding: const EdgeInsets.all(14),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
                   ),
-                  onPressed: isMatched || _hasAnswered ? null : () => _connectTapItem(trans, false),
-                  child: Text(trans, style: const TextStyle(color: AppTheme.textPrimary)),
+                  onPressed: isMatched || _hasAnswered
+                      ? null
+                      : () => _connectTapItem(trans, false),
+                  child: Text(trans,
+                      style: const TextStyle(color: AppTheme.textPrimary)),
                 ),
               );
             }).toList(),
@@ -1257,17 +1377,27 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             width: double.infinity,
             child: OutlinedButton(
               style: OutlinedButton.styleFrom(
-                side: BorderSide(color: isSelected ? color : AppTheme.textSecondary.withOpacity(0.1), width: 2),
-                padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                backgroundColor: isSelected ? color.withOpacity(0.08) : Colors.transparent,
+                side: BorderSide(
+                    color: isSelected
+                        ? color
+                        : AppTheme.textSecondary.withOpacity(0.1),
+                    width: 2),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12)),
+                backgroundColor:
+                    isSelected ? color.withOpacity(0.08) : Colors.transparent,
               ),
-              onPressed: _hasAnswered ? null : () => setState(() => _selectedChoiceIndex = idx),
+              onPressed: _hasAnswered
+                  ? null
+                  : () => setState(() => _selectedChoiceIndex = idx),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   optText,
-                  style: const TextStyle(color: AppTheme.textPrimary, fontSize: 15),
+                  style: const TextStyle(
+                      color: AppTheme.textPrimary, fontSize: 15),
                 ),
               ),
             ),
@@ -1289,7 +1419,10 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
             ),
             child: Text(
               q.wordPrompt,
-              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
+              style: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
           ),
         ),
@@ -1299,7 +1432,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
           autofocus: true,
           decoration: InputDecoration(
             hintText: 'Ketik arti kata di sini...',
-            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: color, width: 2)),
+            focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: color, width: 2)),
           ),
           style: const TextStyle(fontSize: 16, color: AppTheme.textPrimary),
           onChanged: (val) {
@@ -1317,7 +1451,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
     if (!_hasAnswered) {
       // Show check button
       bool canCheck = false;
-      if (q.type == QuestionType.multipleChoice || q.type == QuestionType.listening) {
+      if (q.type == QuestionType.multipleChoice ||
+          q.type == QuestionType.listening) {
         canCheck = _selectedChoiceIndex != -1;
       } else if (q.type == QuestionType.fillInBlank) {
         // Choice mode (stages <= 12): use selectedChoiceIndex; text mode (stages 13+): use typed answer
@@ -1339,17 +1474,21 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: AppTheme.darkSurface,
-          border: Border(top: BorderSide(color: AppTheme.textSecondary.withOpacity(0.1))),
+          border: Border(
+              top: BorderSide(color: AppTheme.textSecondary.withOpacity(0.1))),
         ),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: canCheck ? color : AppTheme.textSecondary.withOpacity(0.2),
+            backgroundColor:
+                canCheck ? color : AppTheme.textSecondary.withOpacity(0.2),
             foregroundColor: AppTheme.darkBackground,
             padding: const EdgeInsets.symmetric(vertical: 16),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           ),
           onPressed: canCheck ? _checkAnswer : null,
-          child: const Text('PERIKSA JAWABAN', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+          child: const Text('PERIKSA JAWABAN',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
         ),
       );
     }
@@ -1365,11 +1504,15 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
         children: [
           Row(
             children: [
-              Icon(_isCorrect ? Icons.check_circle : Icons.error, color: feedColor, size: 28),
+              Icon(_isCorrect ? Icons.check_circle : Icons.error,
+                  color: feedColor, size: 28),
               const SizedBox(width: 12),
               Text(
                 _isCorrect ? 'Jawaban Anda Benar!' : 'Jawaban Kurang Tepat',
-                style: TextStyle(fontWeight: FontWeight.bold, color: feedColor, fontSize: 16),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: feedColor,
+                    fontSize: 16),
               ),
             ],
           ),
@@ -1379,7 +1522,8 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
               alignment: Alignment.centerLeft,
               child: Text(
                 'Kunci jawaban tepat: ${q.correctAnswer}',
-                style: const TextStyle(fontSize: 13, color: AppTheme.textPrimary),
+                style:
+                    const TextStyle(fontSize: 13, color: AppTheme.textPrimary),
               ),
             ),
           ],
@@ -1391,10 +1535,12 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
                 backgroundColor: feedColor,
                 foregroundColor: AppTheme.darkBackground,
                 padding: const EdgeInsets.symmetric(vertical: 14),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12)),
               ),
               onPressed: _nextStep,
-              child: const Text('LANJUTKAN', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+              child: const Text('LANJUTKAN',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
             ),
           ),
         ],

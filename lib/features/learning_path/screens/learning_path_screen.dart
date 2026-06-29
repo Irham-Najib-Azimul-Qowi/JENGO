@@ -59,7 +59,7 @@ class _LearningPathScreenState extends State<LearningPathScreen> {
 
       int nextXp = currentXp + 300; // Bonus 300 XP
       int nextGems = currentGems + 50; // Bonus 50 Gems
-      
+
       // Rumus level sederhana: Level naik setiap kelipatan 1000 XP
       int nextLevel = (nextXp / 1000).floor() + 1;
 
@@ -106,7 +106,8 @@ class _LearningPathScreenState extends State<LearningPathScreen> {
                 children: [
                   const Text(
                     'Jawab pertanyaan evaluasi di bawah dengan benar untuk lulus & membuka Stage berikutnya!',
-                    style: TextStyle(color: AppTheme.textSecondary, fontSize: 13),
+                    style:
+                        TextStyle(color: AppTheme.textSecondary, fontSize: 13),
                   ),
                   const SizedBox(height: 16),
                   const Text(
@@ -138,10 +139,12 @@ class _LearningPathScreenState extends State<LearningPathScreen> {
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(dialogContext),
-                  child: const Text('Batal', style: TextStyle(color: AppTheme.textSecondary)),
+                  child: const Text('Batal',
+                      style: TextStyle(color: AppTheme.textSecondary)),
                 ),
                 ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonBlue),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: AppTheme.neonBlue),
                   onPressed: _selectedAnswerIndex == -1
                       ? null
                       : () {
@@ -155,13 +158,108 @@ class _LearningPathScreenState extends State<LearningPathScreen> {
                             _showFailureDialog(context);
                           }
                         },
-                  child: const Text('Kirim', style: TextStyle(color: AppTheme.darkBackground)),
+                  child: const Text('Kirim',
+                      style: TextStyle(color: AppTheme.darkBackground)),
                 ),
               ],
             );
           },
         );
       },
+    );
+  }
+
+  void _openSkipStageReviewQuiz(BuildContext context, int stageNumber) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: AppTheme.darkSurface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (sheetContext) {
+        return SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    const Icon(Icons.lock_open, color: AppTheme.neonBlue),
+                    const SizedBox(width: 10),
+                    Text(
+                      'Evaluasi Lompat Stage $stageNumber',
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Kerjakan review kumulatif. Anda harus mencapai minimal 80% untuk membuka stage ini.',
+                  style: TextStyle(color: AppTheme.textSecondary, fontSize: 13),
+                ),
+                const SizedBox(height: 18),
+                _buildSkipQuizLanguageButton(
+                  sheetContext,
+                  stageNumber: stageNumber,
+                  language: 'JAPANESE',
+                  label: 'Review JLPT / Jepang',
+                  icon: Icons.translate,
+                  color: AppTheme.neonBlue,
+                ),
+                const SizedBox(height: 10),
+                _buildSkipQuizLanguageButton(
+                  sheetContext,
+                  stageNumber: stageNumber,
+                  language: 'ENGLISH',
+                  label: 'Review IELTS / Inggris',
+                  icon: Icons.school,
+                  color: AppTheme.neonGreen,
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildSkipQuizLanguageButton(
+    BuildContext sheetContext, {
+    required int stageNumber,
+    required String language,
+    required String label,
+    required IconData icon,
+    required Color color,
+  }) {
+    return SizedBox(
+      width: double.infinity,
+      child: OutlinedButton.icon(
+        icon: Icon(icon),
+        label: Text(label),
+        style: OutlinedButton.styleFrom(
+          foregroundColor: color,
+          side: BorderSide(color: color),
+          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        ),
+        onPressed: () {
+          Navigator.pop(sheetContext);
+          Navigator.pushNamed(
+            context,
+            '/daily_lesson_quiz',
+            arguments: {
+              'language': language,
+              'stage': stageNumber,
+              'day': 1,
+              'isSkippingQuiz': true,
+            },
+          ).then((_) => _loadChapters());
+        },
+      ),
     );
   }
 
@@ -181,10 +279,14 @@ class _LearningPathScreenState extends State<LearningPathScreen> {
         margin: const EdgeInsets.only(bottom: 8),
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
         decoration: BoxDecoration(
-          color: isSelected ? AppTheme.neonBlue.withOpacity(0.1) : AppTheme.darkBackground,
+          color: isSelected
+              ? AppTheme.neonBlue.withOpacity(0.1)
+              : AppTheme.darkBackground,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
-            color: isSelected ? AppTheme.neonBlue : AppTheme.textSecondary.withOpacity(0.2),
+            color: isSelected
+                ? AppTheme.neonBlue
+                : AppTheme.textSecondary.withOpacity(0.2),
           ),
         ),
         child: Row(
@@ -199,7 +301,9 @@ class _LearningPathScreenState extends State<LearningPathScreen> {
               child: Text(
                 text,
                 style: TextStyle(
-                  color: isSelected ? AppTheme.textPrimary : AppTheme.textSecondary,
+                  color: isSelected
+                      ? AppTheme.textPrimary
+                      : AppTheme.textSecondary,
                   fontSize: 13,
                 ),
               ),
@@ -232,9 +336,11 @@ class _LearningPathScreenState extends State<LearningPathScreen> {
         ),
         actions: [
           ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonGreen),
+            style:
+                ElevatedButton.styleFrom(backgroundColor: AppTheme.neonGreen),
             onPressed: () => Navigator.pop(context),
-            child: const Text('Mantap', style: TextStyle(color: AppTheme.darkBackground)),
+            child: const Text('Mantap',
+                style: TextStyle(color: AppTheme.darkBackground)),
           ),
         ],
       ),
@@ -264,7 +370,8 @@ class _LearningPathScreenState extends State<LearningPathScreen> {
           ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: AppTheme.neonPink),
             onPressed: () => Navigator.pop(context),
-            child: const Text('Coba Lagi', style: TextStyle(color: AppTheme.textPrimary)),
+            child: const Text('Coba Lagi',
+                style: TextStyle(color: AppTheme.textPrimary)),
           ),
         ],
       ),
@@ -283,7 +390,8 @@ class _LearningPathScreenState extends State<LearningPathScreen> {
         future: _chaptersFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator(color: AppTheme.neonBlue));
+            return const Center(
+                child: CircularProgressIndicator(color: AppTheme.neonBlue));
           } else if (snapshot.hasError) {
             return Center(child: Text('Gagal memuat: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
@@ -299,7 +407,8 @@ class _LearningPathScreenState extends State<LearningPathScreen> {
               final stageNumber = chapter['chapter_number'] as int;
               final title = chapter['title'] as String;
               final description = chapter['description'] as String;
-              final status = chapter['status'] as String; // ACTIVE, LOCKED, COMPLETED
+              final status =
+                  chapter['status'] as String; // ACTIVE, LOCKED, COMPLETED
 
               return Column(
                 children: [
@@ -310,7 +419,8 @@ class _LearningPathScreenState extends State<LearningPathScreen> {
                     description: description,
                     status: status,
                   ),
-                  if (index < chapters.length - 1) _buildPathConnector(status == 'COMPLETED'),
+                  if (index < chapters.length - 1)
+                    _buildPathConnector(status == 'COMPLETED'),
                 ],
               );
             },
@@ -351,89 +461,127 @@ class _LearningPathScreenState extends State<LearningPathScreen> {
         borderRadius: BorderRadius.circular(16),
         side: BorderSide(color: borderColor, width: 1.5),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Header Card
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            decoration: BoxDecoration(
-              color: headerBgColor,
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(15),
-                topRight: Radius.circular(15),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
+        onTap: isLocked
+            ? () => _openSkipStageReviewQuiz(context, stageNumber)
+            : null,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Header Card
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              decoration: BoxDecoration(
+                color: headerBgColor,
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'STAGE $stageNumber (BULAN $stageNumber)',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: isLocked
+                          ? AppTheme.textSecondary
+                          : AppTheme.textPrimary,
+                    ),
+                  ),
+                  Text(
+                    status,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: statusColor,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
               ),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'STAGE $stageNumber (BULAN $stageNumber)',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: isLocked ? AppTheme.textSecondary : AppTheme.textPrimary,
-                  ),
-                ),
-                Text(
-                  status,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: statusColor,
-                    fontSize: 12,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          // Body Card
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontSize: 18,
-                        color: isLocked ? AppTheme.textSecondary : AppTheme.textPrimary,
-                      ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  description,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-                // Tombol Kuis Akhir untuk me-bypass/membuka stage berikutnya
-                if (!isLocked) ...[
-                  const SizedBox(height: 16),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: OutlinedButton.icon(
-                          icon: const Icon(Icons.quiz),
-                          label: Text(isCompleted ? 'ULANG KUIS AKHIR' : 'IKUT KUIS AKHIR'),
-                          style: OutlinedButton.styleFrom(
-                            foregroundColor: isCompleted ? AppTheme.neonGreen : AppTheme.neonBlue,
-                            side: BorderSide(
-                              color: isCompleted ? AppTheme.neonGreen : AppTheme.neonBlue,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                          ),
-                          onPressed: () {
-                            _showFinalQuizDialog(context, stageNumber);
-                          },
+            // Body Card
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontSize: 18,
+                          color: isLocked
+                              ? AppTheme.textSecondary
+                              : AppTheme.textPrimary,
                         ),
-                      ),
-                    ],
                   ),
-                ]
-              ],
+                  const SizedBox(height: 8),
+                  Text(
+                    description,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                  if (isLocked) ...[
+                    const SizedBox(height: 16),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: OutlinedButton.icon(
+                            icon: const Icon(Icons.lock_open),
+                            label: const Text('IKUT REVIEW UNTUK MEMBUKA'),
+                            style: OutlinedButton.styleFrom(
+                              foregroundColor: AppTheme.neonBlue,
+                              side: const BorderSide(color: AppTheme.neonBlue),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            onPressed: () =>
+                                _openSkipStageReviewQuiz(context, stageNumber),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                  // Tombol Kuis Akhir untuk me-bypass/membuka stage berikutnya
+                  if (!isLocked) ...[
+                    const SizedBox(height: 16),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: OutlinedButton.icon(
+                            icon: const Icon(Icons.quiz),
+                            label: Text(isCompleted
+                                ? 'ULANG KUIS AKHIR'
+                                : 'IKUT KUIS AKHIR'),
+                            style: OutlinedButton.styleFrom(
+                              foregroundColor: isCompleted
+                                  ? AppTheme.neonGreen
+                                  : AppTheme.neonBlue,
+                              side: BorderSide(
+                                color: isCompleted
+                                    ? AppTheme.neonGreen
+                                    : AppTheme.neonBlue,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            onPressed: () {
+                              _showFinalQuizDialog(context, stageNumber);
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ]
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -442,7 +590,9 @@ class _LearningPathScreenState extends State<LearningPathScreen> {
     return Container(
       width: 4,
       height: 32,
-      color: isActive ? AppTheme.neonGreen : AppTheme.textSecondary.withOpacity(0.2),
+      color: isActive
+          ? AppTheme.neonGreen
+          : AppTheme.textSecondary.withOpacity(0.2),
     );
   }
 }
