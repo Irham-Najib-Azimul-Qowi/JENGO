@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:sqflite/sqflite.dart' show Database;
 import '../../../core/theme/app_theme.dart';
 import '../../../core/database/database_helper.dart';
 import '../../../core/services/srs_engine.dart';
 import '../../../core/utils/kana_helper.dart';
 import '../../../core/utils/custom_top_notification.dart';
-import 'package:sqflite/sqflite.dart';
 
 class FlashcardStudyScreen extends StatefulWidget {
   final String language;
@@ -26,9 +26,13 @@ class FlashcardStudyScreen extends StatefulWidget {
 class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
   final FlutterTts _flutterTts = FlutterTts();
   List<Map<String, dynamic>> _flashcards = [];
+  List<Map<String, dynamic>> _learningFlashcards = [];
+  List<Map<String, dynamic>> _reviewFlashcards = [];
   int _currentIndex = 0;
   bool _isFlipped = false;
   bool _isLoading = true;
+
+  bool get _isReviewSegment => _currentIndex < _reviewFlashcards.length;
 
   @override
   void initState() {
@@ -48,203 +52,217 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
     final targetStage = widget.stage;
     final targetDay = widget.day;
 
-    // 1. Tentukan difficulty level berdasarkan stage dan bahasa
-    List<String> diffLevels = [];
-    String additionalWhere = "";
-    if (widget.language == 'JAPANESE') {
-      if (targetStage == 1) {
-        diffLevels = ['HIRAGANA'];
-        additionalWhere = " AND id <= 100025";
-      } else if (targetStage == 2) {
-        diffLevels = ['HIRAGANA'];
-        additionalWhere = " AND id > 100025";
-      } else if (targetStage == 3) {
-        diffLevels = ['HIRAGANA'];
-      } else if (targetStage == 4) {
-        diffLevels = ['KATAKANA'];
-        additionalWhere = " AND id <= 100100";
-      } else if (targetStage == 5) {
-        diffLevels = ['KATAKANA'];
-        additionalWhere = " AND id > 100100";
-      } else if (targetStage == 6) {
-        diffLevels = ['HIRAGANA', 'KATAKANA'];
-      } else if (targetStage >= 7 && targetStage <= 13) {
-        diffLevels = ['N5'];
-      } else if (targetStage >= 14 && targetStage <= 15) {
-        diffLevels = ['N4'];
-      } else if (targetStage >= 16 && targetStage <= 18) {
-        diffLevels = ['N3'];
-      } else {
-        diffLevels = ['N2', 'N1'];
-      }
-    } else {
-      // ENGLISH
-      if (targetStage >= 1 && targetStage <= 2) {
-        diffLevels = ['A1'];
-      } else if (targetStage >= 3 && targetStage <= 4) {
-        diffLevels = ['A2'];
-      } else if (targetStage >= 5 && targetStage <= 6) {
-        diffLevels = ['B1'];
-      } else if (targetStage >= 7 && targetStage <= 12) {
-        diffLevels = ['B2'];
-      } else {
-        diffLevels = ['C1'];
-      }
-    }
-
-    List<Map<String, dynamic>> dueWords = [];
-
-    // 2. Muat kata secara deterministik dengan paginasi per Hari (LIMIT 10, OFFSET)
-    if (diffLevels.isNotEmpty) {
-      String placeholders = List.filled(diffLevels.length, '?').join(', ');
-
-      // Hitung total kata yang tersedia untuk level ini
-      final countResults = await db.rawQuery(
-        'SELECT COUNT(*) as total FROM vocabulary WHERE language = ? AND difficulty_level IN ($placeholders)$additionalWhere',
-        [widget.language, ...diffLevels],
-      );
-      int totalCount = Sqflite.firstIntValue(countResults) ?? 0;
-
-      int wordsPerDay = 10;
-      int lessonIndex = (targetStage - 1) * 30 + (targetDay - 1);
-
-      // Muat kata Hari ini
-      int offsetToday = 0;
-      if (totalCount > 0) {
-        offsetToday = (lessonIndex * wordsPerDay) % totalCount;
-      }
-      final resultsToday = await db.query(
-        'vocabulary',
-        where:
-            'language = ? AND difficulty_level IN ($placeholders)$additionalWhere',
-        whereArgs: [widget.language, ...diffLevels],
-        orderBy: 'id ASC',
-        limit: wordsPerDay,
-        offset: offsetToday,
-      );
-
-      List<Map<String, dynamic>> combined =
-          List<Map<String, dynamic>>.from(resultsToday);
-
-      // Muat kata ulasan Hari Kemarin (jika lessonIndex > 0)
-      if (lessonIndex > 0) {
-        int offsetYesterday = 0;
-        if (totalCount > 0) {
-          offsetYesterday = ((lessonIndex - 1) * wordsPerDay) % totalCount;
-        }
-        final resultsYesterday = await db.query(
-          'vocabulary',
-          where:
-              'language = ? AND difficulty_level IN ($placeholders)$additionalWhere',
-          whereArgs: [widget.language, ...diffLevels],
-          orderBy: 'id ASC',
-          limit: wordsPerDay,
-          offset: offsetYesterday,
-        );
-        combined.addAll(resultsYesterday);
-      }
-
-      dueWords = combined;
-    }
-
-    // Fallback jika kosong: tetap hormati level stage agar materi tidak loncat.
-    if (dueWords.isEmpty) {
-      int wordsPerDay = 10;
-      int lessonIndex = (targetStage - 1) * 30 + (targetDay - 1);
-      List<Map<String, dynamic>> resultsToday = [];
-      if (diffLevels.isNotEmpty) {
-        final placeholders = List.filled(diffLevels.length, '?').join(', ');
-        var stageWhere = 'language = ? AND difficulty_level IN ($placeholders)';
-        var stageWhereArgs = <Object?>[widget.language, ...diffLevels];
-        if (widget.language == 'JAPANESE' && targetStage == 5) {
-          stageWhere = 'language = ? AND difficulty_level = ? AND id > 100071';
-          stageWhereArgs = [widget.language, 'KATAKANA'];
-        }
-        resultsToday = await db.query(
-          'vocabulary',
-          where: stageWhere,
-          whereArgs: stageWhereArgs,
-          orderBy: 'id ASC',
-          limit: wordsPerDay,
-          offset: lessonIndex * wordsPerDay,
-        );
-        if (resultsToday.isEmpty) {
-          resultsToday = await db.query(
-            'vocabulary',
-            where: stageWhere,
-            whereArgs: stageWhereArgs,
-            orderBy: 'id ASC',
-            limit: wordsPerDay,
-          );
-        }
-      }
-      if (resultsToday.isEmpty) {
-        resultsToday = await db.query(
-          'vocabulary',
-          where: 'language = ?',
-          whereArgs: [widget.language],
-          orderBy: 'id ASC',
-          limit: wordsPerDay,
-          offset: lessonIndex * wordsPerDay,
-        );
-      }
-      List<Map<String, dynamic>> combined =
-          List<Map<String, dynamic>>.from(resultsToday);
-
-      if (lessonIndex > 0) {
-        List<Map<String, dynamic>> resultsYesterday = [];
-        if (diffLevels.isNotEmpty) {
-          final placeholders = List.filled(diffLevels.length, '?').join(', ');
-          var stageWhere =
-              'language = ? AND difficulty_level IN ($placeholders)';
-          var stageWhereArgs = <Object?>[widget.language, ...diffLevels];
-          if (widget.language == 'JAPANESE' && targetStage == 5) {
-            stageWhere =
-                'language = ? AND difficulty_level = ? AND id > 100071';
-            stageWhereArgs = [widget.language, 'KATAKANA'];
-          }
-          resultsYesterday = await db.query(
-            'vocabulary',
-            where: stageWhere,
-            whereArgs: stageWhereArgs,
-            orderBy: 'id ASC',
-            limit: wordsPerDay,
-            offset: (lessonIndex - 1) * wordsPerDay,
-          );
-          if (resultsYesterday.isEmpty) {
-            resultsYesterday = await db.query(
-              'vocabulary',
-              where: stageWhere,
-              whereArgs: stageWhereArgs,
-              orderBy: 'id ASC',
-              limit: wordsPerDay,
-            );
-          }
-        }
-        combined.addAll(resultsYesterday);
-      }
-      dueWords = combined;
-    }
+    final targetFilter = _buildStageFilter(targetStage);
+    final int lessonIndex = (targetStage - 1) * 30 + (targetDay - 1);
+    final learningWords =
+        await _queryLessonWords(db, targetFilter, lessonIndex, 20);
+    final reviewWords = lessonIndex > 0
+        ? await _queryLessonWords(db, targetFilter, lessonIndex - 1, 5)
+        : <Map<String, dynamic>>[];
 
     // Filter out empty entries
-    dueWords = dueWords.where((v) {
+    final learning = _dedupeCards(learningWords).where((v) {
       final w = (v['word'] ?? '').toString().trim();
       final t = (v['translation'] ?? '').toString().trim();
       return w.isNotEmpty && t.isNotEmpty;
     }).toList();
+    final learningIds = learning.map((v) => v['id']).toSet();
+    final review = _dedupeCards(reviewWords).where((v) {
+      final w = (v['word'] ?? '').toString().trim();
+      final t = (v['translation'] ?? '').toString().trim();
+      return w.isNotEmpty && t.isNotEmpty && !learningIds.contains(v['id']);
+    }).toList();
+    final displayCards = [...review, ...learning];
 
     if (mounted) {
       setState(() {
-        _flashcards = dueWords;
+        _reviewFlashcards = review;
+        _learningFlashcards = learning;
+        _flashcards = displayCards;
         _isLoading = false;
       });
       // Auto-speak the first card word when loaded
-      if (dueWords.isNotEmpty) {
+      if (displayCards.isNotEmpty) {
         Future.delayed(const Duration(milliseconds: 500), () {
-          _speak(dueWords.first['word']!);
+          _speak(displayCards.first['word']!);
         });
       }
     }
+  }
+
+  ({
+    String where,
+    List<Object?> whereArgs,
+    int poolStart,
+    int? poolLimit,
+  }) _buildStageFilter(int targetStage) {
+    if (widget.language == 'JAPANESE') {
+      if (targetStage == 1) {
+        return (
+          where: 'language = ? AND difficulty_level = ?',
+          whereArgs: [widget.language, 'HIRAGANA'],
+          poolStart: 0,
+          poolLimit: 25,
+        );
+      }
+      if (targetStage == 2) {
+        return (
+          where: 'language = ? AND difficulty_level = ?',
+          whereArgs: [widget.language, 'HIRAGANA'],
+          poolStart: 25,
+          poolLimit: null,
+        );
+      }
+      if (targetStage == 3) {
+        return (
+          where: 'language = ? AND difficulty_level = ?',
+          whereArgs: [widget.language, 'HIRAGANA'],
+          poolStart: 0,
+          poolLimit: null,
+        );
+      }
+      if (targetStage == 4) {
+        return (
+          where: 'language = ? AND difficulty_level = ?',
+          whereArgs: [widget.language, 'KATAKANA'],
+          poolStart: 0,
+          poolLimit: 25,
+        );
+      }
+      if (targetStage == 5) {
+        return (
+          where: 'language = ? AND difficulty_level = ?',
+          whereArgs: [widget.language, 'KATAKANA'],
+          poolStart: 25,
+          poolLimit: null,
+        );
+      }
+      if (targetStage == 6) {
+        return (
+          where: 'language = ? AND difficulty_level IN (?, ?)',
+          whereArgs: [widget.language, 'HIRAGANA', 'KATAKANA'],
+          poolStart: 0,
+          poolLimit: null,
+        );
+      }
+      if (targetStage >= 7 && targetStage <= 13) {
+        return (
+          where: 'language = ? AND difficulty_level = ?',
+          whereArgs: [widget.language, 'N5'],
+          poolStart: 0,
+          poolLimit: null,
+        );
+      }
+      if (targetStage >= 14 && targetStage <= 15) {
+        return (
+          where: 'language = ? AND difficulty_level = ?',
+          whereArgs: [widget.language, 'N4'],
+          poolStart: 0,
+          poolLimit: null,
+        );
+      }
+      if (targetStage >= 16 && targetStage <= 18) {
+        return (
+          where: 'language = ? AND difficulty_level = ?',
+          whereArgs: [widget.language, 'N3'],
+          poolStart: 0,
+          poolLimit: null,
+        );
+      }
+      return (
+        where: 'language = ? AND difficulty_level IN (?, ?)',
+        whereArgs: [widget.language, 'N2', 'N1'],
+        poolStart: 0,
+        poolLimit: null,
+      );
+    }
+
+    if (targetStage <= 2) {
+      return (
+        where: 'language = ? AND difficulty_level = ?',
+        whereArgs: [widget.language, 'A1'],
+        poolStart: 0,
+        poolLimit: null,
+      );
+    }
+    if (targetStage <= 4) {
+      return (
+        where: 'language = ? AND difficulty_level = ?',
+        whereArgs: [widget.language, 'A2'],
+        poolStart: 0,
+        poolLimit: null,
+      );
+    }
+    if (targetStage <= 6) {
+      return (
+        where: 'language = ? AND difficulty_level = ?',
+        whereArgs: [widget.language, 'B1'],
+        poolStart: 0,
+        poolLimit: null,
+      );
+    }
+    if (targetStage <= 12) {
+      return (
+        where: 'language = ? AND difficulty_level = ?',
+        whereArgs: [widget.language, 'B2'],
+        poolStart: 0,
+        poolLimit: null,
+      );
+    }
+    return (
+      where: 'language = ? AND difficulty_level = ?',
+      whereArgs: [widget.language, 'C1'],
+      poolStart: 0,
+      poolLimit: null,
+    );
+  }
+
+  Future<List<Map<String, dynamic>>> _queryLessonWords(
+    Database db,
+    ({
+      String where,
+      List<Object?> whereArgs,
+      int poolStart,
+      int? poolLimit,
+    }) filter,
+    int lessonIndex,
+    int limit,
+  ) async {
+    final allRows = await db.query(
+      'vocabulary',
+      where: filter.where,
+      whereArgs: filter.whereArgs,
+      orderBy: 'id ASC',
+    );
+    if (allRows.isEmpty || filter.poolStart >= allRows.length) return [];
+
+    final poolEnd = filter.poolLimit == null
+        ? allRows.length
+        : (filter.poolStart + filter.poolLimit!).clamp(0, allRows.length);
+    final pool = allRows.sublist(filter.poolStart, poolEnd);
+    if (pool.isEmpty) return [];
+
+    final offset = (lessonIndex * limit) % pool.length;
+    final selected = <Map<String, dynamic>>[];
+    for (var i = 0; i < limit && i < pool.length; i++) {
+      selected.add(pool[(offset + i) % pool.length]);
+    }
+    return selected;
+  }
+
+  List<Map<String, dynamic>> _dedupeCards(List<Map<String, dynamic>> cards) {
+    final seenIds = <Object?>{};
+    final seenWords = <String>{};
+    final unique = <Map<String, dynamic>>[];
+    for (final card in cards) {
+      final id = card['id'];
+      final word = (card['word'] ?? '').toString();
+      if (seenIds.contains(id) || seenWords.contains(word)) continue;
+      seenIds.add(id);
+      seenWords.add(word);
+      unique.add(card);
+    }
+    return unique;
   }
 
   Future<void> _speak(String text) async {
@@ -330,9 +348,14 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'Kartu ${_currentIndex + 1} / ${_flashcards.length}',
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                Expanded(
+                  child: Text(
+                    _isReviewSegment
+                        ? 'Review Lesson Sebelumnya ${_currentIndex + 1} / ${_reviewFlashcards.length}'
+                        : 'Belajar Lesson Ini ${_currentIndex - _reviewFlashcards.length + 1} / ${_learningFlashcards.length}',
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
                 Text(
                   '${((_currentIndex + 1) / _flashcards.length * 100).toInt()}%',
@@ -393,7 +416,9 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                           Text(
                             _isFlipped
                                 ? 'TERJEMAHAN / ARTI'
-                                : 'KOSAKATA / KANA',
+                                : _isReviewSegment
+                                    ? 'REVIEW LESSON SEBELUMNYA'
+                                    : 'MATERI BARU LESSON INI',
                             style: const TextStyle(
                                 color: AppTheme.textSecondary,
                                 fontSize: 12,
@@ -685,9 +710,9 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
             Text('Flashcard Selesai!'),
           ],
         ),
-        content: const Text(
-          'Hebat! Anda telah mengulas kosakata ulasan hari ini. '
-          'Langkah berikutnya adalah langsung mengikuti latihan kuis interaktif (Duolingo-style) untuk menguji ingatan Anda.',
+        content: Text(
+          'Review dan materi baru lesson ini selesai.\n\n'
+          'Langkah berikutnya adalah kuis untuk materi baru Lesson ${widget.day}, bukan materi review.',
         ),
         actions: [
           ElevatedButton(
@@ -700,7 +725,7 @@ class _FlashcardStudyScreenState extends State<FlashcardStudyScreen> {
                 '/daily_lesson_quiz',
                 arguments: {
                   'language': widget.language,
-                  'vocabList': _flashcards,
+                  'vocabList': _learningFlashcards,
                   'stage': widget.stage,
                   'day': widget.day,
                 },

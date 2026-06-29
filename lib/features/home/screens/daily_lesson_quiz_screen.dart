@@ -481,6 +481,58 @@ class _DailyLessonQuizScreenState extends State<DailyLessonQuizScreen> {
 
   List<QuizQuestion> _getFallbackQuestionsList() {
     final isJp = widget.language == 'JAPANESE';
+    if (widget.stage <= 12) {
+      return [
+        QuizQuestion(
+          type: QuestionType.multipleChoice,
+          questionText: 'Pilihlah arti kata yang tepat untuk kata berikut:',
+          wordPrompt: isJp ? 'あ' : 'Apple',
+          readingPrompt: isJp ? 'a' : null,
+          correctAnswer: isJp ? "Huruf Hiragana 'a'" : 'Apel',
+          options: isJp
+              ? [
+                  "Huruf Hiragana 'a'",
+                  "Huruf Hiragana 'i'",
+                  "Huruf Hiragana 'u'",
+                  "Huruf Hiragana 'e'"
+                ]
+              : ['Apel', 'Buku', 'Meja', 'Rumah'],
+        ),
+        QuizQuestion(
+          type: QuestionType.listening,
+          questionText: 'Dengarkan audio, lalu pilih jawaban yang benar.',
+          wordPrompt: isJp ? 'い' : 'Book',
+          readingPrompt: isJp ? 'i' : null,
+          correctAnswer: isJp ? "Huruf Hiragana 'i'" : 'Buku',
+          options: isJp
+              ? [
+                  "Huruf Hiragana 'a'",
+                  "Huruf Hiragana 'i'",
+                  "Huruf Hiragana 'u'",
+                  "Huruf Hiragana 'e'"
+                ]
+              : ['Apel', 'Buku', 'Meja', 'Rumah'],
+        ),
+        QuizQuestion(
+          type: QuestionType.fillInBlank,
+          questionText:
+              'Pilih jawaban yang tepat untuk melengkapi bagian kosong.',
+          wordPrompt: isJp ? 'Huruf ini dibaca ____.' : 'I ____ a student.',
+          readingPrompt: isJp ? 'u' : null,
+          correctAnswer: isJp ? 'u' : 'am',
+          options: isJp ? ['a', 'i', 'u', 'e'] : ['am', 'is', 'are', 'be'],
+        ),
+        QuizQuestion(
+          type: QuestionType.connectPairs,
+          questionText: 'Hubungkan pasangan yang tepat.',
+          wordPrompt: 'Pasangkan kata dengan artinya.',
+          correctAnswer: 'matched',
+          pairs: isJp
+              ? {'あ': 'a', 'い': 'i', 'う': 'u'}
+              : {'Apple': 'Apel', 'Book': 'Buku', 'House': 'Rumah'},
+        ),
+      ];
+    }
     return [
       QuizQuestion(
         type: QuestionType.multipleChoice,

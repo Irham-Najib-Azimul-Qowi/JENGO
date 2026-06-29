@@ -25,8 +25,8 @@ class DailyMockPracticeScreen extends StatefulWidget {
 class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
   final FlutterTts _flutterTts = FlutterTts();
 
-  int _currentStep = 0; // 0: Tips, 1-4: Day N, 5-8: Day N-1 review
-  final int _totalSteps = 9;
+  int _currentStep = 0; // 0: Tips, 1-4: current lesson mock practice
+  final int _totalSteps = 5;
   bool _isLoading = true;
   bool _isSpeakingPlaying = false;
   bool _isRecording = false;
@@ -116,21 +116,13 @@ class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
 
     int lessonIndex = (widget.stage - 1) * 30 + (widget.day - 1);
 
-    final reviewIndex = lessonIndex > 0 ? lessonIndex - 1 : lessonIndex;
     final readToday = await _queryReading(db, level, lessonIndex, readCount);
-    final readReview = await _queryReading(db, level, reviewIndex, readCount);
     final listenToday =
         await _queryListening(db, level, lessonIndex, listenCount);
-    final listenReview =
-        await _queryListening(db, level, reviewIndex, listenCount);
     final writingToday =
         await _queryPrompt(db, 'writing_prompts', lessonIndex, writingCount);
-    final writingReview =
-        await _queryPrompt(db, 'writing_prompts', reviewIndex, writingCount);
     final speakingToday =
         await _queryPrompt(db, 'speaking_prompts', lessonIndex, speakingCount);
-    final speakingReview =
-        await _queryPrompt(db, 'speaking_prompts', reviewIndex, speakingCount);
 
     if (mounted) {
       setState(() {
@@ -149,20 +141,16 @@ class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
 
         _readingItems
           ..clear()
-          ..add(readToday ?? fallbackReading)
-          ..add(readReview ?? readToday ?? fallbackReading);
+          ..add(readToday ?? fallbackReading);
         _listeningItems
           ..clear()
-          ..add(listenToday ?? fallbackListening)
-          ..add(listenReview ?? listenToday ?? fallbackListening);
+          ..add(listenToday ?? fallbackListening);
         _writingItems
           ..clear()
-          ..add(writingToday ?? fallbackWriting)
-          ..add(writingReview ?? writingToday ?? fallbackWriting);
+          ..add(writingToday ?? fallbackWriting);
         _speakingItems
           ..clear()
-          ..add(speakingToday ?? fallbackSpeaking)
-          ..add(speakingReview ?? speakingToday ?? fallbackSpeaking);
+          ..add(speakingToday ?? fallbackSpeaking);
 
         _selectContentSlot(0);
 
@@ -329,20 +317,20 @@ class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
   void _goToStep(int nextStep) {
     setState(() {
       _currentStep = nextStep;
-      if (nextStep == 1 || nextStep == 5) {
+      if (nextStep == 1) {
         _selectedReadAnswerIndex = -1;
         _hasCheckedRead = false;
       }
-      if (nextStep == 2 || nextStep == 6) {
+      if (nextStep == 2) {
         _writingController.clear();
         _wordCount = 0;
       }
-      if (nextStep == 3 || nextStep == 7) {
+      if (nextStep == 3) {
         _isRecording = false;
         _hasSpoken = false;
         _spokenText = "";
       }
-      if (nextStep == 4 || nextStep == 8) {
+      if (nextStep == 4) {
         _selectedListenAnswerIndex = -1;
         _hasCheckedListen = false;
       }
@@ -469,18 +457,15 @@ class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
   }
 
   Widget _buildStepContent(bool isJapanese, Color accentColor) {
-    _selectContentSlot(_currentStep >= 5 ? 1 : 0);
+    _selectContentSlot(0);
     switch (_currentStep) {
       case 0:
         return _buildTipsAndTricks(isJapanese, accentColor);
       case 1:
-      case 5:
         return _buildReadingSection(isJapanese, accentColor);
       case 2:
-      case 6:
         return _buildWritingSection(isJapanese, accentColor);
       case 3:
-      case 7:
         return _buildSpeakingSection(isJapanese, accentColor);
       default:
         return _buildListeningSection(isJapanese, accentColor);
@@ -571,10 +556,7 @@ class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-            _currentStep >= 5
-                ? 'REVIEW HARI SEBELUMNYA: MEMBACA'
-                : 'MODUL 1: MEMBACA (READING)',
+        Text('MODUL 1: MEMBACA (READING)',
             style: const TextStyle(
                 color: AppTheme.textSecondary,
                 fontSize: 12,
@@ -663,10 +645,7 @@ class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-            _currentStep >= 5
-                ? 'REVIEW HARI SEBELUMNYA: MENULIS'
-                : 'MODUL 2: MENULIS (WRITING)',
+        Text('MODUL 2: MENULIS (WRITING)',
             style: const TextStyle(
                 color: AppTheme.textSecondary,
                 fontSize: 12,
@@ -752,10 +731,7 @@ class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-            _currentStep >= 5
-                ? 'REVIEW HARI SEBELUMNYA: BERBICARA'
-                : 'MODUL 3: BERBICARA (SPEAKING)',
+        Text('MODUL 3: BERBICARA (SPEAKING)',
             style: const TextStyle(
                 color: AppTheme.textSecondary,
                 fontSize: 12,
@@ -866,10 +842,7 @@ class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-            _currentStep >= 5
-                ? 'REVIEW HARI SEBELUMNYA: MENDENGARKAN'
-                : 'MODUL 4: MENDENGARKAN (LISTENING)',
+        Text('MODUL 4: MENDENGARKAN (LISTENING)',
             style: const TextStyle(
                 color: AppTheme.textSecondary,
                 fontSize: 12,
@@ -981,7 +954,7 @@ class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
           )
         ],
       );
-    } else if (_currentStep == 1 || _currentStep == 5) {
+    } else if (_currentStep == 1) {
       final bool canCheck = _selectedReadAnswerIndex != -1;
       return Row(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -1012,7 +985,7 @@ class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
           )
         ],
       );
-    } else if (_currentStep == 2 || _currentStep == 6) {
+    } else if (_currentStep == 2) {
       final bool canCheck = _wordCount >= 10;
       return Row(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -1035,7 +1008,7 @@ class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
           )
         ],
       );
-    } else if (_currentStep == 3 || _currentStep == 7) {
+    } else if (_currentStep == 3) {
       final bool canCheck = _hasSpoken;
       return Row(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -1088,9 +1061,7 @@ class _DailyMockPracticeScreenState extends State<DailyMockPracticeScreen> {
                   },
             child: Text(
               _hasCheckedListen
-                  ? (_currentStep < _totalSteps - 1
-                      ? 'Lanjut Review'
-                      : 'Selesai')
+                  ? (_currentStep < _totalSteps - 1 ? 'Lanjut' : 'Selesai')
                   : 'Periksa',
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
